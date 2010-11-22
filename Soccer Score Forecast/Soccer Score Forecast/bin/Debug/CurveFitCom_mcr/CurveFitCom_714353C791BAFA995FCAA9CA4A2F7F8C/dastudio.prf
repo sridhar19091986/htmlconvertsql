@@ -1,0 +1,26 @@
+#
+#DAStudio Preference File
+#
+
+
+[DAStudio Model Explorer]
+MEGeometry=-4 -4 1288 778
+MESearchOptions_DeepSearch=1
+MESearchOptions_EvaluateProperties=0
+MESearchOptions_MatchCase=0
+MESearchOptions_MatchWholeString=0
+MESearchOptions_RefineAnd=0
+MESearchOptions_RegularExpression=1
+MESearchOptions_SearchLinks=0
+MESearchOptions_SearchMasks=0
+MESplitterPositions=647 0 216 1059 351 492 
+METreeClassNames=DAStudio.WorkspaceNode,Simulink.BlockDiagram,Simulink.ConfigSet,Simulink.ModelAdvisor,Simulink.Root,Simulink.SubSystem,
+MEViewOptions_MarkUnrelatedProperties=0
+MEViewOptions_ShowCustomizePropsPane=0
+MEViewOptions_ShowDynamicDialogs=1
+MEViewOptions_ShowPropertyDetails=1
+MEViewOptions_StackListnTree=0
+
+[General]
+MatlabRelease=2007b
+
