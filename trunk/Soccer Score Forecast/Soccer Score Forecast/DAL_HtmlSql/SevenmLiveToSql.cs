@@ -83,6 +83,7 @@ namespace Soccer_Score_Forecast
             
         }
 
+        private string temp_date = null;
         public void UpdateTodayMatch()
         {
             DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
@@ -98,7 +99,9 @@ namespace Soccer_Score_Forecast
                     ltl.home_team_big = Int32.Parse(GetNumber(m.home_team_big));
                     ltl.away_team_big = Int32.Parse(GetNumber(m.away_team_big));
                     ltl.match_type = m.match_type.Trim();
-                    ltl.match_time = DateTime.Parse(m.s_date.Substring(0, 10) + " " + m.s_time);
+                    if (m.s_date.IndexOf("-") != -1)
+                        temp_date = m.s_date.Substring(0, 10);
+                    ltl.match_time = DateTime.Parse(temp_date + " " + m.s_time);
                     ltl.status = m.full_time_score.Replace("&nbsp;", "").Trim();
                     ltl.home_team = m.home_team.Trim();
                     ltl.away_team = m.away_team.Trim();
@@ -141,7 +144,7 @@ namespace Soccer_Score_Forecast
                     }
                 }
             }
-            
+
             matches.live_Table.DeleteAllOnSubmit(lt);//更新后删除
             matches.SubmitChanges();
             MessageBox.Show("OK");

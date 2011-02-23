@@ -61,6 +61,8 @@ namespace Soccer_Score_Forecast
         {
      
         }
+        private string temp_time = null;
+        private int last_line = 0;
         public  void UpdateLastMatch()
         {
             int i = 0;
@@ -81,7 +83,9 @@ namespace Soccer_Score_Forecast
                     rtl.home_team_big = Int32.Parse(GetNumber(m.home_team_big));
                     rtl.away_team_big = Int32.Parse(GetNumber(m.away_team_big));
                     rtl.match_type = m.match_type.Trim();
-                    rtl.match_time = DateTime.Parse(m.s_date.Substring(0, 10) + " " + m.s_time);
+                    last_line = m.s_time.LastIndexOf("\n");
+                    temp_time=m.s_time.Substring(last_line,m.s_time.Length-last_line-1);
+                    rtl.match_time = DateTime.Parse(m.s_date.Substring(0, 10) + " " + temp_time);
                     rtl.odds = m.odds.Trim();
                     rtl.win_loss_big = m.win_loss_big.Trim();
                     rtl.home_team = m.home_team.Trim();
