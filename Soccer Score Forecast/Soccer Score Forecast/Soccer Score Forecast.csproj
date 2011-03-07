@@ -53,11 +53,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CurveFitCom, Version=0.0.3412.25058, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>src\CurveFitCom.dll</HintPath>
-    </Reference>
-    <Reference Include="CurveFitting, Version=2.0.3411.41109, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\HtmlAgilityPack.dll</HintPath>
@@ -66,8 +61,19 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
-    <Reference Include="MWArray, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e1d84a0da19db86f, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MWArray, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e1d84a0da19db86f, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>matlab_lib\MWArray.dll</HintPath>
+    </Reference>
+    <Reference Include="myCurveFit, Version=0.0.4083.20764, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Matlab\myCurveFit\distrib\myCurveFit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -116,10 +122,6 @@
     <Compile Include="DAL_HtmlSql\OkooHtmlToSql.cs" />
     <Compile Include="DAL_HtmlSql\ElementParserFunction.cs" />
     <Compile Include="OldClass\ConnDb.cs" />
-    <Compile Include="CurveFit\CsharpMatlabCompilerVer4.cs" />
-    <Compile Include="CurveFit\CurveFit.cs" />
-    <Compile Include="CurveFit\CurveFitComclass.cs" />
-    <Compile Include="CurveFit\CurveFitCom_mcc_component_data.cs" />
     <Compile Include="OldClass\doublePoint.cs" />
     <Compile Include="LinqSql\DataClassesMatch.designer.cs">
       <AutoGen>True</AutoGen>
@@ -205,22 +207,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="MLApp">
-      <Guid>{C36E46AB-6A81-457B-9F91-A7719A06287F}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
-    <COMReference Include="MSACAL">
-      <Guid>{8E27C92E-1264-101C-8A2F-040224009C02}</Guid>
-      <VersionMajor>7</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
     <COMReference Include="stdole">
       <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>2</VersionMajor>
