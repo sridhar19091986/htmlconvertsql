@@ -1,0 +1,22 @@
+Warnings during fitting:
+Equation is badly conditioned. Remove repeated data points
+         or try centering and scaling.
+ 
+Linear model Poly7:
+       f(x) = p1*x^7 + p2*x^6 + p3*x^5 + p4*x^4 + p5*x^3 + 
+                    p6*x^2 + p7*x + p8
+Coefficients (with 95% confidence bounds):
+       p1 =   4.97e-006  (-1.705e-005, 2.699e-005)
+       p2 =  -0.0003793  (-0.002079, 0.00132)
+       p3 =     0.01135  (-0.04132, 0.06402)
+       p4 =     -0.1677  (-1.006, 0.6702)
+       p5 =       1.253  (-5.995, 8.5)
+       p6 =      -4.151  (-37.3, 28.99)
+       p7 =       2.645  (-68.52, 73.81)
+       p8 =       13.81  (-38.16, 65.78)
+
+Goodness of fit:
+  SSE: 374.4
+  R-square: 0.2627
+  Adjusted R-square: -0.1342
+  RMSE: 5.366
