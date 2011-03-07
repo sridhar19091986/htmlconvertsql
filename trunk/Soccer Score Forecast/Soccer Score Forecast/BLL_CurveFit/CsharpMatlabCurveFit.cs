@@ -29,7 +29,7 @@ namespace Soccer_Score_Forecast
         //Matlab和Csharp混合编程的方法，利用Matlab运算得出想要的一系列数据
         public static string ployfitStr(string result)
         {
-            CurveFitCom.CurveFitComclass mmm = new CurveFitCom.CurveFitComclass();
+            myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             string[] yS = result.Trim().Split();
             int size = yS.Length;
             double[] Y = new double[size];
@@ -57,7 +57,7 @@ namespace Soccer_Score_Forecast
         //Matlab和Csharp混合编程的方法，利用Matlab运算得出想要的一个单数据
         public static string ployfitVal(string result)
         {
-            CurveFitCom.CurveFitComclass mmm = new CurveFitCom.CurveFitComclass();
+            myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             string[] yS = result.Trim().Split();
             int size = yS.Length;
             double[] Y = new double[size];
@@ -85,7 +85,7 @@ namespace Soccer_Score_Forecast
         public static float ployfitNowWDL(List<MatchPoint<int>> result, int LastNowDiff)
         {
             List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
-            CurveFitCom.CurveFitComclass mmm = new CurveFitCom.CurveFitComclass();
+            myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
             double[] Y = new double[size];
@@ -121,7 +121,7 @@ namespace Soccer_Score_Forecast
         public static float ployfitNowGoals(List<MatchPoint<int>> result, int LastNowDiff)
         {
             List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
-            CurveFitCom.CurveFitComclass mmm = new CurveFitCom.CurveFitComclass();
+            myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
             double[] Y = new double[size];
@@ -157,7 +157,7 @@ namespace Soccer_Score_Forecast
         public static float ployfitNowOE(List<MatchPoint<int>> result, int LastNowDiff)
         {
             List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
-            CurveFitCom.CurveFitComclass mmm = new CurveFitCom.CurveFitComclass();
+            myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
             double[] Y = new double[size];
@@ -195,7 +195,7 @@ namespace Soccer_Score_Forecast
         public static List<MatchPoint<float>> ployfitSeriesWDL(List<MatchPoint<int>> result, int LastNowDiff)
         {
             List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
-            CurveFitCom.CurveFitComclass mmm = new CurveFitCom.CurveFitComclass();
+            myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
             double[] Y = new double[size];
@@ -236,7 +236,7 @@ namespace Soccer_Score_Forecast
         public static List<MatchPoint<float>> ployfitSeriesGoals(List<MatchPoint<int>> result, int LastNowDiff)
         {
             List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
-            CurveFitCom.CurveFitComclass mmm = new CurveFitCom.CurveFitComclass();
+            myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
             double[] Y = new double[size];
@@ -277,7 +277,7 @@ namespace Soccer_Score_Forecast
         public static List<MatchPoint<float>> ployfitSeriesOE(List<MatchPoint<int>> result, int LastNowDiff)
         {
             List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
-            CurveFitCom.CurveFitComclass mmm = new CurveFitCom.CurveFitComclass();
+            myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
             double[] Y = new double[size];
@@ -320,7 +320,7 @@ namespace Soccer_Score_Forecast
         #region  反射的经典实现，变量的反复抽象，把变化部分减少到最小，增强稳定部分，有利于扩展
         public static List<MatchPoint<float>> ployfitSeries(List<MatchPoint<int>> result, int LastNowDiff)
         {
-            CurveFitCom.CurveFitComclass mmm = new CurveFitCom.CurveFitComclass();
+            myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
             //在此反射数据系列，计算需要拟合的成员，由于输入和输出的数据类型不同，使用泛型<>，T
             FieldInfo[] field = typeof(MatchPoint<>).GetFields();
