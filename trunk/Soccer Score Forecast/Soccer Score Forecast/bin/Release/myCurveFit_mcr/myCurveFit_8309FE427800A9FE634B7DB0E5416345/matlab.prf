@@ -1,7 +1,0 @@
-#MATLAB Preferences
-#Sun Mar 06 16:14:39 CST 2011
-FileBrowserFiveColumnWidths=S[150 100 75 150 400]
-FileBrowserFiveColumnOrder=S[0 1 2 3 4]
-MatlabExitConfirm=Bfalse
-MatlabErrorLogReportTime=J4694557107289019928
-CommandWindowClearConfirmation=Btrue
