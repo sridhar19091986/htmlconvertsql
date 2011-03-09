@@ -71,3 +71,6 @@ G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Genera
 G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\Microsoft.Office.Interop.Excel.dll
 G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\myCurveFit.dll
 G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\myCurveFit.ctf
+G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\ICSharpCode.TextEditor.dll
+G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\sandbar.dll
+G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\sanddock.dll

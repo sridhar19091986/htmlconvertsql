@@ -57,6 +57,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\HtmlAgilityPack.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.TextEditor">
+      <HintPath>form_lib\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
@@ -73,6 +76,12 @@
     <Reference Include="myCurveFit, Version=0.0.4083.20764, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Matlab\myCurveFit\distrib\myCurveFit.dll</HintPath>
+    </Reference>
+    <Reference Include="sandbar">
+      <HintPath>form_lib\sandbar.dll</HintPath>
+    </Reference>
+    <Reference Include="sanddock">
+      <HintPath>form_lib\sanddock.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">

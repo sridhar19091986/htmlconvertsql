@@ -99,6 +99,7 @@ namespace Soccer_Score_Forecast
             chart1.ChartAreas["Default"].AxisX.ScaleView.Zoomable = true;//zooming end user interface
             chart1.ChartAreas["Default"].AxisX.ScrollBar.IsPositionedInside = true;
             chart1.ChartAreas["Default"].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
+            //chart1.ChartAreas["Default"].AxisX.LineColor = Color.FromArgb(164, 164, 164);
         }
         public static void LabelMatchDetail(Chart chart1, string strKey)
         {
