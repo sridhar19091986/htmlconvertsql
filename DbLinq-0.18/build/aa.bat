@@ -1,0 +1,1 @@
+DbMetal.exe /database:SoccerScoreSqlite  /schema /namespace=Soccer_Score_Forecast.LinqSql /sprocs /entityInterfaces= /culture="en"  /code=DataClassesMatch.cs /provider=Sqlite  /conn="data source=G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\SoccerScoreSqlite.db"
