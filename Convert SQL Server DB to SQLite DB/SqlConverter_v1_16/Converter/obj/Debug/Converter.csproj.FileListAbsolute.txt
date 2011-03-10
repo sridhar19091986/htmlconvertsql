@@ -1,0 +1,16 @@
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\bin\Debug\Converter.exe.config
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\bin\Debug\Converter.exe
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\bin\Debug\Converter.pdb
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\bin\Debug\DbAccess.dll
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\bin\Debug\log4net.dll
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\bin\Debug\System.Data.SQLite.dll
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\bin\Debug\DbAccess.pdb
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\obj\Debug\ResolveAssemblyReference.cache
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\obj\Debug\Converter.AuthorMessageForm.resources
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\obj\Debug\Converter.MainForm.resources
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\obj\Debug\Converter.TableSelectionDialog.resources
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\obj\Debug\Converter.ViewFailureDialog.resources
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\obj\Debug\GenerateResource-ResGen.read.1.tlog
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\obj\Debug\GenerateResource-ResGen.write.1.tlog
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\obj\Debug\Converter.exe
+G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\Converter\obj\Debug\Converter.pdb
