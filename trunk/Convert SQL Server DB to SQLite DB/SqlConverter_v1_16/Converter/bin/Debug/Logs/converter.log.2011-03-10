@@ -1,0 +1,319 @@
+DEBUG 2011-03-10 22:25:49,265 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:830) - parsed table schema for [live_Table]
+DEBUG 2011-03-10 22:25:50,062 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:830) - parsed table schema for [live_okoo]
+DEBUG 2011-03-10 22:25:50,484 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:830) - parsed table schema for [match_table_xpath]
+DEBUG 2011-03-10 22:25:50,875 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:830) - parsed table schema for [match_analysis_result]
+DEBUG 2011-03-10 22:25:51,250 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:830) - parsed table schema for [live_Aibo]
+DEBUG 2011-03-10 22:25:51,640 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:830) - parsed table schema for [result_tb]
+DEBUG 2011-03-10 22:25:52,015 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:830) - parsed table schema for [result_tb_lib]
+DEBUG 2011-03-10 22:25:52,375 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:830) - parsed table schema for [match_analysis_collection]
+DEBUG 2011-03-10 22:25:52,734 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:830) - parsed table schema for [live_Table_lib]
+DEBUG 2011-03-10 22:25:52,734 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:834) - finished parsing all tables in SQL Server schema
+DEBUG 2011-03-10 22:25:58,812 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:461) - Creating SQLite database...
+DEBUG 2011-03-10 22:25:58,812 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:466) - SQLite file was created successfully at [G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\SoccerScore.db]
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,281 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+ INFO 2011-03-10 22:25:59,312 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:571) - 
+
+CREATE TABLE [live_Table] (
+	"live_table_id"		integer NOT NULL,
+	"html_position"		nvarchar(50) COLLATE NOCASE,
+	"home_team_big"		nvarchar(50) COLLATE NOCASE,
+	"away_team_big"		nvarchar(50) COLLATE NOCASE,
+	"match_type"		nvarchar(50) COLLATE NOCASE,
+	"s_date"		nvarchar(50) COLLATE NOCASE,
+	"s_time"		nvarchar(50) COLLATE NOCASE,
+	"status"		nvarchar(50) COLLATE NOCASE,
+	"home_team"		nvarchar(50) COLLATE NOCASE,
+	"away_team"		nvarchar(50) COLLATE NOCASE,
+	"full_time_score"		nvarchar(50) COLLATE NOCASE,
+	"half_time_score"		nvarchar(50) COLLATE NOCASE,
+    PRIMARY KEY ([live_table_id])
+
+);
+
+
+
+DEBUG 2011-03-10 22:25:59,421 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:491) - added schema for SQLite table [live_Table]
+DEBUG 2011-03-10 22:25:59,421 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,421 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,421 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,421 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+ INFO 2011-03-10 22:25:59,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:571) - 
+
+CREATE TABLE [live_okoo] (
+	"live_okoo_id"		integer NOT NULL,
+	"value"		integer,
+	"LeagueName"		nvarchar(50) COLLATE NOCASE,
+	"match_time"		nvarchar(50) COLLATE NOCASE,
+	"MatchOrder1_HomeName"		nvarchar(50) COLLATE NOCASE,
+	"MatchOrder1_HandicapNumber"		nvarchar(50) COLLATE NOCASE,
+	"MatchOrder1_AwayName"		nvarchar(50) COLLATE NOCASE,
+	"ok_1_0"		nvarchar(50) COLLATE NOCASE,
+	"ok_1_1"		nvarchar(50) COLLATE NOCASE,
+	"ok_1_2"		nvarchar(50) COLLATE NOCASE,
+	"MatchInfo"		nvarchar(50) COLLATE NOCASE,
+	"Match_1_Win"		nvarchar(50) COLLATE NOCASE,
+	"Match_1_Drawn"		nvarchar(50) COLLATE NOCASE,
+	"Match_1_Lost"		nvarchar(50) COLLATE NOCASE,
+    PRIMARY KEY ([live_okoo_id])
+
+);
+
+
+
+DEBUG 2011-03-10 22:25:59,812 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:491) - added schema for SQLite table [live_okoo]
+DEBUG 2011-03-10 22:25:59,812 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,812 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,812 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,812 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,906 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,906 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,906 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+ INFO 2011-03-10 22:25:59,906 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:571) - 
+
+CREATE TABLE [match_table_xpath] (
+	"uri_host_id"		integer NOT NULL,
+	"uri_host"		nvarchar(500) COLLATE NOCASE,
+	"max_table_xpath"		nvarchar(500) COLLATE NOCASE,
+	"max_table_id_value"		nvarchar(500) COLLATE NOCASE,
+	"second_table_xpath"		nvarchar(500) COLLATE NOCASE,
+	"second_table_id_value"		nvarchar(500) COLLATE NOCASE,
+	"order_table_id"		integer,
+    PRIMARY KEY ([uri_host_id])
+
+);
+
+
+
+DEBUG 2011-03-10 22:25:59,984 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:491) - added schema for SQLite table [match_table_xpath]
+DEBUG 2011-03-10 22:25:59,984 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:25:59,984 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,125 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,312 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,312 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+ INFO 2011-03-10 22:26:00,312 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:571) - 
+
+CREATE TABLE [match_analysis_result] (
+	"analysis_result_id"		integer NOT NULL,
+	"live_table_lib_id"		numeric NOT NULL,
+	"result_tb_lib_id"		numeric,
+	"pre_algorithm"		nvarchar(20) COLLATE NOCASE,
+	"pre_match_count"		integer,
+	"home_w"		integer,
+	"home_d"		integer,
+	"home_l"		integer,
+	"home_goals"		float,
+	"away_goals"		float,
+	"fit_win_loss"		float,
+	"fit_goals"		float,
+	"fit_odd_even"		float,
+	"result_fit"		nvarchar(20) COLLATE NOCASE,
+	"result_goals"		nvarchar(20) COLLATE NOCASE,
+	"result_wdl"		nvarchar(20) COLLATE NOCASE,
+    PRIMARY KEY ([analysis_result_id])
+
+);
+
+
+
+DEBUG 2011-03-10 22:26:00,406 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:491) - added schema for SQLite table [match_analysis_result]
+DEBUG 2011-03-10 22:26:00,406 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+ INFO 2011-03-10 22:26:00,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:571) - 
+
+CREATE TABLE [live_Aibo] (
+	"live_Aibo_id"		integer NOT NULL,
+	"value"		nvarchar(50) COLLATE NOCASE,
+	"LeagueName"		nvarchar(50) COLLATE NOCASE,
+	"match_time"		nvarchar(50) COLLATE NOCASE,
+	"MatchOrder1_HomeName"		nvarchar(50) COLLATE NOCASE,
+	"MatchOrder1_HandicapNumber"		nvarchar(50) COLLATE NOCASE,
+	"MatchOrder1_AwayName"		nvarchar(50) COLLATE NOCASE,
+    PRIMARY KEY ([live_Aibo_id])
+
+);
+
+
+
+DEBUG 2011-03-10 22:26:00,578 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:491) - added schema for SQLite table [live_Aibo]
+DEBUG 2011-03-10 22:26:00,703 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,703 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,703 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:00,906 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+ INFO 2011-03-10 22:26:00,906 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:571) - 
+
+CREATE TABLE [result_tb] (
+	"result_tb_id"		integer NOT NULL,
+	"html_position"		nvarchar(50) COLLATE NOCASE,
+	"home_team_big"		nvarchar(50) COLLATE NOCASE,
+	"away_team_big"		nvarchar(50) COLLATE NOCASE,
+	"match_type"		nvarchar(50) COLLATE NOCASE,
+	"s_date"		nvarchar(50) COLLATE NOCASE,
+	"s_time"		nvarchar(50) COLLATE NOCASE,
+	"home_team"		nvarchar(50) COLLATE NOCASE,
+	"away_team"		nvarchar(50) COLLATE NOCASE,
+	"full_time_score"		nvarchar(50) COLLATE NOCASE,
+	"half_time_score"		nvarchar(50) COLLATE NOCASE,
+	"odds"		nvarchar(50) COLLATE NOCASE,
+	"win_loss_big"		nvarchar(50) COLLATE NOCASE,
+    PRIMARY KEY ([result_tb_id])
+
+);
+
+
+
+DEBUG 2011-03-10 22:26:01,000 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:491) - added schema for SQLite table [result_tb]
+DEBUG 2011-03-10 22:26:01,000 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,000 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,312 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,312 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+ INFO 2011-03-10 22:26:01,312 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:571) - 
+
+CREATE TABLE [result_tb_lib] (
+	"result_tb_lib_id"		integer NOT NULL,
+	"html_position"		integer,
+	"home_team_big"		integer,
+	"away_team_big"		integer,
+	"match_type"		nvarchar(50) COLLATE NOCASE,
+	"match_time"		datetime,
+	"home_team"		nvarchar(50) COLLATE NOCASE,
+	"away_team"		nvarchar(50) COLLATE NOCASE,
+	"odds"		nvarchar(50) COLLATE NOCASE,
+	"win_loss_big"		nvarchar(50) COLLATE NOCASE,
+	"home_red_card"		integer,
+	"away_red_card"		integer,
+	"full_home_goals"		integer,
+	"full_away_goals"		integer,
+	"half_home_goals"		integer,
+	"half_away_goals"		integer,
+    PRIMARY KEY ([result_tb_lib_id])
+
+);
+
+
+
+DEBUG 2011-03-10 22:26:01,421 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:491) - added schema for SQLite table [result_tb_lib]
+DEBUG 2011-03-10 22:26:01,421 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+ INFO 2011-03-10 22:26:01,515 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:571) - 
+
+CREATE TABLE [match_analysis_collection] (
+	"analysis_collection_id"		integer NOT NULL,
+	"live_table_lib_id"		integer,
+	"result_tb_lib_id"		integer,
+    PRIMARY KEY ([analysis_collection_id])
+
+);
+
+
+
+DEBUG 2011-03-10 22:26:01,578 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:491) - added schema for SQLite table [match_analysis_collection]
+DEBUG 2011-03-10 22:26:01,578 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,578 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,578 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,578 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,578 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,703 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+DEBUG 2011-03-10 22:26:01,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:719) - DEFAULT VALUE BEFORE [] AFTER []
+ INFO 2011-03-10 22:26:01,718 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:571) - 
+
+CREATE TABLE [live_Table_lib] (
+	"live_table_lib_id"		integer NOT NULL,
+	"html_position"		integer,
+	"home_team_big"		integer,
+	"away_team_big"		integer,
+	"match_type"		nvarchar(50) COLLATE NOCASE,
+	"match_time"		datetime,
+	"status"		nvarchar(50) COLLATE NOCASE,
+	"home_team"		nvarchar(50) COLLATE NOCASE,
+	"away_team"		nvarchar(50) COLLATE NOCASE,
+	"home_red_card"		integer,
+	"away_red_card"		integer,
+	"full_home_goals"		integer,
+	"full_away_goals"		integer,
+	"half_home_goals"		integer,
+	"half_away_goals"		integer,
+    PRIMARY KEY ([live_table_lib_id])
+
+);
+
+
+
+DEBUG 2011-03-10 22:26:01,984 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:491) - added schema for SQLite table [live_Table_lib]
+DEBUG 2011-03-10 22:26:01,984 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:516) - finished adding all table/view schemas for SQLite database
+DEBUG 2011-03-10 22:26:01,984 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:133) - preparing to insert tables ...
+DEBUG 2011-03-10 22:26:02,109 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:186) - finished inserting all rows for table [live_Table]
+DEBUG 2011-03-10 22:26:02,343 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:186) - finished inserting all rows for table [live_okoo]
+DEBUG 2011-03-10 22:26:02,453 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:186) - finished inserting all rows for table [match_table_xpath]
+DEBUG 2011-03-10 22:26:04,890 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:186) - finished inserting all rows for table [match_analysis_result]
+DEBUG 2011-03-10 22:26:05,015 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:186) - finished inserting all rows for table [live_Aibo]
+DEBUG 2011-03-10 22:26:07,140 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:186) - finished inserting all rows for table [result_tb]
+DEBUG 2011-03-10 22:28:13,953 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:186) - finished inserting all rows for table [result_tb_lib]
+DEBUG 2011-03-10 22:28:13,968 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:186) - finished inserting all rows for table [match_analysis_collection]
+DEBUG 2011-03-10 22:28:16,406 (G:\htmlconvertsql\Convert SQL Server DB to SQLite DB\SqlConverter_v1_16\DbAccess\SqlServerToSQLite.cs:186) - finished inserting all rows for table [live_Table_lib]
