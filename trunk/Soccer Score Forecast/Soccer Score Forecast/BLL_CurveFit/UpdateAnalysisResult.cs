@@ -25,9 +25,10 @@ namespace Soccer_Score_Forecast
 {
     public class UpdateAnalysisResult
     {
-         DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
+        SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn);
+        //DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
         public int ExecUpateCount;
-        public IEnumerable<match_analysis_result> mar;
+        public IEnumerable<MatchAnalysisResult> mar;
         private DateTime? match_time;
         private int? home_team_big;
         private int? away_team_big;
@@ -36,8 +37,8 @@ namespace Soccer_Score_Forecast
 
         public UpdateAnalysisResult()
         {
-
-            mar = matches.match_analysis_result.Where(e => e.result_tb_lib_id == null);
+            mar=matches.MatchAnalysisResult.Where(e => e.AnalysisResultID == null);
+            //mar = matches.match_analysis_result.Where(e => e.result_tb_lib_id == null);
             ExecUpateCount = mar.Count();
 
         }
@@ -45,8 +46,10 @@ namespace Soccer_Score_Forecast
         {
 
             int i = 0;
-            var lvls = matches.live_Table_lib.ToDictionary(e => e.live_table_lib_id);
-            var rtls = matches.result_tb_lib.ToDictionary(e => e.match_time.ToString() + "-" + e.home_team_big + "-" + e.away_team_big);
+            //var lvls = matches.live_Table_lib.ToDictionary(e => e.live_table_lib_id);
+            var lvls = matches.LiveTableLib.ToDictionary(e => e.LiveTableLibID);
+            //var rtls = matches.result_tb_lib.ToDictionary(e => e.match_time.ToString() + "-" + e.home_team_big + "-" + e.away_team_big);
+            var rtls = matches.ResultTBLib.ToDictionary(e => e.MatchTime.ToString() + "-" + e.HomeTeamBig + "-" + e.AwayTeamBig);
 
             foreach (var m in mar)
             {

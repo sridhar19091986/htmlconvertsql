@@ -53,6 +53,12 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DbLinq">
+      <HintPath>..\..\DbLinq-0.18\build\DbLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="DbLinq.Sqlite">
+      <HintPath>..\..\DbLinq-0.18\build\DbLinq.Sqlite.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\HtmlAgilityPack.dll</HintPath>
@@ -90,6 +96,8 @@
     <Reference Include="System.Data.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
+    <Reference Include="System.Data.SQLite.Linq, Version=2.0.38.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Microsoft Chart Controls\Assemblies\System.Windows.Forms.DataVisualization.dll</HintPath>
@@ -116,12 +124,10 @@
     <Compile Include="BLL_CurveFit\RowNumberLimit.cs" />
     <Compile Include="BLL_CurveFit\UpdateAnalysisResult.cs" />
     <Compile Include="BLL_CurveFit\AuditForecastAlgorithm.cs" />
+    <Compile Include="Config\SoccerScoreSqlite.cs" />
     <Compile Include="DAL_HtmlSql\AiboLiveToSql.cs" />
     <Compile Include="DAL_HtmlSql\HtmlAgilityPackTableXpath.cs" />
     <Compile Include="DAL_HtmlSql\SqlAgilityPackTableXpath.cs" />
-    <Compile Include="LinqSql\DataClassesMatch.cs">
-      <DependentUpon>DataClassesMatch.dbml</DependentUpon>
-    </Compile>
     <Compile Include="UI_TreeChart\LoadHtmlToTree.cs" />
     <Compile Include="UI_TreeChart\ProgressBarDelegate.cs" />
     <Compile Include="OldClass\UpdateSqldata.cs" />
@@ -132,11 +138,6 @@
     <Compile Include="DAL_HtmlSql\ElementParserFunction.cs" />
     <Compile Include="OldClass\ConnDb.cs" />
     <Compile Include="OldClass\doublePoint.cs" />
-    <Compile Include="LinqSql\DataClassesMatch.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataClassesMatch.dbml</DependentUpon>
-    </Compile>
     <Compile Include="OldClass\LiveOdds.cs" />
     <Compile Include="OldClass\MatchStruct.cs" />
     <Compile Include="OldClass\MatchData.cs" />
@@ -148,9 +149,8 @@
     </Compile>
     <Compile Include="Config\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Config\app.config" />
-    <None Include="LinqSql\DataClassesMatch.dbml.layout">
-      <DependentUpon>DataClassesMatch.dbml</DependentUpon>
+    <None Include="Config\app.config">
+      <SubType>Designer</SubType>
     </None>
     <EmbeddedResource Include="Soccer Score Forecast.resx">
       <DependentUpon>Soccer Score Forecast.cs</DependentUpon>
@@ -166,11 +166,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="LinqSql\DataClassesMatch.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClassesMatch.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -224,6 +219,9 @@
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LinqSql\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -26,14 +26,14 @@ namespace Soccer_Score_Forecast
     public class LoadDataToTree
     {
         //private  DataClassesMatchDataContext matches;
-        private List<live_Table_lib> ltlAll;
-        private List<result_tb_lib> rtlAll;
-        private List<match_analysis_result> marAll;
-        private List<live_Aibo> loAll;
-        private IEnumerable<live_Table_lib> ltls;
+        private List<LiveTableLib> ltlAll;
+        private List<ResultTBLib> rtlAll;
+        private List<MatchAnalysisResult> marAll;
+        private List<LiveAibo> loAll;
+        private IEnumerable<LiveTableLib> ltls;
         //private IEnumerable<match_analysis_result> mars;
-        private result_tb_lib rtl;
-        private match_analysis_result mar;
+        private ResultTBLib rtl;
+        private MatchAnalysisResult mar;
         private string strNode;
         //private  TreeNode _treeViewMatch;
         public LoadDataToTree(int daysDiff)
@@ -45,11 +45,12 @@ namespace Soccer_Score_Forecast
             //这个连接不能放到class中，不然取的还是缓存的数据？？？？？？？？？？？
             //对象和数据库之间会存在不能更新的问题？？？？？？？？？？？
             //DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+
+            using (SoccerScoreSqlite matches = new SoccerScoreSqlite(cnn))
             {
-                ltlAll = matches.live_Table_lib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).OrderBy(m => m.match_time).ToList();
-                rtlAll = matches.result_tb_lib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).ToList();
-                marAll = matches.match_analysis_result.Where(e => e.live_table_lib_id > 0).ToList();
+                ltlAll = matches.LiveTableLib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).OrderBy(m => m.match_time).ToList();
+                rtlAll = matches.ResultTBLib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).ToList();
+                marAll = matches.match_analysis_result.Where(e => e.LiveTableLib_id > 0).ToList();
                 loAll = matches.live_Aibo .Where(e => e.live_Aibo_id  > 0).ToList();
             }
         }
