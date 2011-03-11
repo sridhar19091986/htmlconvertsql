@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.SQLite;
 
 namespace Soccer_Score_Forecast
 {
@@ -14,5 +15,11 @@ namespace Soccer_Score_Forecast
         {
             sendPEvent(i);
         }
+    }
+
+    public static class Conn
+    {
+        private static string connStr = "Data Source=SoccerScoreSqlite.db;FailIfMissing=false;";
+        public static System.Data.SQLite.SQLiteConnection cnn = new SQLiteConnection(connStr);
     }
 }
