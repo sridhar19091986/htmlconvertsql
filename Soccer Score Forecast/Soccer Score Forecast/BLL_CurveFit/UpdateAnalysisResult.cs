@@ -47,9 +47,9 @@ namespace Soccer_Score_Forecast
 
             int i = 0;
             //var lvls = matches.live_Table_lib.ToDictionary(e => e.live_table_lib_id);
-            var lvls = matches.LiveTableLib.ToDictionary(e => e.LiveTableLibID);
+            Dictionary<int,LiveTableLib> lvls = matches.LiveTableLib.ToDictionary(e => e.LiveTableLibID);
             //var rtls = matches.result_tb_lib.ToDictionary(e => e.match_time.ToString() + "-" + e.home_team_big + "-" + e.away_team_big);
-            var rtls = matches.ResultTBLib.ToDictionary(e => e.MatchTime.ToString() + "-" + e.HomeTeamBig + "-" + e.AwayTeamBig);
+            Dictionary<string,ResultTBLib> rtls = matches.ResultTBLib.ToDictionary(e => e.MatchTime.ToString() + "-" + e.HomeTeamBig + "-" + e.AwayTeamBig);
 
             foreach (var m in mar)
             {
@@ -63,7 +63,7 @@ namespace Soccer_Score_Forecast
                 //{
                 //    //得出match time home away
                 //var lvl = lvls[m.live_table_lib_id];
-                var lvl = lvls[(int)m.LiveTableLibID];
+                LiveTableLib lvl = lvls[(int)m.LiveTableLibID];
                 //match_time = lvl.match_time;
                 match_time = lvl.MatchTime;
                 //home_team_big = lvl.home_team_big;
@@ -82,7 +82,7 @@ namespace Soccer_Score_Forecast
                 //var rtl = rtls.First();
                 if (rtls.ContainsKey(match_time.ToString() + "-" + home_team_big + "-" + away_team_big))
                 {
-                    var rtl = rtls[match_time.ToString() + "-" + home_team_big + "-" + away_team_big];
+                    ResultTBLib rtl = rtls[match_time.ToString() + "-" + home_team_big + "-" + away_team_big];
                     //result_tb_lib_id = rtl.result_tb_lib_id;
                     //m.result_tb_lib_id = result_tb_lib_id;
 

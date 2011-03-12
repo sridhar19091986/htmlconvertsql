@@ -81,7 +81,7 @@ namespace Soccer_Score_Forecast
             int i = 0;
            // DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
             SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn);
-            var rt = matches.ResultTB.OrderBy(o => o.SDate).ThenBy(p => p.STime);//用lambda表达式简洁
+            IEnumerable<ResultTB>  rt = matches.ResultTB.OrderBy(o => o.SDate).ThenBy(p => p.STime);//用lambda表达式简洁
 
             //取临时变量监视
             DateTime lib_max_match_time = matches.ResultTBLib.Select(p => p.MatchTime).Max().Value.AddDays(-2);
@@ -135,7 +135,7 @@ namespace Soccer_Score_Forecast
                     if (rtl.MatchTime > lib_max_match_time)
                     {
                         //数据分区，层次化查询
-                        var rtExist = from p in matches.ResultTBLib
+                        IEnumerable<ResultTBLib> rtExist = from p in matches.ResultTBLib
                                       where p.MatchTime== rtl.MatchTime
                                       where p.HomeTeamBig== rtl.HomeTeamBig
                                       where p.AwayTeamBig== rtl.AwayTeamBig
