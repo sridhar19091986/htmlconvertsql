@@ -422,6 +422,9 @@ namespace Soccer_Score_Forecast
                                 [fit_win_loss] [float] NULL,
                                 [fit_goals] [float] NULL,
                                 [fit_odd_even] [float] NULL,
+[result_fit] [nvarchar](20) NULL,
+[result_goals] [nvarchar](20) NULL,
+[result_wdl] [nvarchar](20) NULL,
                              CONSTRAINT [PK_MATCH_ANALYSIS_RESULT] PRIMARY KEY NONCLUSTERED 
                             (
                                 [analysis_result_id] ASC

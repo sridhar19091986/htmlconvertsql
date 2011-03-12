@@ -22,7 +22,7 @@ namespace Soccer_Score_Forecast.LinqSql
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="match_analysis_pdm")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="D:\\MDF FILES\\MATCH_ANALYSIS_PDM.MDF")]
 	public partial class DataClassesMatchDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -51,16 +51,16 @@ namespace Soccer_Score_Forecast.LinqSql
     partial void Insertmatch_table_xpath(match_table_xpath instance);
     partial void Updatematch_table_xpath(match_table_xpath instance);
     partial void Deletematch_table_xpath(match_table_xpath instance);
-    partial void Insertmatch_analysis_result(match_analysis_result instance);
-    partial void Updatematch_analysis_result(match_analysis_result instance);
-    partial void Deletematch_analysis_result(match_analysis_result instance);
     partial void Insertlive_Aibo(live_Aibo instance);
     partial void Updatelive_Aibo(live_Aibo instance);
     partial void Deletelive_Aibo(live_Aibo instance);
+    partial void Insertmatch_analysis_result(match_analysis_result instance);
+    partial void Updatematch_analysis_result(match_analysis_result instance);
+    partial void Deletematch_analysis_result(match_analysis_result instance);
     #endregion
 		
 		public DataClassesMatchDataContext() : 
-				base(global::Soccer_Score_Forecast.Properties.Settings.Default.match_analysis_pdmConnectionString, mappingSource)
+				base(global::Soccer_Score_Forecast.Properties.Settings.Default.D__MDF_FILES_MATCH_ANALYSIS_PDM_MDFConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -145,19 +145,19 @@ namespace Soccer_Score_Forecast.LinqSql
 			}
 		}
 		
-		public System.Data.Linq.Table<match_analysis_result> match_analysis_result
-		{
-			get
-			{
-				return this.GetTable<match_analysis_result>();
-			}
-		}
-		
 		public System.Data.Linq.Table<live_Aibo> live_Aibo
 		{
 			get
 			{
 				return this.GetTable<live_Aibo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<match_analysis_result> match_analysis_result
+		{
+			get
+			{
+				return this.GetTable<match_analysis_result>();
 			}
 		}
 	}
@@ -2348,6 +2348,212 @@ namespace Soccer_Score_Forecast.LinqSql
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.live_Aibo")]
+	public partial class live_Aibo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _live_Aibo_id;
+		
+		private string _value;
+		
+		private string _LeagueName;
+		
+		private string _match_time;
+		
+		private string _MatchOrder1_HomeName;
+		
+		private string _MatchOrder1_HandicapNumber;
+		
+		private string _MatchOrder1_AwayName;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onlive_Aibo_idChanging(decimal value);
+    partial void Onlive_Aibo_idChanged();
+    partial void OnvalueChanging(string value);
+    partial void OnvalueChanged();
+    partial void OnLeagueNameChanging(string value);
+    partial void OnLeagueNameChanged();
+    partial void Onmatch_timeChanging(string value);
+    partial void Onmatch_timeChanged();
+    partial void OnMatchOrder1_HomeNameChanging(string value);
+    partial void OnMatchOrder1_HomeNameChanged();
+    partial void OnMatchOrder1_HandicapNumberChanging(string value);
+    partial void OnMatchOrder1_HandicapNumberChanged();
+    partial void OnMatchOrder1_AwayNameChanging(string value);
+    partial void OnMatchOrder1_AwayNameChanged();
+    #endregion
+		
+		public live_Aibo()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_live_Aibo_id", AutoSync=AutoSync.OnInsert, DbType="Decimal(18,0) NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public decimal live_Aibo_id
+		{
+			get
+			{
+				return this._live_Aibo_id;
+			}
+			set
+			{
+				if ((this._live_Aibo_id != value))
+				{
+					this.Onlive_Aibo_idChanging(value);
+					this.SendPropertyChanging();
+					this._live_Aibo_id = value;
+					this.SendPropertyChanged("live_Aibo_id");
+					this.Onlive_Aibo_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_value", DbType="NVarChar(50)")]
+		public string value
+		{
+			get
+			{
+				return this._value;
+			}
+			set
+			{
+				if ((this._value != value))
+				{
+					this.OnvalueChanging(value);
+					this.SendPropertyChanging();
+					this._value = value;
+					this.SendPropertyChanged("value");
+					this.OnvalueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeagueName", DbType="NVarChar(50)")]
+		public string LeagueName
+		{
+			get
+			{
+				return this._LeagueName;
+			}
+			set
+			{
+				if ((this._LeagueName != value))
+				{
+					this.OnLeagueNameChanging(value);
+					this.SendPropertyChanging();
+					this._LeagueName = value;
+					this.SendPropertyChanged("LeagueName");
+					this.OnLeagueNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_match_time", DbType="NVarChar(50)")]
+		public string match_time
+		{
+			get
+			{
+				return this._match_time;
+			}
+			set
+			{
+				if ((this._match_time != value))
+				{
+					this.Onmatch_timeChanging(value);
+					this.SendPropertyChanging();
+					this._match_time = value;
+					this.SendPropertyChanged("match_time");
+					this.Onmatch_timeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchOrder1_HomeName", DbType="NVarChar(50)")]
+		public string MatchOrder1_HomeName
+		{
+			get
+			{
+				return this._MatchOrder1_HomeName;
+			}
+			set
+			{
+				if ((this._MatchOrder1_HomeName != value))
+				{
+					this.OnMatchOrder1_HomeNameChanging(value);
+					this.SendPropertyChanging();
+					this._MatchOrder1_HomeName = value;
+					this.SendPropertyChanged("MatchOrder1_HomeName");
+					this.OnMatchOrder1_HomeNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchOrder1_HandicapNumber", DbType="NVarChar(50)")]
+		public string MatchOrder1_HandicapNumber
+		{
+			get
+			{
+				return this._MatchOrder1_HandicapNumber;
+			}
+			set
+			{
+				if ((this._MatchOrder1_HandicapNumber != value))
+				{
+					this.OnMatchOrder1_HandicapNumberChanging(value);
+					this.SendPropertyChanging();
+					this._MatchOrder1_HandicapNumber = value;
+					this.SendPropertyChanged("MatchOrder1_HandicapNumber");
+					this.OnMatchOrder1_HandicapNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchOrder1_AwayName", DbType="NVarChar(50)")]
+		public string MatchOrder1_AwayName
+		{
+			get
+			{
+				return this._MatchOrder1_AwayName;
+			}
+			set
+			{
+				if ((this._MatchOrder1_AwayName != value))
+				{
+					this.OnMatchOrder1_AwayNameChanging(value);
+					this.SendPropertyChanging();
+					this._MatchOrder1_AwayName = value;
+					this.SendPropertyChanged("MatchOrder1_AwayName");
+					this.OnMatchOrder1_AwayNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.match_analysis_result")]
 	public partial class match_analysis_result : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2745,212 +2951,6 @@ namespace Soccer_Score_Forecast.LinqSql
 					this._result_wdl = value;
 					this.SendPropertyChanged("result_wdl");
 					this.Onresult_wdlChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.live_Aibo")]
-	public partial class live_Aibo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private decimal _live_Aibo_id;
-		
-		private string _value;
-		
-		private string _LeagueName;
-		
-		private string _match_time;
-		
-		private string _MatchOrder1_HomeName;
-		
-		private string _MatchOrder1_HandicapNumber;
-		
-		private string _MatchOrder1_AwayName;
-		
-    #region 可扩展性方法定义
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onlive_Aibo_idChanging(decimal value);
-    partial void Onlive_Aibo_idChanged();
-    partial void OnvalueChanging(string value);
-    partial void OnvalueChanged();
-    partial void OnLeagueNameChanging(string value);
-    partial void OnLeagueNameChanged();
-    partial void Onmatch_timeChanging(string value);
-    partial void Onmatch_timeChanged();
-    partial void OnMatchOrder1_HomeNameChanging(string value);
-    partial void OnMatchOrder1_HomeNameChanged();
-    partial void OnMatchOrder1_HandicapNumberChanging(string value);
-    partial void OnMatchOrder1_HandicapNumberChanged();
-    partial void OnMatchOrder1_AwayNameChanging(string value);
-    partial void OnMatchOrder1_AwayNameChanged();
-    #endregion
-		
-		public live_Aibo()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_live_Aibo_id", AutoSync=AutoSync.OnInsert, DbType="Decimal(18,0) NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public decimal live_Aibo_id
-		{
-			get
-			{
-				return this._live_Aibo_id;
-			}
-			set
-			{
-				if ((this._live_Aibo_id != value))
-				{
-					this.Onlive_Aibo_idChanging(value);
-					this.SendPropertyChanging();
-					this._live_Aibo_id = value;
-					this.SendPropertyChanged("live_Aibo_id");
-					this.Onlive_Aibo_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_value", DbType="NVarChar(50)")]
-		public string value
-		{
-			get
-			{
-				return this._value;
-			}
-			set
-			{
-				if ((this._value != value))
-				{
-					this.OnvalueChanging(value);
-					this.SendPropertyChanging();
-					this._value = value;
-					this.SendPropertyChanged("value");
-					this.OnvalueChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeagueName", DbType="NVarChar(50)")]
-		public string LeagueName
-		{
-			get
-			{
-				return this._LeagueName;
-			}
-			set
-			{
-				if ((this._LeagueName != value))
-				{
-					this.OnLeagueNameChanging(value);
-					this.SendPropertyChanging();
-					this._LeagueName = value;
-					this.SendPropertyChanged("LeagueName");
-					this.OnLeagueNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_match_time", DbType="NVarChar(50)")]
-		public string match_time
-		{
-			get
-			{
-				return this._match_time;
-			}
-			set
-			{
-				if ((this._match_time != value))
-				{
-					this.Onmatch_timeChanging(value);
-					this.SendPropertyChanging();
-					this._match_time = value;
-					this.SendPropertyChanged("match_time");
-					this.Onmatch_timeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchOrder1_HomeName", DbType="NVarChar(50)")]
-		public string MatchOrder1_HomeName
-		{
-			get
-			{
-				return this._MatchOrder1_HomeName;
-			}
-			set
-			{
-				if ((this._MatchOrder1_HomeName != value))
-				{
-					this.OnMatchOrder1_HomeNameChanging(value);
-					this.SendPropertyChanging();
-					this._MatchOrder1_HomeName = value;
-					this.SendPropertyChanged("MatchOrder1_HomeName");
-					this.OnMatchOrder1_HomeNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchOrder1_HandicapNumber", DbType="NVarChar(50)")]
-		public string MatchOrder1_HandicapNumber
-		{
-			get
-			{
-				return this._MatchOrder1_HandicapNumber;
-			}
-			set
-			{
-				if ((this._MatchOrder1_HandicapNumber != value))
-				{
-					this.OnMatchOrder1_HandicapNumberChanging(value);
-					this.SendPropertyChanging();
-					this._MatchOrder1_HandicapNumber = value;
-					this.SendPropertyChanged("MatchOrder1_HandicapNumber");
-					this.OnMatchOrder1_HandicapNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchOrder1_AwayName", DbType="NVarChar(50)")]
-		public string MatchOrder1_AwayName
-		{
-			get
-			{
-				return this._MatchOrder1_AwayName;
-			}
-			set
-			{
-				if ((this._MatchOrder1_AwayName != value))
-				{
-					this.OnMatchOrder1_AwayNameChanging(value);
-					this.SendPropertyChanging();
-					this._MatchOrder1_AwayName = value;
-					this.SendPropertyChanged("MatchOrder1_AwayName");
-					this.OnMatchOrder1_AwayNameChanged();
 				}
 			}
 		}

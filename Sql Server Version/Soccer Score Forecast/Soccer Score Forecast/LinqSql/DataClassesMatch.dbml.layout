@@ -44,16 +44,16 @@
         <elementListCompartment Id="5daac08e-57bc-4bf9-a015-6789ee9c86ee" absoluteBounds="0.51500000000000012, 3.46, 1.9700000000000002, 1.3942057291666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="84890dcf-f9db-457d-a528-d9aabaec52c7" isExpanded="false" absoluteBounds="3.75, 3, 2, 0.45">
-      <DataClassMoniker Name="/DataClassesMatchDataContext/match_analysis_result" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e447c43b-670c-4e64-a155-232e9be12945" absoluteBounds="3.765, 3.46, 1.9700000000000002, 2.9117838541666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="2aefb393-d532-416a-95c4-e94245412bee" absoluteBounds="2.875, 3.5, 2, 1.9542057291666666">
+    <classShape Id="2aefb393-d532-416a-95c4-e94245412bee" isExpanded="false" absoluteBounds="2.875, 3.5, 2, 0.45">
       <DataClassMoniker Name="/DataClassesMatchDataContext/live_Aibo" />
       <nestedChildShapes>
         <elementListCompartment Id="e859cbfc-7f45-42c0-b3c1-5b0087b79601" absoluteBounds="2.89, 3.96, 1.9700000000000002, 1.3942057291666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64700714-e7f4-4743-8741-e29d0667eb02" isExpanded="false" absoluteBounds="3.375, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesMatchDataContext/match_analysis_result" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bccc01f1-963a-4812-9e39-1f4b7e277815" absoluteBounds="3.3899999999999997, 3.21, 1.9700000000000002, 2.9117838541666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

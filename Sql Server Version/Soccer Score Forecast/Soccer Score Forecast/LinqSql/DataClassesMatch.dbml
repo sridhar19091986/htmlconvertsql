@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Database Name="match_analysis_pdm" Class="DataClassesMatchDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=PC3705-20090828\SQLEXPRESS;Initial Catalog=match_analysis_pdm;Integrated Security=True" SettingsObjectName="Soccer_Score_Forecast.Properties.Settings" SettingsPropertyName="match_analysis_pdmConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="D:\MDF FILES\MATCH_ANALYSIS_PDM.MDF" Class="DataClassesMatchDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=&quot;D:\MDF FILES\MATCH_ANALYSIS_PDM.MDF&quot;;Integrated Security=True" SettingsObjectName="Soccer_Score_Forecast.Properties.Settings" SettingsPropertyName="D__MDF_FILES_MATCH_ANALYSIS_PDM_MDFConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.live_Table" Member="live_Table">
     <Type Name="live_Table">
       <Column Name="live_table_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -109,6 +108,17 @@
       <Column Name="order_table_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.live_Aibo" Member="live_Aibo">
+    <Type Name="live_Aibo">
+      <Column Name="live_Aibo_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LeagueName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchOrder1_HomeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchOrder1_HandicapNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchOrder1_AwayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.match_analysis_result" Member="match_analysis_result">
     <Type Name="match_analysis_result">
       <Column Name="analysis_result_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -127,17 +137,6 @@
       <Column Name="result_fit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="result_goals" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="result_wdl" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.live_Aibo" Member="live_Aibo">
-    <Type Name="live_Aibo">
-      <Column Name="live_Aibo_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LeagueName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="match_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MatchOrder1_HomeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MatchOrder1_HandicapNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MatchOrder1_AwayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
