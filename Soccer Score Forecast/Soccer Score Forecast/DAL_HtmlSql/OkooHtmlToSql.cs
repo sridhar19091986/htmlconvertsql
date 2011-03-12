@@ -27,36 +27,36 @@ namespace Soccer_Score_Forecast
         public decimal updateLiveOkoo()
         {
             DataTable dt = OkooHtml.GetTableOutHtml();
-            using (DataClassesMatchDataContext match = new DataClassesMatchDataContext())
+            using (SoccerScoreSqlite match = new SoccerScoreSqlite(Conn.cnn))
+            //using (DataClassesMatchDataContext match = new DataClassesMatchDataContext())
             {
-                var ll = match.live_okoo.Where(e => e.live_okoo_id > 0);
-                match.live_okoo.DeleteAllOnSubmit(ll);//更新后删除
+                var ll = match.LiveOkOO.Where(e => e.LiveOkOOID > 0);
+                match.LiveOkOO.DeleteAllOnSubmit(ll);//更新后删除
                 match.SubmitChanges();
 
                 foreach (DataRow aa in dt.Rows)
                 {
                     if (HtmlTextToStr(aa[15].ToString()) != null)
                     {
-                        live_okoo lo = new live_okoo();
-                        lo.value = HtmlValueToInt(aa[0].ToString());
+                        LiveOkOO lo = new LiveOkOO();
+                        lo.Value = HtmlValueToInt(aa[0].ToString());
                         lo.LeagueName = HtmlTextToStr(aa[1].ToString());
-                        lo.match_time = HtmlTextToStr(aa[2].ToString());
-                        lo.MatchOrder1_HomeName = TeamName(aa[3].ToString());
-                        lo.MatchOrder1_HandicapNumber = HtmlTextToStr(aa[4].ToString());
-                        lo.MatchOrder1_AwayName = TeamName(aa[5].ToString());
-                        lo.ok_1_0 = HtmlTextToStr(aa[6].ToString());
-                        lo.ok_1_1 = HtmlTextToStr(aa[7].ToString());
-                        lo.ok_1_2 = HtmlTextToStr(aa[8].ToString());
+                        lo.MatchTime = HtmlTextToStr(aa[2].ToString());
+                        lo.MatchOrder1hOmeName = TeamName(aa[3].ToString());
+                        lo.MatchOrder1hAndicapNumber = HtmlTextToStr(aa[4].ToString());
+                        lo.MatchOrder1aWayName = TeamName(aa[5].ToString());
+                        lo.Ok10 = HtmlTextToStr(aa[6].ToString());
+                        lo.Ok11 = HtmlTextToStr(aa[7].ToString());
+                        lo.Ok12 = HtmlTextToStr(aa[8].ToString());
                         lo.MatchInfo = HtmlTextToStr(aa[11].ToString());
-                        lo.Match_1_Win = HtmlTextToStr(aa[12].ToString());
-                        lo.Match_1_Drawn = HtmlTextToStr(aa[13].ToString());
-                        lo.Match_1_Lost = HtmlTextToStr(aa[14].ToString());
-
-                        match.live_okoo.InsertOnSubmit(lo);
+                        lo.Match1wIn = HtmlTextToStr(aa[12].ToString());
+                        lo.Match1dRawn = HtmlTextToStr(aa[13].ToString());
+                        lo.Match1lOst = HtmlTextToStr(aa[14].ToString());
+                        match.LiveOkOO.InsertOnSubmit(lo);
                         match.SubmitChanges();
                     }
                 }
-                return match.live_okoo.Max(e => e.live_okoo_id);
+                return match.LiveOkOO.Select(e => e.LiveOkOOID).Max();
             }
         }
     }

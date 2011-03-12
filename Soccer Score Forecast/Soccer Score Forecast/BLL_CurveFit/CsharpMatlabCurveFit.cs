@@ -381,8 +381,8 @@ namespace Soccer_Score_Forecast
     }
      static class dMatch
     {
-        public static ILookup<int?, result_tb_lib> dHome;
-        public static ILookup<int?, result_tb_lib> dAway;
+        public static ILookup<int?, ResultTBLib> dHome;
+        public static ILookup<int?, ResultTBLib> dAway;
 
     }
 }

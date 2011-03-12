@@ -29,30 +29,30 @@ namespace Soccer_Score_Forecast
         public decimal updateLiveAibo()
         {
             DataTable dt = AiboHtml.GetTableOutHtml();
-            using (DataClassesMatchDataContext match = new DataClassesMatchDataContext())
+            using (SoccerScoreSqlite match = new SoccerScoreSqlite(Conn.cnn))
             {
-                var ll = match.live_Aibo.Where(e => e.live_Aibo_id > 0);
-                match.live_Aibo.DeleteAllOnSubmit(ll);//更新后删除
+                var ll = match.LiveAibo.Where(e => e.LiveAiboID> 0);
+                match.LiveAibo.DeleteAllOnSubmit(ll);//更新后删除
                 match.SubmitChanges();
 
                 foreach (DataRow aa in dt.Rows)
                 {
                     if (HtmlTextToStr(aa[3].ToString()) != null) // && HtmlTextToStr(aa[11].ToString()) == null
                     {
-                        live_Aibo lo = new live_Aibo();
-                        lo.value = HtmlTextToStr(aa[1].ToString());
+                        LiveAibo lo = new LiveAibo();
+                        lo.Value = HtmlTextToStr(aa[1].ToString());
                         lo.LeagueName = HtmlTextToStr(aa[2].ToString());
-                        lo.match_time = HtmlTextToStr(aa[3].ToString());
-                        lo.MatchOrder1_HomeName = AiboTeamName(aa[5].ToString());
-                        lo.MatchOrder1_HandicapNumber = HtmlTextToStr(aa[6].ToString());
-                        lo.MatchOrder1_AwayName = AiboTeamName(aa[7].ToString());
+                        lo.MatchTime = HtmlTextToStr(aa[3].ToString());
+                        lo.MatchOrder1hOmeName = AiboTeamName(aa[5].ToString());
+                        lo.MatchOrder1hAndicapNumber= HtmlTextToStr(aa[6].ToString());
+                        lo.MatchOrder1aWayName = AiboTeamName(aa[7].ToString());
 
-                        match.live_Aibo.InsertOnSubmit(lo);
+                        match.LiveAibo.InsertOnSubmit(lo);
                        
                     }
                 }
                 match.SubmitChanges();
-                return match.live_Aibo.Max(e => e.live_Aibo_id);
+                return match.LiveAibo.Select(e => e.LiveAiboID).Max();
             }
         }
     }

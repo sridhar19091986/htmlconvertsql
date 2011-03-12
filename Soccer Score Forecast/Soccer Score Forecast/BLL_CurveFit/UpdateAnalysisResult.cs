@@ -62,10 +62,14 @@ namespace Soccer_Score_Forecast
                 //if (lvls.Any())
                 //{
                 //    //得出match time home away
-                var lvl = lvls[m.live_table_lib_id];
-                match_time = lvl.match_time;
-                home_team_big = lvl.home_team_big;
-                away_team_big = lvl.away_team_big;
+                //var lvl = lvls[m.live_table_lib_id];
+                var lvl = lvls[(int)m.LiveTableLibID];
+                //match_time = lvl.match_time;
+                match_time = lvl.MatchTime;
+                //home_team_big = lvl.home_team_big;
+                home_team_big = lvl.HomeTeamBig;
+                //away_team_big = lvl.away_team_big;
+                away_team_big = lvl.AwayTeamBig;
                 //var rtls = matches.result_tb_lib.Where(e => e.match_time == match_time)
                 //    .Where(e => e.home_team_big == home_team_big)
                 //    .Where(e => e.away_team_big == away_team_big);
@@ -79,23 +83,41 @@ namespace Soccer_Score_Forecast
                 if (rtls.ContainsKey(match_time.ToString() + "-" + home_team_big + "-" + away_team_big))
                 {
                     var rtl = rtls[match_time.ToString() + "-" + home_team_big + "-" + away_team_big];
-                    result_tb_lib_id = rtl.result_tb_lib_id;
-                    m.result_tb_lib_id = result_tb_lib_id;
+                    //result_tb_lib_id = rtl.result_tb_lib_id;
+                    //m.result_tb_lib_id = result_tb_lib_id;
 
-                    if ((rtl.full_home_goals - rtl.full_away_goals) * m.fit_win_loss > 0)
-                        m.result_fit = "W";
-                    else
-                        m.result_fit = "L";
+                    result_tb_lib_id = rtl.ResultTBLibID;
+                    m.ResultTBLibID = result_tb_lib_id;
 
-                    if ((rtl.full_home_goals - rtl.full_away_goals) * (m.home_goals - m.away_goals) > 0)
-                        m.result_goals = "W";
-                    else
-                        m.result_goals = "L";
+                    //if ((rtl.full_home_goals - rtl.full_away_goals) * m.fit_win_loss > 0)
+                    //    m.result_fit = "W";
+                    //else
+                    //    m.result_fit = "L";
 
-                    if ((rtl.full_home_goals - rtl.full_away_goals) * (m.home_w - m.home_l) > 0)
-                        m.result_wdl = "W";
+                    //if ((rtl.full_home_goals - rtl.full_away_goals) * (m.home_goals - m.away_goals) > 0)
+                    //    m.result_goals = "W";
+                    //else
+                    //    m.result_goals = "L";
+
+                    //if ((rtl.full_home_goals - rtl.full_away_goals) * (m.home_w - m.home_l) > 0)
+                    //    m.result_wdl = "W";
+                    //else
+                    //    m.result_wdl = "L";
+
+                    if ((rtl.FullHomeGoals - rtl.FullAwayGoals) * m.FitWinLoss > 0)
+                        m.ResultFit = "W";
                     else
-                        m.result_wdl = "L";
+                        m.ResultFit = "L";
+
+                    if ((rtl.FullHomeGoals- rtl.FullAwayGoals) * (m.HomeGoals - m.AwayGoals) > 0)
+                        m.ResultGoals = "W";
+                    else
+                        m.ResultGoals = "L";
+
+                    if ((rtl.FullHomeGoals- rtl.FullAwayGoals) * (m.HomeW - m.HomeL) > 0)
+                        m.ResultWDL= "W";
+                    else
+                        m.ResultWDL = "L";
                 }
 
 
