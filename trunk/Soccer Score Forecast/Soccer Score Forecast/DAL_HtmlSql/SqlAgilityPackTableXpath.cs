@@ -42,17 +42,17 @@ namespace Soccer_Score_Forecast
         }
         private void init_table_id_value()
         {
-            using (DataClassesMatchDataContext match = new DataClassesMatchDataContext())
+            using (SoccerScoreSqlite match = new SoccerScoreSqlite(Conn.cnn))
             {
-                var uri = match.match_table_xpath.Where(e => e.uri_host == uri_host).FirstOrDefault();
-                if (uri.max_table_id_value.Length > 1)
-                    table_id_value = uri.max_table_id_value;
+                var uri = match.MatchTableXPath.Where(e => e.UriHost == uri_host).FirstOrDefault();
+                if (uri.MaXTableIDValue.Length > 1)
+                    table_id_value = uri.MaXTableIDValue;
                 else
                 {
-                    if (uri.second_table_id_value.Length > 1)
-                        table_id_value = uri.second_table_id_value;
+                    if (uri.SecondTableIDValue.Length > 1)
+                        table_id_value = uri.SecondTableIDValue;
                     else
-                        table_id_value = uri.max_table_xpath;
+                        table_id_value = uri.MaXTableXPath;
                 }
             }
         }

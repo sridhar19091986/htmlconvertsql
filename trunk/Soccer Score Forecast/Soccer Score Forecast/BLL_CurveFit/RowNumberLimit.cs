@@ -26,11 +26,12 @@ namespace Soccer_Score_Forecast
     public class RowNumberLimit
     {
         public decimal id;
-        public int? home_team_big;
-        public int? away_team_big;
+        public int? HomeTeamBig;
+        public int? AwayTeamBig;
         public DateTime? matchtime;
         public int Top20Count;
-        public List<result_tb_lib> Top20;
+        //public List<result_tb_lib> Top20;
+        public List<ResultTBLib> Top20;
         /*
 Func<T, TResult> 委托
 在此似乎没有实用价值
@@ -45,25 +46,40 @@ Func<T, TResult> 委托
 
         public RowNumberLimit(decimal id)
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            using ( SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
+            //using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
             {
                if(dMatch.dHome==null||dMatch.dAway==null)
                 {
-                    dMatch.dHome = matches.result_tb_lib.ToLookup(e => e.home_team_big);
-                    dMatch.dAway = matches.result_tb_lib.ToLookup(e => e.away_team_big);
+                //    dMatch.dHome = matches.result_tb_lib.ToLookup(e => e.HomeTeamBig);
+                //    dMatch.dAway = matches.result_tb_lib.ToLookup(e => e.AwayTeamBig);
+                    dMatch.dHome = matches.ResultTBLib.ToLookup(e => e.HomeTeamBig);
+                    dMatch.dAway = matches.ResultTBLib.ToLookup(e => e.AwayTeamBig);
                 }
                 this.id = id;
-                var l = matches.live_Table_lib.Where(e => e.live_table_lib_id == id).First();
-                home_team_big = l.home_team_big;
-                away_team_big = l.away_team_big;
-                matchtime = l.match_time;
-                var top20h = dMatch.dHome[home_team_big].Union(dMatch.dHome[away_team_big]).
-                    Union(dMatch.dAway[home_team_big]).Union(dMatch.dAway[away_team_big]);
-                Top20 = top20h.Where(e => e.match_time < matchtime).OrderByDescending(e => e.match_time).Take(40).ToList();
+                //var l = matches.live_Table_lib.Where(e => e.live_table_lib_id == id).First();
+                var l = matches.LiveTableLib.Where(e => e.LiveTableLibID == id).First();
+                //HomeTeamBig = l.HomeTeamBig;
+                //AwayTeamBig = l.AwayTeamBig;
+                //matchtime = l.MatchTime;
+                //var top20h = dMatch.dHome[HomeTeamBig].Union(dMatch.dHome[AwayTeamBig]).
+                //    Union(dMatch.dAway[HomeTeamBig]).Union(dMatch.dAway[AwayTeamBig]);
+                //Top20 = top20h.Where(e => e.MatchTime < matchtime).OrderByDescending(e => e.MatchTime).Take(40).ToList();
 
-                //var top20h = matches.result_tb_lib.Where(e => e.home_team_big == l.home_team_big || e.away_team_big == l.away_team_big);
-                //var top20a = matches.result_tb_lib.Where(e => e.home_team_big == l.away_team_big || e.away_team_big == l.home_team_big);
-                //Top20 = top20h.Union(top20a).Where(e => e.match_time < matchtime).OrderByDescending(e => e.match_time).Take(40).ToList();
+                HomeTeamBig = l.HomeTeamBig;
+                AwayTeamBig = l.AwayTeamBig;
+                matchtime = l.MatchTime;
+                IEnumerable<ResultTBLib>  t1=dMatch.dHome[HomeTeamBig];
+                IEnumerable<ResultTBLib>  t2=dMatch.dAway[AwayTeamBig];
+                IEnumerable<ResultTBLib>  t3=dMatch.dHome[AwayTeamBig];
+                IEnumerable<ResultTBLib>  t4=dMatch.dAway[HomeTeamBig];
+                IEnumerable<ResultTBLib> top20h=t1.Union(t2).Union(t3).Union(t4);
+                //var top20h = (dMatch.dHome[HomeTeamBig]).Union(dMatch.dHome[AwayTeamBig]). Union(dMatch.dAway[HomeTeamBig]).Union(dMatch.dAway[AwayTeamBig]);
+                Top20 = top20h.Where(e => e.MatchTime< matchtime).OrderByDescending(e => e.MatchTime).Take(40).ToList();
+
+                //var top20h = matches.result_tb_lib.Where(e => e.HomeTeamBig == l.HomeTeamBig || e.AwayTeamBig == l.AwayTeamBig);
+                //var top20a = matches.result_tb_lib.Where(e => e.HomeTeamBig == l.AwayTeamBig || e.AwayTeamBig == l.HomeTeamBig);
+                //Top20 = top20h.Union(top20a).Where(e => e.MatchTime < matchtime).OrderByDescending(e => e.MatchTime).Take(40).ToList();
                 Top20Count = Top20.Count();
             }
         }
@@ -79,12 +95,12 @@ Func<T, TResult> 委托
                     //剔除没有记录的
                     if (Top20Count < 10) return 0;
 
-                    var hg1 = Top20.Where(e => e.home_team_big == home_team_big).Sum(e => e.full_home_goals);
-                    var hg2 = Top20.Where(e => e.away_team_big == home_team_big).Sum(e => e.full_away_goals);
-                    var hg3 = Top20.Where(e => e.home_team_big == away_team_big).Sum(e => e.full_away_goals);
-                    var hg4 = Top20.Where(e => e.away_team_big == away_team_big).Sum(e => e.full_home_goals);
-                    var hg5 = Top20.Where(e => e.away_team_big == away_team_big && e.home_team_big == home_team_big).Sum(e => e.full_home_goals);
-                    var hg6 = Top20.Where(e => e.away_team_big == home_team_big && e.home_team_big == away_team_big).Sum(e => e.full_away_goals);
+                    var hg1 = Top20.Where(e => e.HomeTeamBig == HomeTeamBig).Sum(e => e.FullHomeGoals);
+                    var hg2 = Top20.Where(e => e.AwayTeamBig == HomeTeamBig).Sum(e => e.FullAwayGoals);
+                    var hg3 = Top20.Where(e => e.HomeTeamBig == AwayTeamBig).Sum(e => e.FullAwayGoals);
+                    var hg4 = Top20.Where(e => e.AwayTeamBig == AwayTeamBig).Sum(e => e.FullHomeGoals);
+                    var hg5 = Top20.Where(e => e.AwayTeamBig == AwayTeamBig && e.HomeTeamBig == HomeTeamBig).Sum(e => e.FullHomeGoals);
+                    var hg6 = Top20.Where(e => e.AwayTeamBig == HomeTeamBig && e.HomeTeamBig == AwayTeamBig).Sum(e => e.FullAwayGoals);
                     _homeGoals = Convert.ToDouble((hg1 == null ? 0 : hg1) +
                                         (hg2 == null ? 0 : hg2) +
                                         (hg3 == null ? 0 : hg3) +
@@ -107,12 +123,12 @@ Func<T, TResult> 委托
                     //剔除没有记录的
                     if (Top20Count < 10) return 0;
 
-                    var ag1 = Top20.Where(e => e.home_team_big == home_team_big).Sum(e => e.full_away_goals);
-                    var ag2 = Top20.Where(e => e.away_team_big == home_team_big).Sum(e => e.full_home_goals);
-                    var ag3 = Top20.Where(e => e.home_team_big == away_team_big).Sum(e => e.full_home_goals);
-                    var ag4 = Top20.Where(e => e.away_team_big == away_team_big).Sum(e => e.full_away_goals);
-                    var ag5 = Top20.Where(e => e.away_team_big == away_team_big && e.home_team_big == home_team_big).Sum(e => e.full_away_goals);
-                    var ag6 = Top20.Where(e => e.away_team_big == home_team_big && e.home_team_big == away_team_big).Sum(e => e.full_home_goals);
+                    var ag1 = Top20.Where(e => e.HomeTeamBig == HomeTeamBig).Sum(e => e.FullAwayGoals);
+                    var ag2 = Top20.Where(e => e.AwayTeamBig == HomeTeamBig).Sum(e => e.FullHomeGoals);
+                    var ag3 = Top20.Where(e => e.HomeTeamBig == AwayTeamBig).Sum(e => e.FullHomeGoals);
+                    var ag4 = Top20.Where(e => e.AwayTeamBig == AwayTeamBig).Sum(e => e.FullAwayGoals);
+                    var ag5 = Top20.Where(e => e.AwayTeamBig == AwayTeamBig && e.HomeTeamBig == HomeTeamBig).Sum(e => e.FullAwayGoals);
+                    var ag6 = Top20.Where(e => e.AwayTeamBig == HomeTeamBig && e.HomeTeamBig == AwayTeamBig).Sum(e => e.FullHomeGoals);
                     _awayGoals = Convert.ToDouble((ag1 == null ? 0 : ag1) +
                                          (ag2 == null ? 0 : ag2) +
                                          (ag3 == null ? 0 : ag3) +
@@ -135,12 +151,12 @@ Func<T, TResult> 委托
                     //剔除没有记录的
                     if (Top20Count < 10) return 0;
 
-                    var w1 = Top20.Where(e => e.home_team_big == home_team_big).Where(e => e.full_home_goals > e.full_away_goals);
-                    var w2 = Top20.Where(e => e.away_team_big == home_team_big).Where(e => e.full_away_goals > e.full_home_goals);
-                    var w3 = Top20.Where(e => e.home_team_big == away_team_big).Where(e => e.full_away_goals > e.full_home_goals);
-                    var w4 = Top20.Where(e => e.away_team_big == away_team_big).Where(e => e.full_home_goals > e.full_away_goals);
-                    var w5 = Top20.Where(e => e.away_team_big == away_team_big && e.home_team_big == home_team_big).Where(e => e.full_home_goals > e.full_away_goals);
-                    var w6 = Top20.Where(e => e.away_team_big == home_team_big && e.home_team_big == away_team_big).Where(e => e.full_away_goals > e.full_home_goals);
+                    var w1 = Top20.Where(e => e.HomeTeamBig == HomeTeamBig).Where(e => e.FullHomeGoals > e.FullAwayGoals);
+                    var w2 = Top20.Where(e => e.AwayTeamBig == HomeTeamBig).Where(e => e.FullAwayGoals > e.FullHomeGoals);
+                    var w3 = Top20.Where(e => e.HomeTeamBig == AwayTeamBig).Where(e => e.FullAwayGoals > e.FullHomeGoals);
+                    var w4 = Top20.Where(e => e.AwayTeamBig == AwayTeamBig).Where(e => e.FullHomeGoals > e.FullAwayGoals);
+                    var w5 = Top20.Where(e => e.AwayTeamBig == AwayTeamBig && e.HomeTeamBig == HomeTeamBig).Where(e => e.FullHomeGoals > e.FullAwayGoals);
+                    var w6 = Top20.Where(e => e.AwayTeamBig == HomeTeamBig && e.HomeTeamBig == AwayTeamBig).Where(e => e.FullAwayGoals > e.FullHomeGoals);
                     _hWin = w1.Count() + w2.Count() + w3.Count() + w4.Count() - w5.Count() - w6.Count();
                 }
                 return _hWin;
@@ -158,7 +174,7 @@ Func<T, TResult> 委托
                     //剔除没有记录的
                     if (Top20Count < 10) return 0;
 
-                    _hDraw = Top20.Where(e => e.full_home_goals == e.full_away_goals).Count();
+                    _hDraw = Top20.Where(e => e.FullHomeGoals == e.FullAwayGoals).Count();
                 }
                 return _hDraw;
             }
@@ -175,12 +191,12 @@ Func<T, TResult> 委托
                     //剔除没有记录的
                     if (Top20Count < 10) return 0;
 
-                    var l1 = Top20.Where(e => e.home_team_big == home_team_big).Where(e => e.full_home_goals < e.full_away_goals);
-                    var l2 = Top20.Where(e => e.away_team_big == home_team_big).Where(e => e.full_away_goals < e.full_home_goals);
-                    var l3 = Top20.Where(e => e.home_team_big == away_team_big).Where(e => e.full_away_goals < e.full_home_goals);
-                    var l4 = Top20.Where(e => e.away_team_big == away_team_big).Where(e => e.full_home_goals < e.full_away_goals);
-                    var l5 = Top20.Where(e => e.away_team_big == away_team_big && e.home_team_big == home_team_big).Where(e => e.full_home_goals < e.full_away_goals);
-                    var l6 = Top20.Where(e => e.away_team_big == home_team_big && e.home_team_big == away_team_big).Where(e => e.full_away_goals < e.full_home_goals);
+                    var l1 = Top20.Where(e => e.HomeTeamBig == HomeTeamBig).Where(e => e.FullHomeGoals < e.FullAwayGoals);
+                    var l2 = Top20.Where(e => e.AwayTeamBig == HomeTeamBig).Where(e => e.FullAwayGoals < e.FullHomeGoals);
+                    var l3 = Top20.Where(e => e.HomeTeamBig == AwayTeamBig).Where(e => e.FullAwayGoals < e.FullHomeGoals);
+                    var l4 = Top20.Where(e => e.AwayTeamBig == AwayTeamBig).Where(e => e.FullHomeGoals < e.FullAwayGoals);
+                    var l5 = Top20.Where(e => e.AwayTeamBig == AwayTeamBig && e.HomeTeamBig == HomeTeamBig).Where(e => e.FullHomeGoals < e.FullAwayGoals);
+                    var l6 = Top20.Where(e => e.AwayTeamBig == HomeTeamBig && e.HomeTeamBig == AwayTeamBig).Where(e => e.FullAwayGoals < e.FullHomeGoals);
                     _hLose = l1.Count() + l2.Count() + l3.Count() + l4.Count() - l5.Count() - l6.Count();
                 }
                 return _hLose;
@@ -302,7 +318,7 @@ Func<T, TResult> 委托
             {
                 if (_firstMatchTime == null)
                 {
-                    DateTime? dt = Top20.Min(o => o.match_time);
+                    DateTime? dt = Top20.Min(o => o.MatchTime);
                     if (dt == null)
                         _firstMatchTime = DateTime.Now;
                     else
@@ -336,24 +352,24 @@ Func<T, TResult> 委托
                 if (_listMatchPointData == null)
                 {
                     List<MatchPoint<int>> matchpoints = new List<MatchPoint<int>>();
-                    var reTOP20 = Top20.OrderBy(o => o.match_time);
+                    var reTOP20 = Top20.OrderBy(o => o.MatchTime);
                     foreach (var m in reTOP20)
                     {
                         MatchPoint<int> p = new MatchPoint<int>();
-                        TimeSpan minDif = m.match_time.Value - firstMatchTime.Value;
+                        TimeSpan minDif = m.MatchTime.Value - firstMatchTime.Value;
                         p.LastMatchOverTime = minDif.Days;//时间差赋值，横坐标
-                        p.matchTime = m.match_time.Value; //比赛时间
-                        p.LastMatchGoals = m.full_home_goals.Value + m.full_away_goals.Value; //进球总数
+                        p.matchTime = m.MatchTime.Value; //比赛时间
+                        p.LastMatchGoals = m.FullHomeGoals.Value + m.FullAwayGoals.Value; //进球总数
                         p.LastMatchOddEven = ConvertGoalsToOE(p.LastMatchGoals);   //进球单双
-                        if (m.home_team_big == home_team_big || m.away_team_big == away_team_big)
-                            p.LastMatchScore = m.full_home_goals.Value - m.full_away_goals.Value; //胜负
+                        if (m.HomeTeamBig == HomeTeamBig || m.AwayTeamBig == AwayTeamBig)
+                            p.LastMatchScore = m.FullHomeGoals.Value - m.FullAwayGoals.Value; //胜负
                         else
-                            p.LastMatchScore = m.full_away_goals.Value - m.full_home_goals.Value;
+                            p.LastMatchScore = m.FullAwayGoals.Value - m.FullHomeGoals.Value;
                         p.LastMatchWDL = ConvertGoalsToWDL(p.LastMatchScore);  //进球多少
                         //记录提示
-                        p.matchDetail = m.home_team + "<------->" + m.away_team + "\r\n" +
-                            m.odds + "<------->" + m.win_loss_big + "<------->" + m.match_type + "\r\n" +
-                            m.full_home_goals.ToString() + "<------->" + m.full_away_goals.ToString() + "\r\n";
+                        p.matchDetail = m.HomeTeam + "<------->" + m.AwayTeam + "\r\n" +
+                            m.Odds + "<------->" + m.WinLossBig+ "<------->" + m.MatchType + "\r\n" +
+                            m.FullHomeGoals.ToString() + "<------->" + m.FullAwayGoals.ToString() + "\r\n";
                         matchpoints.Add(p);
                     }
                     _listMatchPointData = matchpoints;
@@ -383,14 +399,15 @@ Func<T, TResult> 委托
                 if (_listLastJZ == null)
                 {
                     string jzText = null;
-                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+                    //using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+                    using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
                     {
-                        var jz = matches.result_tb_lib.Where(e => e.home_team_big == home_team_big && e.away_team_big == away_team_big).OrderByDescending(e => e.match_time);
+                        var jz = matches.ResultTBLib.Where(e => e.HomeTeamBig == HomeTeamBig && e.AwayTeamBig == AwayTeamBig).OrderByDescending(e => e.MatchTime);
                         foreach (var m in jz)
                         {
-                            jzText += m.match_time.Value.ToShortDateString() + "::" +
-                                m.full_home_goals.ToString() + "-" + m.full_away_goals.ToString() + "::" +
-                                m.odds + "::" + m.win_loss_big + "::" + m.home_team + "::" + m.away_team + "\r\n";
+                            jzText += m.MatchTime.Value.ToShortDateString() + "::" +
+                                m.FullHomeGoals.ToString() + "-" + m.FullAwayGoals.ToString() + "::" +
+                                m.Odds+ "::" + m.WinLossBig + "::" + m.HomeTeam + "::" + m.AwayTeam+ "\r\n";
                         }
                     }
                     _listLastJZ = jzText;

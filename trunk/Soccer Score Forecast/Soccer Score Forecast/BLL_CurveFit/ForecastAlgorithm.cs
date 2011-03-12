@@ -26,19 +26,19 @@ namespace Soccer_Score_Forecast
     public class ForecastAlgorithm
     {
         //private DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
-        public List<Decimal> idExc;
+        public List<int> idExc;
         public ForecastAlgorithm()
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            using ( SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
-                var idLive = matches.live_Table_lib.Select(e => e.live_table_lib_id);
-                var idAnalysis = matches.match_analysis_result.Select(e => e.live_table_lib_id);
+                IEnumerable<int> idLive = matches.LiveTableLib.Select(e => e.LiveTableLibID);
+                IEnumerable<int> idAnalysis = matches.MatchAnalysisResult.Select(e => (int)e.LiveTableLibID);
                 idExc = idLive.Except(idAnalysis).ToList();   //except序列A有的元素序列B没有
             }
         }
         public void top20Algorithm()
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            using ( SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
                 int i = 0;
                 foreach (var id in idExc)
@@ -47,19 +47,20 @@ namespace Soccer_Score_Forecast
                     ProgressBarDelegate.DoSendPMessage(i);
                     Application.DoEvents();
                     RowNumberLimit r = new RowNumberLimit(id);
-                    match_analysis_result mar = new match_analysis_result();
-                    mar.live_table_lib_id = r.id;
-                    mar.pre_algorithm = "top20";
-                    mar.pre_match_count = r.Top20Count;
-                    mar.home_goals = r.HomeGoals;
-                    mar.away_goals = r.AwayGoals;
-                    mar.home_w = r.hWin;
-                    mar.home_d = r.hDraw;
-                    mar.home_l = r.hLose;
-                    mar.fit_win_loss = r.CureFitWinLoss ;
-                    mar.fit_goals = r.CureFitGoals ;
-                    mar.fit_odd_even = r.CureFitOddEven ;
-                    matches.match_analysis_result.InsertOnSubmit(mar);
+                   // match_analysis_result mar = new match_analysis_result();
+                    MatchAnalysisResult mar = new MatchAnalysisResult();
+                    mar.LiveTableLibID= r.id;
+                    mar.PreAlgorithm = "top20";
+                    mar.PreMatchCount = r.Top20Count;
+                    mar.HomeGoals =(float) r.HomeGoals;
+                    mar.AwayGoals = (float)r.AwayGoals;
+                    mar.HomeW = r.hWin;
+                    mar.HomeD = r.hDraw;
+                    mar.HomeL = r.hLose;
+                    mar.FitWinLoss = (float)r.CureFitWinLoss;
+                    mar.FitGoals = (float) r.CureFitGoals;
+                    mar.FitOddEven = (float)r.CureFitOddEven;
+                    matches.MatchAnalysisResult.InsertOnSubmit(mar);
                    
                 }
                 matches.SubmitChanges();

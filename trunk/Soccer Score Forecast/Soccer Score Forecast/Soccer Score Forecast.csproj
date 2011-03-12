@@ -53,11 +53,13 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DbLinq">
-      <HintPath>..\..\DbLinq-0.18\build\DbLinq.dll</HintPath>
+    <Reference Include="DbLinq, Version=0.20.0.0, Culture=neutral, PublicKeyToken=61e015a67077348b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dblinq2007\build.dbg\DbLinq.dll</HintPath>
     </Reference>
-    <Reference Include="DbLinq.Sqlite">
-      <HintPath>..\..\DbLinq-0.18\build\DbLinq.Sqlite.dll</HintPath>
+    <Reference Include="DbLinq.Sqlite, Version=0.20.0.0, Culture=neutral, PublicKeyToken=61e015a67077348b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dblinq2007\build.dbg\DbLinq.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -74,6 +76,9 @@
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>..\..\..\dblinq2007\build.dbg\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="MWArray, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e1d84a0da19db86f, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -124,6 +129,7 @@
     <Compile Include="BLL_CurveFit\RowNumberLimit.cs" />
     <Compile Include="BLL_CurveFit\UpdateAnalysisResult.cs" />
     <Compile Include="BLL_CurveFit\AuditForecastAlgorithm.cs" />
+    <Compile Include="Config\DynamicLinq.cs" />
     <Compile Include="Config\SoccerScoreSqlite.cs" />
     <Compile Include="DAL_HtmlSql\AiboLiveToSql.cs" />
     <Compile Include="DAL_HtmlSql\HtmlAgilityPackTableXpath.cs" />
@@ -152,6 +158,9 @@
     <None Include="Config\app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Config\SoccerScoreSqlite.dbml.layout">
+      <DependentUpon>SoccerScoreSqlite.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Soccer Score Forecast.resx">
       <DependentUpon>Soccer Score Forecast.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -166,6 +175,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Config\SoccerScoreSqlite.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

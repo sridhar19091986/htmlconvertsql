@@ -22,17 +22,18 @@ namespace Soccer_Score_Forecast
         {
             SqlAgilityPackTableXpath tbTag = new SqlAgilityPackTableXpath("live2.7m.cn");
             SevenmLive = new HtmlAgilityPackGeneric(_html, tbTag.tbTag, 0);
-            //SevenmLive = new HtmlAgilityPackGeneric(_html, "//table[@id='live_Table']", 0); 
+            //SevenmLive = new HtmlAgilityPackGeneric(_html, "//table[@id='LiveTable']", 0); 
         }
 
         public decimal InsertLiveHtmlTableToDB()
         {
             DataTable dt = SevenmLive.GetHtmlTable();
 
-            DataClassesMatchDataContext match = new DataClassesMatchDataContext();
+            //DataClassesMatchDataContext match = new DataClassesMatchDataContext();
+            SoccerScoreSqlite match = new SoccerScoreSqlite(Conn.cnn);
 
-            var result = match.live_Table.Where(r => r.live_table_id > 0);
-            match.live_Table.DeleteAllOnSubmit(result);
+            var result = match.LiveTable.Where(r => r.LiveTableID> 0);
+            match.LiveTable.DeleteAllOnSubmit(result);
             match.SubmitChanges();
 
             string ddate = null;
@@ -56,25 +57,35 @@ namespace Soccer_Score_Forecast
 
                 if (HtmlTextToStr(aa[3].ToString()) != null)
                 {
-                    live_Table lt = new live_Table();
-                    lt.html_position = aa[0].ToString();
-                    lt.match_type = HtmlTextToStr(aa[2].ToString());
-                    lt.s_time = HtmlTextToStr(aa[3].ToString());
-                    lt.home_team = HtmlTextToStr(aa[5].ToString());
-                    lt.full_time_score = HtmlTextToStr(aa[6].ToString());
-                    lt.away_team = HtmlTextToStr(aa[7].ToString());
-                    lt.half_time_score = HtmlTextToStr(aa[8].ToString());
-                    lt.s_date = ddate;
-                    lt.home_team_big = HtmlHrefToStr(aa[5].ToString());
-                    lt.away_team_big = HtmlHrefToStr(aa[7].ToString());
+                    LiveTable lt = new LiveTable();
+                    lt.HTMLPosition = aa[0].ToString();
+                   
+                  lt.MatchType= HtmlTextToStr(aa[2].ToString());
+                    
+                  lt.STime = HtmlTextToStr(aa[3].ToString());
+                  
+                   lt.HomeTeam= HtmlTextToStr(aa[5].ToString());
+                    
+                    lt.FullTimeScore = HtmlTextToStr(aa[6].ToString());
+                   
+             lt.AwayTeam = HtmlTextToStr(aa[7].ToString());
+                    
+                   lt.HalfTimeScore = HtmlTextToStr(aa[8].ToString());
+                   
+                  lt.SDate = ddate;
+                    
+                        lt.HomeTeamBig = HtmlHrefToStr(aa[5].ToString());
+                
+                lt.AwayTeamBig = HtmlHrefToStr(aa[7].ToString());
+                    
 
-                    match.live_Table.InsertOnSubmit(lt);
+                    match.LiveTable.InsertOnSubmit(lt);
                     match.SubmitChanges();
                     
                 }
             }
             
-            return match.live_Table.Select(e => e.live_table_id).Max();
+            return match.LiveTable.Select(e => e.LiveTableID).Max();
         }
 
         //设置一个空的构造函数，调用后面的方法
@@ -86,39 +97,42 @@ namespace Soccer_Score_Forecast
         private string temp_date = null;
         public void UpdateTodayMatch()
         {
-            DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
-            var lt = matches.live_Table.OrderBy(o => o.s_date).ThenBy(p => p.s_time);//用lambda表达式简洁
+            //DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
+
+            SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn);
+
+            var lt = matches.LiveTable.OrderBy(o => o.SDate).ThenBy(p => p.STime);//用lambda表达式简洁
 
             foreach (var m in lt)
             {
-                if (m.home_team_big != null)
+                if (m.HomeTeamBig!= null)
                 {
                     //一一对应生成
-                    live_Table_lib ltl = new live_Table_lib();
-                    ltl.html_position = Int32.Parse(m.html_position);
-                    ltl.home_team_big = Int32.Parse(GetNumber(m.home_team_big));
-                    ltl.away_team_big = Int32.Parse(GetNumber(m.away_team_big));
-                    ltl.match_type = m.match_type.Trim();
-                    if (m.s_date.IndexOf("-") != -1)
-                        temp_date = m.s_date.Substring(0, 10);
-                    ltl.match_time = DateTime.Parse(temp_date + " " + m.s_time);
-                    ltl.status = m.full_time_score.Replace("&nbsp;", "").Trim();
-                    ltl.home_team = m.home_team.Trim();
-                    ltl.away_team = m.away_team.Trim();
-                    ltl.home_red_card = StringCount(m.home_team, "&nbsp;", 0);
-                    ltl.away_red_card = StringCount(m.away_team, "&nbsp;", 0);
-                    ltl.full_home_goals = null;
-                    ltl.full_away_goals = null;
-                    if (m.half_time_score.IndexOf("-") > 0)
+                    LiveTableLib ltl = new LiveTableLib();
+                    ltl.HTMLPosition= Int32.Parse(m.HTMLPosition);
+                    ltl.HomeTeamBig = Int32.Parse(GetNumber(m.HomeTeamBig));
+                    ltl.AwayTeamBig = Int32.Parse(GetNumber(m.AwayTeamBig));
+                    ltl.MatchType = m.MatchType.Trim();
+                    if (m.SDate.IndexOf("-") != -1)
+                        temp_date = m.SDate.Substring(0, 10);
+                    ltl.MatchTime = DateTime.Parse(temp_date + " " + m.STime);
+                    ltl.Status= m.FullTimeScore.Replace("&nbsp;", "").Trim();
+                    ltl.HomeTeam = m.HomeTeam.Trim();
+                    ltl.AwayTeam= m.AwayTeam.Trim();
+                    ltl.HomeRedCard = StringCount(m.HomeTeam, "&nbsp;", 0);
+                    ltl.AwayRedCard= StringCount(m.AwayTeam, "&nbsp;", 0);
+                    ltl.FullHomeGoals = null;
+                    ltl.FullAwayGoals = null;
+                    if (m.HalfTimeScore.IndexOf("-") > 0)
                     {
-                        ltl.half_home_goals = Int32.Parse(m.half_time_score.Substring(0, m.half_time_score.IndexOf("-")));
-                        ltl.half_away_goals = Int32.Parse(m.half_time_score.Substring(m.half_time_score.IndexOf("-") + 1, m.half_time_score.Length - m.half_time_score.IndexOf("-") - 1));
+                        ltl.HalfHomeGoals = Int32.Parse(m.HalfTimeScore.Substring(0, m.HalfTimeScore.IndexOf("-")));
+                        ltl.HalfAwayGoals = Int32.Parse(m.HalfTimeScore.Substring(m.HalfTimeScore.IndexOf("-") + 1, m.HalfTimeScore.Length - m.HalfTimeScore.IndexOf("-") - 1));
                     }
 
-                    var rtExist = matches.live_Table_lib.Where(p => p.home_team_big == ltl.home_team_big && p.away_team_big == ltl.away_team_big);
+                    var rtExist = matches.LiveTableLib.Where(p => p.HomeTeamBig == ltl.HomeTeamBig && p.AwayTeamBig == ltl.AwayTeamBig);
                     //let关键字，匿名类型
                     var rtUpdateExist = from p in rtExist
-                                        let timeDiff = ltl.match_time.Value - p.match_time.Value
+                                        let timeDiff = ltl.MatchTime.Value - p.MatchTime.Value
                                         where timeDiff.Days <= 1
                                         where timeDiff.Days >= -1
                                         select p;
@@ -127,28 +141,28 @@ namespace Soccer_Score_Forecast
                     if (rtUpdateExist.Any())
                     {
                         var rtUpate = rtUpdateExist.First();
-                        rtUpate.status = ltl.status;
-                        rtUpate.home_team = ltl.home_team;
-                        rtUpate.away_team = ltl.away_team;
-                        rtUpate.home_red_card = ltl.home_red_card;
-                        rtUpate.away_red_card = ltl.away_red_card;
-                        rtUpate.half_home_goals = ltl.half_home_goals;
-                        rtUpate.half_away_goals = ltl.half_away_goals;
+                        rtUpate.Status = ltl.Status;
+                        rtUpate.HomeTeam= ltl.HomeTeam;
+                        rtUpate.AwayTeam = ltl.AwayTeam;
+                        rtUpate.HomeRedCard = ltl.HomeRedCard;
+                        rtUpate.AwayRedCard = ltl.AwayRedCard;
+                        rtUpate.HalfHomeGoals = ltl.HalfHomeGoals;
+                        rtUpate.HalfAwayGoals = ltl.HalfAwayGoals;
                         //matches.SubmitChanges();
                     }
                     //不存在记录的此处做插入
                     else
                     {
-                        matches.live_Table_lib.InsertOnSubmit(ltl);
+                        matches.LiveTableLib.InsertOnSubmit(ltl);
                         matches.SubmitChanges();
                     }
                 }
             }
 
-            matches.live_Table.DeleteAllOnSubmit(lt);//更新后删除
+            matches.LiveTable.DeleteAllOnSubmit(lt);//更新后删除
             matches.SubmitChanges();
             MessageBox.Show("OK");
-            //dataGridView1.DataSource = matches.live_Table_lib;
+            //dataGridView1.DataSource = matches.LiveTable_lib;
         }
 
     }

@@ -31,7 +31,7 @@ namespace Soccer_Score_Forecast
         private List<MatchAnalysisResult> marAll;
         private List<LiveAibo> loAll;
         private IEnumerable<LiveTableLib> ltls;
-        //private IEnumerable<match_analysis_result> mars;
+        //private IEnumerable<MatchAnalysisResult> mars;
         private ResultTBLib rtl;
         private MatchAnalysisResult mar;
         private string strNode;
@@ -45,13 +45,14 @@ namespace Soccer_Score_Forecast
             //这个连接不能放到class中，不然取的还是缓存的数据？？？？？？？？？？？
             //对象和数据库之间会存在不能更新的问题？？？？？？？？？？？
             //DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
+            DateTime dt = DateTime.Now.AddDays(daysDiff).Date;
 
-            using (SoccerScoreSqlite matches = new SoccerScoreSqlite(cnn))
+            using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
-                ltlAll = matches.LiveTableLib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).OrderBy(m => m.match_time).ToList();
-                rtlAll = matches.ResultTBLib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).ToList();
-                marAll = matches.match_analysis_result.Where(e => e.LiveTableLib_id > 0).ToList();
-                loAll = matches.live_Aibo .Where(e => e.live_Aibo_id  > 0).ToList();
+                ltlAll = matches.LiveTableLib.Where(m => m.MatchTime.Value.Date >= dt).OrderBy(m => m.MatchTime).ToList();
+                rtlAll = matches.ResultTBLib.Where(m => m.MatchTime.Value.Date >= dt).ToList();
+                marAll = matches.MatchAnalysisResult.Where(e => e.LiveTableLibID > 0).ToList();
+                loAll = matches.LiveAibo .Where(e => e.LiveAiboID  > 0).ToList();
             }
         }
 
@@ -70,15 +71,15 @@ namespace Soccer_Score_Forecast
         {
             TreeNode root = new TreeNode("Soccer Score Forecast");
             tv.Nodes.Add(root);
-            //选定match_type过滤
-            var mt = ltlAll.Select(e => e.match_type).Distinct();
+            //选定MatchType过滤
+            var mt = ltlAll.Select(e => e.MatchType).Distinct();
 
             //类型遍历
             foreach (var m in mt)
             {
                 TreeNode tn = new TreeNode(m);
                 root.Nodes.Add(tn);
-                ltls = ltlAll.Where(p => p.match_type == m);
+                ltls = ltlAll.Where(p => p.MatchType == m);
                 TreeNodeLoad(tn);
             }
         }
@@ -86,49 +87,49 @@ namespace Soccer_Score_Forecast
         {
             TreeNode root = new TreeNode("Soccer Score Forecast");
             tv.Nodes.Add(root);
-            //选定match_type过滤
-            var mt = ltlAll.Select(e => e.match_time).Distinct();
+            //选定MatchType过滤
+            var mt = ltlAll.Select(e => e.MatchTime).Distinct();
 
             //类型遍历
             foreach (var m in mt)
             {
                 TreeNode tn = new TreeNode(m.ToString());
                 root.Nodes.Add(tn);
-                ltls = ltlAll.Where(p => p.match_time == m);
+                ltls = ltlAll.Where(p => p.MatchTime == m);
                 TreeNodeLoad(tn);
             }
         }
-        #region 相同循环体  ？？  ltl.match_type
+        #region 相同循环体  ？？  ltl.MatchType
         private void TreeNodeLoad(TreeNode tn)
         {
             foreach (var ltl in ltls)
             {
                 double? fit = 0, goals = 0, wdl = 0;
                 //加入live_table数据
-                strNode = ltl.live_table_lib_id + "," + ltl.match_type + "," + ltl.match_time + "::" + ltl.home_team + "::" + ltl.away_team + "::" + ltl.status;
-                mar = marAll.Where(o => o.live_table_lib_id == ltl.live_table_lib_id).OrderByDescending(o => o.analysis_result_id).FirstOrDefault();
+                strNode = ltl.LiveTableLibID + "," + ltl.MatchType + "," + ltl.MatchTime + "::" + ltl.HomeTeam + "::" + ltl.AwayTeam + "::" + ltl.Status;
+                mar = marAll.Where(o => o.LiveTableLibID == ltl.LiveTableLibID).OrderByDescending(o => o.AnalysisResultID).FirstOrDefault();
                 if (mar != null)  //有运行过算法
                 {
                     //加入match_analysis数据
-                    strNode += "||" + mar.result_fit + "::" + mar.result_goals + "::" + mar.result_wdl + "::" + mar.fit_win_loss + "::" +
-                                    mar.home_goals + "::" + mar.away_goals + "::" + (mar.home_goals - mar.away_goals) + "::" +
-                                    mar.home_w.ToString() + "::" + mar.home_d.ToString() + "::" + mar.home_l.ToString();
-                    if (mar.result_tb_lib_id != null)  //有导入了结果
+                    strNode += "||" + mar.ResultFit + "::" + mar.ResultGoals + "::" + mar.ResultWDL + "::" + mar.FitWinLoss + "::" +
+                                    mar.HomeGoals + "::" + mar.AwayGoals + "::" + (mar.HomeGoals - mar.AwayGoals) + "::" +
+                                    mar.HomeW.ToString() + "::" + mar.HomeD.ToString() + "::" + mar.HomeL.ToString();
+                    if (mar.ResultTBLibID != null)  //有导入了结果
                     {
                         //加入result_tb数据
-                        rtl = rtlAll.Where(e => e.result_tb_lib_id == mar.result_tb_lib_id).FirstOrDefault();
-                        strNode += "||" + rtl.match_time.Value.ToShortDateString() + "::" +
-                                            rtl.full_home_goals.ToString() + "-" + rtl.full_away_goals.ToString() + "::" +
-                                            rtl.odds + "::" + rtl.win_loss_big + "::" + rtl.home_team + "::" + rtl.away_team;
+                        rtl = rtlAll.Where(e => e.ResultTBLibID== mar.ResultTBLibID).FirstOrDefault();
+                        strNode += "||" + rtl.MatchTime.Value.ToShortDateString() + "::" +
+                                            rtl.FullHomeGoals.ToString() + "-" + rtl.FullAwayGoals.ToString() + "::" +
+                                            rtl.Odds + "::" + rtl.WinLossBig + "::" + rtl.HomeTeam + "::" + rtl.AwayTeam;
                     }
-                    fit = mar.fit_win_loss;
-                    goals = mar.home_goals - mar.away_goals;
-                    wdl = mar.home_w - mar.home_l;
+                    fit = mar.FitWinLoss;
+                    goals = mar.HomeGoals - mar.AwayGoals;
+                    wdl = mar.HomeW - mar.HomeL;
                 }
                 //加入bj单场数据
                 foreach (var lo in loAll)
-                    if (ltl.home_team.Contains(lo.MatchOrder1_HomeName) || ltl.away_team.Contains(lo.MatchOrder1_AwayName))   //有匹配bj单场的数据
-                        strNode += "********" + lo.value + ">>" + lo.MatchOrder1_HandicapNumber;
+                    if (ltl.HomeTeam.Contains(lo.MatchOrder1hOmeName) || ltl.AwayTeam.Contains(lo.MatchOrder1aWayName))   //有匹配bj单场的数据
+                        strNode += "********" + lo.Value + ">>" + lo.MatchOrder1hAndicapNumber;
                 TreeNode child = new TreeNode(strNode);
                 tn.Nodes.Add(child);
                 //颜色处理

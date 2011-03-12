@@ -20,6 +20,7 @@ using HtmlAgilityPack;
 using Soccer_Score_Forecast.LinqSql;
 using System.Linq;
 using System.Collections;
+//using Mono.Data.Sqlite;
 using System.Windows.Forms.DataVisualization.Charting;
 
 
@@ -45,12 +46,15 @@ namespace Soccer_Score_Forecast
         }
         private void Form1_Load(object sender, EventArgs ee)
         {
+            DataContext dc = new DataContext(Conn.cnn);
             dataGridView5.Visible = false;
             toolStripStatusLabel2.Text = dateTimePicker2.Value.ToString("yyyy-MM-dd");//日历组建日期字符串格式化方法
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            //using (DataContext matches = new DataContext(Conn.cnn))
+           using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
-                toolStripStatusLabel3.Text = matches.result_tb_lib.Max(p => p.match_time).Value.ToString();
-                var maxtime = matches.live_Table_lib.Max(p => p.match_time);
+                DateTime? resultmaxtime = matches.ResultTBLib.Select(e => e.MatchTime).Max();
+                toolStripStatusLabel3.Text = resultmaxtime.Value.ToString();
+                DateTime? maxtime = matches.LiveTableLib.Select(e => e.MatchTime).Max();
                 toolStripStatusLabel4.Text = maxtime.HasValue ? maxtime.Value.ToString() : null;
             }
             treeView5.Nodes.Clear();
@@ -106,28 +110,28 @@ namespace Soccer_Score_Forecast
         }
         private void button3_Click(object sender, EventArgs c)
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
-                var mar = from a in matches.match_analysis_result
-                          join b in matches.live_Table_lib on a.live_table_lib_id equals b.live_table_lib_id
+                var mar = from a in matches.MatchAnalysisResult
+                          join b in matches.LiveTableLib on a.LiveTableLibID equals b.LiveTableLibID
                           select new
                           {
-                              a.result_wdl,
-                              a.result_fit,
-                              a.result_goals,
-                              b.match_type
+                              a.ResultWDL,
+                              a.ResultFit,
+                              a.ResultGoals,
+                              b.MatchType
                           };
                 var winrate = from p in mar
-                              group p by p.match_type into q
+                              group p by p.MatchType into q
                               select new
                               {
                                   q.Key,
-                                  fitW = q.Where(e => e.match_type == q.Key).Where(e => e.result_fit == "W").Count(),
-                                  fitL = q.Where(e => e.match_type == q.Key).Where(e => e.result_fit == "L").Count(),
-                                  goalsW = q.Where(e => e.match_type == q.Key).Where(e => e.result_goals == "W").Count(),
-                                  goalsL = q.Where(e => e.match_type == q.Key).Where(e => e.result_goals == "L").Count(),
-                                  wdlW = q.Where(e => e.match_type == q.Key).Where(e => e.result_wdl == "W").Count(),
-                                  wdlL = q.Where(e => e.match_type == q.Key).Where(e => e.result_wdl == "L").Count(),
+                                  fitW = q.Where(e => e.MatchType == q.Key).Where(e => e.ResultFit == "W").Count(),
+                                  fitL = q.Where(e => e.MatchType == q.Key).Where(e => e.ResultFit == "L").Count(),
+                                  goalsW = q.Where(e => e.MatchType == q.Key).Where(e => e.ResultGoals == "W").Count(),
+                                  goalsL = q.Where(e => e.MatchType == q.Key).Where(e => e.ResultGoals == "L").Count(),
+                                  wdlW = q.Where(e => e.MatchType == q.Key).Where(e => e.ResultWDL == "W").Count(),
+                                  wdlL = q.Where(e => e.MatchType == q.Key).Where(e => e.ResultWDL == "L").Count(),
                               };
 
                 dataGridView1.DataSource = winrate;
@@ -154,9 +158,9 @@ namespace Soccer_Score_Forecast
         //获取数据库的数据结构
         private void button6_Click(object sender, EventArgs e)
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
-                dataGridView1.DataSource = matches.match_table_xpath;
+                dataGridView1.DataSource = matches.MatchTableXPath;
             }
         }
         private void filterMatchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -170,9 +174,9 @@ namespace Soccer_Score_Forecast
         }
         private void toolStripButton_iniLast_Click(object sender, EventArgs e)
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
-                int pb = matches.result_tb.Count();
+                int pb = matches.ResultTB.Count();
                 toolStripProgressBar1.Maximum = pb;
                 MessageBox.Show(pb.ToString());
             }
@@ -245,10 +249,10 @@ namespace Soccer_Score_Forecast
             MessageBox.Show(pb.ToString());
             if (pb != 0)
             {
-                using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+                using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
                 {
-                    dMatch.dHome = matches.result_tb_lib.ToLookup(e => e.home_team_big);
-                    dMatch.dAway = matches.result_tb_lib.ToLookup(e => e.away_team_big);
+                    dMatch.dHome = matches.ResultTBLib.ToLookup(e => e.HomeTeamBig);
+                    dMatch.dAway = matches.ResultTBLib.ToLookup(e => e.AwayTeamBig);
                 }
                 toolStripProgressBar1.Maximum = pb;
                 f.top20Algorithm();
@@ -393,9 +397,9 @@ namespace Soccer_Score_Forecast
         }
         private void button19_Click(object sender, EventArgs e)
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
-                dataGridView1.DataSource = matches.live_Aibo;
+                dataGridView1.DataSource = matches.LiveAibo;
             }
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -428,7 +432,8 @@ namespace Soccer_Score_Forecast
                             )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF,
                                  IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
                             ) ON [PRIMARY]";
-            DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
+            //DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
+            SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn);
             DialogResult result; //Messagebox所属于的类
             result = MessageBox.Show(this, "YesOrNo", "你确定要删除分析库？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)//Messagebox返回的值
@@ -509,10 +514,10 @@ namespace Soccer_Score_Forecast
             MessageBox.Show(pb.ToString());
             if (pb != 0)
             {
-                using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+                using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
                 {
-                    dMatch.dHome = matches.result_tb_lib.ToLookup(e => e.home_team_big);
-                    dMatch.dAway = matches.result_tb_lib.ToLookup(e => e.away_team_big);
+                    dMatch.dHome = matches.ResultTBLib.ToLookup(e => e.HomeTeamBig);
+                    dMatch.dAway = matches.ResultTBLib.ToLookup(e => e.AwayTeamBig);
                 }
                 toolStripProgressBar1.Maximum = pb;
                 f.top20Algorithm();
@@ -562,22 +567,23 @@ namespace Soccer_Score_Forecast
         }
         private void button26_Click(object sender, EventArgs e)
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
-                dataGridView1.DataSource = matches.live_okoo;
+                dataGridView1.DataSource = matches.LiveOkOO;
             }
         }
         private void button29_Click(object sender, EventArgs e)
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
-                dataGridView1.DataSource = matches.live_Table_lib;
+                dataGridView1.DataSource = matches.LiveTableLib;
             }
         }
         private void button30_Click(object sender, EventArgs e)
         {
-            DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
-            dataGridView1.DataSource = matches.result_tb_lib;
+            SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn);
+            //DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
+            dataGridView1.DataSource = matches.ResultTBLib;
         }
         private void button31_Click(object sender, EventArgs e)
         {
@@ -625,29 +631,29 @@ namespace Soccer_Score_Forecast
             if (c.Node.Level == 1)
             {
                 dataGridView5.Visible = true;
-                using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+                using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
                 {
-                    var mar = from a in matches.match_analysis_result
-                              join b in matches.live_Table_lib on a.live_table_lib_id equals b.live_table_lib_id
+                    var mar = from a in matches.MatchAnalysisResult
+                              join b in matches.LiveTableLib on a.LiveTableLibID equals b.LiveTableLibID
                               select new
                               {
-                                  a.result_wdl,
-                                  a.result_fit,
-                                  a.result_goals,
-                                  b.match_type
+                                  a.ResultWDL,
+                                  a.ResultFit,
+                                  a.ResultGoals,
+                                  b.MatchType
                               };
                     var winrate = from p in mar
-                                  where p.match_type == c.Node.Text
-                                  group p by p.match_type into q
+                                  where p.MatchType == c.Node.Text
+                                  group p by p.MatchType into q
                                   select new
                                   {
                                       q.Key,
-                                      fitW = q.Where(e => e.result_fit == "W").Count(),
-                                      fitL = q.Where(e => e.result_fit == "L").Count(),
-                                      goalsW = q.Where(e => e.result_goals == "W").Count(),
-                                      goalsL = q.Where(e => e.result_goals == "L").Count(),
-                                      wdlW = q.Where(e => e.result_wdl == "W").Count(),
-                                      wdlL = q.Where(e => e.result_wdl == "L").Count(),
+                                      fitW = q.Where(e => e.ResultFit == "W").Count(),
+                                      fitL = q.Where(e => e.ResultFit == "L").Count(),
+                                      goalsW = q.Where(e => e.ResultGoals == "W").Count(),
+                                      goalsL = q.Where(e => e.ResultGoals == "L").Count(),
+                                      wdlW = q.Where(e => e.ResultWDL == "W").Count(),
+                                      wdlL = q.Where(e => e.ResultWDL == "L").Count(),
                                   };
                     dataGridView5.DataSource = winrate;
                     var maxwin = winrate.FirstOrDefault();
@@ -721,26 +727,26 @@ namespace Soccer_Score_Forecast
         {
             Uri uri = new Uri(textBox3.Text);
             string host = uri.Host;
-            using (DataClassesMatchDataContext match = new DataClassesMatchDataContext())
+            using (SoccerScoreSqlite match = new SoccerScoreSqlite(Conn.cnn))
             {
-                var eUri = match.match_table_xpath.Where(e => e.uri_host == host).FirstOrDefault();
+                var eUri = match.MatchTableXPath.Where(e => e.UriHost == host).FirstOrDefault();
                 if (eUri == null)
                 {
-                    match_table_xpath nUri = new match_table_xpath();
-                    nUri.uri_host = host.ToString();
-                    nUri.max_table_xpath = textBox4.Text;
-                    nUri.second_table_xpath = textBox6.Text;
-                    nUri.max_table_id_value = textBox7.Text;
-                    nUri.second_table_id_value = textBox8.Text;
-                    match.match_table_xpath.InsertOnSubmit(nUri);
+                    MatchTableXPath nUri = new MatchTableXPath();
+                    nUri.UriHost = host.ToString();
+                    nUri.MaXTableXPath = textBox4.Text;
+                    nUri.SecondTableXPath = textBox6.Text;
+                    nUri.MaXTableIDValue = textBox7.Text;
+                    nUri.SecondTableIDValue = textBox8.Text;
+                    match.MatchTableXPath.InsertOnSubmit(nUri);
                 }
                 else
                 {
-                    eUri.uri_host = host.ToString();
-                    eUri.max_table_xpath = textBox4.Text;
-                    eUri.second_table_xpath = textBox6.Text;
-                    eUri.max_table_id_value = textBox7.Text;
-                    eUri.second_table_id_value = textBox8.Text;
+                    eUri.UriHost = host.ToString();
+                    eUri.MaXTableXPath = textBox4.Text;
+                    eUri.SecondTableXPath = textBox6.Text;
+                    eUri.SecondTableIDValue = textBox7.Text;
+                    eUri.SecondTableIDValue = textBox8.Text;
                     //match.match_table_xpath.InsertOnSubmit(eUri);
                 }
                 match.SubmitChanges();

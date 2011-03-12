@@ -74,3 +74,8 @@ G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\myCurv
 G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\ICSharpCode.TextEditor.dll
 G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\sandbar.dll
 G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\sanddock.dll
+G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\DbLinq.dll
+G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\DbLinq.Sqlite.dll
+G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\DbLinq.pdb
+G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\DbLinq.Sqlite.pdb
+G:\htmlconvertsql\Soccer Score Forecast\Soccer Score Forecast\bin\Release\Mono.Data.Sqlite.dll
