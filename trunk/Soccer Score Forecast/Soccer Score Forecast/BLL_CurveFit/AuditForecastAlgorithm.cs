@@ -33,7 +33,7 @@ namespace Soccer_Score_Forecast
             using (SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn))
             {
                 //todaytime = DateTime.Now;
-                var idLive = matches.LiveTableLib
+                IEnumerable<int> idLive = matches.LiveTableLib
                     .Where(e => e.MatchTime.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
                     .Select(e => e.LiveTableLibID);
                 idExc = idLive.ToList();

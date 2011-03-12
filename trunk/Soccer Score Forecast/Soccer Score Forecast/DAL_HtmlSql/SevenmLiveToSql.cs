@@ -32,9 +32,9 @@ namespace Soccer_Score_Forecast
             //DataClassesMatchDataContext match = new DataClassesMatchDataContext();
             SoccerScoreSqlite match = new SoccerScoreSqlite(Conn.cnn);
 
-            var result = match.LiveTable.Where(r => r.LiveTableID> 0);
+            IEnumerable<LiveTable> result = match.LiveTable.Where(r => r.LiveTableID> 0);
             match.LiveTable.DeleteAllOnSubmit(result);
-            match.SubmitChanges();
+            //match.SubmitChanges();
 
             string ddate = null;
             Queue<string> todayDate = new Queue<string>();
@@ -80,7 +80,7 @@ namespace Soccer_Score_Forecast
                     
 
                     match.LiveTable.InsertOnSubmit(lt);
-                    match.SubmitChanges();
+                    //match.SubmitChanges();
                     
                 }
             }
@@ -101,7 +101,7 @@ namespace Soccer_Score_Forecast
 
             SoccerScoreSqlite matches = new SoccerScoreSqlite(Conn.cnn);
 
-            var lt = matches.LiveTable.OrderBy(o => o.SDate).ThenBy(p => p.STime);//用lambda表达式简洁
+            IEnumerable<LiveTable> lt = matches.LiveTable.OrderBy(o => o.SDate).ThenBy(p => p.STime);//用lambda表达式简洁
 
             foreach (var m in lt)
             {
@@ -129,9 +129,9 @@ namespace Soccer_Score_Forecast
                         ltl.HalfAwayGoals = Int32.Parse(m.HalfTimeScore.Substring(m.HalfTimeScore.IndexOf("-") + 1, m.HalfTimeScore.Length - m.HalfTimeScore.IndexOf("-") - 1));
                     }
 
-                    var rtExist = matches.LiveTableLib.Where(p => p.HomeTeamBig == ltl.HomeTeamBig && p.AwayTeamBig == ltl.AwayTeamBig);
+                    IEnumerable<LiveTableLib> rtExist = matches.LiveTableLib.Where(p => p.HomeTeamBig == ltl.HomeTeamBig && p.AwayTeamBig == ltl.AwayTeamBig);
                     //let关键字，匿名类型
-                    var rtUpdateExist = from p in rtExist
+                    IEnumerable<LiveTableLib> rtUpdateExist = from p in rtExist
                                         let timeDiff = ltl.MatchTime.Value - p.MatchTime.Value
                                         where timeDiff.Days <= 1
                                         where timeDiff.Days >= -1
@@ -140,7 +140,7 @@ namespace Soccer_Score_Forecast
                     //存在记录的则做更新，必须确认是最新数据，即时间差不超过1天
                     if (rtUpdateExist.Any())
                     {
-                        var rtUpate = rtUpdateExist.First();
+                        LiveTableLib rtUpate = rtUpdateExist.First();
                         rtUpate.Status = ltl.Status;
                         rtUpate.HomeTeam= ltl.HomeTeam;
                         rtUpate.AwayTeam = ltl.AwayTeam;
@@ -148,7 +148,7 @@ namespace Soccer_Score_Forecast
                         rtUpate.AwayRedCard = ltl.AwayRedCard;
                         rtUpate.HalfHomeGoals = ltl.HalfHomeGoals;
                         rtUpate.HalfAwayGoals = ltl.HalfAwayGoals;
-                        //matches.SubmitChanges();
+                        matches.SubmitChanges();
                     }
                     //不存在记录的此处做插入
                     else
