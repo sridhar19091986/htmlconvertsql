@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<Database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SoccerScoreSqlite" EntityNamespace="Soccer_Score_Forecast.LinqSql" ContextNamespace="Soccer_Score_Forecast.LinqSql" Class="SoccerScoreSqlite" BaseType="DbLinq.Data.Linq.DataContext" Provider="Sqlite" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="main.live_Aibo" Member="LiveAibo">
+    <Type Name="LiveAibo">
+      <Column Name="LeagueName" Member="LeagueName" Storage="_leagueName" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="live_Aibo_id" Member="LiveAiboID" Storage="_liveAiboID" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MatchOrder1_AwayName" Member="MatchOrder1aWayName" Storage="_matchOrder1aWayName" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="MatchOrder1_HandicapNumber" Member="MatchOrder1hAndicapNumber" Storage="_matchOrder1hAndicapNumber" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="MatchOrder1_HomeName" Member="MatchOrder1hOmeName" Storage="_matchOrder1hOmeName" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="match_time" Member="MatchTime" Storage="_matchTime" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="value" Member="Value" Storage="_value" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="main.live_okoo" Member="LiveOkOO">
+    <Type Name="LiveOkOO">
+      <Column Name="LeagueName" Member="LeagueName" Storage="_leagueName" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="live_okoo_id" Member="LiveOkOOID" Storage="_liveOkOoid" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Match_1_Drawn" Member="Match1dRawn" Storage="_match1dRawn" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="Match_1_Lost" Member="Match1lOst" Storage="_match1lOst" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="Match_1_Win" Member="Match1wIn" Storage="_match1wIn" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="MatchInfo" Member="MatchInfo" Storage="_matchInfo" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="MatchOrder1_AwayName" Member="MatchOrder1aWayName" Storage="_matchOrder1aWayName" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="MatchOrder1_HandicapNumber" Member="MatchOrder1hAndicapNumber" Storage="_matchOrder1hAndicapNumber" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="MatchOrder1_HomeName" Member="MatchOrder1hOmeName" Storage="_matchOrder1hOmeName" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="match_time" Member="MatchTime" Storage="_matchTime" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="ok_1_0" Member="Ok10" Storage="_ok10" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="ok_1_1" Member="Ok11" Storage="_ok11" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="ok_1_2" Member="Ok12" Storage="_ok12" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="value" Member="Value" Storage="_value" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="main.live_Table" Member="LiveTable">
+    <Type Name="LiveTable">
+      <Column Name="away_team" Member="AwayTeam" Storage="_awayTeam" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="away_team_big" Member="AwayTeamBig" Storage="_awayTeamBig" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="full_time_score" Member="FullTimeScore" Storage="_fullTimeScore" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="half_time_score" Member="HalfTimeScore" Storage="_halfTimeScore" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_team" Member="HomeTeam" Storage="_homeTeam" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_team_big" Member="HomeTeamBig" Storage="_homeTeamBig" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="html_position" Member="HTMLPosition" Storage="_htmlpOsition" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="live_table_id" Member="LiveTableID" Storage="_liveTableID" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="match_type" Member="MatchType" Storage="_matchType" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="s_date" Member="SDate" Storage="_sdAte" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="status" Member="Status" Storage="_status" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="s_time" Member="STime" Storage="_stIme" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="main.live_Table_lib" Member="LiveTableLib">
+    <Type Name="LiveTableLib">
+      <Column Name="away_red_card" Member="AwayRedCard" Storage="_awayRedCard" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="away_team" Member="AwayTeam" Storage="_awayTeam" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="away_team_big" Member="AwayTeamBig" Storage="_awayTeamBig" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="full_away_goals" Member="FullAwayGoals" Storage="_fullAwayGoals" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="full_home_goals" Member="FullHomeGoals" Storage="_fullHomeGoals" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="half_away_goals" Member="HalfAwayGoals" Storage="_halfAwayGoals" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="half_home_goals" Member="HalfHomeGoals" Storage="_halfHomeGoals" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_red_card" Member="HomeRedCard" Storage="_homeRedCard" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_team" Member="HomeTeam" Storage="_homeTeam" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_team_big" Member="HomeTeamBig" Storage="_homeTeamBig" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="html_position" Member="HTMLPosition" Storage="_htmlpOsition" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="live_table_lib_id" Member="LiveTableLibID" Storage="_liveTableLibID" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="match_time" Member="MatchTime" Storage="_matchTime" Type="System.DateTime" DbType="datetime" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="match_type" Member="MatchType" Storage="_matchType" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="status" Member="Status" Storage="_status" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="main.match_analysis_collection" Member="MatchAnalysisCollection">
+    <Type Name="MatchAnalysisCollection">
+      <Column Name="analysis_collection_id" Member="AnalysisCollectionID" Storage="_analysisCollectionID" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="live_table_lib_id" Member="LiveTableLibID" Storage="_liveTableLibID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="result_tb_lib_id" Member="ResultTBLibID" Storage="_resultTblIbID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="main.match_analysis_result" Member="MatchAnalysisResult">
+    <Type Name="MatchAnalysisResult">
+      <Column Name="analysis_result_id" Member="AnalysisResultID" Storage="_analysisResultID" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="away_goals" Member="AwayGoals" Storage="_awayGoals" Type="System.Single" DbType="float" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="fit_goals" Member="FitGoals" Storage="_fitGoals" Type="System.Single" DbType="float" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="fit_odd_even" Member="FitOddEven" Storage="_fitOddEven" Type="System.Single" DbType="float" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="fit_win_loss" Member="FitWinLoss" Storage="_fitWinLoss" Type="System.Single" DbType="float" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_d" Member="HomeD" Storage="_homeD" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_goals" Member="HomeGoals" Storage="_homeGoals" Type="System.Single" DbType="float" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_l" Member="HomeL" Storage="_homeL" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_w" Member="HomeW" Storage="_homeW" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="live_table_lib_id" Member="LiveTableLibID" Storage="_liveTableLibID" Type="System.Decimal" DbType="numeric" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="pre_algorithm" Member="PreAlgorithm" Storage="_preAlgorithm" Type="System.String" DbType="nvarchar(20)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="pre_match_count" Member="PreMatchCount" Storage="_preMatchCount" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="result_fit" Member="ResultFit" Storage="_resultFit" Type="System.String" DbType="nvarchar(20)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="result_goals" Member="ResultGoals" Storage="_resultGoals" Type="System.String" DbType="nvarchar(20)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="result_tb_lib_id" Member="ResultTBLibID" Storage="_resultTblIbID" Type="System.Decimal" DbType="numeric" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="result_wdl" Member="ResultWDL" Storage="_resultWdl" Type="System.String" DbType="nvarchar(20)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="main.match_table_xpath" Member="MatchTableXPath">
+    <Type Name="MatchTableXPath">
+      <Column Name="max_table_id_value" Member="MaXTableIDValue" Storage="_maXtAbleIdvAlue" Type="System.String" DbType="nvarchar(500)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="max_table_xpath" Member="MaXTableXPath" Storage="_maXtAbleXpAth" Type="System.String" DbType="nvarchar(500)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="order_table_id" Member="OrderTableID" Storage="_orderTableID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="second_table_id_value" Member="SecondTableIDValue" Storage="_secondTableIdvAlue" Type="System.String" DbType="nvarchar(500)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="second_table_xpath" Member="SecondTableXPath" Storage="_secondTableXpAth" Type="System.String" DbType="nvarchar(500)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="uri_host" Member="UriHost" Storage="_uriHost" Type="System.String" DbType="nvarchar(500)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="uri_host_id" Member="UriHostID" Storage="_uriHostID" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="main.result_tb" Member="ResultTB">
+    <Type Name="ResultTB">
+      <Column Name="away_team" Member="AwayTeam" Storage="_awayTeam" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="away_team_big" Member="AwayTeamBig" Storage="_awayTeamBig" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="full_time_score" Member="FullTimeScore" Storage="_fullTimeScore" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="half_time_score" Member="HalfTimeScore" Storage="_halfTimeScore" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_team" Member="HomeTeam" Storage="_homeTeam" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_team_big" Member="HomeTeamBig" Storage="_homeTeamBig" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="html_position" Member="HTMLPosition" Storage="_htmlpOsition" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="match_type" Member="MatchType" Storage="_matchType" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="odds" Member="Odds" Storage="_odds" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="result_tb_id" Member="ResultTBID" Storage="_resultTbid" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="s_date" Member="SDate" Storage="_sdAte" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="s_time" Member="STime" Storage="_stIme" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="win_loss_big" Member="WinLossBig" Storage="_winLossBig" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="main.result_tb_lib" Member="ResultTBLib">
+    <Type Name="ResultTBLib">
+      <Column Name="away_red_card" Member="AwayRedCard" Storage="_awayRedCard" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="away_team" Member="AwayTeam" Storage="_awayTeam" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="away_team_big" Member="AwayTeamBig" Storage="_awayTeamBig" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="full_away_goals" Member="FullAwayGoals" Storage="_fullAwayGoals" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="full_home_goals" Member="FullHomeGoals" Storage="_fullHomeGoals" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="half_away_goals" Member="HalfAwayGoals" Storage="_halfAwayGoals" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="half_home_goals" Member="HalfHomeGoals" Storage="_halfHomeGoals" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_red_card" Member="HomeRedCard" Storage="_homeRedCard" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_team" Member="HomeTeam" Storage="_homeTeam" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="home_team_big" Member="HomeTeamBig" Storage="_homeTeamBig" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="html_position" Member="HTMLPosition" Storage="_htmlpOsition" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="match_time" Member="MatchTime" Storage="_matchTime" Type="System.DateTime" DbType="datetime" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="match_type" Member="MatchType" Storage="_matchType" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="odds" Member="Odds" Storage="_odds" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="result_tb_lib_id" Member="ResultTBLibID" Storage="_resultTblIbID" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="win_loss_big" Member="WinLossBig" Storage="_winLossBig" Type="System.String" DbType="nvarchar(50)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
