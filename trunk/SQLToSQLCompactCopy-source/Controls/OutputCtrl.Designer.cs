@@ -48,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 14);
+            this.label1.Location = new System.Drawing.Point(14, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(297, 22);
             this.label1.TabIndex = 1;
@@ -57,18 +57,18 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(110, 202);
+            this.label12.Location = new System.Drawing.Point(110, 186);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 13);
+            this.label12.Size = new System.Drawing.Size(95, 12);
             this.label12.TabIndex = 35;
             this.label12.Text = "Output Version:";
             // 
             // rbVer35
             // 
             this.rbVer35.AutoSize = true;
-            this.rbVer35.Location = new System.Drawing.Point(113, 241);
+            this.rbVer35.Location = new System.Drawing.Point(113, 222);
             this.rbVer35.Name = "rbVer35";
-            this.rbVer35.Size = new System.Drawing.Size(178, 17);
+            this.rbVer35.Size = new System.Drawing.Size(203, 16);
             this.rbVer35.TabIndex = 34;
             this.rbVer35.Text = "SQL Server Compact Edition 3.5";
             this.rbVer35.UseVisualStyleBackColor = true;
@@ -77,9 +77,9 @@
             // 
             this.rbVer3.AutoSize = true;
             this.rbVer3.Checked = true;
-            this.rbVer3.Location = new System.Drawing.Point(113, 218);
+            this.rbVer3.Location = new System.Drawing.Point(113, 201);
             this.rbVer3.Name = "rbVer3";
-            this.rbVer3.Size = new System.Drawing.Size(178, 17);
+            this.rbVer3.Size = new System.Drawing.Size(203, 16);
             this.rbVer3.TabIndex = 33;
             this.rbVer3.TabStop = true;
             this.rbVer3.Text = "SQL Server Compact Edition 3.1";
@@ -88,51 +88,51 @@
             // cbEncryptDb
             // 
             this.cbEncryptDb.AutoSize = true;
-            this.cbEncryptDb.Location = new System.Drawing.Point(214, 181);
+            this.cbEncryptDb.Location = new System.Drawing.Point(214, 167);
             this.cbEncryptDb.Name = "cbEncryptDb";
-            this.cbEncryptDb.Size = new System.Drawing.Size(117, 17);
+            this.cbEncryptDb.Size = new System.Drawing.Size(126, 16);
             this.cbEncryptDb.TabIndex = 32;
             this.cbEncryptDb.Text = "Encrypt Database?";
             this.cbEncryptDb.UseVisualStyleBackColor = true;
             // 
             // tbMobileDestPassword
             // 
-            this.tbMobileDestPassword.Location = new System.Drawing.Point(214, 155);
+            this.tbMobileDestPassword.Location = new System.Drawing.Point(214, 143);
             this.tbMobileDestPassword.Name = "tbMobileDestPassword";
             this.tbMobileDestPassword.PasswordChar = '*';
-            this.tbMobileDestPassword.Size = new System.Drawing.Size(146, 20);
+            this.tbMobileDestPassword.Size = new System.Drawing.Size(146, 21);
             this.tbMobileDestPassword.TabIndex = 31;
             // 
             // tbMobileDestLogin
             // 
-            this.tbMobileDestLogin.Location = new System.Drawing.Point(214, 129);
+            this.tbMobileDestLogin.Location = new System.Drawing.Point(214, 119);
             this.tbMobileDestLogin.Name = "tbMobileDestLogin";
-            this.tbMobileDestLogin.Size = new System.Drawing.Size(146, 20);
+            this.tbMobileDestLogin.Size = new System.Drawing.Size(146, 21);
             this.tbMobileDestLogin.TabIndex = 30;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(110, 155);
+            this.label10.Location = new System.Drawing.Point(110, 143);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.Size = new System.Drawing.Size(59, 12);
             this.label10.TabIndex = 29;
             this.label10.Text = "Password:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(110, 129);
+            this.label11.Location = new System.Drawing.Point(110, 119);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(36, 13);
+            this.label11.Size = new System.Drawing.Size(41, 12);
             this.label11.TabIndex = 28;
             this.label11.Text = "Login:";
             // 
             // btnSelectPath
             // 
-            this.btnSelectPath.Location = new System.Drawing.Point(361, 92);
+            this.btnSelectPath.Location = new System.Drawing.Point(361, 85);
             this.btnSelectPath.Name = "btnSelectPath";
-            this.btnSelectPath.Size = new System.Drawing.Size(24, 23);
+            this.btnSelectPath.Size = new System.Drawing.Size(24, 21);
             this.btnSelectPath.TabIndex = 27;
             this.btnSelectPath.Text = "...";
             this.btnSelectPath.UseVisualStyleBackColor = true;
@@ -140,26 +140,26 @@
             // 
             // tbDestPath
             // 
-            this.tbDestPath.Location = new System.Drawing.Point(113, 93);
+            this.tbDestPath.Location = new System.Drawing.Point(113, 86);
             this.tbDestPath.Name = "tbDestPath";
-            this.tbDestPath.Size = new System.Drawing.Size(247, 20);
+            this.tbDestPath.Size = new System.Drawing.Size(247, 21);
             this.tbDestPath.TabIndex = 26;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 96);
+            this.label9.Location = new System.Drawing.Point(15, 89);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 13);
+            this.label9.Size = new System.Drawing.Size(89, 12);
             this.label9.TabIndex = 36;
             this.label9.Text = "Database Path:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 62);
+            this.label2.Location = new System.Drawing.Point(14, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(285, 13);
+            this.label2.Size = new System.Drawing.Size(371, 12);
             this.label2.TabIndex = 37;
             this.label2.Text = "Enter the following information for the destination database.";
             // 
@@ -170,7 +170,7 @@
             // 
             // OutputCtrl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
@@ -186,7 +186,7 @@
             this.Controls.Add(this.tbDestPath);
             this.Controls.Add(this.label1);
             this.Name = "OutputCtrl";
-            this.Size = new System.Drawing.Size(392, 268);
+            this.Size = new System.Drawing.Size(392, 247);
             this.ResumeLayout(false);
             this.PerformLayout();
 

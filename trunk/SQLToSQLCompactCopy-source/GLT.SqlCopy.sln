@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLT.SqlCopy", "GLT.SqlCopy.csproj", "{0CF1444A-1EDD-4F17-94EA-68AFCCA35417}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLT.Common", "..\GLT.Common\GLT.Common.csproj", "{E58FBCA6-FCE3-4A67-879C-446D0FD12CE3}"

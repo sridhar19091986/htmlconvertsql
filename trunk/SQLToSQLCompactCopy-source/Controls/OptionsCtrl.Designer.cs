@@ -37,7 +37,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 14);
+            this.label1.Location = new System.Drawing.Point(14, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 22);
             this.label1.TabIndex = 2;
@@ -46,9 +46,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 62);
+            this.label2.Location = new System.Drawing.Point(14, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 13);
+            this.label2.Size = new System.Drawing.Size(155, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "Select the options below:";
             // 
@@ -57,22 +57,22 @@
             this.cbCopyTableData.AutoSize = true;
             this.cbCopyTableData.Checked = true;
             this.cbCopyTableData.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbCopyTableData.Location = new System.Drawing.Point(17, 98);
+            this.cbCopyTableData.Location = new System.Drawing.Point(17, 90);
             this.cbCopyTableData.Name = "cbCopyTableData";
-            this.cbCopyTableData.Size = new System.Drawing.Size(100, 17);
+            this.cbCopyTableData.Size = new System.Drawing.Size(114, 16);
             this.cbCopyTableData.TabIndex = 4;
             this.cbCopyTableData.Text = "Copy table data";
             this.cbCopyTableData.UseVisualStyleBackColor = true;
             // 
             // OptionsCtrl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cbCopyTableData);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "OptionsCtrl";
-            this.Size = new System.Drawing.Size(392, 268);
+            this.Size = new System.Drawing.Size(392, 247);
             this.ResumeLayout(false);
             this.PerformLayout();
 
