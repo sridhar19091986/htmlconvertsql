@@ -19,7 +19,8 @@ namespace Soccer_Score_Forecast
 
     public static class Conn
     {
-        private static string connStr = "Data Source=SoccerScoreSqlite.db;FailIfMissing=false;";
-        public static System.Data.SQLite.SQLiteConnection cnn = new SQLiteConnection(connStr);
+        public static string connStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb";
+        public static System.Data.OleDb.OleDbConnection cnn = new System.Data.OleDb.OleDbConnection(connStr);
+        //public static System.Data.SQLite.SQLiteConnection cnn = new SQLiteConnection(connStr);
     }
 }
