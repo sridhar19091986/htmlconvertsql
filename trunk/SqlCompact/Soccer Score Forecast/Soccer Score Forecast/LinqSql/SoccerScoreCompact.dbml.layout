@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 13.5" name="SoccerScoreCompact">
+  <DataContextMoniker Name="/SoccerScoreCompact" />
+  <nestedChildShapes>
+    <classShape Id="eee118b8-ec18-4634-8a38-31fc514dd7b8" absoluteBounds="0.75, 0.75, 2, 1.9542057291666666">
+      <DataClassMoniker Name="/SoccerScoreCompact/live_Aibo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7efa773f-97fd-4d6a-aeb9-948acbc40b6b" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.3942057291666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="17418cb6-2bc9-4bdb-814c-df548b17fe5c" absoluteBounds="3.75, 0.75, 2, 3.1345442708333326">
+      <DataClassMoniker Name="/SoccerScoreCompact/live_okoo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af4c0f67-6d58-47ad-a041-6f29806df55a" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.574544270833333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="83900095-b887-402b-8f51-4b768177cc31" absoluteBounds="0.75, 4.75, 2, 2.7973046875000005">
+      <DataClassMoniker Name="/SoccerScoreCompact/live_Table" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1eaa6926-586c-43d5-b1fb-7b0e9482575b" absoluteBounds="0.765, 5.21, 1.9700000000000002, 2.2373046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56a80b1a-2c16-44d8-9f39-38c460271815" absoluteBounds="3.75, 4.75, 2, 3.3031640625000005">
+      <DataClassMoniker Name="/SoccerScoreCompact/live_Table_lib" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6b1a054-25f2-4a08-98c9-51bf0f76a85f" absoluteBounds="3.765, 5.21, 1.9700000000000002, 2.7431640625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80a9c92a-1dfc-485f-8aed-8d323e0b70ed" absoluteBounds="6.75, 0.75, 2, 1.2797265625000003">
+      <DataClassMoniker Name="/SoccerScoreCompact/match_analysis_collection" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48ec3802-aee5-4055-9d2b-f105c06f3c15" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="828cdf4f-ed97-45af-a3af-4f5c2f787a21" absoluteBounds="6.75, 3.75, 2, 3.4717838541666666">
+      <DataClassMoniker Name="/SoccerScoreCompact/match_analysis_result" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67703c30-6a57-4391-b9ab-3382c8b8ecca" absoluteBounds="6.765, 4.21, 1.9700000000000002, 2.9117838541666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="026e796f-08f2-4faa-b483-c956ce859fcc" absoluteBounds="6.75, 8.75, 2, 1.9542057291666666">
+      <DataClassMoniker Name="/SoccerScoreCompact/match_table_xpath" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8c7e4431-25c8-4f5b-a124-91f56fdccd6a" absoluteBounds="6.765, 9.21, 1.9700000000000002, 1.3942057291666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="06875b09-0282-476f-9a02-823879b880fc" absoluteBounds="9.75, 0.75, 2, 2.9659244791666666">
+      <DataClassMoniker Name="/SoccerScoreCompact/result_tb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="049f42fb-71f2-48a4-aa72-b0fc972dd888" absoluteBounds="9.765, 1.21, 1.9700000000000002, 2.4059244791666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c92ab6c-083c-4bd6-aafe-2b6e008d8f21" absoluteBounds="0.75, 9.75, 2, 3.4717838541666666">
+      <DataClassMoniker Name="/SoccerScoreCompact/result_tb_lib" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83c47843-4501-4989-9a34-9c75d72196a6" absoluteBounds="0.765, 10.21, 1.9700000000000002, 2.9117838541666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70418af8-ec56-4d2c-a69e-9b5c7c75c68d" absoluteBounds="9.75, 4.75, 2, 0.94248697916666657">
+      <DataClassMoniker Name="/SoccerScoreCompact/Tt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94b4f755-c577-41f7-bf62-0fbacfecbf52" absoluteBounds="9.765, 5.21, 1.9700000000000002, 0.38248697916666669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
