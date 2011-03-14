@@ -47,7 +47,7 @@ namespace Soccer_Score_Forecast
         {
             dataGridView5.Visible = false;
             toolStripStatusLabel2.Text = dateTimePicker2.Value.ToString("yyyy-MM-dd");//日历组建日期字符串格式化方法
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext())
+            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.cnn))
             {
                 toolStripStatusLabel3.Text = matches.result_tb_lib.Max(p => p.match_time).Value.ToString();
                 var maxtime = matches.live_Table_lib.Max(p => p.match_time);
