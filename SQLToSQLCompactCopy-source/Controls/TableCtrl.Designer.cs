@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 14);
+            this.label1.Location = new System.Drawing.Point(14, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 22);
             this.label1.TabIndex = 1;
@@ -50,26 +50,26 @@
             // 
             this.clbTables.CheckOnClick = true;
             this.clbTables.FormattingEnabled = true;
-            this.clbTables.Location = new System.Drawing.Point(14, 107);
+            this.clbTables.Location = new System.Drawing.Point(14, 99);
             this.clbTables.Name = "clbTables";
-            this.clbTables.Size = new System.Drawing.Size(362, 154);
+            this.clbTables.Size = new System.Drawing.Size(362, 132);
             this.clbTables.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 62);
+            this.label2.Location = new System.Drawing.Point(14, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(292, 13);
+            this.label2.Size = new System.Drawing.Size(365, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "Click the ckeckbox next to each table you could like copied.";
             // 
             // cbSelectAll
             // 
             this.cbSelectAll.AutoSize = true;
-            this.cbSelectAll.Location = new System.Drawing.Point(17, 84);
+            this.cbSelectAll.Location = new System.Drawing.Point(17, 78);
             this.cbSelectAll.Name = "cbSelectAll";
-            this.cbSelectAll.Size = new System.Drawing.Size(70, 17);
+            this.cbSelectAll.Size = new System.Drawing.Size(84, 16);
             this.cbSelectAll.TabIndex = 4;
             this.cbSelectAll.Text = "Select All";
             this.cbSelectAll.UseVisualStyleBackColor = true;
@@ -79,24 +79,24 @@
             // 
             this.ddlSchema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlSchema.FormattingEnabled = true;
-            this.ddlSchema.Location = new System.Drawing.Point(245, 84);
+            this.ddlSchema.Location = new System.Drawing.Point(245, 78);
             this.ddlSchema.Name = "ddlSchema";
-            this.ddlSchema.Size = new System.Drawing.Size(131, 21);
+            this.ddlSchema.Size = new System.Drawing.Size(131, 20);
             this.ddlSchema.TabIndex = 5;
             this.ddlSchema.SelectedIndexChanged += new System.EventHandler(this.ddlSchema_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(193, 88);
+            this.label3.Location = new System.Drawing.Point(193, 81);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 6;
             this.label3.Text = "Schema";
             // 
             // TableCtrl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ddlSchema);
@@ -105,7 +105,7 @@
             this.Controls.Add(this.clbTables);
             this.Controls.Add(this.label1);
             this.Name = "TableCtrl";
-            this.Size = new System.Drawing.Size(392, 268);
+            this.Size = new System.Drawing.Size(392, 247);
             this.ResumeLayout(false);
             this.PerformLayout();
 
