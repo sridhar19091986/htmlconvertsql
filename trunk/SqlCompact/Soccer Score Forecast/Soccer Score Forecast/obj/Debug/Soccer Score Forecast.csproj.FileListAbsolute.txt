@@ -136,3 +136,19 @@ F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Socc
 G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.ResolveComReference.cache
 G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.exe
 G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.pdb
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.exe
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.pdb
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\HtmlAgilityPack.dll
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Microsoft.Office.Interop.Excel.dll
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\myCurveFit.dll
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\office.dll
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Microsoft.Vbe.Interop.dll
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\HtmlAgilityPack.pdb
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\HtmlAgilityPack.xml
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\myCurveFit.ctf
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\ResolveAssemblyReference.cache
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Form1.resources
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Properties.Resources.resources
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\GenerateResource-ResGen.read.5.tlog
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\GenerateResource-ResGen.read.1.tlog
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\GenerateResource-ResGen.write.1.tlog
