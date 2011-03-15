@@ -133,3 +133,6 @@ F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Socc
 F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.exe.config
 F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\office.dll
 F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Microsoft.Vbe.Interop.dll
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.ResolveComReference.cache
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.exe
+G:\htmlconvertsql\SqlCompact\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.pdb
