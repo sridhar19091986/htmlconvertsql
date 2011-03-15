@@ -139,6 +139,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="LinqSql\SoccerScoreCompact.dbml.layout">
       <DependentUpon>SoccerScoreCompact.dbml</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <EmbeddedResource Include="Soccer Score Forecast.resx">
       <DependentUpon>Soccer Score Forecast.cs</DependentUpon>
