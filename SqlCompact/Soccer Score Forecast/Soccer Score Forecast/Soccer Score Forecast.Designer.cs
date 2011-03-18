@@ -75,12 +75,12 @@
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dataCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oddsCollectionOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OddsCollectionOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataEvaluateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scoreForecastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.winRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitSystemSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -97,10 +97,10 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.filterMatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.todayMatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectMatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.todayMatchTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtermatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.todaymatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectmatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.todaymatchTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeExpandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeColaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -241,7 +241,7 @@
             this.treeView5 = new System.Windows.Forms.TreeView();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.StatusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -322,7 +322,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dataCollectionToolStripMenuItem,
-            this.oddsCollectionOToolStripMenuItem,
+            this.OddsCollectionOToolStripMenuItem,
             this.dataEvaluateToolStripMenuItem,
             this.scoreForecastToolStripMenuItem,
             this.winRateToolStripMenuItem,
@@ -340,12 +340,12 @@
             this.dataCollectionToolStripMenuItem.Text = "dataCollection(&C)";
             this.dataCollectionToolStripMenuItem.Click += new System.EventHandler(this.dataCollectionToolStripMenuItem_Click);
             // 
-            // oddsCollectionOToolStripMenuItem
+            // OddsCollectionOToolStripMenuItem
             // 
-            this.oddsCollectionOToolStripMenuItem.Name = "oddsCollectionOToolStripMenuItem";
-            this.oddsCollectionOToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
-            this.oddsCollectionOToolStripMenuItem.Text = "oddsCollection(&O)";
-            this.oddsCollectionOToolStripMenuItem.Click += new System.EventHandler(this.oddsCollectionOToolStripMenuItem_Click);
+            this.OddsCollectionOToolStripMenuItem.Name = "OddsCollectionOToolStripMenuItem";
+            this.OddsCollectionOToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
+            this.OddsCollectionOToolStripMenuItem.Text = "OddsCollection(&O)";
+            this.OddsCollectionOToolStripMenuItem.Click += new System.EventHandler(this.OddsCollectionOToolStripMenuItem_Click);
             // 
             // dataEvaluateToolStripMenuItem
             // 
@@ -375,19 +375,19 @@
             this.exitSystemSToolStripMenuItem.Text = "exitSystem(&S)";
             this.exitSystemSToolStripMenuItem.Click += new System.EventHandler(this.exitSystemSToolStripMenuItem_Click);
             // 
-            // statusStrip1
+            // StatusStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 468);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(907, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
+            this.StatusStrip1.Location = new System.Drawing.Point(0, 468);
+            this.StatusStrip1.Name = "StatusStrip1";
+            this.StatusStrip1.Size = new System.Drawing.Size(907, 22);
+            this.StatusStrip1.TabIndex = 1;
+            this.StatusStrip1.Text = "StatusStrip1";
             // 
             // toolStripProgressBar1
             // 
@@ -533,10 +533,10 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filterMatchToolStripMenuItem,
-            this.todayMatchToolStripMenuItem,
-            this.selectMatchToolStripMenuItem,
-            this.todayMatchTimeToolStripMenuItem,
+            this.filtermatchToolStripMenuItem,
+            this.todaymatchToolStripMenuItem,
+            this.selectmatchToolStripMenuItem,
+            this.todaymatchTimeToolStripMenuItem,
             this.treeExpandToolStripMenuItem,
             this.treeColaToolStripMenuItem,
             this.tToolStripMenuItem,
@@ -545,33 +545,33 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(167, 202);
             // 
-            // filterMatchToolStripMenuItem
+            // filtermatchToolStripMenuItem
             // 
-            this.filterMatchToolStripMenuItem.Name = "filterMatchToolStripMenuItem";
-            this.filterMatchToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.filterMatchToolStripMenuItem.Text = "Filter Match";
-            this.filterMatchToolStripMenuItem.Click += new System.EventHandler(this.filterMatchToolStripMenuItem_Click);
+            this.filtermatchToolStripMenuItem.Name = "filtermatchToolStripMenuItem";
+            this.filtermatchToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.filtermatchToolStripMenuItem.Text = "Filter match";
+            this.filtermatchToolStripMenuItem.Click += new System.EventHandler(this.filtermatchToolStripMenuItem_Click);
             // 
-            // todayMatchToolStripMenuItem
+            // todaymatchToolStripMenuItem
             // 
-            this.todayMatchToolStripMenuItem.Name = "todayMatchToolStripMenuItem";
-            this.todayMatchToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.todayMatchToolStripMenuItem.Text = "Today Match";
-            this.todayMatchToolStripMenuItem.Click += new System.EventHandler(this.todayMatchToolStripMenuItem_Click);
+            this.todaymatchToolStripMenuItem.Name = "todaymatchToolStripMenuItem";
+            this.todaymatchToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.todaymatchToolStripMenuItem.Text = "Today match";
+            this.todaymatchToolStripMenuItem.Click += new System.EventHandler(this.todaymatchToolStripMenuItem_Click);
             // 
-            // selectMatchToolStripMenuItem
+            // selectmatchToolStripMenuItem
             // 
-            this.selectMatchToolStripMenuItem.Name = "selectMatchToolStripMenuItem";
-            this.selectMatchToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.selectMatchToolStripMenuItem.Text = "Select Match";
-            this.selectMatchToolStripMenuItem.Click += new System.EventHandler(this.selectMatchToolStripMenuItem_Click);
+            this.selectmatchToolStripMenuItem.Name = "selectmatchToolStripMenuItem";
+            this.selectmatchToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.selectmatchToolStripMenuItem.Text = "Select match";
+            this.selectmatchToolStripMenuItem.Click += new System.EventHandler(this.selectmatchToolStripMenuItem_Click);
             // 
-            // todayMatchTimeToolStripMenuItem
+            // todaymatchTimeToolStripMenuItem
             // 
-            this.todayMatchTimeToolStripMenuItem.Name = "todayMatchTimeToolStripMenuItem";
-            this.todayMatchTimeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.todayMatchTimeToolStripMenuItem.Text = "Today Match Time";
-            this.todayMatchTimeToolStripMenuItem.Click += new System.EventHandler(this.todayMatchTimeToolStripMenuItem_Click);
+            this.todaymatchTimeToolStripMenuItem.Name = "todaymatchTimeToolStripMenuItem";
+            this.todaymatchTimeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.todaymatchTimeToolStripMenuItem.Text = "Today match Time";
+            this.todaymatchTimeToolStripMenuItem.Click += new System.EventHandler(this.todaymatchTimeToolStripMenuItem_Click);
             // 
             // treeExpandToolStripMenuItem
             // 
@@ -627,7 +627,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(899, 384);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Match Data Collection";
+            this.tabPage1.Text = "match Data Collection";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
@@ -844,7 +844,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(899, 384);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Match Data Operation";
+            this.tabPage2.Text = "match Data Operation";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // splitContainer5
@@ -933,7 +933,7 @@
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(163, 23);
             this.button30.TabIndex = 8;
-            this.button30.Text = "result_tb_lib";
+            this.button30.Text = "Result_tb_lib";
             this.button30.UseVisualStyleBackColor = true;
             this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
@@ -943,7 +943,7 @@
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(164, 23);
             this.button29.TabIndex = 7;
-            this.button29.Text = "live_Table_lib";
+            this.button29.Text = "Live_Table_lib";
             this.button29.UseVisualStyleBackColor = true;
             this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
@@ -953,7 +953,7 @@
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(86, 23);
             this.button26.TabIndex = 6;
-            this.button26.Text = "live_okoo";
+            this.button26.Text = "Live_okoo";
             this.button26.UseVisualStyleBackColor = true;
             this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
@@ -963,7 +963,7 @@
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(86, 23);
             this.button19.TabIndex = 5;
-            this.button19.Text = "live_Aibo";
+            this.button19.Text = "Live_Aibo";
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
@@ -973,7 +973,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(164, 23);
             this.button6.TabIndex = 4;
-            this.button6.Text = "match_table_xpath";
+            this.button6.Text = "Match_table_xpath";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -1458,7 +1458,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(125, 23);
             this.button9.TabIndex = 12;
-            this.button9.Text = "match_table_xpath";
+            this.button9.Text = "Match_table_xpath";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
@@ -1669,7 +1669,7 @@
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(96, 16);
             this.checkBox4.TabIndex = 4;
-            this.checkBox4.Text = "->MatchToday";
+            this.checkBox4.Text = "->matchToday";
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
@@ -2095,7 +2095,7 @@
             this.ClientSize = new System.Drawing.Size(907, 490);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.StatusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -2105,8 +2105,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.StatusStrip1.ResumeLayout(false);
+            this.StatusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -2199,7 +2199,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip StatusStrip1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -2231,8 +2231,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem filterMatchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem todayMatchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filtermatchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem todaymatchToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton_iniLast;
         private System.Windows.Forms.ToolStripButton toolStripButton_iniToday;
         private System.Windows.Forms.ToolStripButton toolStripButton_exitSystem;
@@ -2266,8 +2266,8 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_resultEvaluate;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripButton toolStripButton_todayEvaluate;
-        private System.Windows.Forms.ToolStripMenuItem selectMatchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem todayMatchTimeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectmatchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem todaymatchTimeToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer13;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Button button8;
@@ -2311,7 +2311,7 @@
         private System.Windows.Forms.ToolStripMenuItem scoreForecastToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem winRateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitSystemSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem oddsCollectionOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OddsCollectionOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caiPiaoToolStripMenuItem;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button24;

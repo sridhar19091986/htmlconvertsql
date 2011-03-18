@@ -96,7 +96,7 @@ namespace Soccer_Score_Forecast
                     for (int j = 0; j < cols.Count; ++j)
                     {
                         if (dt.Columns.Count == j) dt.Columns.Add(j.ToString());
-                        dataRow[j.ToString()] = cols[j].OuterHtml;// Get the value of the column and print it
+                        dataRow[j.ToString()] = cols[j].OuterHtml;// Get the Value of the column and print it
                     }
                     dt.Rows.Add(dataRow);
                 }
@@ -120,7 +120,7 @@ namespace Soccer_Score_Forecast
                     for (int j = 0; j < cols.Count; ++j)
                     {
                         if (dt.Columns.Count == j) dt.Columns.Add(j.ToString());
-                        dataRow[j.ToString()] = cols[j].InnerHtml;// Get the value of the column and print it
+                        dataRow[j.ToString()] = cols[j].InnerHtml;// Get the Value of the column and print it
                     }
                     dt.Rows.Add(dataRow);
                 }
@@ -144,7 +144,7 @@ namespace Soccer_Score_Forecast
                     for (int j = 0; j < cols.Count; ++j)
                     {
                         if (dt.Columns.Count == j) dt.Columns.Add(j.ToString());
-                        dataRow[j.ToString()] = cols[j].InnerText;// Get the value of the column and print it
+                        dataRow[j.ToString()] = cols[j].InnerText;// Get the Value of the column and print it
                     }
                     dt.Rows.Add(dataRow);
                 }

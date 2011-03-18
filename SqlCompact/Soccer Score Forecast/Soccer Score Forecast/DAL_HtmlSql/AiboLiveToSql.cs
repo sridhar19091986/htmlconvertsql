@@ -29,31 +29,31 @@ namespace Soccer_Score_Forecast
         public decimal updateLiveAibo()
         {
             DataTable dt = AiboHtml.GetTableOutHtml();
-            using (SoccerScoreCompact match = new SoccerScoreCompact(Conn.cnn))
-            {
-                var ll = match.live_Aibo.Where(e => e.live_Aibo_id > 0);
-                match.live_Aibo.DeleteAllOnSubmit(ll);//更新后删除
-                match.SubmitChanges();
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
+                var ll = Conn.match.Live_Aibo.Where(e => e.Live_Aibo_id > 0);
+                Conn.match.Live_Aibo.DeleteAllOnSubmit(ll);//更新后删除
+                Conn.match.SubmitChanges();
 
                 foreach (DataRow aa in dt.Rows)
                 {
                     if (HtmlTextToStr(aa[3].ToString()) != null) // && HtmlTextToStr(aa[11].ToString()) == null
                     {
-                        live_Aibo lo = new live_Aibo();
-                        lo.value = HtmlTextToStr(aa[1].ToString());
+                        Live_Aibo lo = new Live_Aibo();
+                        lo.Value = HtmlTextToStr(aa[1].ToString());
                         lo.LeagueName = HtmlTextToStr(aa[2].ToString());
-                        lo.match_time = HtmlTextToStr(aa[3].ToString());
+                        lo.Match_time = HtmlTextToStr(aa[3].ToString());
                         lo.MatchOrder1_HomeName = AiboTeamName(aa[5].ToString());
                         lo.MatchOrder1_HandicapNumber = HtmlTextToStr(aa[6].ToString());
                         lo.MatchOrder1_AwayName = AiboTeamName(aa[7].ToString());
 
-                        match.live_Aibo.InsertOnSubmit(lo);
+                        Conn.match.Live_Aibo.InsertOnSubmit(lo);
                        
                     }
                 }
-                match.SubmitChanges();
-                return match.live_Aibo.Max(e => e.live_Aibo_id);
-            }
+                Conn.match.SubmitChanges();
+                return Conn.match.Live_Aibo.Max(e => e.Live_Aibo_id);
+            //}
         }
     }
 }

@@ -53,7 +53,7 @@ namespace Soccer_Score_Forecast
             doc.LoadHtml(html);
             var inputs = doc.DocumentNode.Descendants("input");
             foreach (var input in inputs)
-                text = input.Attributes["value"].Value;
+                text = input.Attributes["Value"].Value;
             return Int32.Parse(text);
         }
         public string HtmlHrefToStr(string html)

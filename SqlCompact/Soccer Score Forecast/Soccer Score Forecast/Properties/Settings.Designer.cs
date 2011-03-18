@@ -37,11 +37,11 @@ namespace Soccer_Score_Forecast.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=\"D:\\MDF FILES\\MATCH_ANALYSIS_PDM.MDF\";In" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=\"D:\\MDF FILES\\match_ANALYSIS_PDM.MDF\";In" +
             "tegrated Security=True")]
-        public string D__MDF_FILES_MATCH_ANALYSIS_PDM_MDFConnectionString {
+        public string D__MDF_FILES_match_ANALYSIS_PDM_MDFConnectionString {
             get {
-                return ((string)(this["D__MDF_FILES_MATCH_ANALYSIS_PDM_MDFConnectionString"]));
+                return ((string)(this["D__MDF_FILES_match_ANALYSIS_PDM_MDFConnectionString"]));
             }
         }
     }

@@ -29,33 +29,33 @@ namespace SoccerScore.Compact.Linq
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertlive_Aibo(live_Aibo instance);
-    partial void Updatelive_Aibo(live_Aibo instance);
-    partial void Deletelive_Aibo(live_Aibo instance);
-    partial void Insertlive_okoo(live_okoo instance);
-    partial void Updatelive_okoo(live_okoo instance);
-    partial void Deletelive_okoo(live_okoo instance);
-    partial void Insertlive_Table(live_Table instance);
-    partial void Updatelive_Table(live_Table instance);
-    partial void Deletelive_Table(live_Table instance);
-    partial void Insertlive_Table_lib(live_Table_lib instance);
-    partial void Updatelive_Table_lib(live_Table_lib instance);
-    partial void Deletelive_Table_lib(live_Table_lib instance);
-    partial void Insertmatch_analysis_collection(match_analysis_collection instance);
-    partial void Updatematch_analysis_collection(match_analysis_collection instance);
-    partial void Deletematch_analysis_collection(match_analysis_collection instance);
-    partial void Insertmatch_analysis_result(match_analysis_result instance);
-    partial void Updatematch_analysis_result(match_analysis_result instance);
-    partial void Deletematch_analysis_result(match_analysis_result instance);
-    partial void Insertmatch_table_xpath(match_table_xpath instance);
-    partial void Updatematch_table_xpath(match_table_xpath instance);
-    partial void Deletematch_table_xpath(match_table_xpath instance);
-    partial void Insertresult_tb(result_tb instance);
-    partial void Updateresult_tb(result_tb instance);
-    partial void Deleteresult_tb(result_tb instance);
-    partial void Insertresult_tb_lib(result_tb_lib instance);
-    partial void Updateresult_tb_lib(result_tb_lib instance);
-    partial void Deleteresult_tb_lib(result_tb_lib instance);
+    partial void InsertLive_Aibo(Live_Aibo instance);
+    partial void UpdateLive_Aibo(Live_Aibo instance);
+    partial void DeleteLive_Aibo(Live_Aibo instance);
+    partial void InsertLive_okoo(Live_okoo instance);
+    partial void UpdateLive_okoo(Live_okoo instance);
+    partial void DeleteLive_okoo(Live_okoo instance);
+    partial void InsertLive_Table(Live_Table instance);
+    partial void UpdateLive_Table(Live_Table instance);
+    partial void DeleteLive_Table(Live_Table instance);
+    partial void InsertLive_Table_lib(Live_Table_lib instance);
+    partial void UpdateLive_Table_lib(Live_Table_lib instance);
+    partial void DeleteLive_Table_lib(Live_Table_lib instance);
+    partial void InsertMatch_analysis_collection(Match_analysis_collection instance);
+    partial void UpdateMatch_analysis_collection(Match_analysis_collection instance);
+    partial void DeleteMatch_analysis_collection(Match_analysis_collection instance);
+    partial void InsertMatch_analysis_result(Match_analysis_result instance);
+    partial void UpdateMatch_analysis_result(Match_analysis_result instance);
+    partial void DeleteMatch_analysis_result(Match_analysis_result instance);
+    partial void InsertMatch_table_xpath(Match_table_xpath instance);
+    partial void UpdateMatch_table_xpath(Match_table_xpath instance);
+    partial void DeleteMatch_table_xpath(Match_table_xpath instance);
+    partial void InsertResult_tb(Result_tb instance);
+    partial void UpdateResult_tb(Result_tb instance);
+    partial void DeleteResult_tb(Result_tb instance);
+    partial void InsertResult_tb_lib(Result_tb_lib instance);
+    partial void UpdateResult_tb_lib(Result_tb_lib instance);
+    partial void DeleteResult_tb_lib(Result_tb_lib instance);
     #endregion
 		
 		public SoccerScoreCompact(string connection) : 
@@ -82,75 +82,75 @@ namespace SoccerScore.Compact.Linq
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<live_Aibo> live_Aibo
+		public System.Data.Linq.Table<Live_Aibo> Live_Aibo
 		{
 			get
 			{
-				return this.GetTable<live_Aibo>();
+				return this.GetTable<Live_Aibo>();
 			}
 		}
 		
-		public System.Data.Linq.Table<live_okoo> live_okoo
+		public System.Data.Linq.Table<Live_okoo> Live_okoo
 		{
 			get
 			{
-				return this.GetTable<live_okoo>();
+				return this.GetTable<Live_okoo>();
 			}
 		}
 		
-		public System.Data.Linq.Table<live_Table> live_Table
+		public System.Data.Linq.Table<Live_Table> Live_Table
 		{
 			get
 			{
-				return this.GetTable<live_Table>();
+				return this.GetTable<Live_Table>();
 			}
 		}
 		
-		public System.Data.Linq.Table<live_Table_lib> live_Table_lib
+		public System.Data.Linq.Table<Live_Table_lib> Live_Table_lib
 		{
 			get
 			{
-				return this.GetTable<live_Table_lib>();
+				return this.GetTable<Live_Table_lib>();
 			}
 		}
 		
-		public System.Data.Linq.Table<match_analysis_collection> match_analysis_collection
+		public System.Data.Linq.Table<Match_analysis_collection> Match_analysis_collection
 		{
 			get
 			{
-				return this.GetTable<match_analysis_collection>();
+				return this.GetTable<Match_analysis_collection>();
 			}
 		}
 		
-		public System.Data.Linq.Table<match_analysis_result> match_analysis_result
+		public System.Data.Linq.Table<Match_analysis_result> Match_analysis_result
 		{
 			get
 			{
-				return this.GetTable<match_analysis_result>();
+				return this.GetTable<Match_analysis_result>();
 			}
 		}
 		
-		public System.Data.Linq.Table<match_table_xpath> match_table_xpath
+		public System.Data.Linq.Table<Match_table_xpath> Match_table_xpath
 		{
 			get
 			{
-				return this.GetTable<match_table_xpath>();
+				return this.GetTable<Match_table_xpath>();
 			}
 		}
 		
-		public System.Data.Linq.Table<result_tb> result_tb
+		public System.Data.Linq.Table<Result_tb> Result_tb
 		{
 			get
 			{
-				return this.GetTable<result_tb>();
+				return this.GetTable<Result_tb>();
 			}
 		}
 		
-		public System.Data.Linq.Table<result_tb_lib> result_tb_lib
+		public System.Data.Linq.Table<Result_tb_lib> Result_tb_lib
 		{
 			get
 			{
-				return this.GetTable<result_tb_lib>();
+				return this.GetTable<Result_tb_lib>();
 			}
 		}
 		
@@ -163,8 +163,8 @@ namespace SoccerScore.Compact.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute()]
-	public partial class live_Aibo : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="live_Aibo")]
+	public partial class Live_Aibo : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -187,14 +187,14 @@ namespace SoccerScore.Compact.Linq
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onlive_Aibo_idChanging(decimal value);
-    partial void Onlive_Aibo_idChanged();
-    partial void OnvalueChanging(string value);
-    partial void OnvalueChanged();
+    partial void OnLive_Aibo_idChanging(decimal value);
+    partial void OnLive_Aibo_idChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
     partial void OnLeagueNameChanging(string value);
     partial void OnLeagueNameChanged();
-    partial void Onmatch_timeChanging(string value);
-    partial void Onmatch_timeChanged();
+    partial void OnMatch_timeChanging(string value);
+    partial void OnMatch_timeChanged();
     partial void OnMatchOrder1_HomeNameChanging(string value);
     partial void OnMatchOrder1_HomeNameChanged();
     partial void OnMatchOrder1_HandicapNumberChanging(string value);
@@ -203,13 +203,13 @@ namespace SoccerScore.Compact.Linq
     partial void OnMatchOrder1_AwayNameChanged();
     #endregion
 		
-		public live_Aibo()
+		public Live_Aibo()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Live_Aibo_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
-		public decimal live_Aibo_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="live_Aibo_id", Storage="_Live_Aibo_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal Live_Aibo_id
 		{
 			get
 			{
@@ -219,17 +219,17 @@ namespace SoccerScore.Compact.Linq
 			{
 				if ((this._Live_Aibo_id != value))
 				{
-					this.Onlive_Aibo_idChanging(value);
+					this.OnLive_Aibo_idChanging(value);
 					this.SendPropertyChanging();
 					this._Live_Aibo_id = value;
-					this.SendPropertyChanged("live_Aibo_id");
-					this.Onlive_Aibo_idChanged();
+					this.SendPropertyChanged("Live_Aibo_id");
+					this.OnLive_Aibo_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="NVarChar(50)")]
-		public string value
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="value", Storage="_Value", DbType="NVarChar(50)")]
+		public string Value
 		{
 			get
 			{
@@ -239,11 +239,11 @@ namespace SoccerScore.Compact.Linq
 			{
 				if ((this._Value != value))
 				{
-					this.OnvalueChanging(value);
+					this.OnValueChanging(value);
 					this.SendPropertyChanging();
 					this._Value = value;
-					this.SendPropertyChanged("value");
-					this.OnvalueChanged();
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
 				}
 			}
 		}
@@ -268,8 +268,8 @@ namespace SoccerScore.Compact.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Match_time", DbType="NVarChar(50)")]
-		public string match_time
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="match_time", Storage="_Match_time", DbType="NVarChar(50)")]
+		public string Match_time
 		{
 			get
 			{
@@ -279,11 +279,11 @@ namespace SoccerScore.Compact.Linq
 			{
 				if ((this._Match_time != value))
 				{
-					this.Onmatch_timeChanging(value);
+					this.OnMatch_timeChanging(value);
 					this.SendPropertyChanging();
 					this._Match_time = value;
-					this.SendPropertyChanged("match_time");
-					this.Onmatch_timeChanged();
+					this.SendPropertyChanged("Match_time");
+					this.OnMatch_timeChanged();
 				}
 			}
 		}
@@ -369,19 +369,19 @@ namespace SoccerScore.Compact.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute()]
-	public partial class live_okoo : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="live_okoo")]
+	public partial class Live_okoo : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private decimal _live_okoo_id;
+		private decimal _Live_okoo_id;
 		
-		private System.Nullable<int> _value;
+		private System.Nullable<int> _Value;
 		
 		private string _LeagueName;
 		
-		private string _match_time;
+		private string _Match_time;
 		
 		private string _MatchOrder1_HomeName;
 		
@@ -389,11 +389,11 @@ namespace SoccerScore.Compact.Linq
 		
 		private string _MatchOrder1_AwayName;
 		
-		private string _ok_1_0;
+		private string _Ok_1_0;
 		
-		private string _ok_1_1;
+		private string _Ok_1_1;
 		
-		private string _ok_1_2;
+		private string _Ok_1_2;
 		
 		private string _MatchInfo;
 		
@@ -407,26 +407,26 @@ namespace SoccerScore.Compact.Linq
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onlive_okoo_idChanging(decimal value);
-    partial void Onlive_okoo_idChanged();
-    partial void OnvalueChanging(System.Nullable<int> value);
-    partial void OnvalueChanged();
+    partial void OnLive_okoo_idChanging(decimal value);
+    partial void OnLive_okoo_idChanged();
+    partial void OnValueChanging(System.Nullable<int> value);
+    partial void OnValueChanged();
     partial void OnLeagueNameChanging(string value);
     partial void OnLeagueNameChanged();
-    partial void Onmatch_timeChanging(string value);
-    partial void Onmatch_timeChanged();
+    partial void OnMatch_timeChanging(string value);
+    partial void OnMatch_timeChanged();
     partial void OnMatchOrder1_HomeNameChanging(string value);
     partial void OnMatchOrder1_HomeNameChanged();
     partial void OnMatchOrder1_HandicapNumberChanging(string value);
     partial void OnMatchOrder1_HandicapNumberChanged();
     partial void OnMatchOrder1_AwayNameChanging(string value);
     partial void OnMatchOrder1_AwayNameChanged();
-    partial void Onok_1_0Changing(string value);
-    partial void Onok_1_0Changed();
-    partial void Onok_1_1Changing(string value);
-    partial void Onok_1_1Changed();
-    partial void Onok_1_2Changing(string value);
-    partial void Onok_1_2Changed();
+    partial void OnOk_1_0Changing(string value);
+    partial void OnOk_1_0Changed();
+    partial void OnOk_1_1Changing(string value);
+    partial void OnOk_1_1Changed();
+    partial void OnOk_1_2Changing(string value);
+    partial void OnOk_1_2Changed();
     partial void OnMatchInfoChanging(string value);
     partial void OnMatchInfoChanged();
     partial void OnMatch_1_WinChanging(string value);
@@ -437,47 +437,47 @@ namespace SoccerScore.Compact.Linq
     partial void OnMatch_1_LostChanged();
     #endregion
 		
-		public live_okoo()
+		public Live_okoo()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_live_okoo_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
-		public decimal live_okoo_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="live_okoo_id", Storage="_Live_okoo_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal Live_okoo_id
 		{
 			get
 			{
-				return this._live_okoo_id;
+				return this._Live_okoo_id;
 			}
 			set
 			{
-				if ((this._live_okoo_id != value))
+				if ((this._Live_okoo_id != value))
 				{
-					this.Onlive_okoo_idChanging(value);
+					this.OnLive_okoo_idChanging(value);
 					this.SendPropertyChanging();
-					this._live_okoo_id = value;
-					this.SendPropertyChanged("live_okoo_id");
-					this.Onlive_okoo_idChanged();
+					this._Live_okoo_id = value;
+					this.SendPropertyChanged("Live_okoo_id");
+					this.OnLive_okoo_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_value", DbType="Int")]
-		public System.Nullable<int> value
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="value", Storage="_Value", DbType="Int")]
+		public System.Nullable<int> Value
 		{
 			get
 			{
-				return this._value;
+				return this._Value;
 			}
 			set
 			{
-				if ((this._value != value))
+				if ((this._Value != value))
 				{
-					this.OnvalueChanging(value);
+					this.OnValueChanging(value);
 					this.SendPropertyChanging();
-					this._value = value;
-					this.SendPropertyChanged("value");
-					this.OnvalueChanged();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
 				}
 			}
 		}
@@ -502,22 +502,22 @@ namespace SoccerScore.Compact.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_match_time", DbType="NVarChar(50)")]
-		public string match_time
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="match_time", Storage="_Match_time", DbType="NVarChar(50)")]
+		public string Match_time
 		{
 			get
 			{
-				return this._match_time;
+				return this._Match_time;
 			}
 			set
 			{
-				if ((this._match_time != value))
+				if ((this._Match_time != value))
 				{
-					this.Onmatch_timeChanging(value);
+					this.OnMatch_timeChanging(value);
 					this.SendPropertyChanging();
-					this._match_time = value;
-					this.SendPropertyChanged("match_time");
-					this.Onmatch_timeChanged();
+					this._Match_time = value;
+					this.SendPropertyChanged("Match_time");
+					this.OnMatch_timeChanged();
 				}
 			}
 		}
@@ -582,62 +582,62 @@ namespace SoccerScore.Compact.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ok_1_0", DbType="NVarChar(50)")]
-		public string ok_1_0
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="ok_1_0", Storage="_Ok_1_0", DbType="NVarChar(50)")]
+		public string Ok_1_0
 		{
 			get
 			{
-				return this._ok_1_0;
+				return this._Ok_1_0;
 			}
 			set
 			{
-				if ((this._ok_1_0 != value))
+				if ((this._Ok_1_0 != value))
 				{
-					this.Onok_1_0Changing(value);
+					this.OnOk_1_0Changing(value);
 					this.SendPropertyChanging();
-					this._ok_1_0 = value;
-					this.SendPropertyChanged("ok_1_0");
-					this.Onok_1_0Changed();
+					this._Ok_1_0 = value;
+					this.SendPropertyChanged("Ok_1_0");
+					this.OnOk_1_0Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ok_1_1", DbType="NVarChar(50)")]
-		public string ok_1_1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="ok_1_1", Storage="_Ok_1_1", DbType="NVarChar(50)")]
+		public string Ok_1_1
 		{
 			get
 			{
-				return this._ok_1_1;
+				return this._Ok_1_1;
 			}
 			set
 			{
-				if ((this._ok_1_1 != value))
+				if ((this._Ok_1_1 != value))
 				{
-					this.Onok_1_1Changing(value);
+					this.OnOk_1_1Changing(value);
 					this.SendPropertyChanging();
-					this._ok_1_1 = value;
-					this.SendPropertyChanged("ok_1_1");
-					this.Onok_1_1Changed();
+					this._Ok_1_1 = value;
+					this.SendPropertyChanged("Ok_1_1");
+					this.OnOk_1_1Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ok_1_2", DbType="NVarChar(50)")]
-		public string ok_1_2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="ok_1_2", Storage="_Ok_1_2", DbType="NVarChar(50)")]
+		public string Ok_1_2
 		{
 			get
 			{
-				return this._ok_1_2;
+				return this._Ok_1_2;
 			}
 			set
 			{
-				if ((this._ok_1_2 != value))
+				if ((this._Ok_1_2 != value))
 				{
-					this.Onok_1_2Changing(value);
+					this.OnOk_1_2Changing(value);
 					this.SendPropertyChanging();
-					this._ok_1_2 = value;
-					this.SendPropertyChanged("ok_1_2");
-					this.Onok_1_2Changed();
+					this._Ok_1_2 = value;
+					this.SendPropertyChanged("Ok_1_2");
+					this.OnOk_1_2Changed();
 				}
 			}
 		}
@@ -743,307 +743,307 @@ namespace SoccerScore.Compact.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute()]
-	public partial class live_Table : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="live_Table")]
+	public partial class Live_Table : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private decimal _live_table_id;
+		private decimal _Live_table_id;
 		
-		private string _html_position;
+		private string _Html_position;
 		
-		private string _home_team_big;
+		private string _Home_team_big;
 		
-		private string _away_team_big;
+		private string _Away_team_big;
 		
-		private string _match_type;
+		private string _Match_type;
 		
-		private string _s_date;
+		private string _S_date;
 		
-		private string _s_time;
+		private string _S_time;
 		
-		private string _status;
+		private string _Status;
 		
-		private string _home_team;
+		private string _Home_team;
 		
-		private string _away_team;
+		private string _Away_team;
 		
-		private string _full_time_score;
+		private string _Full_time_score;
 		
-		private string _half_time_score;
+		private string _Half_time_score;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onlive_table_idChanging(decimal value);
-    partial void Onlive_table_idChanged();
-    partial void Onhtml_positionChanging(string value);
-    partial void Onhtml_positionChanged();
-    partial void Onhome_team_bigChanging(string value);
-    partial void Onhome_team_bigChanged();
-    partial void Onaway_team_bigChanging(string value);
-    partial void Onaway_team_bigChanged();
-    partial void Onmatch_typeChanging(string value);
-    partial void Onmatch_typeChanged();
-    partial void Ons_dateChanging(string value);
-    partial void Ons_dateChanged();
-    partial void Ons_timeChanging(string value);
-    partial void Ons_timeChanged();
-    partial void OnstatusChanging(string value);
-    partial void OnstatusChanged();
-    partial void Onhome_teamChanging(string value);
-    partial void Onhome_teamChanged();
-    partial void Onaway_teamChanging(string value);
-    partial void Onaway_teamChanged();
-    partial void Onfull_time_scoreChanging(string value);
-    partial void Onfull_time_scoreChanged();
-    partial void Onhalf_time_scoreChanging(string value);
-    partial void Onhalf_time_scoreChanged();
+    partial void OnLive_table_idChanging(decimal value);
+    partial void OnLive_table_idChanged();
+    partial void OnHtml_positionChanging(string value);
+    partial void OnHtml_positionChanged();
+    partial void OnHome_team_bigChanging(string value);
+    partial void OnHome_team_bigChanged();
+    partial void OnAway_team_bigChanging(string value);
+    partial void OnAway_team_bigChanged();
+    partial void OnMatch_typeChanging(string value);
+    partial void OnMatch_typeChanged();
+    partial void OnS_dateChanging(string value);
+    partial void OnS_dateChanged();
+    partial void OnS_timeChanging(string value);
+    partial void OnS_timeChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    partial void OnHome_teamChanging(string value);
+    partial void OnHome_teamChanged();
+    partial void OnAway_teamChanging(string value);
+    partial void OnAway_teamChanged();
+    partial void OnFull_time_scoreChanging(string value);
+    partial void OnFull_time_scoreChanged();
+    partial void OnHalf_time_scoreChanging(string value);
+    partial void OnHalf_time_scoreChanged();
     #endregion
 		
-		public live_Table()
+		public Live_Table()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_live_table_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
-		public decimal live_table_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="live_table_id", Storage="_Live_table_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal Live_table_id
 		{
 			get
 			{
-				return this._live_table_id;
+				return this._Live_table_id;
 			}
 			set
 			{
-				if ((this._live_table_id != value))
+				if ((this._Live_table_id != value))
 				{
-					this.Onlive_table_idChanging(value);
+					this.OnLive_table_idChanging(value);
 					this.SendPropertyChanging();
-					this._live_table_id = value;
-					this.SendPropertyChanged("live_table_id");
-					this.Onlive_table_idChanged();
+					this._Live_table_id = value;
+					this.SendPropertyChanged("Live_table_id");
+					this.OnLive_table_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_html_position", DbType="NVarChar(50)")]
-		public string html_position
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="html_position", Storage="_Html_position", DbType="NVarChar(50)")]
+		public string Html_position
 		{
 			get
 			{
-				return this._html_position;
+				return this._Html_position;
 			}
 			set
 			{
-				if ((this._html_position != value))
+				if ((this._Html_position != value))
 				{
-					this.Onhtml_positionChanging(value);
+					this.OnHtml_positionChanging(value);
 					this.SendPropertyChanging();
-					this._html_position = value;
-					this.SendPropertyChanged("html_position");
-					this.Onhtml_positionChanged();
+					this._Html_position = value;
+					this.SendPropertyChanged("Html_position");
+					this.OnHtml_positionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_team_big", DbType="NVarChar(50)")]
-		public string home_team_big
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_team_big", Storage="_Home_team_big", DbType="NVarChar(50)")]
+		public string Home_team_big
 		{
 			get
 			{
-				return this._home_team_big;
+				return this._Home_team_big;
 			}
 			set
 			{
-				if ((this._home_team_big != value))
+				if ((this._Home_team_big != value))
 				{
-					this.Onhome_team_bigChanging(value);
+					this.OnHome_team_bigChanging(value);
 					this.SendPropertyChanging();
-					this._home_team_big = value;
-					this.SendPropertyChanged("home_team_big");
-					this.Onhome_team_bigChanged();
+					this._Home_team_big = value;
+					this.SendPropertyChanged("Home_team_big");
+					this.OnHome_team_bigChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_team_big", DbType="NVarChar(50)")]
-		public string away_team_big
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_team_big", Storage="_Away_team_big", DbType="NVarChar(50)")]
+		public string Away_team_big
 		{
 			get
 			{
-				return this._away_team_big;
+				return this._Away_team_big;
 			}
 			set
 			{
-				if ((this._away_team_big != value))
+				if ((this._Away_team_big != value))
 				{
-					this.Onaway_team_bigChanging(value);
+					this.OnAway_team_bigChanging(value);
 					this.SendPropertyChanging();
-					this._away_team_big = value;
-					this.SendPropertyChanged("away_team_big");
-					this.Onaway_team_bigChanged();
+					this._Away_team_big = value;
+					this.SendPropertyChanged("Away_team_big");
+					this.OnAway_team_bigChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_match_type", DbType="NVarChar(50)")]
-		public string match_type
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="match_type", Storage="_Match_type", DbType="NVarChar(50)")]
+		public string Match_type
 		{
 			get
 			{
-				return this._match_type;
+				return this._Match_type;
 			}
 			set
 			{
-				if ((this._match_type != value))
+				if ((this._Match_type != value))
 				{
-					this.Onmatch_typeChanging(value);
+					this.OnMatch_typeChanging(value);
 					this.SendPropertyChanging();
-					this._match_type = value;
-					this.SendPropertyChanged("match_type");
-					this.Onmatch_typeChanged();
+					this._Match_type = value;
+					this.SendPropertyChanged("Match_type");
+					this.OnMatch_typeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_s_date", DbType="NVarChar(50)")]
-		public string s_date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="s_date", Storage="_S_date", DbType="NVarChar(50)")]
+		public string S_date
 		{
 			get
 			{
-				return this._s_date;
+				return this._S_date;
 			}
 			set
 			{
-				if ((this._s_date != value))
+				if ((this._S_date != value))
 				{
-					this.Ons_dateChanging(value);
+					this.OnS_dateChanging(value);
 					this.SendPropertyChanging();
-					this._s_date = value;
-					this.SendPropertyChanged("s_date");
-					this.Ons_dateChanged();
+					this._S_date = value;
+					this.SendPropertyChanged("S_date");
+					this.OnS_dateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_s_time", DbType="NVarChar(50)")]
-		public string s_time
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="s_time", Storage="_S_time", DbType="NVarChar(50)")]
+		public string S_time
 		{
 			get
 			{
-				return this._s_time;
+				return this._S_time;
 			}
 			set
 			{
-				if ((this._s_time != value))
+				if ((this._S_time != value))
 				{
-					this.Ons_timeChanging(value);
+					this.OnS_timeChanging(value);
 					this.SendPropertyChanging();
-					this._s_time = value;
-					this.SendPropertyChanged("s_time");
-					this.Ons_timeChanged();
+					this._S_time = value;
+					this.SendPropertyChanged("S_time");
+					this.OnS_timeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
-		public string status
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="status", Storage="_Status", DbType="NVarChar(50)")]
+		public string Status
 		{
 			get
 			{
-				return this._status;
+				return this._Status;
 			}
 			set
 			{
-				if ((this._status != value))
+				if ((this._Status != value))
 				{
-					this.OnstatusChanging(value);
+					this.OnStatusChanging(value);
 					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_team", DbType="NVarChar(50)")]
-		public string home_team
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_team", Storage="_Home_team", DbType="NVarChar(50)")]
+		public string Home_team
 		{
 			get
 			{
-				return this._home_team;
+				return this._Home_team;
 			}
 			set
 			{
-				if ((this._home_team != value))
+				if ((this._Home_team != value))
 				{
-					this.Onhome_teamChanging(value);
+					this.OnHome_teamChanging(value);
 					this.SendPropertyChanging();
-					this._home_team = value;
-					this.SendPropertyChanged("home_team");
-					this.Onhome_teamChanged();
+					this._Home_team = value;
+					this.SendPropertyChanged("Home_team");
+					this.OnHome_teamChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_team", DbType="NVarChar(50)")]
-		public string away_team
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_team", Storage="_Away_team", DbType="NVarChar(50)")]
+		public string Away_team
 		{
 			get
 			{
-				return this._away_team;
+				return this._Away_team;
 			}
 			set
 			{
-				if ((this._away_team != value))
+				if ((this._Away_team != value))
 				{
-					this.Onaway_teamChanging(value);
+					this.OnAway_teamChanging(value);
 					this.SendPropertyChanging();
-					this._away_team = value;
-					this.SendPropertyChanged("away_team");
-					this.Onaway_teamChanged();
+					this._Away_team = value;
+					this.SendPropertyChanged("Away_team");
+					this.OnAway_teamChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_time_score", DbType="NVarChar(50)")]
-		public string full_time_score
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="full_time_score", Storage="_Full_time_score", DbType="NVarChar(50)")]
+		public string Full_time_score
 		{
 			get
 			{
-				return this._full_time_score;
+				return this._Full_time_score;
 			}
 			set
 			{
-				if ((this._full_time_score != value))
+				if ((this._Full_time_score != value))
 				{
-					this.Onfull_time_scoreChanging(value);
+					this.OnFull_time_scoreChanging(value);
 					this.SendPropertyChanging();
-					this._full_time_score = value;
-					this.SendPropertyChanged("full_time_score");
-					this.Onfull_time_scoreChanged();
+					this._Full_time_score = value;
+					this.SendPropertyChanged("Full_time_score");
+					this.OnFull_time_scoreChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_half_time_score", DbType="NVarChar(50)")]
-		public string half_time_score
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="half_time_score", Storage="_Half_time_score", DbType="NVarChar(50)")]
+		public string Half_time_score
 		{
 			get
 			{
-				return this._half_time_score;
+				return this._Half_time_score;
 			}
 			set
 			{
-				if ((this._half_time_score != value))
+				if ((this._Half_time_score != value))
 				{
-					this.Onhalf_time_scoreChanging(value);
+					this.OnHalf_time_scoreChanging(value);
 					this.SendPropertyChanging();
-					this._half_time_score = value;
-					this.SendPropertyChanged("half_time_score");
-					this.Onhalf_time_scoreChanged();
+					this._Half_time_score = value;
+					this.SendPropertyChanged("Half_time_score");
+					this.OnHalf_time_scoreChanged();
 				}
 			}
 		}
@@ -1069,379 +1069,379 @@ namespace SoccerScore.Compact.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute()]
-	public partial class live_Table_lib : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="live_Table_lib")]
+	public partial class Live_Table_lib : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private decimal _live_table_lib_id;
+		private decimal _Live_table_lib_id;
 		
-		private System.Nullable<int> _html_position;
+		private System.Nullable<int> _Html_position;
 		
-		private System.Nullable<int> _home_team_big;
+		private System.Nullable<int> _Home_team_big;
 		
-		private System.Nullable<int> _away_team_big;
+		private System.Nullable<int> _Away_team_big;
 		
-		private string _match_type;
+		private string _Match_type;
 		
-		private System.Nullable<System.DateTime> _match_time;
+		private System.Nullable<System.DateTime> _Match_time;
 		
-		private string _status;
+		private string _Status;
 		
-		private string _home_team;
+		private string _Home_team;
 		
-		private string _away_team;
+		private string _Away_team;
 		
-		private System.Nullable<int> _home_red_card;
+		private System.Nullable<int> _Home_red_card;
 		
-		private System.Nullable<int> _away_red_card;
+		private System.Nullable<int> _Away_red_card;
 		
-		private System.Nullable<int> _full_home_goals;
+		private System.Nullable<int> _Full_home_goals;
 		
-		private System.Nullable<int> _full_away_goals;
+		private System.Nullable<int> _Full_away_goals;
 		
-		private System.Nullable<int> _half_home_goals;
+		private System.Nullable<int> _Half_home_goals;
 		
-		private System.Nullable<int> _half_away_goals;
+		private System.Nullable<int> _Half_away_goals;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onlive_table_lib_idChanging(decimal value);
-    partial void Onlive_table_lib_idChanged();
-    partial void Onhtml_positionChanging(System.Nullable<int> value);
-    partial void Onhtml_positionChanged();
-    partial void Onhome_team_bigChanging(System.Nullable<int> value);
-    partial void Onhome_team_bigChanged();
-    partial void Onaway_team_bigChanging(System.Nullable<int> value);
-    partial void Onaway_team_bigChanged();
-    partial void Onmatch_typeChanging(string value);
-    partial void Onmatch_typeChanged();
-    partial void Onmatch_timeChanging(System.Nullable<System.DateTime> value);
-    partial void Onmatch_timeChanged();
-    partial void OnstatusChanging(string value);
-    partial void OnstatusChanged();
-    partial void Onhome_teamChanging(string value);
-    partial void Onhome_teamChanged();
-    partial void Onaway_teamChanging(string value);
-    partial void Onaway_teamChanged();
-    partial void Onhome_red_cardChanging(System.Nullable<int> value);
-    partial void Onhome_red_cardChanged();
-    partial void Onaway_red_cardChanging(System.Nullable<int> value);
-    partial void Onaway_red_cardChanged();
-    partial void Onfull_home_goalsChanging(System.Nullable<int> value);
-    partial void Onfull_home_goalsChanged();
-    partial void Onfull_away_goalsChanging(System.Nullable<int> value);
-    partial void Onfull_away_goalsChanged();
-    partial void Onhalf_home_goalsChanging(System.Nullable<int> value);
-    partial void Onhalf_home_goalsChanged();
-    partial void Onhalf_away_goalsChanging(System.Nullable<int> value);
-    partial void Onhalf_away_goalsChanged();
+    partial void OnLive_table_lib_idChanging(decimal value);
+    partial void OnLive_table_lib_idChanged();
+    partial void OnHtml_positionChanging(System.Nullable<int> value);
+    partial void OnHtml_positionChanged();
+    partial void OnHome_team_bigChanging(System.Nullable<int> value);
+    partial void OnHome_team_bigChanged();
+    partial void OnAway_team_bigChanging(System.Nullable<int> value);
+    partial void OnAway_team_bigChanged();
+    partial void OnMatch_typeChanging(string value);
+    partial void OnMatch_typeChanged();
+    partial void OnMatch_timeChanging(System.Nullable<System.DateTime> value);
+    partial void OnMatch_timeChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    partial void OnHome_teamChanging(string value);
+    partial void OnHome_teamChanged();
+    partial void OnAway_teamChanging(string value);
+    partial void OnAway_teamChanged();
+    partial void OnHome_red_cardChanging(System.Nullable<int> value);
+    partial void OnHome_red_cardChanged();
+    partial void OnAway_red_cardChanging(System.Nullable<int> value);
+    partial void OnAway_red_cardChanged();
+    partial void OnFull_home_goalsChanging(System.Nullable<int> value);
+    partial void OnFull_home_goalsChanged();
+    partial void OnFull_away_goalsChanging(System.Nullable<int> value);
+    partial void OnFull_away_goalsChanged();
+    partial void OnHalf_home_goalsChanging(System.Nullable<int> value);
+    partial void OnHalf_home_goalsChanged();
+    partial void OnHalf_away_goalsChanging(System.Nullable<int> value);
+    partial void OnHalf_away_goalsChanged();
     #endregion
 		
-		public live_Table_lib()
+		public Live_Table_lib()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_live_table_lib_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
-		public decimal live_table_lib_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="live_table_lib_id", Storage="_Live_table_lib_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal Live_table_lib_id
 		{
 			get
 			{
-				return this._live_table_lib_id;
+				return this._Live_table_lib_id;
 			}
 			set
 			{
-				if ((this._live_table_lib_id != value))
+				if ((this._Live_table_lib_id != value))
 				{
-					this.Onlive_table_lib_idChanging(value);
+					this.OnLive_table_lib_idChanging(value);
 					this.SendPropertyChanging();
-					this._live_table_lib_id = value;
-					this.SendPropertyChanged("live_table_lib_id");
-					this.Onlive_table_lib_idChanged();
+					this._Live_table_lib_id = value;
+					this.SendPropertyChanged("Live_table_lib_id");
+					this.OnLive_table_lib_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_html_position", DbType="Int")]
-		public System.Nullable<int> html_position
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="html_position", Storage="_Html_position", DbType="Int")]
+		public System.Nullable<int> Html_position
 		{
 			get
 			{
-				return this._html_position;
+				return this._Html_position;
 			}
 			set
 			{
-				if ((this._html_position != value))
+				if ((this._Html_position != value))
 				{
-					this.Onhtml_positionChanging(value);
+					this.OnHtml_positionChanging(value);
 					this.SendPropertyChanging();
-					this._html_position = value;
-					this.SendPropertyChanged("html_position");
-					this.Onhtml_positionChanged();
+					this._Html_position = value;
+					this.SendPropertyChanged("Html_position");
+					this.OnHtml_positionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_team_big", DbType="Int")]
-		public System.Nullable<int> home_team_big
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_team_big", Storage="_Home_team_big", DbType="Int")]
+		public System.Nullable<int> Home_team_big
 		{
 			get
 			{
-				return this._home_team_big;
+				return this._Home_team_big;
 			}
 			set
 			{
-				if ((this._home_team_big != value))
+				if ((this._Home_team_big != value))
 				{
-					this.Onhome_team_bigChanging(value);
+					this.OnHome_team_bigChanging(value);
 					this.SendPropertyChanging();
-					this._home_team_big = value;
-					this.SendPropertyChanged("home_team_big");
-					this.Onhome_team_bigChanged();
+					this._Home_team_big = value;
+					this.SendPropertyChanged("Home_team_big");
+					this.OnHome_team_bigChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_team_big", DbType="Int")]
-		public System.Nullable<int> away_team_big
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_team_big", Storage="_Away_team_big", DbType="Int")]
+		public System.Nullable<int> Away_team_big
 		{
 			get
 			{
-				return this._away_team_big;
+				return this._Away_team_big;
 			}
 			set
 			{
-				if ((this._away_team_big != value))
+				if ((this._Away_team_big != value))
 				{
-					this.Onaway_team_bigChanging(value);
+					this.OnAway_team_bigChanging(value);
 					this.SendPropertyChanging();
-					this._away_team_big = value;
-					this.SendPropertyChanged("away_team_big");
-					this.Onaway_team_bigChanged();
+					this._Away_team_big = value;
+					this.SendPropertyChanged("Away_team_big");
+					this.OnAway_team_bigChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_match_type", DbType="NVarChar(50)")]
-		public string match_type
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="match_type", Storage="_Match_type", DbType="NVarChar(50)")]
+		public string Match_type
 		{
 			get
 			{
-				return this._match_type;
+				return this._Match_type;
 			}
 			set
 			{
-				if ((this._match_type != value))
+				if ((this._Match_type != value))
 				{
-					this.Onmatch_typeChanging(value);
+					this.OnMatch_typeChanging(value);
 					this.SendPropertyChanging();
-					this._match_type = value;
-					this.SendPropertyChanged("match_type");
-					this.Onmatch_typeChanged();
+					this._Match_type = value;
+					this.SendPropertyChanged("Match_type");
+					this.OnMatch_typeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_match_time", DbType="DateTime")]
-		public System.Nullable<System.DateTime> match_time
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="match_time", Storage="_Match_time", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Match_time
 		{
 			get
 			{
-				return this._match_time;
+				return this._Match_time;
 			}
 			set
 			{
-				if ((this._match_time != value))
+				if ((this._Match_time != value))
 				{
-					this.Onmatch_timeChanging(value);
+					this.OnMatch_timeChanging(value);
 					this.SendPropertyChanging();
-					this._match_time = value;
-					this.SendPropertyChanged("match_time");
-					this.Onmatch_timeChanged();
+					this._Match_time = value;
+					this.SendPropertyChanged("Match_time");
+					this.OnMatch_timeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
-		public string status
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="status", Storage="_Status", DbType="NVarChar(50)")]
+		public string Status
 		{
 			get
 			{
-				return this._status;
+				return this._Status;
 			}
 			set
 			{
-				if ((this._status != value))
+				if ((this._Status != value))
 				{
-					this.OnstatusChanging(value);
+					this.OnStatusChanging(value);
 					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_team", DbType="NVarChar(50)")]
-		public string home_team
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_team", Storage="_Home_team", DbType="NVarChar(50)")]
+		public string Home_team
 		{
 			get
 			{
-				return this._home_team;
+				return this._Home_team;
 			}
 			set
 			{
-				if ((this._home_team != value))
+				if ((this._Home_team != value))
 				{
-					this.Onhome_teamChanging(value);
+					this.OnHome_teamChanging(value);
 					this.SendPropertyChanging();
-					this._home_team = value;
-					this.SendPropertyChanged("home_team");
-					this.Onhome_teamChanged();
+					this._Home_team = value;
+					this.SendPropertyChanged("Home_team");
+					this.OnHome_teamChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_team", DbType="NVarChar(50)")]
-		public string away_team
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_team", Storage="_Away_team", DbType="NVarChar(50)")]
+		public string Away_team
 		{
 			get
 			{
-				return this._away_team;
+				return this._Away_team;
 			}
 			set
 			{
-				if ((this._away_team != value))
+				if ((this._Away_team != value))
 				{
-					this.Onaway_teamChanging(value);
+					this.OnAway_teamChanging(value);
 					this.SendPropertyChanging();
-					this._away_team = value;
-					this.SendPropertyChanged("away_team");
-					this.Onaway_teamChanged();
+					this._Away_team = value;
+					this.SendPropertyChanged("Away_team");
+					this.OnAway_teamChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_red_card", DbType="Int")]
-		public System.Nullable<int> home_red_card
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_red_card", Storage="_Home_red_card", DbType="Int")]
+		public System.Nullable<int> Home_red_card
 		{
 			get
 			{
-				return this._home_red_card;
+				return this._Home_red_card;
 			}
 			set
 			{
-				if ((this._home_red_card != value))
+				if ((this._Home_red_card != value))
 				{
-					this.Onhome_red_cardChanging(value);
+					this.OnHome_red_cardChanging(value);
 					this.SendPropertyChanging();
-					this._home_red_card = value;
-					this.SendPropertyChanged("home_red_card");
-					this.Onhome_red_cardChanged();
+					this._Home_red_card = value;
+					this.SendPropertyChanged("Home_red_card");
+					this.OnHome_red_cardChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_red_card", DbType="Int")]
-		public System.Nullable<int> away_red_card
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_red_card", Storage="_Away_red_card", DbType="Int")]
+		public System.Nullable<int> Away_red_card
 		{
 			get
 			{
-				return this._away_red_card;
+				return this._Away_red_card;
 			}
 			set
 			{
-				if ((this._away_red_card != value))
+				if ((this._Away_red_card != value))
 				{
-					this.Onaway_red_cardChanging(value);
+					this.OnAway_red_cardChanging(value);
 					this.SendPropertyChanging();
-					this._away_red_card = value;
-					this.SendPropertyChanged("away_red_card");
-					this.Onaway_red_cardChanged();
+					this._Away_red_card = value;
+					this.SendPropertyChanged("Away_red_card");
+					this.OnAway_red_cardChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_home_goals", DbType="Int")]
-		public System.Nullable<int> full_home_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="full_home_goals", Storage="_Full_home_goals", DbType="Int")]
+		public System.Nullable<int> Full_home_goals
 		{
 			get
 			{
-				return this._full_home_goals;
+				return this._Full_home_goals;
 			}
 			set
 			{
-				if ((this._full_home_goals != value))
+				if ((this._Full_home_goals != value))
 				{
-					this.Onfull_home_goalsChanging(value);
+					this.OnFull_home_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._full_home_goals = value;
-					this.SendPropertyChanged("full_home_goals");
-					this.Onfull_home_goalsChanged();
+					this._Full_home_goals = value;
+					this.SendPropertyChanged("Full_home_goals");
+					this.OnFull_home_goalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_away_goals", DbType="Int")]
-		public System.Nullable<int> full_away_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="full_away_goals", Storage="_Full_away_goals", DbType="Int")]
+		public System.Nullable<int> Full_away_goals
 		{
 			get
 			{
-				return this._full_away_goals;
+				return this._Full_away_goals;
 			}
 			set
 			{
-				if ((this._full_away_goals != value))
+				if ((this._Full_away_goals != value))
 				{
-					this.Onfull_away_goalsChanging(value);
+					this.OnFull_away_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._full_away_goals = value;
-					this.SendPropertyChanged("full_away_goals");
-					this.Onfull_away_goalsChanged();
+					this._Full_away_goals = value;
+					this.SendPropertyChanged("Full_away_goals");
+					this.OnFull_away_goalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_half_home_goals", DbType="Int")]
-		public System.Nullable<int> half_home_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="half_home_goals", Storage="_Half_home_goals", DbType="Int")]
+		public System.Nullable<int> Half_home_goals
 		{
 			get
 			{
-				return this._half_home_goals;
+				return this._Half_home_goals;
 			}
 			set
 			{
-				if ((this._half_home_goals != value))
+				if ((this._Half_home_goals != value))
 				{
-					this.Onhalf_home_goalsChanging(value);
+					this.OnHalf_home_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._half_home_goals = value;
-					this.SendPropertyChanged("half_home_goals");
-					this.Onhalf_home_goalsChanged();
+					this._Half_home_goals = value;
+					this.SendPropertyChanged("Half_home_goals");
+					this.OnHalf_home_goalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_half_away_goals", DbType="Int")]
-		public System.Nullable<int> half_away_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="half_away_goals", Storage="_Half_away_goals", DbType="Int")]
+		public System.Nullable<int> Half_away_goals
 		{
 			get
 			{
-				return this._half_away_goals;
+				return this._Half_away_goals;
 			}
 			set
 			{
-				if ((this._half_away_goals != value))
+				if ((this._Half_away_goals != value))
 				{
-					this.Onhalf_away_goalsChanging(value);
+					this.OnHalf_away_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._half_away_goals = value;
-					this.SendPropertyChanged("half_away_goals");
-					this.Onhalf_away_goalsChanged();
+					this._Half_away_goals = value;
+					this.SendPropertyChanged("Half_away_goals");
+					this.OnHalf_away_goalsChanged();
 				}
 			}
 		}
@@ -1467,91 +1467,91 @@ namespace SoccerScore.Compact.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute()]
-	public partial class match_analysis_collection : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="match_analysis_collection")]
+	public partial class Match_analysis_collection : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private decimal _analysis_collection_id;
+		private decimal _Analysis_collection_id;
 		
-		private System.Nullable<int> _live_table_lib_id;
+		private System.Nullable<int> _Live_table_lib_id;
 		
-		private System.Nullable<int> _result_tb_lib_id;
+		private System.Nullable<int> _Result_tb_lib_id;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onanalysis_collection_idChanging(decimal value);
-    partial void Onanalysis_collection_idChanged();
-    partial void Onlive_table_lib_idChanging(System.Nullable<int> value);
-    partial void Onlive_table_lib_idChanged();
-    partial void Onresult_tb_lib_idChanging(System.Nullable<int> value);
-    partial void Onresult_tb_lib_idChanged();
+    partial void OnAnalysis_collection_idChanging(decimal value);
+    partial void OnAnalysis_collection_idChanged();
+    partial void OnLive_table_lib_idChanging(System.Nullable<int> value);
+    partial void OnLive_table_lib_idChanged();
+    partial void OnResult_tb_lib_idChanging(System.Nullable<int> value);
+    partial void OnResult_tb_lib_idChanged();
     #endregion
 		
-		public match_analysis_collection()
+		public Match_analysis_collection()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_analysis_collection_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
-		public decimal analysis_collection_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="analysis_collection_id", Storage="_Analysis_collection_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal Analysis_collection_id
 		{
 			get
 			{
-				return this._analysis_collection_id;
+				return this._Analysis_collection_id;
 			}
 			set
 			{
-				if ((this._analysis_collection_id != value))
+				if ((this._Analysis_collection_id != value))
 				{
-					this.Onanalysis_collection_idChanging(value);
+					this.OnAnalysis_collection_idChanging(value);
 					this.SendPropertyChanging();
-					this._analysis_collection_id = value;
-					this.SendPropertyChanged("analysis_collection_id");
-					this.Onanalysis_collection_idChanged();
+					this._Analysis_collection_id = value;
+					this.SendPropertyChanged("Analysis_collection_id");
+					this.OnAnalysis_collection_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_live_table_lib_id", DbType="Int")]
-		public System.Nullable<int> live_table_lib_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="live_table_lib_id", Storage="_Live_table_lib_id", DbType="Int")]
+		public System.Nullable<int> Live_table_lib_id
 		{
 			get
 			{
-				return this._live_table_lib_id;
+				return this._Live_table_lib_id;
 			}
 			set
 			{
-				if ((this._live_table_lib_id != value))
+				if ((this._Live_table_lib_id != value))
 				{
-					this.Onlive_table_lib_idChanging(value);
+					this.OnLive_table_lib_idChanging(value);
 					this.SendPropertyChanging();
-					this._live_table_lib_id = value;
-					this.SendPropertyChanged("live_table_lib_id");
-					this.Onlive_table_lib_idChanged();
+					this._Live_table_lib_id = value;
+					this.SendPropertyChanged("Live_table_lib_id");
+					this.OnLive_table_lib_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_result_tb_lib_id", DbType="Int")]
-		public System.Nullable<int> result_tb_lib_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="result_tb_lib_id", Storage="_Result_tb_lib_id", DbType="Int")]
+		public System.Nullable<int> Result_tb_lib_id
 		{
 			get
 			{
-				return this._result_tb_lib_id;
+				return this._Result_tb_lib_id;
 			}
 			set
 			{
-				if ((this._result_tb_lib_id != value))
+				if ((this._Result_tb_lib_id != value))
 				{
-					this.Onresult_tb_lib_idChanging(value);
+					this.OnResult_tb_lib_idChanging(value);
 					this.SendPropertyChanging();
-					this._result_tb_lib_id = value;
-					this.SendPropertyChanged("result_tb_lib_id");
-					this.Onresult_tb_lib_idChanged();
+					this._Result_tb_lib_id = value;
+					this.SendPropertyChanged("Result_tb_lib_id");
+					this.OnResult_tb_lib_idChanged();
 				}
 			}
 		}
@@ -1577,403 +1577,403 @@ namespace SoccerScore.Compact.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute()]
-	public partial class match_analysis_result : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="match_analysis_result")]
+	public partial class Match_analysis_result : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private decimal _analysis_result_id;
+		private decimal _Analysis_result_id;
 		
-		private decimal _live_table_lib_id;
+		private decimal _Live_table_lib_id;
 		
-		private System.Nullable<decimal> _result_tb_lib_id;
+		private System.Nullable<decimal> _Result_tb_lib_id;
 		
-		private string _pre_algorithm;
+		private string _Pre_algorithm;
 		
-		private System.Nullable<int> _pre_match_count;
+		private System.Nullable<int> _Pre_match_count;
 		
-		private System.Nullable<int> _home_w;
+		private System.Nullable<int> _Home_w;
 		
-		private System.Nullable<int> _home_d;
+		private System.Nullable<int> _Home_d;
 		
-		private System.Nullable<int> _home_l;
+		private System.Nullable<int> _Home_l;
 		
-		private System.Nullable<double> _home_goals;
+		private System.Nullable<double> _Home_goals;
 		
-		private System.Nullable<double> _away_goals;
+		private System.Nullable<double> _Away_goals;
 		
-		private System.Nullable<double> _fit_win_loss;
+		private System.Nullable<double> _Fit_win_loss;
 		
-		private System.Nullable<double> _fit_goals;
+		private System.Nullable<double> _Fit_goals;
 		
-		private System.Nullable<double> _fit_odd_even;
+		private System.Nullable<double> _Fit_odd_even;
 		
-		private string _result_fit;
+		private string _Result_fit;
 		
-		private string _result_goals;
+		private string _Result_goals;
 		
-		private string _result_wdl;
+		private string _Result_wdl;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onanalysis_result_idChanging(decimal value);
-    partial void Onanalysis_result_idChanged();
-    partial void Onlive_table_lib_idChanging(decimal value);
-    partial void Onlive_table_lib_idChanged();
-    partial void Onresult_tb_lib_idChanging(System.Nullable<decimal> value);
-    partial void Onresult_tb_lib_idChanged();
-    partial void Onpre_algorithmChanging(string value);
-    partial void Onpre_algorithmChanged();
-    partial void Onpre_match_countChanging(System.Nullable<int> value);
-    partial void Onpre_match_countChanged();
-    partial void Onhome_wChanging(System.Nullable<int> value);
-    partial void Onhome_wChanged();
-    partial void Onhome_dChanging(System.Nullable<int> value);
-    partial void Onhome_dChanged();
-    partial void Onhome_lChanging(System.Nullable<int> value);
-    partial void Onhome_lChanged();
-    partial void Onhome_goalsChanging(System.Nullable<double> value);
-    partial void Onhome_goalsChanged();
-    partial void Onaway_goalsChanging(System.Nullable<double> value);
-    partial void Onaway_goalsChanged();
-    partial void Onfit_win_lossChanging(System.Nullable<double> value);
-    partial void Onfit_win_lossChanged();
-    partial void Onfit_goalsChanging(System.Nullable<double> value);
-    partial void Onfit_goalsChanged();
-    partial void Onfit_odd_evenChanging(System.Nullable<double> value);
-    partial void Onfit_odd_evenChanged();
-    partial void Onresult_fitChanging(string value);
-    partial void Onresult_fitChanged();
-    partial void Onresult_goalsChanging(string value);
-    partial void Onresult_goalsChanged();
-    partial void Onresult_wdlChanging(string value);
-    partial void Onresult_wdlChanged();
+    partial void OnAnalysis_result_idChanging(decimal value);
+    partial void OnAnalysis_result_idChanged();
+    partial void OnLive_table_lib_idChanging(decimal value);
+    partial void OnLive_table_lib_idChanged();
+    partial void OnResult_tb_lib_idChanging(System.Nullable<decimal> value);
+    partial void OnResult_tb_lib_idChanged();
+    partial void OnPre_algorithmChanging(string value);
+    partial void OnPre_algorithmChanged();
+    partial void OnPre_match_countChanging(System.Nullable<int> value);
+    partial void OnPre_match_countChanged();
+    partial void OnHome_wChanging(System.Nullable<int> value);
+    partial void OnHome_wChanged();
+    partial void OnHome_dChanging(System.Nullable<int> value);
+    partial void OnHome_dChanged();
+    partial void OnHome_lChanging(System.Nullable<int> value);
+    partial void OnHome_lChanged();
+    partial void OnHome_goalsChanging(System.Nullable<double> value);
+    partial void OnHome_goalsChanged();
+    partial void OnAway_goalsChanging(System.Nullable<double> value);
+    partial void OnAway_goalsChanged();
+    partial void OnFit_win_lossChanging(System.Nullable<double> value);
+    partial void OnFit_win_lossChanged();
+    partial void OnFit_goalsChanging(System.Nullable<double> value);
+    partial void OnFit_goalsChanged();
+    partial void OnFit_odd_evenChanging(System.Nullable<double> value);
+    partial void OnFit_odd_evenChanged();
+    partial void OnResult_fitChanging(string value);
+    partial void OnResult_fitChanged();
+    partial void OnResult_goalsChanging(string value);
+    partial void OnResult_goalsChanged();
+    partial void OnResult_wdlChanging(string value);
+    partial void OnResult_wdlChanged();
     #endregion
 		
-		public match_analysis_result()
+		public Match_analysis_result()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_analysis_result_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
-		public decimal analysis_result_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="analysis_result_id", Storage="_Analysis_result_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal Analysis_result_id
 		{
 			get
 			{
-				return this._analysis_result_id;
+				return this._Analysis_result_id;
 			}
 			set
 			{
-				if ((this._analysis_result_id != value))
+				if ((this._Analysis_result_id != value))
 				{
-					this.Onanalysis_result_idChanging(value);
+					this.OnAnalysis_result_idChanging(value);
 					this.SendPropertyChanging();
-					this._analysis_result_id = value;
-					this.SendPropertyChanged("analysis_result_id");
-					this.Onanalysis_result_idChanged();
+					this._Analysis_result_id = value;
+					this.SendPropertyChanged("Analysis_result_id");
+					this.OnAnalysis_result_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_live_table_lib_id", DbType="Decimal(18,0) NOT NULL")]
-		public decimal live_table_lib_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="live_table_lib_id", Storage="_Live_table_lib_id", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Live_table_lib_id
 		{
 			get
 			{
-				return this._live_table_lib_id;
+				return this._Live_table_lib_id;
 			}
 			set
 			{
-				if ((this._live_table_lib_id != value))
+				if ((this._Live_table_lib_id != value))
 				{
-					this.Onlive_table_lib_idChanging(value);
+					this.OnLive_table_lib_idChanging(value);
 					this.SendPropertyChanging();
-					this._live_table_lib_id = value;
-					this.SendPropertyChanged("live_table_lib_id");
-					this.Onlive_table_lib_idChanged();
+					this._Live_table_lib_id = value;
+					this.SendPropertyChanged("Live_table_lib_id");
+					this.OnLive_table_lib_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_result_tb_lib_id", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> result_tb_lib_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="result_tb_lib_id", Storage="_Result_tb_lib_id", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> Result_tb_lib_id
 		{
 			get
 			{
-				return this._result_tb_lib_id;
+				return this._Result_tb_lib_id;
 			}
 			set
 			{
-				if ((this._result_tb_lib_id != value))
+				if ((this._Result_tb_lib_id != value))
 				{
-					this.Onresult_tb_lib_idChanging(value);
+					this.OnResult_tb_lib_idChanging(value);
 					this.SendPropertyChanging();
-					this._result_tb_lib_id = value;
-					this.SendPropertyChanged("result_tb_lib_id");
-					this.Onresult_tb_lib_idChanged();
+					this._Result_tb_lib_id = value;
+					this.SendPropertyChanged("Result_tb_lib_id");
+					this.OnResult_tb_lib_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pre_algorithm", DbType="NVarChar(20)")]
-		public string pre_algorithm
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="pre_algorithm", Storage="_Pre_algorithm", DbType="NVarChar(20)")]
+		public string Pre_algorithm
 		{
 			get
 			{
-				return this._pre_algorithm;
+				return this._Pre_algorithm;
 			}
 			set
 			{
-				if ((this._pre_algorithm != value))
+				if ((this._Pre_algorithm != value))
 				{
-					this.Onpre_algorithmChanging(value);
+					this.OnPre_algorithmChanging(value);
 					this.SendPropertyChanging();
-					this._pre_algorithm = value;
-					this.SendPropertyChanged("pre_algorithm");
-					this.Onpre_algorithmChanged();
+					this._Pre_algorithm = value;
+					this.SendPropertyChanged("Pre_algorithm");
+					this.OnPre_algorithmChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pre_match_count", DbType="Int")]
-		public System.Nullable<int> pre_match_count
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="pre_match_count", Storage="_Pre_match_count", DbType="Int")]
+		public System.Nullable<int> Pre_match_count
 		{
 			get
 			{
-				return this._pre_match_count;
+				return this._Pre_match_count;
 			}
 			set
 			{
-				if ((this._pre_match_count != value))
+				if ((this._Pre_match_count != value))
 				{
-					this.Onpre_match_countChanging(value);
+					this.OnPre_match_countChanging(value);
 					this.SendPropertyChanging();
-					this._pre_match_count = value;
-					this.SendPropertyChanged("pre_match_count");
-					this.Onpre_match_countChanged();
+					this._Pre_match_count = value;
+					this.SendPropertyChanged("Pre_match_count");
+					this.OnPre_match_countChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_w", DbType="Int")]
-		public System.Nullable<int> home_w
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_w", Storage="_Home_w", DbType="Int")]
+		public System.Nullable<int> Home_w
 		{
 			get
 			{
-				return this._home_w;
+				return this._Home_w;
 			}
 			set
 			{
-				if ((this._home_w != value))
+				if ((this._Home_w != value))
 				{
-					this.Onhome_wChanging(value);
+					this.OnHome_wChanging(value);
 					this.SendPropertyChanging();
-					this._home_w = value;
-					this.SendPropertyChanged("home_w");
-					this.Onhome_wChanged();
+					this._Home_w = value;
+					this.SendPropertyChanged("Home_w");
+					this.OnHome_wChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_d", DbType="Int")]
-		public System.Nullable<int> home_d
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_d", Storage="_Home_d", DbType="Int")]
+		public System.Nullable<int> Home_d
 		{
 			get
 			{
-				return this._home_d;
+				return this._Home_d;
 			}
 			set
 			{
-				if ((this._home_d != value))
+				if ((this._Home_d != value))
 				{
-					this.Onhome_dChanging(value);
+					this.OnHome_dChanging(value);
 					this.SendPropertyChanging();
-					this._home_d = value;
-					this.SendPropertyChanged("home_d");
-					this.Onhome_dChanged();
+					this._Home_d = value;
+					this.SendPropertyChanged("Home_d");
+					this.OnHome_dChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_l", DbType="Int")]
-		public System.Nullable<int> home_l
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_l", Storage="_Home_l", DbType="Int")]
+		public System.Nullable<int> Home_l
 		{
 			get
 			{
-				return this._home_l;
+				return this._Home_l;
 			}
 			set
 			{
-				if ((this._home_l != value))
+				if ((this._Home_l != value))
 				{
-					this.Onhome_lChanging(value);
+					this.OnHome_lChanging(value);
 					this.SendPropertyChanging();
-					this._home_l = value;
-					this.SendPropertyChanged("home_l");
-					this.Onhome_lChanged();
+					this._Home_l = value;
+					this.SendPropertyChanged("Home_l");
+					this.OnHome_lChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_goals", DbType="Float")]
-		public System.Nullable<double> home_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_goals", Storage="_Home_goals", DbType="Float")]
+		public System.Nullable<double> Home_goals
 		{
 			get
 			{
-				return this._home_goals;
+				return this._Home_goals;
 			}
 			set
 			{
-				if ((this._home_goals != value))
+				if ((this._Home_goals != value))
 				{
-					this.Onhome_goalsChanging(value);
+					this.OnHome_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._home_goals = value;
-					this.SendPropertyChanged("home_goals");
-					this.Onhome_goalsChanged();
+					this._Home_goals = value;
+					this.SendPropertyChanged("Home_goals");
+					this.OnHome_goalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_goals", DbType="Float")]
-		public System.Nullable<double> away_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_goals", Storage="_Away_goals", DbType="Float")]
+		public System.Nullable<double> Away_goals
 		{
 			get
 			{
-				return this._away_goals;
+				return this._Away_goals;
 			}
 			set
 			{
-				if ((this._away_goals != value))
+				if ((this._Away_goals != value))
 				{
-					this.Onaway_goalsChanging(value);
+					this.OnAway_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._away_goals = value;
-					this.SendPropertyChanged("away_goals");
-					this.Onaway_goalsChanged();
+					this._Away_goals = value;
+					this.SendPropertyChanged("Away_goals");
+					this.OnAway_goalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fit_win_loss", DbType="Float")]
-		public System.Nullable<double> fit_win_loss
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="fit_win_loss", Storage="_Fit_win_loss", DbType="Float")]
+		public System.Nullable<double> Fit_win_loss
 		{
 			get
 			{
-				return this._fit_win_loss;
+				return this._Fit_win_loss;
 			}
 			set
 			{
-				if ((this._fit_win_loss != value))
+				if ((this._Fit_win_loss != value))
 				{
-					this.Onfit_win_lossChanging(value);
+					this.OnFit_win_lossChanging(value);
 					this.SendPropertyChanging();
-					this._fit_win_loss = value;
-					this.SendPropertyChanged("fit_win_loss");
-					this.Onfit_win_lossChanged();
+					this._Fit_win_loss = value;
+					this.SendPropertyChanged("Fit_win_loss");
+					this.OnFit_win_lossChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fit_goals", DbType="Float")]
-		public System.Nullable<double> fit_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="fit_goals", Storage="_Fit_goals", DbType="Float")]
+		public System.Nullable<double> Fit_goals
 		{
 			get
 			{
-				return this._fit_goals;
+				return this._Fit_goals;
 			}
 			set
 			{
-				if ((this._fit_goals != value))
+				if ((this._Fit_goals != value))
 				{
-					this.Onfit_goalsChanging(value);
+					this.OnFit_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._fit_goals = value;
-					this.SendPropertyChanged("fit_goals");
-					this.Onfit_goalsChanged();
+					this._Fit_goals = value;
+					this.SendPropertyChanged("Fit_goals");
+					this.OnFit_goalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fit_odd_even", DbType="Float")]
-		public System.Nullable<double> fit_odd_even
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="fit_odd_even", Storage="_Fit_odd_even", DbType="Float")]
+		public System.Nullable<double> Fit_odd_even
 		{
 			get
 			{
-				return this._fit_odd_even;
+				return this._Fit_odd_even;
 			}
 			set
 			{
-				if ((this._fit_odd_even != value))
+				if ((this._Fit_odd_even != value))
 				{
-					this.Onfit_odd_evenChanging(value);
+					this.OnFit_odd_evenChanging(value);
 					this.SendPropertyChanging();
-					this._fit_odd_even = value;
-					this.SendPropertyChanged("fit_odd_even");
-					this.Onfit_odd_evenChanged();
+					this._Fit_odd_even = value;
+					this.SendPropertyChanged("Fit_odd_even");
+					this.OnFit_odd_evenChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_result_fit", DbType="NVarChar(20)")]
-		public string result_fit
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="result_fit", Storage="_Result_fit", DbType="NVarChar(20)")]
+		public string Result_fit
 		{
 			get
 			{
-				return this._result_fit;
+				return this._Result_fit;
 			}
 			set
 			{
-				if ((this._result_fit != value))
+				if ((this._Result_fit != value))
 				{
-					this.Onresult_fitChanging(value);
+					this.OnResult_fitChanging(value);
 					this.SendPropertyChanging();
-					this._result_fit = value;
-					this.SendPropertyChanged("result_fit");
-					this.Onresult_fitChanged();
+					this._Result_fit = value;
+					this.SendPropertyChanged("Result_fit");
+					this.OnResult_fitChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_result_goals", DbType="NVarChar(20)")]
-		public string result_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="result_goals", Storage="_Result_goals", DbType="NVarChar(20)")]
+		public string Result_goals
 		{
 			get
 			{
-				return this._result_goals;
+				return this._Result_goals;
 			}
 			set
 			{
-				if ((this._result_goals != value))
+				if ((this._Result_goals != value))
 				{
-					this.Onresult_goalsChanging(value);
+					this.OnResult_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._result_goals = value;
-					this.SendPropertyChanged("result_goals");
-					this.Onresult_goalsChanged();
+					this._Result_goals = value;
+					this.SendPropertyChanged("Result_goals");
+					this.OnResult_goalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_result_wdl", DbType="NVarChar(20)")]
-		public string result_wdl
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="result_wdl", Storage="_Result_wdl", DbType="NVarChar(20)")]
+		public string Result_wdl
 		{
 			get
 			{
-				return this._result_wdl;
+				return this._Result_wdl;
 			}
 			set
 			{
-				if ((this._result_wdl != value))
+				if ((this._Result_wdl != value))
 				{
-					this.Onresult_wdlChanging(value);
+					this.OnResult_wdlChanging(value);
 					this.SendPropertyChanging();
-					this._result_wdl = value;
-					this.SendPropertyChanged("result_wdl");
-					this.Onresult_wdlChanged();
+					this._Result_wdl = value;
+					this.SendPropertyChanged("Result_wdl");
+					this.OnResult_wdlChanged();
 				}
 			}
 		}
@@ -1999,187 +1999,187 @@ namespace SoccerScore.Compact.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute()]
-	public partial class match_table_xpath : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="match_table_xpath")]
+	public partial class Match_table_xpath : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private decimal _uri_host_id;
+		private decimal _Uri_host_id;
 		
-		private string _uri_host;
+		private string _Uri_host;
 		
-		private string _max_table_xpath;
+		private string _Max_table_xpath;
 		
-		private string _max_table_id_value;
+		private string _Max_table_id_value;
 		
-		private string _second_table_xpath;
+		private string _Second_table_xpath;
 		
-		private string _second_table_id_value;
+		private string _Second_table_id_value;
 		
-		private System.Nullable<int> _order_table_id;
+		private System.Nullable<int> _Order_table_id;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onuri_host_idChanging(decimal value);
-    partial void Onuri_host_idChanged();
-    partial void Onuri_hostChanging(string value);
-    partial void Onuri_hostChanged();
-    partial void Onmax_table_xpathChanging(string value);
-    partial void Onmax_table_xpathChanged();
-    partial void Onmax_table_id_valueChanging(string value);
-    partial void Onmax_table_id_valueChanged();
-    partial void Onsecond_table_xpathChanging(string value);
-    partial void Onsecond_table_xpathChanged();
-    partial void Onsecond_table_id_valueChanging(string value);
-    partial void Onsecond_table_id_valueChanged();
-    partial void Onorder_table_idChanging(System.Nullable<int> value);
-    partial void Onorder_table_idChanged();
+    partial void OnUri_host_idChanging(decimal value);
+    partial void OnUri_host_idChanged();
+    partial void OnUri_hostChanging(string value);
+    partial void OnUri_hostChanged();
+    partial void OnMax_table_xpathChanging(string value);
+    partial void OnMax_table_xpathChanged();
+    partial void OnMax_table_id_valueChanging(string value);
+    partial void OnMax_table_id_valueChanged();
+    partial void OnSecond_table_xpathChanging(string value);
+    partial void OnSecond_table_xpathChanged();
+    partial void OnSecond_table_id_valueChanging(string value);
+    partial void OnSecond_table_id_valueChanged();
+    partial void OnOrder_table_idChanging(System.Nullable<int> value);
+    partial void OnOrder_table_idChanged();
     #endregion
 		
-		public match_table_xpath()
+		public Match_table_xpath()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uri_host_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
-		public decimal uri_host_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="uri_host_id", Storage="_Uri_host_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal Uri_host_id
 		{
 			get
 			{
-				return this._uri_host_id;
+				return this._Uri_host_id;
 			}
 			set
 			{
-				if ((this._uri_host_id != value))
+				if ((this._Uri_host_id != value))
 				{
-					this.Onuri_host_idChanging(value);
+					this.OnUri_host_idChanging(value);
 					this.SendPropertyChanging();
-					this._uri_host_id = value;
-					this.SendPropertyChanged("uri_host_id");
-					this.Onuri_host_idChanged();
+					this._Uri_host_id = value;
+					this.SendPropertyChanged("Uri_host_id");
+					this.OnUri_host_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uri_host", DbType="NVarChar(500)")]
-		public string uri_host
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="uri_host", Storage="_Uri_host", DbType="NVarChar(500)")]
+		public string Uri_host
 		{
 			get
 			{
-				return this._uri_host;
+				return this._Uri_host;
 			}
 			set
 			{
-				if ((this._uri_host != value))
+				if ((this._Uri_host != value))
 				{
-					this.Onuri_hostChanging(value);
+					this.OnUri_hostChanging(value);
 					this.SendPropertyChanging();
-					this._uri_host = value;
-					this.SendPropertyChanged("uri_host");
-					this.Onuri_hostChanged();
+					this._Uri_host = value;
+					this.SendPropertyChanged("Uri_host");
+					this.OnUri_hostChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_max_table_xpath", DbType="NVarChar(500)")]
-		public string max_table_xpath
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="max_table_xpath", Storage="_Max_table_xpath", DbType="NVarChar(500)")]
+		public string Max_table_xpath
 		{
 			get
 			{
-				return this._max_table_xpath;
+				return this._Max_table_xpath;
 			}
 			set
 			{
-				if ((this._max_table_xpath != value))
+				if ((this._Max_table_xpath != value))
 				{
-					this.Onmax_table_xpathChanging(value);
+					this.OnMax_table_xpathChanging(value);
 					this.SendPropertyChanging();
-					this._max_table_xpath = value;
-					this.SendPropertyChanged("max_table_xpath");
-					this.Onmax_table_xpathChanged();
+					this._Max_table_xpath = value;
+					this.SendPropertyChanged("Max_table_xpath");
+					this.OnMax_table_xpathChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_max_table_id_value", DbType="NVarChar(500)")]
-		public string max_table_id_value
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="max_table_id_value", Storage="_Max_table_id_value", DbType="NVarChar(500)")]
+		public string Max_table_id_value
 		{
 			get
 			{
-				return this._max_table_id_value;
+				return this._Max_table_id_value;
 			}
 			set
 			{
-				if ((this._max_table_id_value != value))
+				if ((this._Max_table_id_value != value))
 				{
-					this.Onmax_table_id_valueChanging(value);
+					this.OnMax_table_id_valueChanging(value);
 					this.SendPropertyChanging();
-					this._max_table_id_value = value;
-					this.SendPropertyChanged("max_table_id_value");
-					this.Onmax_table_id_valueChanged();
+					this._Max_table_id_value = value;
+					this.SendPropertyChanged("Max_table_id_value");
+					this.OnMax_table_id_valueChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_second_table_xpath", DbType="NVarChar(500)")]
-		public string second_table_xpath
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="second_table_xpath", Storage="_Second_table_xpath", DbType="NVarChar(500)")]
+		public string Second_table_xpath
 		{
 			get
 			{
-				return this._second_table_xpath;
+				return this._Second_table_xpath;
 			}
 			set
 			{
-				if ((this._second_table_xpath != value))
+				if ((this._Second_table_xpath != value))
 				{
-					this.Onsecond_table_xpathChanging(value);
+					this.OnSecond_table_xpathChanging(value);
 					this.SendPropertyChanging();
-					this._second_table_xpath = value;
-					this.SendPropertyChanged("second_table_xpath");
-					this.Onsecond_table_xpathChanged();
+					this._Second_table_xpath = value;
+					this.SendPropertyChanged("Second_table_xpath");
+					this.OnSecond_table_xpathChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_second_table_id_value", DbType="NVarChar(500)")]
-		public string second_table_id_value
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="second_table_id_value", Storage="_Second_table_id_value", DbType="NVarChar(500)")]
+		public string Second_table_id_value
 		{
 			get
 			{
-				return this._second_table_id_value;
+				return this._Second_table_id_value;
 			}
 			set
 			{
-				if ((this._second_table_id_value != value))
+				if ((this._Second_table_id_value != value))
 				{
-					this.Onsecond_table_id_valueChanging(value);
+					this.OnSecond_table_id_valueChanging(value);
 					this.SendPropertyChanging();
-					this._second_table_id_value = value;
-					this.SendPropertyChanged("second_table_id_value");
-					this.Onsecond_table_id_valueChanged();
+					this._Second_table_id_value = value;
+					this.SendPropertyChanged("Second_table_id_value");
+					this.OnSecond_table_id_valueChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_table_id", DbType="Int")]
-		public System.Nullable<int> order_table_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="order_table_id", Storage="_Order_table_id", DbType="Int")]
+		public System.Nullable<int> Order_table_id
 		{
 			get
 			{
-				return this._order_table_id;
+				return this._Order_table_id;
 			}
 			set
 			{
-				if ((this._order_table_id != value))
+				if ((this._Order_table_id != value))
 				{
-					this.Onorder_table_idChanging(value);
+					this.OnOrder_table_idChanging(value);
 					this.SendPropertyChanging();
-					this._order_table_id = value;
-					this.SendPropertyChanged("order_table_id");
-					this.Onorder_table_idChanged();
+					this._Order_table_id = value;
+					this.SendPropertyChanged("Order_table_id");
+					this.OnOrder_table_idChanged();
 				}
 			}
 		}
@@ -2205,331 +2205,331 @@ namespace SoccerScore.Compact.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute()]
-	public partial class result_tb : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="result_tb")]
+	public partial class Result_tb : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private decimal _result_tb_id;
+		private decimal _Result_tb_id;
 		
-		private string _html_position;
+		private string _Html_position;
 		
-		private string _home_team_big;
+		private string _Home_team_big;
 		
-		private string _away_team_big;
+		private string _Away_team_big;
 		
-		private string _match_type;
+		private string _Match_type;
 		
-		private string _s_date;
+		private string _S_date;
 		
-		private string _s_time;
+		private string _S_time;
 		
-		private string _home_team;
+		private string _Home_team;
 		
-		private string _away_team;
+		private string _Away_team;
 		
-		private string _full_time_score;
+		private string _Full_time_score;
 		
-		private string _half_time_score;
+		private string _Half_time_score;
 		
-		private string _odds;
+		private string _Odds;
 		
-		private string _win_loss_big;
+		private string _Win_loss_big;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onresult_tb_idChanging(decimal value);
-    partial void Onresult_tb_idChanged();
-    partial void Onhtml_positionChanging(string value);
-    partial void Onhtml_positionChanged();
-    partial void Onhome_team_bigChanging(string value);
-    partial void Onhome_team_bigChanged();
-    partial void Onaway_team_bigChanging(string value);
-    partial void Onaway_team_bigChanged();
-    partial void Onmatch_typeChanging(string value);
-    partial void Onmatch_typeChanged();
-    partial void Ons_dateChanging(string value);
-    partial void Ons_dateChanged();
-    partial void Ons_timeChanging(string value);
-    partial void Ons_timeChanged();
-    partial void Onhome_teamChanging(string value);
-    partial void Onhome_teamChanged();
-    partial void Onaway_teamChanging(string value);
-    partial void Onaway_teamChanged();
-    partial void Onfull_time_scoreChanging(string value);
-    partial void Onfull_time_scoreChanged();
-    partial void Onhalf_time_scoreChanging(string value);
-    partial void Onhalf_time_scoreChanged();
-    partial void OnoddsChanging(string value);
-    partial void OnoddsChanged();
-    partial void Onwin_loss_bigChanging(string value);
-    partial void Onwin_loss_bigChanged();
+    partial void OnResult_tb_idChanging(decimal value);
+    partial void OnResult_tb_idChanged();
+    partial void OnHtml_positionChanging(string value);
+    partial void OnHtml_positionChanged();
+    partial void OnHome_team_bigChanging(string value);
+    partial void OnHome_team_bigChanged();
+    partial void OnAway_team_bigChanging(string value);
+    partial void OnAway_team_bigChanged();
+    partial void OnMatch_typeChanging(string value);
+    partial void OnMatch_typeChanged();
+    partial void OnS_dateChanging(string value);
+    partial void OnS_dateChanged();
+    partial void OnS_timeChanging(string value);
+    partial void OnS_timeChanged();
+    partial void OnHome_teamChanging(string value);
+    partial void OnHome_teamChanged();
+    partial void OnAway_teamChanging(string value);
+    partial void OnAway_teamChanged();
+    partial void OnFull_time_scoreChanging(string value);
+    partial void OnFull_time_scoreChanged();
+    partial void OnHalf_time_scoreChanging(string value);
+    partial void OnHalf_time_scoreChanged();
+    partial void OnOddsChanging(string value);
+    partial void OnOddsChanged();
+    partial void OnWin_loss_bigChanging(string value);
+    partial void OnWin_loss_bigChanged();
     #endregion
 		
-		public result_tb()
+		public Result_tb()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_result_tb_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
-		public decimal result_tb_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="result_tb_id", Storage="_Result_tb_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal Result_tb_id
 		{
 			get
 			{
-				return this._result_tb_id;
+				return this._Result_tb_id;
 			}
 			set
 			{
-				if ((this._result_tb_id != value))
+				if ((this._Result_tb_id != value))
 				{
-					this.Onresult_tb_idChanging(value);
+					this.OnResult_tb_idChanging(value);
 					this.SendPropertyChanging();
-					this._result_tb_id = value;
-					this.SendPropertyChanged("result_tb_id");
-					this.Onresult_tb_idChanged();
+					this._Result_tb_id = value;
+					this.SendPropertyChanged("Result_tb_id");
+					this.OnResult_tb_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_html_position", DbType="NVarChar(50)")]
-		public string html_position
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="html_position", Storage="_Html_position", DbType="NVarChar(50)")]
+		public string Html_position
 		{
 			get
 			{
-				return this._html_position;
+				return this._Html_position;
 			}
 			set
 			{
-				if ((this._html_position != value))
+				if ((this._Html_position != value))
 				{
-					this.Onhtml_positionChanging(value);
+					this.OnHtml_positionChanging(value);
 					this.SendPropertyChanging();
-					this._html_position = value;
-					this.SendPropertyChanged("html_position");
-					this.Onhtml_positionChanged();
+					this._Html_position = value;
+					this.SendPropertyChanged("Html_position");
+					this.OnHtml_positionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_team_big", DbType="NVarChar(50)")]
-		public string home_team_big
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_team_big", Storage="_Home_team_big", DbType="NVarChar(50)")]
+		public string Home_team_big
 		{
 			get
 			{
-				return this._home_team_big;
+				return this._Home_team_big;
 			}
 			set
 			{
-				if ((this._home_team_big != value))
+				if ((this._Home_team_big != value))
 				{
-					this.Onhome_team_bigChanging(value);
+					this.OnHome_team_bigChanging(value);
 					this.SendPropertyChanging();
-					this._home_team_big = value;
-					this.SendPropertyChanged("home_team_big");
-					this.Onhome_team_bigChanged();
+					this._Home_team_big = value;
+					this.SendPropertyChanged("Home_team_big");
+					this.OnHome_team_bigChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_team_big", DbType="NVarChar(50)")]
-		public string away_team_big
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_team_big", Storage="_Away_team_big", DbType="NVarChar(50)")]
+		public string Away_team_big
 		{
 			get
 			{
-				return this._away_team_big;
+				return this._Away_team_big;
 			}
 			set
 			{
-				if ((this._away_team_big != value))
+				if ((this._Away_team_big != value))
 				{
-					this.Onaway_team_bigChanging(value);
+					this.OnAway_team_bigChanging(value);
 					this.SendPropertyChanging();
-					this._away_team_big = value;
-					this.SendPropertyChanged("away_team_big");
-					this.Onaway_team_bigChanged();
+					this._Away_team_big = value;
+					this.SendPropertyChanged("Away_team_big");
+					this.OnAway_team_bigChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_match_type", DbType="NVarChar(50)")]
-		public string match_type
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="match_type", Storage="_Match_type", DbType="NVarChar(50)")]
+		public string Match_type
 		{
 			get
 			{
-				return this._match_type;
+				return this._Match_type;
 			}
 			set
 			{
-				if ((this._match_type != value))
+				if ((this._Match_type != value))
 				{
-					this.Onmatch_typeChanging(value);
+					this.OnMatch_typeChanging(value);
 					this.SendPropertyChanging();
-					this._match_type = value;
-					this.SendPropertyChanged("match_type");
-					this.Onmatch_typeChanged();
+					this._Match_type = value;
+					this.SendPropertyChanged("Match_type");
+					this.OnMatch_typeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_s_date", DbType="NVarChar(50)")]
-		public string s_date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="s_date", Storage="_S_date", DbType="NVarChar(50)")]
+		public string S_date
 		{
 			get
 			{
-				return this._s_date;
+				return this._S_date;
 			}
 			set
 			{
-				if ((this._s_date != value))
+				if ((this._S_date != value))
 				{
-					this.Ons_dateChanging(value);
+					this.OnS_dateChanging(value);
 					this.SendPropertyChanging();
-					this._s_date = value;
-					this.SendPropertyChanged("s_date");
-					this.Ons_dateChanged();
+					this._S_date = value;
+					this.SendPropertyChanged("S_date");
+					this.OnS_dateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_s_time", DbType="NVarChar(50)")]
-		public string s_time
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="s_time", Storage="_S_time", DbType="NVarChar(50)")]
+		public string S_time
 		{
 			get
 			{
-				return this._s_time;
+				return this._S_time;
 			}
 			set
 			{
-				if ((this._s_time != value))
+				if ((this._S_time != value))
 				{
-					this.Ons_timeChanging(value);
+					this.OnS_timeChanging(value);
 					this.SendPropertyChanging();
-					this._s_time = value;
-					this.SendPropertyChanged("s_time");
-					this.Ons_timeChanged();
+					this._S_time = value;
+					this.SendPropertyChanged("S_time");
+					this.OnS_timeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_team", DbType="NVarChar(50)")]
-		public string home_team
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_team", Storage="_Home_team", DbType="NVarChar(50)")]
+		public string Home_team
 		{
 			get
 			{
-				return this._home_team;
+				return this._Home_team;
 			}
 			set
 			{
-				if ((this._home_team != value))
+				if ((this._Home_team != value))
 				{
-					this.Onhome_teamChanging(value);
+					this.OnHome_teamChanging(value);
 					this.SendPropertyChanging();
-					this._home_team = value;
-					this.SendPropertyChanged("home_team");
-					this.Onhome_teamChanged();
+					this._Home_team = value;
+					this.SendPropertyChanged("Home_team");
+					this.OnHome_teamChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_team", DbType="NVarChar(50)")]
-		public string away_team
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_team", Storage="_Away_team", DbType="NVarChar(50)")]
+		public string Away_team
 		{
 			get
 			{
-				return this._away_team;
+				return this._Away_team;
 			}
 			set
 			{
-				if ((this._away_team != value))
+				if ((this._Away_team != value))
 				{
-					this.Onaway_teamChanging(value);
+					this.OnAway_teamChanging(value);
 					this.SendPropertyChanging();
-					this._away_team = value;
-					this.SendPropertyChanged("away_team");
-					this.Onaway_teamChanged();
+					this._Away_team = value;
+					this.SendPropertyChanged("Away_team");
+					this.OnAway_teamChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_time_score", DbType="NVarChar(50)")]
-		public string full_time_score
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="full_time_score", Storage="_Full_time_score", DbType="NVarChar(50)")]
+		public string Full_time_score
 		{
 			get
 			{
-				return this._full_time_score;
+				return this._Full_time_score;
 			}
 			set
 			{
-				if ((this._full_time_score != value))
+				if ((this._Full_time_score != value))
 				{
-					this.Onfull_time_scoreChanging(value);
+					this.OnFull_time_scoreChanging(value);
 					this.SendPropertyChanging();
-					this._full_time_score = value;
-					this.SendPropertyChanged("full_time_score");
-					this.Onfull_time_scoreChanged();
+					this._Full_time_score = value;
+					this.SendPropertyChanged("Full_time_score");
+					this.OnFull_time_scoreChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_half_time_score", DbType="NVarChar(50)")]
-		public string half_time_score
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="half_time_score", Storage="_Half_time_score", DbType="NVarChar(50)")]
+		public string Half_time_score
 		{
 			get
 			{
-				return this._half_time_score;
+				return this._Half_time_score;
 			}
 			set
 			{
-				if ((this._half_time_score != value))
+				if ((this._Half_time_score != value))
 				{
-					this.Onhalf_time_scoreChanging(value);
+					this.OnHalf_time_scoreChanging(value);
 					this.SendPropertyChanging();
-					this._half_time_score = value;
-					this.SendPropertyChanged("half_time_score");
-					this.Onhalf_time_scoreChanged();
+					this._Half_time_score = value;
+					this.SendPropertyChanged("Half_time_score");
+					this.OnHalf_time_scoreChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_odds", DbType="NVarChar(50)")]
-		public string odds
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="odds", Storage="_Odds", DbType="NVarChar(50)")]
+		public string Odds
 		{
 			get
 			{
-				return this._odds;
+				return this._Odds;
 			}
 			set
 			{
-				if ((this._odds != value))
+				if ((this._Odds != value))
 				{
-					this.OnoddsChanging(value);
+					this.OnOddsChanging(value);
 					this.SendPropertyChanging();
-					this._odds = value;
-					this.SendPropertyChanged("odds");
-					this.OnoddsChanged();
+					this._Odds = value;
+					this.SendPropertyChanged("Odds");
+					this.OnOddsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_win_loss_big", DbType="NVarChar(50)")]
-		public string win_loss_big
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="win_loss_big", Storage="_Win_loss_big", DbType="NVarChar(50)")]
+		public string Win_loss_big
 		{
 			get
 			{
-				return this._win_loss_big;
+				return this._Win_loss_big;
 			}
 			set
 			{
-				if ((this._win_loss_big != value))
+				if ((this._Win_loss_big != value))
 				{
-					this.Onwin_loss_bigChanging(value);
+					this.OnWin_loss_bigChanging(value);
 					this.SendPropertyChanging();
-					this._win_loss_big = value;
-					this.SendPropertyChanged("win_loss_big");
-					this.Onwin_loss_bigChanged();
+					this._Win_loss_big = value;
+					this.SendPropertyChanged("Win_loss_big");
+					this.OnWin_loss_bigChanged();
 				}
 			}
 		}
@@ -2555,403 +2555,403 @@ namespace SoccerScore.Compact.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute()]
-	public partial class result_tb_lib : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="result_tb_lib")]
+	public partial class Result_tb_lib : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private decimal _result_tb_lib_id;
+		private decimal _Result_tb_lib_id;
 		
-		private System.Nullable<int> _html_position;
+		private System.Nullable<int> _Html_position;
 		
-		private System.Nullable<int> _home_team_big;
+		private System.Nullable<int> _Home_team_big;
 		
-		private System.Nullable<int> _away_team_big;
+		private System.Nullable<int> _Away_team_big;
 		
-		private string _match_type;
+		private string _Match_type;
 		
-		private System.Nullable<System.DateTime> _match_time;
+		private System.Nullable<System.DateTime> _Match_time;
 		
-		private string _home_team;
+		private string _Home_team;
 		
-		private string _away_team;
+		private string _Away_team;
 		
-		private string _odds;
+		private string _Odds;
 		
-		private string _win_loss_big;
+		private string _Win_loss_big;
 		
-		private System.Nullable<int> _home_red_card;
+		private System.Nullable<int> _Home_red_card;
 		
-		private System.Nullable<int> _away_red_card;
+		private System.Nullable<int> _Away_red_card;
 		
-		private System.Nullable<int> _full_home_goals;
+		private System.Nullable<int> _Full_home_goals;
 		
-		private System.Nullable<int> _full_away_goals;
+		private System.Nullable<int> _Full_away_goals;
 		
-		private System.Nullable<int> _half_home_goals;
+		private System.Nullable<int> _Half_home_goals;
 		
-		private System.Nullable<int> _half_away_goals;
+		private System.Nullable<int> _Half_away_goals;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onresult_tb_lib_idChanging(decimal value);
-    partial void Onresult_tb_lib_idChanged();
-    partial void Onhtml_positionChanging(System.Nullable<int> value);
-    partial void Onhtml_positionChanged();
-    partial void Onhome_team_bigChanging(System.Nullable<int> value);
-    partial void Onhome_team_bigChanged();
-    partial void Onaway_team_bigChanging(System.Nullable<int> value);
-    partial void Onaway_team_bigChanged();
-    partial void Onmatch_typeChanging(string value);
-    partial void Onmatch_typeChanged();
-    partial void Onmatch_timeChanging(System.Nullable<System.DateTime> value);
-    partial void Onmatch_timeChanged();
-    partial void Onhome_teamChanging(string value);
-    partial void Onhome_teamChanged();
-    partial void Onaway_teamChanging(string value);
-    partial void Onaway_teamChanged();
-    partial void OnoddsChanging(string value);
-    partial void OnoddsChanged();
-    partial void Onwin_loss_bigChanging(string value);
-    partial void Onwin_loss_bigChanged();
-    partial void Onhome_red_cardChanging(System.Nullable<int> value);
-    partial void Onhome_red_cardChanged();
-    partial void Onaway_red_cardChanging(System.Nullable<int> value);
-    partial void Onaway_red_cardChanged();
-    partial void Onfull_home_goalsChanging(System.Nullable<int> value);
-    partial void Onfull_home_goalsChanged();
-    partial void Onfull_away_goalsChanging(System.Nullable<int> value);
-    partial void Onfull_away_goalsChanged();
-    partial void Onhalf_home_goalsChanging(System.Nullable<int> value);
-    partial void Onhalf_home_goalsChanged();
-    partial void Onhalf_away_goalsChanging(System.Nullable<int> value);
-    partial void Onhalf_away_goalsChanged();
+    partial void OnResult_tb_lib_idChanging(decimal value);
+    partial void OnResult_tb_lib_idChanged();
+    partial void OnHtml_positionChanging(System.Nullable<int> value);
+    partial void OnHtml_positionChanged();
+    partial void OnHome_team_bigChanging(System.Nullable<int> value);
+    partial void OnHome_team_bigChanged();
+    partial void OnAway_team_bigChanging(System.Nullable<int> value);
+    partial void OnAway_team_bigChanged();
+    partial void OnMatch_typeChanging(string value);
+    partial void OnMatch_typeChanged();
+    partial void OnMatch_timeChanging(System.Nullable<System.DateTime> value);
+    partial void OnMatch_timeChanged();
+    partial void OnHome_teamChanging(string value);
+    partial void OnHome_teamChanged();
+    partial void OnAway_teamChanging(string value);
+    partial void OnAway_teamChanged();
+    partial void OnOddsChanging(string value);
+    partial void OnOddsChanged();
+    partial void OnWin_loss_bigChanging(string value);
+    partial void OnWin_loss_bigChanged();
+    partial void OnHome_red_cardChanging(System.Nullable<int> value);
+    partial void OnHome_red_cardChanged();
+    partial void OnAway_red_cardChanging(System.Nullable<int> value);
+    partial void OnAway_red_cardChanged();
+    partial void OnFull_home_goalsChanging(System.Nullable<int> value);
+    partial void OnFull_home_goalsChanged();
+    partial void OnFull_away_goalsChanging(System.Nullable<int> value);
+    partial void OnFull_away_goalsChanged();
+    partial void OnHalf_home_goalsChanging(System.Nullable<int> value);
+    partial void OnHalf_home_goalsChanged();
+    partial void OnHalf_away_goalsChanging(System.Nullable<int> value);
+    partial void OnHalf_away_goalsChanged();
     #endregion
 		
-		public result_tb_lib()
+		public Result_tb_lib()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_result_tb_lib_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
-		public decimal result_tb_lib_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="result_tb_lib_id", Storage="_Result_tb_lib_id", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal Result_tb_lib_id
 		{
 			get
 			{
-				return this._result_tb_lib_id;
+				return this._Result_tb_lib_id;
 			}
 			set
 			{
-				if ((this._result_tb_lib_id != value))
+				if ((this._Result_tb_lib_id != value))
 				{
-					this.Onresult_tb_lib_idChanging(value);
+					this.OnResult_tb_lib_idChanging(value);
 					this.SendPropertyChanging();
-					this._result_tb_lib_id = value;
-					this.SendPropertyChanged("result_tb_lib_id");
-					this.Onresult_tb_lib_idChanged();
+					this._Result_tb_lib_id = value;
+					this.SendPropertyChanged("Result_tb_lib_id");
+					this.OnResult_tb_lib_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_html_position", DbType="Int")]
-		public System.Nullable<int> html_position
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="html_position", Storage="_Html_position", DbType="Int")]
+		public System.Nullable<int> Html_position
 		{
 			get
 			{
-				return this._html_position;
+				return this._Html_position;
 			}
 			set
 			{
-				if ((this._html_position != value))
+				if ((this._Html_position != value))
 				{
-					this.Onhtml_positionChanging(value);
+					this.OnHtml_positionChanging(value);
 					this.SendPropertyChanging();
-					this._html_position = value;
-					this.SendPropertyChanged("html_position");
-					this.Onhtml_positionChanged();
+					this._Html_position = value;
+					this.SendPropertyChanged("Html_position");
+					this.OnHtml_positionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_team_big", DbType="Int")]
-		public System.Nullable<int> home_team_big
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_team_big", Storage="_Home_team_big", DbType="Int")]
+		public System.Nullable<int> Home_team_big
 		{
 			get
 			{
-				return this._home_team_big;
+				return this._Home_team_big;
 			}
 			set
 			{
-				if ((this._home_team_big != value))
+				if ((this._Home_team_big != value))
 				{
-					this.Onhome_team_bigChanging(value);
+					this.OnHome_team_bigChanging(value);
 					this.SendPropertyChanging();
-					this._home_team_big = value;
-					this.SendPropertyChanged("home_team_big");
-					this.Onhome_team_bigChanged();
+					this._Home_team_big = value;
+					this.SendPropertyChanged("Home_team_big");
+					this.OnHome_team_bigChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_team_big", DbType="Int")]
-		public System.Nullable<int> away_team_big
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_team_big", Storage="_Away_team_big", DbType="Int")]
+		public System.Nullable<int> Away_team_big
 		{
 			get
 			{
-				return this._away_team_big;
+				return this._Away_team_big;
 			}
 			set
 			{
-				if ((this._away_team_big != value))
+				if ((this._Away_team_big != value))
 				{
-					this.Onaway_team_bigChanging(value);
+					this.OnAway_team_bigChanging(value);
 					this.SendPropertyChanging();
-					this._away_team_big = value;
-					this.SendPropertyChanged("away_team_big");
-					this.Onaway_team_bigChanged();
+					this._Away_team_big = value;
+					this.SendPropertyChanged("Away_team_big");
+					this.OnAway_team_bigChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_match_type", DbType="NVarChar(50)")]
-		public string match_type
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="match_type", Storage="_Match_type", DbType="NVarChar(50)")]
+		public string Match_type
 		{
 			get
 			{
-				return this._match_type;
+				return this._Match_type;
 			}
 			set
 			{
-				if ((this._match_type != value))
+				if ((this._Match_type != value))
 				{
-					this.Onmatch_typeChanging(value);
+					this.OnMatch_typeChanging(value);
 					this.SendPropertyChanging();
-					this._match_type = value;
-					this.SendPropertyChanged("match_type");
-					this.Onmatch_typeChanged();
+					this._Match_type = value;
+					this.SendPropertyChanged("Match_type");
+					this.OnMatch_typeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_match_time", DbType="DateTime")]
-		public System.Nullable<System.DateTime> match_time
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="match_time", Storage="_Match_time", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Match_time
 		{
 			get
 			{
-				return this._match_time;
+				return this._Match_time;
 			}
 			set
 			{
-				if ((this._match_time != value))
+				if ((this._Match_time != value))
 				{
-					this.Onmatch_timeChanging(value);
+					this.OnMatch_timeChanging(value);
 					this.SendPropertyChanging();
-					this._match_time = value;
-					this.SendPropertyChanged("match_time");
-					this.Onmatch_timeChanged();
+					this._Match_time = value;
+					this.SendPropertyChanged("Match_time");
+					this.OnMatch_timeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_team", DbType="NVarChar(50)")]
-		public string home_team
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_team", Storage="_Home_team", DbType="NVarChar(50)")]
+		public string Home_team
 		{
 			get
 			{
-				return this._home_team;
+				return this._Home_team;
 			}
 			set
 			{
-				if ((this._home_team != value))
+				if ((this._Home_team != value))
 				{
-					this.Onhome_teamChanging(value);
+					this.OnHome_teamChanging(value);
 					this.SendPropertyChanging();
-					this._home_team = value;
-					this.SendPropertyChanged("home_team");
-					this.Onhome_teamChanged();
+					this._Home_team = value;
+					this.SendPropertyChanged("Home_team");
+					this.OnHome_teamChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_team", DbType="NVarChar(50)")]
-		public string away_team
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_team", Storage="_Away_team", DbType="NVarChar(50)")]
+		public string Away_team
 		{
 			get
 			{
-				return this._away_team;
+				return this._Away_team;
 			}
 			set
 			{
-				if ((this._away_team != value))
+				if ((this._Away_team != value))
 				{
-					this.Onaway_teamChanging(value);
+					this.OnAway_teamChanging(value);
 					this.SendPropertyChanging();
-					this._away_team = value;
-					this.SendPropertyChanged("away_team");
-					this.Onaway_teamChanged();
+					this._Away_team = value;
+					this.SendPropertyChanged("Away_team");
+					this.OnAway_teamChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_odds", DbType="NVarChar(50)")]
-		public string odds
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="odds", Storage="_Odds", DbType="NVarChar(50)")]
+		public string Odds
 		{
 			get
 			{
-				return this._odds;
+				return this._Odds;
 			}
 			set
 			{
-				if ((this._odds != value))
+				if ((this._Odds != value))
 				{
-					this.OnoddsChanging(value);
+					this.OnOddsChanging(value);
 					this.SendPropertyChanging();
-					this._odds = value;
-					this.SendPropertyChanged("odds");
-					this.OnoddsChanged();
+					this._Odds = value;
+					this.SendPropertyChanged("Odds");
+					this.OnOddsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_win_loss_big", DbType="NVarChar(50)")]
-		public string win_loss_big
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="win_loss_big", Storage="_Win_loss_big", DbType="NVarChar(50)")]
+		public string Win_loss_big
 		{
 			get
 			{
-				return this._win_loss_big;
+				return this._Win_loss_big;
 			}
 			set
 			{
-				if ((this._win_loss_big != value))
+				if ((this._Win_loss_big != value))
 				{
-					this.Onwin_loss_bigChanging(value);
+					this.OnWin_loss_bigChanging(value);
 					this.SendPropertyChanging();
-					this._win_loss_big = value;
-					this.SendPropertyChanged("win_loss_big");
-					this.Onwin_loss_bigChanged();
+					this._Win_loss_big = value;
+					this.SendPropertyChanged("Win_loss_big");
+					this.OnWin_loss_bigChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_home_red_card", DbType="Int")]
-		public System.Nullable<int> home_red_card
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="home_red_card", Storage="_Home_red_card", DbType="Int")]
+		public System.Nullable<int> Home_red_card
 		{
 			get
 			{
-				return this._home_red_card;
+				return this._Home_red_card;
 			}
 			set
 			{
-				if ((this._home_red_card != value))
+				if ((this._Home_red_card != value))
 				{
-					this.Onhome_red_cardChanging(value);
+					this.OnHome_red_cardChanging(value);
 					this.SendPropertyChanging();
-					this._home_red_card = value;
-					this.SendPropertyChanged("home_red_card");
-					this.Onhome_red_cardChanged();
+					this._Home_red_card = value;
+					this.SendPropertyChanged("Home_red_card");
+					this.OnHome_red_cardChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_away_red_card", DbType="Int")]
-		public System.Nullable<int> away_red_card
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="away_red_card", Storage="_Away_red_card", DbType="Int")]
+		public System.Nullable<int> Away_red_card
 		{
 			get
 			{
-				return this._away_red_card;
+				return this._Away_red_card;
 			}
 			set
 			{
-				if ((this._away_red_card != value))
+				if ((this._Away_red_card != value))
 				{
-					this.Onaway_red_cardChanging(value);
+					this.OnAway_red_cardChanging(value);
 					this.SendPropertyChanging();
-					this._away_red_card = value;
-					this.SendPropertyChanged("away_red_card");
-					this.Onaway_red_cardChanged();
+					this._Away_red_card = value;
+					this.SendPropertyChanged("Away_red_card");
+					this.OnAway_red_cardChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_home_goals", DbType="Int")]
-		public System.Nullable<int> full_home_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="full_home_goals", Storage="_Full_home_goals", DbType="Int")]
+		public System.Nullable<int> Full_home_goals
 		{
 			get
 			{
-				return this._full_home_goals;
+				return this._Full_home_goals;
 			}
 			set
 			{
-				if ((this._full_home_goals != value))
+				if ((this._Full_home_goals != value))
 				{
-					this.Onfull_home_goalsChanging(value);
+					this.OnFull_home_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._full_home_goals = value;
-					this.SendPropertyChanged("full_home_goals");
-					this.Onfull_home_goalsChanged();
+					this._Full_home_goals = value;
+					this.SendPropertyChanged("Full_home_goals");
+					this.OnFull_home_goalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_away_goals", DbType="Int")]
-		public System.Nullable<int> full_away_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="full_away_goals", Storage="_Full_away_goals", DbType="Int")]
+		public System.Nullable<int> Full_away_goals
 		{
 			get
 			{
-				return this._full_away_goals;
+				return this._Full_away_goals;
 			}
 			set
 			{
-				if ((this._full_away_goals != value))
+				if ((this._Full_away_goals != value))
 				{
-					this.Onfull_away_goalsChanging(value);
+					this.OnFull_away_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._full_away_goals = value;
-					this.SendPropertyChanged("full_away_goals");
-					this.Onfull_away_goalsChanged();
+					this._Full_away_goals = value;
+					this.SendPropertyChanged("Full_away_goals");
+					this.OnFull_away_goalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_half_home_goals", DbType="Int")]
-		public System.Nullable<int> half_home_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="half_home_goals", Storage="_Half_home_goals", DbType="Int")]
+		public System.Nullable<int> Half_home_goals
 		{
 			get
 			{
-				return this._half_home_goals;
+				return this._Half_home_goals;
 			}
 			set
 			{
-				if ((this._half_home_goals != value))
+				if ((this._Half_home_goals != value))
 				{
-					this.Onhalf_home_goalsChanging(value);
+					this.OnHalf_home_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._half_home_goals = value;
-					this.SendPropertyChanged("half_home_goals");
-					this.Onhalf_home_goalsChanged();
+					this._Half_home_goals = value;
+					this.SendPropertyChanged("Half_home_goals");
+					this.OnHalf_home_goalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_half_away_goals", DbType="Int")]
-		public System.Nullable<int> half_away_goals
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="half_away_goals", Storage="_Half_away_goals", DbType="Int")]
+		public System.Nullable<int> Half_away_goals
 		{
 			get
 			{
-				return this._half_away_goals;
+				return this._Half_away_goals;
 			}
 			set
 			{
-				if ((this._half_away_goals != value))
+				if ((this._Half_away_goals != value))
 				{
-					this.Onhalf_away_goalsChanging(value);
+					this.OnHalf_away_goalsChanging(value);
 					this.SendPropertyChanging();
-					this._half_away_goals = value;
-					this.SendPropertyChanged("half_away_goals");
-					this.Onhalf_away_goalsChanged();
+					this._Half_away_goals = value;
+					this.SendPropertyChanged("Half_away_goals");
+					this.OnHalf_away_goalsChanged();
 				}
 			}
 		}

@@ -135,6 +135,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SoccerScoreCompact.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="UI_TreeChart\LoadHtmlToTree.cs" />
     <Compile Include="UI_TreeChart\ProgressBarDelegate.cs" />
     <Compile Include="DAL_HtmlSql\SevenmLiveToSql.cs" />
@@ -153,7 +158,6 @@
     <None Include="app.config" />
     <None Include="LinqSql\SoccerScoreCompact.dbml.layout">
       <DependentUpon>SoccerScoreCompact.dbml</DependentUpon>
-      <SubType>Designer</SubType>
     </None>
     <EmbeddedResource Include="Soccer Score Forecast.resx">
       <DependentUpon>Soccer Score Forecast.cs</DependentUpon>
@@ -179,11 +183,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <Compile Include="UI_TreeChart\ExportToExcel.cs" />
     <Compile Include="UI_TreeChart\LoadDataToChart.cs" />
     <Compile Include="UI_TreeChart\LoadDataToTree.cs" />

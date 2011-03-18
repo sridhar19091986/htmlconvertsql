@@ -25,24 +25,24 @@ namespace Soccer_Score_Forecast
 {
     public class AuditForecastAlgorithm
     {
-        //private SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn);
+        //private SoccerScoreCompact match = new SoccerScoreCompact(cnn);
         public List<Decimal> idExc;
         //private DateTime? todaytime;
         public AuditForecastAlgorithm(int daysDiff)
         {
-            using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-            {
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
                 //todaytime = DateTime.Now;
-                var idLive = matches.live_Table_lib
-                    .Where(e => e.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
-                    .Select(e => e.live_table_lib_id);
+                var idLive = Conn.match.Live_Table_lib
+                    .Where(e => e.Match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
+                    .Select(e => e.Live_table_lib_id);
                 idExc = idLive.ToList();
-            }
+            //}
         }
         public void top20Algorithm()
         {
-            using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-            {
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
                 int i = 0;
                 foreach (var id in idExc)
                 {
@@ -50,23 +50,23 @@ namespace Soccer_Score_Forecast
                     ProgressBarDelegate.DoSendPMessage(i);
                     Application.DoEvents();
                     RowNumberLimit r = new RowNumberLimit(id);
-                    //match_analysis_result mar = new match_analysis_result();
-                    var mar = matches.match_analysis_result.Where(e => e.live_table_lib_id == id).First();//查找需要更新的数据
-                    mar.live_table_lib_id = r.id;
-                    mar.pre_algorithm = "top20";
-                    mar.pre_match_count  = r.Top20Count;
-                    mar.home_goals = r.HomeGoals;
-                    mar.away_goals = r.AwayGoals;
-                    mar.home_w = r.hWin;
-                    mar.home_d = r.hDraw;
-                    mar.home_l = r.hLose;
-                    mar.fit_win_loss = r.CureFitWinLoss ;
-                    mar.fit_goals = r.CureFitGoals ;
-                    mar.fit_odd_even = r.CureFitOddEven ;//直接赋值，修改完成
+                    //Match_analysis_result mar = new Match_analysis_result();
+                    var mar = Conn.match.Match_analysis_result.Where(e => e.Live_table_lib_id == id).First();//查找需要更新的数据
+                    mar.Live_table_lib_id = r.id;
+                    mar.Pre_algorithm= "top20";
+                    mar.Pre_match_count = r.Top20Count;
+                    mar.Home_goals = r.HomeGoals;
+                    mar.Away_goals = r.AwayGoals;
+                    mar.Home_w= r.hWin;
+                    mar.Home_d = r.hDraw;
+                    mar.Home_l= r.hLose;
+                    mar.Fit_win_loss = r.CureFitWinLoss ;
+                    mar.Fit_goals = r.CureFitGoals ;
+                    mar.Fit_odd_even = r.CureFitOddEven ;//直接赋值，修改完成
                     
                 }
-                matches.SubmitChanges();
-            }
+                Conn.match.SubmitChanges();
+            //}
         }
     }
 }

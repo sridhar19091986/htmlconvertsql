@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlServerCe;
+using SoccerScore.Compact.Linq;
 
 namespace Soccer_Score_Forecast
 {
@@ -21,5 +22,6 @@ namespace Soccer_Score_Forecast
     {
         private static string connStr = "Data Source=SoccerScoreCompact.sdf;Password=adminadmin123;";
         public static SqlCeConnection cnn =new SqlCeConnection  (connStr);
+        public static SoccerScoreCompact match = new SoccerScoreCompact(cnn);
     }
 }

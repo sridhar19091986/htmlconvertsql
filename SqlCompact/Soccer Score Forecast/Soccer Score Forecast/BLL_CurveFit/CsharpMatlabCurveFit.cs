@@ -82,9 +82,9 @@ namespace Soccer_Score_Forecast
         #endregion
 
         #region   //Matlab和Csharp混合编程的方法，利用Matlab运算得出想要的一个单数据
-        public static float ployfitNowWDL(List<MatchPoint<int>> result, int LastNowDiff)
+        public static float ployfitNowWDL(List<matchPoint<int>> result, int LastNowDiff)
         {
-            List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
+            List<matchPoint<float>> fitseries = new List<matchPoint<float>>();
             myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
@@ -94,18 +94,18 @@ namespace Soccer_Score_Forecast
             for (int i = 0; i < size; i++)
             {
 
-                Y[i] = Convert.ToDouble(result[i].LastMatchWDL);
-                X[i] = Convert.ToDouble(result[i].LastMatchOverTime);
+                Y[i] = Convert.ToDouble(result[i].LastmatchWDL);
+                X[i] = Convert.ToDouble(result[i].LastmatchOverTime);
                 if (i != size - 1)
                 {
-                    X1[i] = Convert.ToDouble(result[i + 1].LastMatchOverTime);
+                    X1[i] = Convert.ToDouble(result[i + 1].LastmatchOverTime);
                 }
                 else
                 {
                     X1[i] = Convert.ToDouble(LastNowDiff);
                 }
-                MatchPoint<float> f = new MatchPoint<float>();
-                f.LastMatchOverTime = (float)X1[i];
+                matchPoint<float> f = new matchPoint<float>();
+                f.LastmatchOverTime = (float)X1[i];
                 fitseries.Add(f);
             }
             MWNumericArray mx_x1 = X1;
@@ -118,9 +118,9 @@ namespace Soccer_Score_Forecast
             double[,] csArray = (double[,])mx_y1.ToArray(MWArrayComponent.Real);
             return (float)csArray[0, csArray.Length - 1];
         }
-        public static float ployfitNowGoals(List<MatchPoint<int>> result, int LastNowDiff)
+        public static float ployfitNowGoals(List<matchPoint<int>> result, int LastNowDiff)
         {
-            List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
+            List<matchPoint<float>> fitseries = new List<matchPoint<float>>();
             myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
@@ -130,18 +130,18 @@ namespace Soccer_Score_Forecast
             for (int i = 0; i < size; i++)
             {
 
-                Y[i] = Convert.ToDouble(result[i].LastMatchGoals);
-                X[i] = Convert.ToDouble(result[i].LastMatchOverTime);
+                Y[i] = Convert.ToDouble(result[i].LastmatchGoals);
+                X[i] = Convert.ToDouble(result[i].LastmatchOverTime);
                 if (i != size - 1)
                 {
-                    X1[i] = Convert.ToDouble(result[i + 1].LastMatchOverTime);
+                    X1[i] = Convert.ToDouble(result[i + 1].LastmatchOverTime);
                 }
                 else
                 {
                     X1[i] = Convert.ToDouble(LastNowDiff);
                 }
-                MatchPoint<float> f = new MatchPoint<float>();
-                f.LastMatchOverTime = (float)X1[i];
+                matchPoint<float> f = new matchPoint<float>();
+                f.LastmatchOverTime = (float)X1[i];
                 fitseries.Add(f);
             }
             MWNumericArray mx_x1 = X1;
@@ -154,9 +154,9 @@ namespace Soccer_Score_Forecast
             double[,] csArray = (double[,])mx_y1.ToArray(MWArrayComponent.Real);
             return (float)csArray[0, csArray.Length - 1];
         }
-        public static float ployfitNowOE(List<MatchPoint<int>> result, int LastNowDiff)
+        public static float ployfitNowOE(List<matchPoint<int>> result, int LastNowDiff)
         {
-            List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
+            List<matchPoint<float>> fitseries = new List<matchPoint<float>>();
             myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
@@ -166,18 +166,18 @@ namespace Soccer_Score_Forecast
             for (int i = 0; i < size; i++)
             {
 
-                Y[i] = Convert.ToDouble(result[i].LastMatchOddEven);
-                X[i] = Convert.ToDouble(result[i].LastMatchOverTime);
+                Y[i] = Convert.ToDouble(result[i].LastmatchOddEven);
+                X[i] = Convert.ToDouble(result[i].LastmatchOverTime);
                 if (i != size - 1)
                 {
-                    X1[i] = Convert.ToDouble(result[i + 1].LastMatchOverTime);
+                    X1[i] = Convert.ToDouble(result[i + 1].LastmatchOverTime);
                 }
                 else
                 {
                     X1[i] = Convert.ToDouble(LastNowDiff);
                 }
-                MatchPoint<float> f = new MatchPoint<float>();
-                f.LastMatchOverTime = (float)X1[i];
+                matchPoint<float> f = new matchPoint<float>();
+                f.LastmatchOverTime = (float)X1[i];
                 fitseries.Add(f);
             }
             MWNumericArray mx_x1 = X1;
@@ -192,9 +192,9 @@ namespace Soccer_Score_Forecast
         }
         #endregion
         #region Matlab和Csharp混合编程的方法，利用Matlab运算得出想要的一系列数据 之前数据
-        public static List<MatchPoint<float>> ployfitSeriesWDL(List<MatchPoint<int>> result, int LastNowDiff)
+        public static List<matchPoint<float>> ployfitSeriesWDL(List<matchPoint<int>> result, int LastNowDiff)
         {
-            List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
+            List<matchPoint<float>> fitseries = new List<matchPoint<float>>();
             myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
@@ -204,18 +204,18 @@ namespace Soccer_Score_Forecast
             for (int i = 0; i < size; i++)
             {
 
-                Y[i] = Convert.ToDouble(result[i].LastMatchWDL);
-                X[i] = Convert.ToDouble(result[i].LastMatchOverTime);
+                Y[i] = Convert.ToDouble(result[i].LastmatchWDL);
+                X[i] = Convert.ToDouble(result[i].LastmatchOverTime);
                 if (i != size - 1)
                 {
-                    X1[i] = Convert.ToDouble(result[i + 1].LastMatchOverTime);
+                    X1[i] = Convert.ToDouble(result[i + 1].LastmatchOverTime);
                 }
                 else
                 {
                     X1[i] = Convert.ToDouble(LastNowDiff);
                 }
-                MatchPoint<float> f = new MatchPoint<float>();
-                f.LastMatchOverTime = (float)X1[i];
+                matchPoint<float> f = new matchPoint<float>();
+                f.LastmatchOverTime = (float)X1[i];
                 fitseries.Add(f);
             }
             MWNumericArray mx_x1 = X1;
@@ -228,14 +228,14 @@ namespace Soccer_Score_Forecast
             double[,] csArray = (double[,])mx_y1.ToArray(MWArrayComponent.Real);
             for (int j = 0; j < csArray.Length; j++)
             {
-                fitseries[j].LastMatchWDL = (float)csArray[0, j];
+                fitseries[j].LastmatchWDL = (float)csArray[0, j];
             }
             return fitseries;
         }
 
-        public static List<MatchPoint<float>> ployfitSeriesGoals(List<MatchPoint<int>> result, int LastNowDiff)
+        public static List<matchPoint<float>> ployfitSeriesGoals(List<matchPoint<int>> result, int LastNowDiff)
         {
-            List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
+            List<matchPoint<float>> fitseries = new List<matchPoint<float>>();
             myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
@@ -245,18 +245,18 @@ namespace Soccer_Score_Forecast
             for (int i = 0; i < size; i++)
             {
 
-                Y[i] = Convert.ToDouble(result[i].LastMatchGoals);
-                X[i] = Convert.ToDouble(result[i].LastMatchOverTime);
+                Y[i] = Convert.ToDouble(result[i].LastmatchGoals);
+                X[i] = Convert.ToDouble(result[i].LastmatchOverTime);
                 if (i != size - 1)
                 {
-                    X1[i] = Convert.ToDouble(result[i + 1].LastMatchOverTime);
+                    X1[i] = Convert.ToDouble(result[i + 1].LastmatchOverTime);
                 }
                 else
                 {
                     X1[i] = Convert.ToDouble(LastNowDiff);
                 }
-                MatchPoint<float> f = new MatchPoint<float>();
-                f.LastMatchOverTime = (float)X1[i];
+                matchPoint<float> f = new matchPoint<float>();
+                f.LastmatchOverTime = (float)X1[i];
                 fitseries.Add(f);
             }
             MWNumericArray mx_x1 = X1;
@@ -269,14 +269,14 @@ namespace Soccer_Score_Forecast
             double[,] csArray = (double[,])mx_y1.ToArray(MWArrayComponent.Real);
             for (int j = 0; j < csArray.Length; j++)
             {
-                fitseries[j].LastMatchGoals = (float)csArray[0, j];
+                fitseries[j].LastmatchGoals = (float)csArray[0, j];
             }
             return fitseries;
         }
 
-        public static List<MatchPoint<float>> ployfitSeriesOE(List<MatchPoint<int>> result, int LastNowDiff)
+        public static List<matchPoint<float>> ployfitSeriesOE(List<matchPoint<int>> result, int LastNowDiff)
         {
-            List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
+            List<matchPoint<float>> fitseries = new List<matchPoint<float>>();
             myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
             //string[] yS = result.Trim().Split();
             int size = result.Count();
@@ -286,18 +286,18 @@ namespace Soccer_Score_Forecast
             for (int i = 0; i < size; i++)
             {
 
-                Y[i] = Convert.ToDouble(result[i].LastMatchOddEven);
-                X[i] = Convert.ToDouble(result[i].LastMatchOverTime);
+                Y[i] = Convert.ToDouble(result[i].LastmatchOddEven);
+                X[i] = Convert.ToDouble(result[i].LastmatchOverTime);
                 if (i != size - 1)
                 {
-                    X1[i] = Convert.ToDouble(result[i + 1].LastMatchOverTime);
+                    X1[i] = Convert.ToDouble(result[i + 1].LastmatchOverTime);
                 }
                 else
                 {
                     X1[i] = Convert.ToDouble(LastNowDiff);
                 }
-                MatchPoint<float> f = new MatchPoint<float>();
-                f.LastMatchOverTime = (float)X1[i];
+                matchPoint<float> f = new matchPoint<float>();
+                f.LastmatchOverTime = (float)X1[i];
                 fitseries.Add(f);
             }
             MWNumericArray mx_x1 = X1;
@@ -310,7 +310,7 @@ namespace Soccer_Score_Forecast
             double[,] csArray = (double[,])mx_y1.ToArray(MWArrayComponent.Real);
             for (int j = 0; j < csArray.Length; j++)
             {
-                fitseries[j].LastMatchOddEven = (float)csArray[0, j];
+                fitseries[j].LastmatchOddEven = (float)csArray[0, j];
             }
             return fitseries;
         }
@@ -318,14 +318,14 @@ namespace Soccer_Score_Forecast
         #endregion
 
         #region  反射的经典实现，变量的反复抽象，把变化部分减少到最小，增强稳定部分，有利于扩展
-        public static List<MatchPoint<float>> ployfitSeries(List<MatchPoint<int>> result, int LastNowDiff)
+        public static List<matchPoint<float>> ployfitSeries(List<matchPoint<int>> result, int LastNowDiff)
         {
             myCurveFit.myCurveFitclass mmm = new myCurveFit.myCurveFitclass();
-            List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
+            List<matchPoint<float>> fitseries = new List<matchPoint<float>>();
             //在此反射数据系列，计算需要拟合的成员，由于输入和输出的数据类型不同，使用泛型<>，T
-            FieldInfo[] field = typeof(MatchPoint<>).GetFields();
+            FieldInfo[] field = typeof(matchPoint<>).GetFields();
             int size = result.Count();
-            var fisfilter = field.Where(e => e.Name == "LastMatchWDL" || e.Name == "LastMatchGoals" || e.Name == "LastMatchOddEven");
+            var fisfilter = field.Where(e => e.Name == "LastmatchWDL" || e.Name == "LastmatchGoals" || e.Name == "LastmatchOddEven");
             foreach (FieldInfo fi in fisfilter)
             {
                 double[] Y = new double[size];
@@ -334,16 +334,16 @@ namespace Soccer_Score_Forecast
                 for (int i = 0; i < size; i++)
                 {
                     //在此指定<>类型是整数
-                    FieldInfo fiIn = typeof(MatchPoint<int>).GetField(fi.Name);
+                    FieldInfo fiIn = typeof(matchPoint<int>).GetField(fi.Name);
                     //反射获取值
                     Y[i] = Convert.ToDouble(fiIn.GetValue(result[i]));
-                    X[i] = Convert.ToDouble(result[i].LastMatchOverTime);
+                    X[i] = Convert.ToDouble(result[i].LastmatchOverTime);
                     if (i != size - 1)
-                        X1[i] = Convert.ToDouble(result[i + 1].LastMatchOverTime);
+                        X1[i] = Convert.ToDouble(result[i + 1].LastmatchOverTime);
                     else
                         X1[i] = Convert.ToDouble(LastNowDiff);
-                    MatchPoint<float> f = new MatchPoint<float>();
-                    f.LastMatchOverTime = (float)X1[i];
+                    matchPoint<float> f = new matchPoint<float>();
+                    f.LastmatchOverTime = (float)X1[i];
                     if(fitseries.Count ==i) fitseries.Add(f);  //如果累加就不行，这种方式，最大值不超过i
                 }
                 MWNumericArray mx_x1 = X1;
@@ -355,7 +355,7 @@ namespace Soccer_Score_Forecast
                 MWNumericArray mx_y1 = (MWNumericArray)mx_F[0];
                 double[,] csArray = (double[,])mx_y1.ToArray(MWArrayComponent.Real);
                 //在此指定<>类型是小数
-                FieldInfo fiOut = typeof(MatchPoint<float>).GetField(fi.Name);
+                FieldInfo fiOut = typeof(matchPoint<float>).GetField(fi.Name);
                 //反射设定值 
                 for (int j = 0; j < csArray.Length; j++) { fiOut.SetValue(fitseries[j], (float)csArray[0, j]); }
             }
@@ -365,24 +365,24 @@ namespace Soccer_Score_Forecast
     }
         
 
-    public class MatchPoint<T>
+    public class matchPoint<T>
     {
-        public T LastMatchOverTime;
-        public T LastMatchScore;
+        public T LastmatchOverTime;
+        public T LastmatchScore;
 
-        public T LastMatchWDL;
-        public T LastMatchGoals;
-        public T LastMatchOddEven;
+        public T LastmatchWDL;
+        public T LastmatchGoals;
+        public T LastmatchOddEven;
         
         //public T RealScore;
         public DateTime? matchTime;
         public string matchDetail;
         //public string Sdate;
     }
-     static class dMatch
+     static class dmatch
     {
-        public static ILookup<int?, result_tb_lib> dHome;
-        public static ILookup<int?, result_tb_lib> dAway;
+        public static ILookup<int?, Result_tb_lib> dHome;
+        public static ILookup<int?, Result_tb_lib> dAway;
 
     }
 }
