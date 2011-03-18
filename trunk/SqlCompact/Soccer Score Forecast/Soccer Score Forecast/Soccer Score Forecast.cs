@@ -36,25 +36,25 @@ namespace Soccer_Score_Forecast
         string textboxDate;
         bool liveLib;
         bool insertComplete;
-        static int ViewMatchOverDays = -1;
-        LoadDataToTree loaddatatree = new LoadDataToTree(ViewMatchOverDays);
+        static int ViewmatchOverDays = -1;
+        LoadDataToTree loaddatatree = new LoadDataToTree(ViewmatchOverDays);
         private void initTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ViewMatchOverDays.ToString());
-            loaddatatree.initTreeNode(ViewMatchOverDays);
+            MessageBox.Show(ViewmatchOverDays.ToString());
+            loaddatatree.initTreeNode(ViewmatchOverDays);
         }
         private void Form1_Load(object sender, EventArgs ee)
         {
             dataGridView5.Visible = false;
             toolStripStatusLabel2.Text = dateTimePicker2.Value.ToString("yyyy-MM-dd");//日历组建日期字符串格式化方法
-            using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-            {
-                toolStripStatusLabel3.Text = matches.result_tb_lib.Max(p => p.match_time).Value.ToString();
-                var maxtime = matches.live_Table_lib.Max(p => p.match_time);
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
+            toolStripStatusLabel3.Text = Conn.match.Result_tb_lib.Max(p => p.Match_time).Value.ToString();
+            var maxtime = Conn.match.Live_Table_lib.Max(p => p.Match_time);
                 toolStripStatusLabel4.Text = maxtime.HasValue ? maxtime.Value.ToString() : null;
-            }
+            //}
             treeView5.Nodes.Clear();
-            loaddatatree.TreeViewMatch(treeView5, "type");
+            loaddatatree.TreeViewmatch(treeView5, "type");
             dateTimePicker1.Value = DateTime.Parse(toolStripStatusLabel3.Text);
 
         }
@@ -106,32 +106,32 @@ namespace Soccer_Score_Forecast
         }
         private void button3_Click(object sender, EventArgs c)
         {
-            using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-            {
-                var mar = from a in matches.match_analysis_result
-                          join b in matches.live_Table_lib on a.live_table_lib_id equals b.live_table_lib_id
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
+            var mar = from a in Conn.match.Match_analysis_result
+                      join b in Conn.match.Live_Table_lib on a.Live_table_lib_id equals b.Live_table_lib_id
                           select new
                           {
-                              a.result_wdl,
-                              a.result_fit,
-                              a.result_goals,
-                              b.match_type
+                              a.Result_wdl,
+                              a.Result_fit,
+                              a.Result_goals,
+                              b.Match_type
                           };
                 var winrate = from p in mar
-                              group p by p.match_type into q
+                              group p by p.Match_type into q
                               select new
                               {
                                   q.Key,
-                                  fitW = q.Where(e => e.match_type == q.Key).Where(e => e.result_fit == "W").Count(),
-                                  fitL = q.Where(e => e.match_type == q.Key).Where(e => e.result_fit == "L").Count(),
-                                  goalsW = q.Where(e => e.match_type == q.Key).Where(e => e.result_goals == "W").Count(),
-                                  goalsL = q.Where(e => e.match_type == q.Key).Where(e => e.result_goals == "L").Count(),
-                                  wdlW = q.Where(e => e.match_type == q.Key).Where(e => e.result_wdl == "W").Count(),
-                                  wdlL = q.Where(e => e.match_type == q.Key).Where(e => e.result_wdl == "L").Count(),
+                                  fitW = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_fit == "W").Count(),
+                                  fitL = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_fit == "L").Count(),
+                                  goalsW = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_goals == "W").Count(),
+                                  goalsL = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_goals == "L").Count(),
+                                  wdlW = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_wdl == "W").Count(),
+                                  wdlL = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_wdl == "L").Count(),
                               };
 
                 dataGridView1.DataSource = winrate;
-            }
+            //}
         }
         //随着鼠标选择的节点做文件路径的索引，读出treeView节点指向的txt中的sql语句
         private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
@@ -154,30 +154,30 @@ namespace Soccer_Score_Forecast
         //获取数据库的数据结构
         private void button6_Click(object sender, EventArgs e)
         {
-            using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-            {
-                dataGridView1.DataSource = matches.match_table_xpath;
-            }
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
+            dataGridView1.DataSource = Conn.match.Match_table_xpath;
+            //}
         }
-        private void filterMatchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void filtermatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             treeView5.Nodes.Clear();
-            loaddatatree.TreeViewMatch(treeView5, "type");
+            loaddatatree.TreeViewmatch(treeView5, "type");
         }
         //treeView过滤操作的方法
-        private void todayMatchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void todaymatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
         private void toolStripButton_iniLast_Click(object sender, EventArgs e)
         {
-            using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-            {
-                int pb = matches.result_tb.Count();
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
+            int pb = Conn.match.Result_tb.Count();
                 toolStripProgressBar1.Maximum = pb;
                 MessageBox.Show(pb.ToString());
-            }
+            //}
             SevenmResultToSql sevenm = new SevenmResultToSql();
-            sevenm.UpdateLastMatch();
+            sevenm.UpdateLastmatch();
         }
         private void fileConvertListProgress(int i)
         {
@@ -187,7 +187,7 @@ namespace Soccer_Score_Forecast
         private void toolStripButton_iniToday_Click(object sender, EventArgs e)
         {
             SevenmLiveToSql sevenm = new SevenmLiveToSql();
-            sevenm.UpdateTodayMatch();
+            sevenm.UpdateTodaymatch();
         }
         private void toolStripButton_exitSystem_Click(object sender, EventArgs e)
         {
@@ -245,11 +245,11 @@ namespace Soccer_Score_Forecast
             MessageBox.Show(pb.ToString());
             if (pb != 0)
             {
-                using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-                {
-                    dMatch.dHome = matches.result_tb_lib.ToLookup(e => e.home_team_big);
-                    dMatch.dAway = matches.result_tb_lib.ToLookup(e => e.away_team_big);
-                }
+                //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+                //{
+                dmatch.dHome = Conn.match.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                dmatch.dAway = Conn.match.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                //}
                 toolStripProgressBar1.Maximum = pb;
                 f.top20Algorithm();
             }
@@ -262,17 +262,17 @@ namespace Soccer_Score_Forecast
             toolStripProgressBar1.Maximum = pb;
             u.ExecUpdate();
         }
-        private void selectMatchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void selectmatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listBox2.Items.Add(toolStripStatusLabel3.Text);
         }
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
         }
-        private void todayMatchTimeToolStripMenuItem_Click(object sender, EventArgs c)
+        private void todaymatchTimeToolStripMenuItem_Click(object sender, EventArgs c)
         {
             treeView5.Nodes.Clear();
-            loaddatatree.TreeViewMatch(treeView5, "time");
+            loaddatatree.TreeViewmatch(treeView5, "time");
         }
         //把html生成tree的方法
         private void button8_Click(object sender, EventArgs e)
@@ -393,50 +393,50 @@ namespace Soccer_Score_Forecast
         }
         private void button19_Click(object sender, EventArgs e)
         {
-            using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-            {
-                dataGridView1.DataSource = matches.live_Aibo;
-            }
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
+            dataGridView1.DataSource = Conn.match.Live_Aibo;
+            //}
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             string sql = @"
                             if exists (select 1
 		                                from  sysobjects
-	                                   where  id = object_id('match_analysis_result')
+	                                   where  id = object_id('Match_analysis_result')
 		                                and   type = 'U')
-                               drop table match_analysis_result
+                               drop table Match_analysis_result
                             ;
 
-                            CREATE TABLE [dbo].[match_analysis_result](
-                                [analysis_result_id] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-                                [live_table_lib_id] [decimal] NOT NULL,
-                                [result_tb_lib_id] [decimal] NULL,
-                                [pre_algorithm] [nvarchar](20) NULL,
+                            CREATE TABLE [dbo].[Match_analysis_result](
+                                [Analysis_result_id] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+                                [Live_table_lib_id] [decimal] NOT NULL,
+                                [Result_tb_lib_id] [decimal] NULL,
+                                [Pre_algorithm] [nvarchar](20) NULL,
                                 [pre_match_count] [int] NULL,
-                                [home_w] [int] NULL,
-                                [home_d] [int] NULL,
-                                [home_l] [int] NULL,
-                                [home_goals] [float] NULL,
-                                [away_goals] [float] NULL,
-                                [fit_win_loss] [float] NULL,
-                                [fit_goals] [float] NULL,
-                                [fit_odd_even] [float] NULL,
-[result_fit] [nvarchar](20) NULL,
-[result_goals] [nvarchar](20) NULL,
-[result_wdl] [nvarchar](20) NULL,
-                             CONSTRAINT [PK_MATCH_ANALYSIS_RESULT] PRIMARY KEY NONCLUSTERED 
+                                [Home_w] [int] NULL,
+                                [Home_d] [int] NULL,
+                                [Home_l] [int] NULL,
+                                [Home_goals] [float] NULL,
+                                [Away_goals] [float] NULL,
+                                [Fit_win_loss] [float] NULL,
+                                [Fit_goals] [float] NULL,
+                                [Fit_odd_even] [float] NULL,
+[Result_fit] [nvarchar](20) NULL,
+[Result_goals] [nvarchar](20) NULL,
+[Result_wdl] [nvarchar](20) NULL,
+                             CONSTRAINT [PK_Match_analysis_result] PRIMARY KEY NONCLUSTERED 
                             (
-                                [analysis_result_id] ASC
+                                [Analysis_result_id] ASC
                             )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF,
                                  IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
                             ) ON [PRIMARY]";
-            SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn);
+            //SoccerScoreCompact match = new SoccerScoreCompact(cnn);
             DialogResult result; //Messagebox所属于的类
             result = MessageBox.Show(this, "YesOrNo", "你确定要删除分析库？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)//Messagebox返回的值
             {
-                matches.ExecuteCommand(sql);
+                Conn.match.ExecuteCommand(sql);
                 MessageBox.Show("OK");
             }
         }
@@ -506,17 +506,17 @@ namespace Soccer_Score_Forecast
         }
         private void toolStripButton2_Click(object sender, EventArgs ee)
         {
-            MessageBox.Show(ViewMatchOverDays.ToString());
-            AuditForecastAlgorithm f = new AuditForecastAlgorithm(ViewMatchOverDays);
+            MessageBox.Show(ViewmatchOverDays.ToString());
+            AuditForecastAlgorithm f = new AuditForecastAlgorithm(ViewmatchOverDays);
             int pb = f.idExc.Count();
             MessageBox.Show(pb.ToString());
             if (pb != 0)
             {
-                using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-                {
-                    dMatch.dHome = matches.result_tb_lib.ToLookup(e => e.home_team_big);
-                    dMatch.dAway = matches.result_tb_lib.ToLookup(e => e.away_team_big);
-                }
+                //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+                //{
+                dmatch.dHome = Conn.match.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                dmatch.dAway = Conn.match.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                //}
                 toolStripProgressBar1.Maximum = pb;
                 f.top20Algorithm();
             }
@@ -530,7 +530,7 @@ namespace Soccer_Score_Forecast
         {
             this.tabControl1.SelectedTab = this.tabPage1;
         }
-        private void oddsCollectionOToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OddsCollectionOToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.tabControl1.SelectedTab = this.tabPage10;
         }
@@ -565,22 +565,22 @@ namespace Soccer_Score_Forecast
         }
         private void button26_Click(object sender, EventArgs e)
         {
-            using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-            {
-                dataGridView1.DataSource = matches.live_okoo;
-            }
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
+            dataGridView1.DataSource = Conn.match.Live_okoo;
+            //}
         }
         private void button29_Click(object sender, EventArgs e)
         {
-            using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-            {
-                dataGridView1.DataSource = matches.live_Table_lib;
-            }
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
+            dataGridView1.DataSource = Conn.match.Live_Table_lib;
+            //}
         }
         private void button30_Click(object sender, EventArgs e)
         {
-            SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn);
-            dataGridView1.DataSource = matches.result_tb_lib;
+            //SoccerScoreCompact match = new SoccerScoreCompact(cnn);
+            dataGridView1.DataSource = Conn.match.Result_tb_lib;
         }
         private void button31_Click(object sender, EventArgs e)
         {
@@ -604,7 +604,7 @@ namespace Soccer_Score_Forecast
             //在这里写入数据
             if (liveLib == true)
             {
-                toolStripLabel2.Text = Update_live_Table(richTextBox1.Text).ToString();
+                toolStripLabel2.Text = Update_Live_Table(richTextBox1.Text).ToString();
             }
             else
             {
@@ -613,7 +613,7 @@ namespace Soccer_Score_Forecast
             insertComplete = true;
             toolStripStatusLabel1.Text = "update table complete!";
         }
-        private decimal Update_live_Table(string html)
+        private decimal Update_Live_Table(string html)
         {
             SevenmLiveToSql sevenlive = new SevenmLiveToSql(html);
             return sevenlive.InsertLiveHtmlTableToDB();
@@ -628,43 +628,43 @@ namespace Soccer_Score_Forecast
             if (c.Node.Level == 1)
             {
                 dataGridView5.Visible = true;
-                using (SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn))
-                {
-                    var mar = from a in matches.match_analysis_result
-                              join b in matches.live_Table_lib on a.live_table_lib_id equals b.live_table_lib_id
+                //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+                //{
+                    var mar = from a in Conn.match.Match_analysis_result
+                              join b in Conn.match.Live_Table_lib on a.Live_table_lib_id equals b.Live_table_lib_id
                               select new
                               {
-                                  a.result_wdl,
-                                  a.result_fit,
-                                  a.result_goals,
-                                  b.match_type
+                                  a.Result_wdl,
+                                  a.Result_fit,
+                                  a.Result_goals,
+                                  b.Match_type
                               };
                     var winrate = from p in mar
-                                  where p.match_type == c.Node.Text
-                                  group p by p.match_type into q
+                                  where p.Match_type == c.Node.Text
+                                  group p by p.Match_type into q
                                   select new
                                   {
                                       q.Key,
-                                      fitW = q.Where(e => e.result_fit == "W").Count(),
-                                      fitL = q.Where(e => e.result_fit == "L").Count(),
-                                      goalsW = q.Where(e => e.result_goals == "W").Count(),
-                                      goalsL = q.Where(e => e.result_goals == "L").Count(),
-                                      wdlW = q.Where(e => e.result_wdl == "W").Count(),
-                                      wdlL = q.Where(e => e.result_wdl == "L").Count(),
+                                      fitW = q.Where(e => e.Result_fit == "W").Count(),
+                                      fitL = q.Where(e => e.Result_fit == "L").Count(),
+                                      goalsW = q.Where(e => e.Result_goals == "W").Count(),
+                                      goalsL = q.Where(e => e.Result_goals == "L").Count(),
+                                      wdlW = q.Where(e => e.Result_wdl == "W").Count(),
+                                      wdlL = q.Where(e => e.Result_wdl == "L").Count(),
                                   };
                     dataGridView5.DataSource = winrate;
                     var maxwin = winrate.FirstOrDefault();
                     int[] maxw = { maxwin.fitW, maxwin.fitL, maxwin.goalsW, maxwin.goalsL, maxwin.wdlW, maxwin.wdlL };
                     label3.Text = maxw.Max().ToString();
-                }
+                //}
             }
             if (c.Node.Level != 2) { return; }
             dataGridView5.Visible = false;
-            string selectMatch = c.Node.Text.ToString();
-            string[] ar = selectMatch.Split(Convert.ToChar(','));
+            string selectmatch = c.Node.Text.ToString();
+            string[] ar = selectmatch.Split(Convert.ToChar(','));
             int id = Int32.Parse(ar[0].ToString());
-            label3.Text = LoadDataToChart.ForeCast(chart1, id, selectMatch);
-            LoadDataToChart.LabelMatchDetail(chart1, PointLabelsList.GetItemText(PointLabelsList.SelectedItem));
+            label3.Text = LoadDataToChart.ForeCast(chart1, id, selectmatch);
+            LoadDataToChart.LabelmatchDetail(chart1, PointLabelsList.GetItemText(PointLabelsList.SelectedItem));
         }
         private void treeView5_MouseDown(object sender, MouseEventArgs e)
         {
@@ -678,7 +678,7 @@ namespace Soccer_Score_Forecast
         }
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            ViewMatchOverDays = -(int)numericUpDown1.Value;
+            ViewmatchOverDays = -(int)numericUpDown1.Value;
         }
         private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -706,7 +706,7 @@ namespace Soccer_Score_Forecast
         }
         private void PointLabelsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadDataToChart.LabelMatchDetail(chart1, PointLabelsList.GetItemText(PointLabelsList.SelectedItem));
+            LoadDataToChart.LabelmatchDetail(chart1, PointLabelsList.GetItemText(PointLabelsList.SelectedItem));
         }
         private void button36_Click(object sender, EventArgs e)
         {
@@ -724,30 +724,30 @@ namespace Soccer_Score_Forecast
         {
             Uri uri = new Uri(textBox3.Text);
             string host = uri.Host;
-            using (SoccerScoreCompact match = new SoccerScoreCompact(Conn.cnn))
-            {
-                var eUri = match.match_table_xpath.Where(e => e.uri_host == host).FirstOrDefault();
+            //using (SoccerScoreCompact match = new SoccerScoreCompact(cnn))
+            //{
+                var eUri = Conn.match.Match_table_xpath.Where(e => e.Uri_host == host).FirstOrDefault();
                 if (eUri == null)
                 {
-                    match_table_xpath nUri = new match_table_xpath();
-                    nUri.uri_host = host.ToString();
-                    nUri.max_table_xpath = textBox4.Text;
-                    nUri.second_table_xpath = textBox6.Text;
-                    nUri.max_table_id_value = textBox7.Text;
-                    nUri.second_table_id_value = textBox8.Text;
-                    match.match_table_xpath.InsertOnSubmit(nUri);
+                    Match_table_xpath nUri = new Match_table_xpath();
+                    nUri.Uri_host = host.ToString();
+                    nUri.Max_table_xpath = textBox4.Text;
+                    nUri.Second_table_xpath = textBox6.Text;
+                    nUri.Max_table_id_value = textBox7.Text;
+                    nUri.Second_table_id_value = textBox8.Text;
+                    Conn.match.Match_table_xpath.InsertOnSubmit(nUri);
                 }
                 else
                 {
-                    eUri.uri_host = host.ToString();
-                    eUri.max_table_xpath = textBox4.Text;
-                    eUri.second_table_xpath = textBox6.Text;
-                    eUri.max_table_id_value = textBox7.Text;
-                    eUri.second_table_id_value = textBox8.Text;
-                    //match.match_table_xpath.InsertOnSubmit(eUri);
+                    eUri.Uri_host = host.ToString();
+                    eUri.Max_table_xpath = textBox4.Text;
+                    eUri.Second_table_xpath = textBox6.Text;
+                    eUri.Max_table_id_value = textBox7.Text;
+                    eUri.Second_table_id_value = textBox8.Text;
+                    //match.Match_table_xpath.InsertOnSubmit(eUri);
                 }
-                match.SubmitChanges();
-            }
+                Conn.match.SubmitChanges();
+            //}
             MessageBox.Show("OK");
         }
 

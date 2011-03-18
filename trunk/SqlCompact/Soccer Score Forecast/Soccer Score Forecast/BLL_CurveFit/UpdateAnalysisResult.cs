@@ -25,20 +25,20 @@ namespace Soccer_Score_Forecast
 {
     public class UpdateAnalysisResult
     {
-        SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn);
-        //SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn);
+        //SoccerScoreCompact match = new SoccerScoreCompact(cnn);
+        //SoccerScoreCompact match = new SoccerScoreCompact(cnn);
         public int ExecUpateCount;
-        public IEnumerable<match_analysis_result> mar;
-        private DateTime? match_time;
-        private int? home_team_big;
-        private int? away_team_big;
-        //private decimal live_table_lib_id;
-        private decimal result_tb_lib_id;
+        public IEnumerable<Match_analysis_result> mar;
+        private DateTime? Match_time;
+        private int? Home_team_big;
+        private int? Away_team_big;
+        //private decimal Live_table_lib_id;
+        private decimal Result_tb_lib_id;
 
         public UpdateAnalysisResult()
         {
-            mar=matches.match_analysis_result.Where(e => e.analysis_result_id == null);
-            //mar = matches.match_analysis_result.Where(e => e.result_tb_lib_id == null);
+            mar = Conn.match.Match_analysis_result.Where(e => e.Analysis_result_id == null);
+            //mar = match.Match_analysis_result.Where(e => e.Result_tb_lib_id == null);
             ExecUpateCount = mar.Count();
 
         }
@@ -46,10 +46,10 @@ namespace Soccer_Score_Forecast
         {
 
             int i = 0;
-            //var lvls = matches.live_Table_lib.ToDictionary(e => e.live_table_lib_id);
-            var lvls = matches.live_Table_lib.ToDictionary(e => e.live_table_lib_id);
-            //var rtls = matches.result_tb_lib.ToDictionary(e => e.match_time.ToString() + "-" + e.home_team_big + "-" + e.away_team_big);
-            var rtls = matches.result_tb_lib.ToDictionary(e => e.match_time.ToString() + "-" + e.home_team_big + "-" + e.away_team_big);
+            //var lvls = match.Live_Table_lib.ToDictionary(e => e.Live_table_lib_id);
+            var lvls = Conn.match.Live_Table_lib.ToDictionary(e => e.Live_table_lib_id);
+            //var rtls = match.Result_tb_lib.ToDictionary(e => e.Match_time.ToString() + "-" + e.Home_team_big + "-" + e.Away_team_big);
+            var rtls = Conn.match.Result_tb_lib.ToDictionary(e => e.Match_time.ToString() + "-" + e.Home_team_big + "-" + e.Away_team_big);
 
             foreach (var m in mar)
             {
@@ -57,18 +57,18 @@ namespace Soccer_Score_Forecast
                 ProgressBarDelegate.DoSendPMessage(i);
                 Application.DoEvents();
                 //根据lvl的id
-                //live_table_lib_id = m.live_table_lib_id;
+                //Live_table_lib_id = m.Live_table_lib_id;
 
                 //if (lvls.Any())
                 //{
                 //    //得出match time home away
-                var lvl = lvls[m.live_table_lib_id];
-                match_time = lvl.match_time;
-                home_team_big = lvl.home_team_big;
-                away_team_big = lvl.away_team_big;
-                //var rtls = matches.result_tb_lib.Where(e => e.match_time == match_time)
-                //    .Where(e => e.home_team_big == home_team_big)
-                //    .Where(e => e.away_team_big == away_team_big);
+                var lvl = lvls[m.Live_table_lib_id];
+                Match_time = lvl.Match_time;
+                Home_team_big = lvl.Home_team_big;
+                Away_team_big = lvl.Away_team_big;
+                //var rtls = match.Result_tb_lib.Where(e => e.Match_time == Match_time)
+                //    .Where(e => e.Home_team_big == Home_team_big)
+                //    .Where(e => e.Away_team_big == Away_team_big);
 
 
 
@@ -76,26 +76,26 @@ namespace Soccer_Score_Forecast
                 //{
                 //得出result中的id
                 //var rtl = rtls.First();
-                if (rtls.ContainsKey(match_time.ToString() + "-" + home_team_big + "-" + away_team_big))
+                if (rtls.ContainsKey(Match_time.ToString() + "-" + Home_team_big + "-" + Away_team_big))
                 {
-                    var rtl = rtls[match_time.ToString() + "-" + home_team_big + "-" + away_team_big];
-                    result_tb_lib_id = rtl.result_tb_lib_id;
-                    m.result_tb_lib_id = result_tb_lib_id;
+                    var rtl = rtls[Match_time.ToString() + "-" + Home_team_big + "-" + Away_team_big];
+                    Result_tb_lib_id = rtl.Result_tb_lib_id;
+                    m.Result_tb_lib_id = Result_tb_lib_id;
 
-                    if ((rtl.full_home_goals - rtl.full_away_goals) * m.fit_win_loss > 0)
-                        m.result_fit = "W";
+                    if ((rtl.Full_home_goals - rtl.Full_away_goals) * m.Fit_win_loss > 0)
+                        m.Result_fit = "W";
                     else
-                        m.result_fit = "L";
+                        m.Result_fit = "L";
 
-                    if ((rtl.full_home_goals - rtl.full_away_goals) * (m.home_goals - m.away_goals) > 0)
-                        m.result_goals = "W";
+                    if ((rtl.Full_home_goals - rtl.Full_away_goals) * (m.Home_goals - m.Away_goals) > 0)
+                        m.Result_goals = "W";
                     else
-                        m.result_goals = "L";
+                        m.Result_goals = "L";
 
-                    if ((rtl.full_home_goals - rtl.full_away_goals) * (m.home_w - m.home_l) > 0)
-                        m.result_wdl = "W";
+                    if ((rtl.Full_home_goals - rtl.Full_away_goals) * (m.Home_w - m.Home_l) > 0)
+                        m.Result_wdl = "W";
                     else
-                        m.result_wdl = "L";
+                        m.Result_wdl = "L";
                 }
 
 
@@ -103,7 +103,7 @@ namespace Soccer_Score_Forecast
                 //    }
                 //}
             }
-            matches.SubmitChanges();
+            Conn.match.SubmitChanges();
         }
     }
 }

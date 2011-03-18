@@ -1,141 +1,142 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoccerScoreCompact" EntityNamespace="SoccerScore.Compact.Linq" ContextNamespace="SoccerScore.Compact.Linq" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Table Name="live_Aibo">
-    <Type Name="live_Aibo">
-      <Column Name="live_Aibo_id" Storage="_Live_Aibo_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="value" Storage="_Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="SoccerScoreCompact" EntityNamespace="SoccerScore.Compact.Linq" ContextNamespace="SoccerScore.Compact.Linq" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="live_Aibo" Member="Live_Aibo">
+    <Type Name="Live_Aibo">
+      <Column Name="live_Aibo_id" Member="Live_Aibo_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="value" Member="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="LeagueName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="match_time" Storage="_Match_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_time" Member="Match_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MatchOrder1_HomeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MatchOrder1_HandicapNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MatchOrder1_AwayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="live_okoo">
-    <Type Name="live_okoo">
-      <Column Name="live_okoo_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="live_okoo" Member="Live_okoo">
+    <Type Name="Live_okoo">
+      <Column Name="live_okoo_id" Member="Live_okoo_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="value" Member="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LeagueName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="match_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_time" Member="Match_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MatchOrder1_HomeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MatchOrder1_HandicapNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MatchOrder1_AwayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ok_1_0" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ok_1_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ok_1_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ok_1_0" Member="Ok_1_0" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ok_1_1" Member="Ok_1_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ok_1_2" Member="Ok_1_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MatchInfo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Match_1_Win" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Match_1_Drawn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Match_1_Lost" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="live_Table">
-    <Type Name="live_Table">
-      <Column Name="live_table_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="html_position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="home_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="away_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="s_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="s_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="full_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="half_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+  <Table Name="live_Table" Member="Live_Table">
+    <Type Name="Live_Table">
+      <Column Name="live_table_id" Member="Live_table_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="html_position" Member="Html_position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_team_big" Member="Home_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team_big" Member="Away_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_type" Member="Match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="s_date" Member="S_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="s_time" Member="S_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="status" Member="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_team" Member="Home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team" Member="Away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="full_time_score" Member="Full_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="half_time_score" Member="Half_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="live_Table_lib">
-    <Type Name="live_Table_lib">
-      <Column Name="live_table_lib_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="html_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="home_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="away_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="match_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="home_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="away_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="full_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="full_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="half_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="half_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="live_Table_lib" Member="Live_Table_lib">
+    <Type Name="Live_Table_lib">
+      <Column Name="live_table_lib_id" Member="Live_table_lib_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="html_position" Member="Html_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_team_big" Member="Home_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="away_team_big" Member="Away_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="match_type" Member="Match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_time" Member="Match_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Member="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_team" Member="Home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team" Member="Away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_red_card" Member="Home_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="away_red_card" Member="Away_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_home_goals" Member="Full_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_away_goals" Member="Full_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="half_home_goals" Member="Half_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="half_away_goals" Member="Half_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="match_analysis_collection">
-    <Type Name="match_analysis_collection">
-      <Column Name="analysis_collection_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="live_table_lib_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="result_tb_lib_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="match_analysis_collection" Member="Match_analysis_collection">
+    <Type Name="Match_analysis_collection">
+      <Column Name="analysis_collection_id" Member="Analysis_collection_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="live_table_lib_id" Member="Live_table_lib_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="result_tb_lib_id" Member="Result_tb_lib_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="match_analysis_result">
-    <Type Name="match_analysis_result">
-      <Column Name="analysis_result_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="live_table_lib_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="result_tb_lib_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="pre_algorithm" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="pre_match_count" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="home_w" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="home_d" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="home_l" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="home_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="away_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="fit_win_loss" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="fit_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="fit_odd_even" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="result_fit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="result_goals" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="result_wdl" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+  <Table Name="match_analysis_result" Member="Match_analysis_result">
+    <Type Name="Match_analysis_result">
+      <Column Name="analysis_result_id" Member="Analysis_result_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="live_table_lib_id" Member="Live_table_lib_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="result_tb_lib_id" Member="Result_tb_lib_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="pre_algorithm" Member="Pre_algorithm" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="pre_match_count" Member="Pre_match_count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_w" Member="Home_w" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_d" Member="Home_d" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_l" Member="Home_l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_goals" Member="Home_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="away_goals" Member="Away_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="fit_win_loss" Member="Fit_win_loss" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="fit_goals" Member="Fit_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="fit_odd_even" Member="Fit_odd_even" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="result_fit" Member="Result_fit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="result_goals" Member="Result_goals" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="result_wdl" Member="Result_wdl" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="match_table_xpath">
-    <Type Name="match_table_xpath">
-      <Column Name="uri_host_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="uri_host" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="max_table_xpath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="max_table_id_value" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="second_table_xpath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="second_table_id_value" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="order_table_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="match_table_xpath" Member="Match_table_xpath">
+    <Type Name="Match_table_xpath">
+      <Column Name="uri_host_id" Member="Uri_host_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="uri_host" Member="Uri_host" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="max_table_xpath" Member="Max_table_xpath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="max_table_id_value" Member="Max_table_id_value" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="second_table_xpath" Member="Second_table_xpath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="second_table_id_value" Member="Second_table_id_value" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="order_table_id" Member="Order_table_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="result_tb">
-    <Type Name="result_tb">
-      <Column Name="result_tb_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="html_position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="home_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="away_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="s_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="s_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="full_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="half_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="odds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="win_loss_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+  <Table Name="result_tb" Member="Result_tb">
+    <Type Name="Result_tb">
+      <Column Name="result_tb_id" Member="Result_tb_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="html_position" Member="Html_position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_team_big" Member="Home_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team_big" Member="Away_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_type" Member="Match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="s_date" Member="S_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="s_time" Member="S_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_team" Member="Home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team" Member="Away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="full_time_score" Member="Full_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="half_time_score" Member="Half_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="odds" Member="Odds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="win_loss_big" Member="Win_loss_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="result_tb_lib">
-    <Type Name="result_tb_lib">
-      <Column Name="result_tb_lib_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="html_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="home_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="away_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="match_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="odds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="win_loss_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="home_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="away_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="full_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="full_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="half_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="half_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="result_tb_lib" Member="Result_tb_lib">
+    <Type Name="Result_tb_lib">
+      <Column Name="result_tb_lib_id" Member="Result_tb_lib_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="html_position" Member="Html_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_team_big" Member="Home_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="away_team_big" Member="Away_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="match_type" Member="Match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_time" Member="Match_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="home_team" Member="Home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team" Member="Away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="odds" Member="Odds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="win_loss_big" Member="Win_loss_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_red_card" Member="Home_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="away_red_card" Member="Away_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_home_goals" Member="Full_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_away_goals" Member="Full_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="half_home_goals" Member="Half_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="half_away_goals" Member="Half_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="tt" Member="Tt">

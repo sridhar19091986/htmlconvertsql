@@ -26,53 +26,53 @@ namespace Soccer_Score_Forecast
 {
     public class LoadDataToChart
     {
-        static List<MatchPoint<int>> matchpoints = new List<MatchPoint<int>>();
-        static List<MatchPoint<float>> fit= new List<MatchPoint<float>>();
+        static List<matchPoint<int>> matchpoints = new List<matchPoint<int>>();
+        static List<matchPoint<float>> fit= new List<matchPoint<float>>();
         public static string ForeCast(Chart chart1, int id, string title)
         {
             foreach (Series ser in chart1.Series) ser.Points.Clear(); //清理chart1上的数据
             string forecast = null;
 
             RowNumberLimit rnl = new RowNumberLimit(id);
-            matchpoints = rnl.ListMatchPointData;  //生成历史数据
+            matchpoints = rnl.ListmatchPointData;  //生成历史数据
             fit = rnl.CurveFit;//生成预测数据
 
             for (int i = 0; i < matchpoints.Count(); i++)
             {
-                chart1.Series["RealScore"].Points.AddXY(matchpoints[i].matchTime, matchpoints[i].LastMatchScore);
+                chart1.Series["RealScore"].Points.AddXY(matchpoints[i].matchTime, matchpoints[i].LastmatchScore);
                 //WinLoss
-                chart1.Series["RealWDL"].Points.AddXY(matchpoints[i].matchTime, matchpoints[i].LastMatchWDL);
-                chart1.Series["RealGoals"].Points.AddXY(matchpoints[i].matchTime, matchpoints[i].LastMatchGoals);
-                //chart1.Series["RealOddEven"].Points.AddXY(matchpoints[i].matchTime, matchpoints[i].LastMatchOddEven);
+                chart1.Series["RealWDL"].Points.AddXY(matchpoints[i].matchTime, matchpoints[i].LastmatchWDL);
+                chart1.Series["RealGoals"].Points.AddXY(matchpoints[i].matchTime, matchpoints[i].LastmatchGoals);
+                //chart1.Series["RealOddEven"].Points.AddXY(matchpoints[i].matchTime, matchpoints[i].LastmatchOddEven);
                 //WinLoss forecast
                 if (i != matchpoints.Count() - 1)
                 {
-                    chart1.Series["ForeWDL"].Points.AddXY(matchpoints[i + 1].matchTime, fit[i].LastMatchWDL);
+                    chart1.Series["ForeWDL"].Points.AddXY(matchpoints[i + 1].matchTime, fit[i].LastmatchWDL);
                 }
                 else
                 {
-                    chart1.Series["ForeWDL"].Points.AddXY(rnl.matchtime, fit[i].LastMatchWDL);
-                    forecast = fit[i].LastMatchWDL.ToString();
+                    chart1.Series["ForeWDL"].Points.AddXY(rnl.matchtime, fit[i].LastmatchWDL);
+                    forecast = fit[i].LastmatchWDL.ToString();
                     chart1.Series["ForeWDL"].Points[i].Label = forecast + "::WDL";
                     chart1.Series["ForeWDL"].Points[i].LabelBorderColor = Color.Red; ;
                 }
                 //Goals forecast
                 if (i != matchpoints.Count() - 1)
                 {
-                    chart1.Series["ForeGoals"].Points.AddXY(matchpoints[i + 1].matchTime, fit[i].LastMatchGoals);
+                    chart1.Series["ForeGoals"].Points.AddXY(matchpoints[i + 1].matchTime, fit[i].LastmatchGoals);
                 }
                 else
                 {
-                    chart1.Series["ForeGoals"].Points.AddXY(rnl.matchtime, fit[i].LastMatchGoals);
-                    forecast = fit[i].LastMatchGoals.ToString();
+                    chart1.Series["ForeGoals"].Points.AddXY(rnl.matchtime, fit[i].LastmatchGoals);
+                    forecast = fit[i].LastmatchGoals.ToString();
                     chart1.Series["ForeGoals"].Points[i].Label = forecast + "::Goals";
                     chart1.Series["ForeGoals"].Points[i].LabelBorderColor = Color.Red;
                 }
                 //OddEven forecast
                 //if (i != matchpoints.Count() - 1)
-                //    chart1.Series["ForeOddEven"].Points.AddXY(matchpoints[i + 1].matchTime, fitOE[i].LastMatchOddEven);
+                //    chart1.Series["ForeOddEven"].Points.AddXY(matchpoints[i + 1].matchTime, fitOE[i].LastmatchOddEven);
                 //else
-                //    chart1.Series["ForeOddEven"].Points.AddXY(rnl.matchtime, fitOE[i].LastMatchOddEven);
+                //    chart1.Series["ForeOddEven"].Points.AddXY(rnl.matchtime, fitOE[i].LastmatchOddEven);
             }
             //chart1.Titles["Title1"].Text = title;
             BaseChartFormat(chart1);
@@ -101,10 +101,10 @@ namespace Soccer_Score_Forecast
             chart1.ChartAreas["Default"].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
             //chart1.ChartAreas["Default"].AxisX.LineColor = Color.FromArgb(164, 164, 164);
         }
-        public static void LabelMatchDetail(Chart chart1, string strKey)
+        public static void LabelmatchDetail(Chart chart1, string strKey)
         {
             //Label
-            //chart1.Series["Series2"].Points[i].Label = fitWDL[i].LastMatchOverTime.ToString();
+            //chart1.Series["Series2"].Points[i].Label = fitWDL[i].LastmatchOverTime.ToString();
             if (strKey == "ClearLabel")
                 for (int i = 0; i < matchpoints.Count(); i++)
                     foreach (Series ser in chart1.Series)
@@ -120,20 +120,20 @@ namespace Soccer_Score_Forecast
             if (strKey == "LastGoals")
                 for (int i = 0; i < matchpoints.Count(); i++)
                 {
-                    chart1.Series["RealGoals"].Points[i].Label = matchpoints[i].LastMatchGoals.ToString();
+                    chart1.Series["RealGoals"].Points[i].Label = matchpoints[i].LastmatchGoals.ToString();
                     chart1.Series["RealGoals"].Points[i].LabelForeColor = Color.Red;
                     chart1.Series["RealGoals"].Points[i].LabelBorderColor = Color.Red;
                 }
             if (strKey == "ScoreForecast")
                 for (int i = 0; i < fit.Count(); i++)
                 {
-                    chart1.Series["ForeWDL"].Points[i].Label = fit[i].LastMatchWDL.ToString();
+                    chart1.Series["ForeWDL"].Points[i].Label = fit[i].LastmatchWDL.ToString();
                     chart1.Series["ForeWDL"].Points[i].LabelForeColor = Color.Red;
                 }
             if (strKey == "GoalsForecast")
                 for (int i = 0; i < fit.Count(); i++)
                 {
-                    chart1.Series["ForeGoals"].Points[i].Label = fit[i].LastMatchGoals.ToString();
+                    chart1.Series["ForeGoals"].Points[i].Label = fit[i].LastmatchGoals.ToString();
                     chart1.Series["ForeGoals"].Points[i].LabelForeColor = Color.Red;
                 }
         }

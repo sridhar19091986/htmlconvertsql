@@ -28,33 +28,33 @@ namespace Soccer_Score_Forecast
         {
             DataTable dt = SevenmResult.GetHtmlTable();
 
-            SoccerScoreCompact match = new SoccerScoreCompact(Conn.cnn);
+            //SoccerScoreCompact match = new SoccerScoreCompact(cnn);
 
             foreach (DataRow aa in dt.Rows)
             {
                 if (HtmlTextToStr(aa[3].ToString()) != null)
                 {
-                    result_tb rt = new result_tb();
-                    rt.html_position = aa[0].ToString();
-                    rt.match_type = HtmlTextToStr(aa[1].ToString());
-                    rt.s_time = HtmlTextToStr(aa[2].ToString());
-                    rt.home_team = HtmlTextToStr(aa[3].ToString());
-                    rt.full_time_score = HtmlTextToStr(aa[4].ToString());
-                    rt.away_team = HtmlTextToStr(aa[5].ToString());
-                    rt.half_time_score = HtmlTextToStr(aa[6].ToString());
-                    rt.odds = HtmlTextToStr(aa[7].ToString());
-                    rt.win_loss_big = HtmlTextToStr(aa[8].ToString());
-                    rt.s_date = HtmlDateToStrResult(aa[2].ToString());
-                    rt.home_team_big = HtmlHrefToStr(aa[3].ToString());
-                    rt.away_team_big = HtmlHrefToStr(aa[5].ToString());
+                    Result_tb rt = new Result_tb();
+                    rt.Html_position = aa[0].ToString();
+                    rt.Match_type = HtmlTextToStr(aa[1].ToString());
+                    rt.S_time = HtmlTextToStr(aa[2].ToString());
+                    rt.Home_team = HtmlTextToStr(aa[3].ToString());
+                    rt.Full_time_score = HtmlTextToStr(aa[4].ToString());
+                    rt.Away_team = HtmlTextToStr(aa[5].ToString());
+                    rt.Half_time_score = HtmlTextToStr(aa[6].ToString());
+                    rt.Odds = HtmlTextToStr(aa[7].ToString());
+                    rt.Win_loss_big = HtmlTextToStr(aa[8].ToString());
+                    rt.S_date = HtmlDateToStrResult(aa[2].ToString());
+                    rt.Home_team_big = HtmlHrefToStr(aa[3].ToString());
+                    rt.Away_team_big = HtmlHrefToStr(aa[5].ToString());
 
-                    match.result_tb.InsertOnSubmit(rt);
-                    match.SubmitChanges();
+                    Conn.match.Result_tb.InsertOnSubmit(rt);
+                    Conn.match.SubmitChanges();
                     
                 }
             }
-           
-            return match.result_tb.Select(e => e.result_tb_id).Max();
+
+            return Conn.match.Result_tb.Select(e => e.Result_tb_id).Max();
         }
         //设置一个空的构造函数，调用后面的方法
         public SevenmResultToSql()
@@ -63,73 +63,73 @@ namespace Soccer_Score_Forecast
         }
         private string temp_time = null;
         private int last_line = 0;
-        public  void UpdateLastMatch()
+        public  void UpdateLastmatch()
         {
             int i = 0;
-            SoccerScoreCompact matches = new SoccerScoreCompact(Conn.cnn);
-            var rt = matches.result_tb.OrderBy(o => o.s_date).ThenBy(p => p.s_time);//用lambda表达式简洁
+            //SoccerScoreCompact match = new SoccerScoreCompact(cnn);
+            var rt = Conn.match.Result_tb.OrderBy(o => o.S_date).ThenBy(p => p.S_time);//用lambda表达式简洁
 
             //取临时变量监视
-            DateTime lib_max_match_time = matches.result_tb_lib.Select(p => p.match_time).Max().Value.AddDays(-2);
+            DateTime lib_max_Match_time = Conn.match.Result_tb_lib.Select(p => p.Match_time).Max().Value.AddDays(-2);
             foreach (var m in rt)
             {
                 i++;
                 ProgressBarDelegate.DoSendPMessage(i);
                 Application.DoEvents();
-                if (m.home_team_big != null)
+                if (m.Home_team_big != null)
                 {
-                    result_tb_lib rtl = new result_tb_lib();
-                    rtl.html_position = Int32.Parse(m.html_position);
-                    rtl.home_team_big = Int32.Parse(GetNumber(m.home_team_big));
-                    rtl.away_team_big = Int32.Parse(GetNumber(m.away_team_big));
-                    rtl.match_type = m.match_type.Trim();
-                    last_line = m.s_time.LastIndexOf("\n");
-                    temp_time=m.s_time.Substring(last_line,m.s_time.Length-last_line-1);
-                    rtl.match_time = DateTime.Parse(m.s_date.Substring(0, 10) + " " + temp_time);
-                    rtl.odds = m.odds.Trim();
-                    rtl.win_loss_big = m.win_loss_big.Trim();
-                    rtl.home_team = m.home_team.Trim();
-                    rtl.away_team = m.away_team.Trim();
-                    rtl.home_red_card = StringCount(m.home_team, "&nbsp;", 0);
-                    rtl.away_red_card =StringCount(m.away_team, "&nbsp;", 0);
-                    string bf = m.full_time_score.Replace("&nbsp;", "").Replace("&nbsp;", "");
-                    if (m.full_time_score.IndexOf("-") > 0)
+                    Result_tb_lib rtl = new Result_tb_lib();
+                    rtl.Html_position = Int32.Parse(m.Html_position);
+                    rtl.Home_team_big = Int32.Parse(GetNumber(m.Home_team_big));
+                    rtl.Away_team_big = Int32.Parse(GetNumber(m.Away_team_big));
+                    rtl.Match_type = m.Match_type.Trim();
+                    last_line = m.S_time.LastIndexOf("\n");
+                    temp_time=m.S_time.Substring(last_line,m.S_time.Length-last_line-1);
+                    rtl.Match_time= DateTime.Parse(m.S_date.Substring(0, 10) + " " + temp_time);
+                    rtl.Odds = m.Odds.Trim();
+                    rtl.Win_loss_big = m.Win_loss_big.Trim();
+                    rtl.Home_team = m.Home_team.Trim();
+                    rtl.Away_team = m.Away_team.Trim();
+                    rtl.Home_red_card = StringCount(m.Home_team, "&nbsp;", 0);
+                    rtl.Away_red_card =StringCount(m.Away_team, "&nbsp;", 0);
+                    string bf = m.Full_time_score.Replace("&nbsp;", "").Replace("&nbsp;", "");
+                    if (m.Full_time_score.IndexOf("-") > 0)
                     {
-                        rtl.full_home_goals = Int32.Parse(bf.Substring(0, bf.IndexOf("-")));
-                        rtl.full_away_goals = Int32.Parse(bf.Substring(bf.IndexOf("-") + 1, bf.Length - bf.IndexOf("-") - 1));
+                        rtl.Full_home_goals = Int32.Parse(bf.Substring(0, bf.IndexOf("-")));
+                        rtl.Full_away_goals = Int32.Parse(bf.Substring(bf.IndexOf("-") + 1, bf.Length - bf.IndexOf("-") - 1));
                     }
-                    if (m.half_time_score.IndexOf("-") > 0)
+                    if (m.Half_time_score.IndexOf("-") > 0)
                     {
-                        rtl.half_home_goals = Int32.Parse(m.half_time_score.Substring(0, m.half_time_score.IndexOf("-")));
-                        rtl.half_away_goals = Int32.Parse(m.half_time_score.Substring(m.half_time_score.IndexOf("-") + 1, m.half_time_score.Length - m.half_time_score.IndexOf("-") - 1));
+                        rtl.Half_home_goals = Int32.Parse(m.Half_time_score.Substring(0, m.Half_time_score.IndexOf("-")));
+                        rtl.Half_away_goals = Int32.Parse(m.Half_time_score.Substring(m.Half_time_score.IndexOf("-") + 1, m.Half_time_score.Length - m.Half_time_score.IndexOf("-") - 1));
                     }
 
                     //如果库中文件的日期太小，直接删除
-                    if (rtl.match_time > lib_max_match_time)
+                    if (rtl.Match_time > lib_max_Match_time)
                     {
                         //数据分区，层次化查询
-                        var rtExist = from p in matches.result_tb_lib
-                                      where p.match_time == rtl.match_time
-                                      where p.home_team_big == rtl.home_team_big
-                                      where p.away_team_big == rtl.away_team_big
+                        var rtExist = from p in Conn.match.Result_tb_lib
+                                      where p.Match_time == rtl.Match_time
+                                      where p.Home_team_big == rtl.Home_team_big
+                                      where p.Away_team_big == rtl.Away_team_big
                                       select p;
 
                         //库中没有记录直接插入
                         if (!rtExist.Any())
                         {
-                            matches.result_tb_lib.InsertOnSubmit(rtl);
-                            matches.SubmitChanges();
+                            Conn.match.Result_tb_lib.InsertOnSubmit(rtl);
+                            Conn.match.SubmitChanges();
                         }
                     }
 
                     //更新后删除
-                    matches.result_tb.DeleteOnSubmit(m);
-                    matches.SubmitChanges();
+                    Conn.match.Result_tb.DeleteOnSubmit(m);
+                    Conn.match.SubmitChanges();
                     
                 }
             }
             MessageBox.Show("OK");
-            //dataGridView1.DataSource = matches.result_tb_lib;
+            //dataGridView1.DataSource = match.Result_tb_lib;
         }
     }
 }
