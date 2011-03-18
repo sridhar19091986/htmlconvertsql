@@ -29,7 +29,7 @@ namespace Soccer_Score_Forecast
         private List<live_Table_lib> ltlAll;
         private List<result_tb_lib> rtlAll;
         private List<match_analysis_result> marAll;
-        private List<live_Aibo> loAll;
+        private List<live_okoo> loAll;
         private IEnumerable<live_Table_lib> ltls;
         //private IEnumerable<match_analysis_result> mars;
         private result_tb_lib rtl;
@@ -51,7 +51,7 @@ namespace Soccer_Score_Forecast
                 ltlAll = matches.live_Table_lib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).OrderBy(m => m.match_time).ToList();
                 rtlAll = matches.result_tb_lib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).ToList();
                 marAll = matches.match_analysis_result.Where(e => e.live_table_lib_id > 0).ToList();
-                loAll = matches.live_Aibo .Where(e => e.live_Aibo_id  > 0).ToList();
+                loAll = matches.live_okoo.Where(e => e.live_okoo_id > 0).ToList();
             }
         }
 
@@ -125,21 +125,56 @@ namespace Soccer_Score_Forecast
                     goals = mar.home_goals - mar.away_goals;
                     wdl = mar.home_w - mar.home_l;
                 }
+                strNode += "足彩【赔率+拟合】";
                 //加入bj单场数据
                 foreach (var lo in loAll)
                     if (ltl.home_team.Contains(lo.MatchOrder1_HomeName) || ltl.away_team.Contains(lo.MatchOrder1_AwayName))   //有匹配bj单场的数据
-                        strNode += "********" + lo.value + ">>" + lo.MatchOrder1_HandicapNumber;
+                    {
+                        List<int> minOdds = new List<int>();
+                        int minOdd = 0;
+                        strNode += "{" + lo.value + "}" + lo.MatchOrder1_HandicapNumber + "***{";
+                        minOdds.Add(ExtractDigital(lo.ok_1_0));
+                        minOdds.Add(ExtractDigital(lo.ok_1_1));
+                        minOdds.Add(ExtractDigital(lo.ok_1_2));
+                        minOdd = minOdds.Min();
+                        if (minOdds[0] == minOdd) strNode += "3";
+                        if (minOdds[1] == minOdd) strNode += "1";
+                        if (minOdds[2] == minOdd) strNode += "0";
+                    }
+                if (fit < 0) strNode += "0}";
+                else strNode += "3}";
                 TreeNode child = new TreeNode(strNode);
                 tn.Nodes.Add(child);
                 //颜色处理
                 if (fit < 0) child.ForeColor = Color.Blue;
                 if (goals < 0) child.BackColor = Color.Orange;
                 if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Bold);
-                if (strNode.Contains(">>")) child.Parent.ForeColor = Color.Red;
+                if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
             }
         }
         #endregion
+
+        private int ExtractDigital(string str)
+        {
+            //Console.WriteLine("请输入一个字符串：");
+            //string str = Console.ReadLine();
+            string number = null;
+            foreach (char item in str)
+            {
+                if (item >= 48 && item <= 58)
+                {
+                    number += item;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return Int32.Parse(number);
+            // Console.WriteLine(number);
+        }
     }
+
 }
 
 
