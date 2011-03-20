@@ -41,7 +41,9 @@ namespace Soccer_Score_Forecast
         private void initTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(ViewMatchOverDays.ToString());
-            loaddatatree.initTreeNode(ViewMatchOverDays);
+            List<string> matchlist = new List<string>();
+            matchlist.Add("西甲"); matchlist.Add("英超"); matchlist.Add("德甲"); matchlist.Add("意甲"); matchlist.Add("法甲");
+            loaddatatree.initTreeNode(ViewMatchOverDays,matchlist);
         }
         private void Form1_Load(object sender, EventArgs ee)
         {

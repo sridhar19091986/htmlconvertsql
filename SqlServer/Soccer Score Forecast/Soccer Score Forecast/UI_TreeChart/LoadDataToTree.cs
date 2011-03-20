@@ -38,9 +38,11 @@ namespace Soccer_Score_Forecast
         //private  TreeNode _treeViewMatch;
         public LoadDataToTree(int daysDiff)
         {
-            initTreeNode(daysDiff);
+            List<string> matchlist = new List<string>();
+            matchlist.Add("西甲"); matchlist.Add("英超"); matchlist.Add("德甲"); matchlist.Add("意甲"); matchlist.Add("法甲");
+            initTreeNode(daysDiff,matchlist);
         }
-        public void initTreeNode(int daysDiff)
+        public void initTreeNode(int daysDiff,List<string> matchlist)
         {
             //这个连接不能放到class中，不然取的还是缓存的数据？？？？？？？？？？？
             //对象和数据库之间会存在不能更新的问题？？？？？？？？？？？
@@ -48,7 +50,10 @@ namespace Soccer_Score_Forecast
 
             //using (SoccerScoreSqlite matches = new SoccerScoreSqlite(cnn))
             {
-                ltlAll = matches.live_Table_lib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).OrderBy(m => m.match_time).ToList();
+                ltlAll = matches.live_Table_lib
+                    .Where(e=>matchlist.Contains(e.match_type))
+                    .Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
+                    .OrderBy(m => m.match_time).ToList();
                 rtlAll = matches.result_tb_lib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).ToList();
                 marAll = matches.match_analysis_result.Where(e => e.live_table_lib_id > 0).ToList();
                 loAll = matches.live_okoo.Where(e => e.live_okoo_id > 0).ToList();
@@ -103,6 +108,7 @@ namespace Soccer_Score_Forecast
         {
             foreach (var ltl in ltls)
             {
+                string fDraw="";
                 double? fit = 0, goals = 0, wdl = 0;
                 //加入live_table数据
                 strNode = ltl.live_table_lib_id + "," + ltl.match_type + "," + ltl.match_time + "::" + ltl.home_team + "::" + ltl.away_team + "::" + ltl.status;
@@ -113,6 +119,7 @@ namespace Soccer_Score_Forecast
                     strNode += "||" + mar.result_fit + "::" + mar.result_goals + "::" + mar.result_wdl + "::" + mar.fit_win_loss + "::" +
                                     mar.home_goals + "::" + mar.away_goals + "::" + (mar.home_goals - mar.away_goals) + "::" +
                                     mar.home_w.ToString() + "::" + mar.home_d.ToString() + "::" + mar.home_l.ToString();
+                    fDraw=ForecastDraw(mar.home_w,mar.home_d,mar.home_l);
                     if (mar.result_tb_lib_id != null)  //有导入了结果
                     {
                         //加入result_tb数据
@@ -125,24 +132,17 @@ namespace Soccer_Score_Forecast
                     goals = mar.home_goals - mar.away_goals;
                     wdl = mar.home_w - mar.home_l;
                 }
-                strNode += "足彩【赔率+拟合】";
+
                 //加入bj单场数据
                 foreach (var lo in loAll)
                     if (ltl.home_team.Contains(lo.MatchOrder1_HomeName) || ltl.away_team.Contains(lo.MatchOrder1_AwayName))   //有匹配bj单场的数据
-                    {
-                        List<int> minOdds = new List<int>();
-                        int minOdd = 0;
-                        strNode += "{" + lo.value + "}" + lo.MatchOrder1_HandicapNumber + "***{";
-                        minOdds.Add(ExtractDigital(lo.ok_1_0));
-                        minOdds.Add(ExtractDigital(lo.ok_1_1));
-                        minOdds.Add(ExtractDigital(lo.ok_1_2));
-                        minOdd = minOdds.Min();
-                        if (minOdds[0] == minOdd) strNode += "3";
-                        if (minOdds[1] == minOdd) strNode += "1";
-                        if (minOdds[2] == minOdd) strNode += "0";
-                    }
+                        strNode += "{" + lo.value + "}" + lo.MatchOrder1_HandicapNumber + "***【赔率+拟合】";
+                if (ltl.home_team.IndexOf("*") != -1) strNode += "++++++{3";
+                else strNode += "++++++{0";
+                strNode += fDraw;
                 if (fit < 0) strNode += "0}";
                 else strNode += "3}";
+                
                 TreeNode child = new TreeNode(strNode);
                 tn.Nodes.Add(child);
                 //颜色处理
@@ -154,7 +154,16 @@ namespace Soccer_Score_Forecast
         }
         #endregion
 
-        private int ExtractDigital(string str)
+        //List<double> minOdds = new List<double>();
+        //double minOdd = 0;
+        //minOdds.Add(ExtractDigital(lo.ok_1_0));
+        //minOdds.Add(ExtractDigital(lo.ok_1_1));
+        //minOdds.Add(ExtractDigital(lo.ok_1_2));
+        //minOdd = minOdds.Min();
+        //if (minOdds[0] == minOdd) strNode += "3";
+        //if (minOdds[1] == minOdd) strNode += "1";
+        //if (minOdds[2] == minOdd) strNode += "0";
+        private double ExtractDigital(string str)
         {
             //Console.WriteLine("请输入一个字符串：");
             //string str = Console.ReadLine();
@@ -170,8 +179,14 @@ namespace Soccer_Score_Forecast
                     break;
                 }
             }
-            return Int32.Parse(number);
+            //return Int32.Parse(number); 
+            return double.Parse(number);
             // Console.WriteLine(number);
+        }
+        private string ForecastDraw(int? w, int? d, int? l) {
+            int?[] wdl = { w, d, l };
+            if (d == wdl.Min()) return "";
+            else  return "1";
         }
     }
 
