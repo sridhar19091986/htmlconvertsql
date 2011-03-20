@@ -255,6 +255,7 @@ namespace Soccer_Score_Forecast
                 toolStripProgressBar1.Maximum = pb;
                 f.top20Algorithm();
             }
+            MessageBox.Show("OK");
         }
         private void toolStripButton_todayEvaluate_Click(object sender, EventArgs e)
         {
@@ -522,6 +523,7 @@ namespace Soccer_Score_Forecast
                 toolStripProgressBar1.Maximum = pb;
                 f.top20Algorithm();
             }
+            MessageBox.Show("OK");
         }
         private void exitSystemSToolStripMenuItem_Click(object sender, EventArgs e)
         {

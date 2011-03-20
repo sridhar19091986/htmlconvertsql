@@ -37,8 +37,8 @@ namespace Soccer_Score_Forecast
 
         public UpdateAnalysisResult()
         {
-            mar=matches.match_analysis_result.Where(e => e.analysis_result_id == null);
-            //mar = matches.match_analysis_result.Where(e => e.result_tb_lib_id == null);
+            //mar=matches.match_analysis_result.Where(e => e.analysis_result_id == null);
+            mar = matches.match_analysis_result.Where(e => e.result_tb_lib_id == null);
             ExecUpateCount = mar.Count();
 
         }

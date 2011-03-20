@@ -22,7 +22,7 @@ namespace Soccer_Score_Forecast.LinqSql
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="D:\\MDF FILES\\MATCH_ANALYSIS_PDM.MDF")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="G:\\htmlconvertsql\\match_analysis_pdm.mdf")]
 	public partial class DataClassesMatchDataContext : System.Data.Linq.DataContext
 	{
 		

@@ -139,7 +139,9 @@ namespace Soccer_Score_Forecast
                         strNode += "{" + lo.value + "}" + lo.MatchOrder1_HandicapNumber + "***【赔率+拟合】";
                 if (ltl.home_team.IndexOf("*") != -1) strNode += "++++++{3";
                 else strNode += "++++++{0";
+
                 strNode += fDraw;
+
                 if (fit < 0) strNode += "0}";
                 else strNode += "3}";
                 
@@ -185,7 +187,7 @@ namespace Soccer_Score_Forecast
         }
         private string ForecastDraw(int? w, int? d, int? l) {
             int?[] wdl = { w, d, l };
-            if (d == wdl.Min()) return "";
+            if (d == wdl.Min() && d!=w && d!=l) return "";
             else  return "1";
         }
     }
