@@ -240,6 +240,7 @@
             this.button18 = new System.Windows.Forms.Button();
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.selectMatchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -556,9 +557,10 @@
             this.treeColaToolStripMenuItem,
             this.tToolStripMenuItem,
             this.caiPiaoToolStripMenuItem,
-            this.initTreeToolStripMenuItem});
+            this.initTreeToolStripMenuItem,
+            this.selectMatchToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 202);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 246);
             // 
             // filterMatchToolStripMenuItem
             // 
@@ -2103,6 +2105,13 @@
             this.treeView4.Size = new System.Drawing.Size(899, 384);
             this.treeView4.TabIndex = 0;
             // 
+            // selectMatchToolStripMenuItem1
+            // 
+            this.selectMatchToolStripMenuItem1.Name = "selectMatchToolStripMenuItem1";
+            this.selectMatchToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+            this.selectMatchToolStripMenuItem1.Text = "SelectMatch";
+            this.selectMatchToolStripMenuItem1.Click += new System.EventHandler(this.selectMatchToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2395,6 +2404,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.TreeView treeView5;
+        private System.Windows.Forms.ToolStripMenuItem selectMatchToolStripMenuItem1;
 
     }
 }

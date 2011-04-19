@@ -41,9 +41,17 @@ namespace Soccer_Score_Forecast
         private void initTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(ViewMatchOverDays.ToString());
+
+            string filterMatchPath = Application.StartupPath + @"\FilterMatch";
             List<string> matchlist = new List<string>();
-            matchlist.Add("西甲"); matchlist.Add("英超"); matchlist.Add("德甲"); matchlist.Add("意甲"); matchlist.Add("法甲");
-            loaddatatree.initTreeNode(ViewMatchOverDays,matchlist);
+            using (StreamReader r = new StreamReader(filterMatchPath, System.Text.Encoding.Default))
+            {
+                string line;
+                while ((line = r.ReadLine()) != null)
+                    matchlist.Add(line);
+            }
+
+            loaddatatree.initTreeNode(ViewMatchOverDays, matchlist, false);
         }
         private void Form1_Load(object sender, EventArgs ee)
         {
@@ -468,7 +476,7 @@ namespace Soccer_Score_Forecast
         }
         private void button21_Click(object sender, EventArgs e)
         {
-            AiboLiveToSql aibo = new AiboLiveToSql(webBrowser2.Document .Body .InnerHtml );
+            AiboLiveToSql aibo = new AiboLiveToSql(webBrowser2.Document.Body.InnerHtml);
             toolStripLabel2.Text = aibo.updateLiveAibo().ToString();
             MessageBox.Show("OK");
         }
@@ -672,8 +680,8 @@ namespace Soccer_Score_Forecast
         }
         private void treeView5_MouseDown(object sender, MouseEventArgs e)
         {
-            label3.Location = new Point(e.Location.X + 100, e.Location.Y+50);
-            dataGridView5.Location = new Point(e.Location.X + 30, e.Location.Y -20);
+            label3.Location = new Point(e.Location.X + 100, e.Location.Y + 50);
+            dataGridView5.Location = new Point(e.Location.X + 30, e.Location.Y - 20);
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -812,6 +820,17 @@ namespace Soccer_Score_Forecast
         private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //dataGridView5.Visible = false;
+        }
+
+        private void selectMatchToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string filterMatchPath = Application.StartupPath + @"\FilterMatch";
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(filterMatchPath, true, System.Text.Encoding.Default))
+            {
+                file.WriteLine("\n");
+                file.WriteLine(treeView5.SelectedNode.Text);
+            }
+
         }
     }
 }

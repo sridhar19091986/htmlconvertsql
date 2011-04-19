@@ -36,13 +36,20 @@ namespace Soccer_Score_Forecast
         private match_analysis_result mar;
         private string strNode;
         //private  TreeNode _treeViewMatch;
+       
         public LoadDataToTree(int daysDiff)
         {
+            string filterMatchPath = Application.StartupPath + @"\FilterMatch";
             List<string> matchlist = new List<string>();
-            matchlist.Add("西甲"); matchlist.Add("英超"); matchlist.Add("德甲"); matchlist.Add("意甲"); matchlist.Add("法甲");
-            initTreeNode(daysDiff,matchlist);
+            using (StreamReader r = new StreamReader(filterMatchPath, System.Text.Encoding.Default))
+            {
+                string line;
+                while ((line = r.ReadLine()) != null)
+                    matchlist.Add(line);
+            }
+            initTreeNode(daysDiff, matchlist, true);
         }
-        public void initTreeNode(int daysDiff,List<string> matchlist)
+        public void initTreeNode(int daysDiff, List<string> matchlist, bool ismath)
         {
             //这个连接不能放到class中，不然取的还是缓存的数据？？？？？？？？？？？
             //对象和数据库之间会存在不能更新的问题？？？？？？？？？？？
@@ -50,10 +57,15 @@ namespace Soccer_Score_Forecast
 
             //using (SoccerScoreSqlite matches = new SoccerScoreSqlite(cnn))
             {
-                ltlAll = matches.live_Table_lib
-                    .Where(e=>matchlist.Contains(e.match_type))
-                    .Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
-                    .OrderBy(m => m.match_time).ToList();
+                if (ismath)
+                    ltlAll = matches.live_Table_lib
+                        .Where(e => matchlist.Contains(e.match_type))
+                        .Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
+                        .OrderBy(m => m.match_time).ToList();
+                else
+                    ltlAll = matches.live_Table_lib
+                        .Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
+                        .OrderBy(m => m.match_time).ToList();
                 rtlAll = matches.result_tb_lib.Where(m => m.match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).ToList();
                 marAll = matches.match_analysis_result.Where(e => e.live_table_lib_id > 0).ToList();
                 loAll = matches.live_okoo.Where(e => e.live_okoo_id > 0).ToList();
