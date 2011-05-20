@@ -113,5 +113,10 @@ namespace GLT.SqlCopy.Controls
                 tbLogin.SelectAll();
             }
         }
+
+        private void SourceCtrl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
