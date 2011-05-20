@@ -815,5 +815,10 @@ namespace GLT.SqlCopy
             AboutForm frm = new AboutForm();
             frm.ShowDialog(this);
         }
+
+        private void WizardForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

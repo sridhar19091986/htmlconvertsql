@@ -90,30 +90,30 @@ namespace GLT.SqlCopy.Dialogs
 
         private bool Check35version(string path)
         {
-            //if (String.IsNullOrEmpty(path))
-            //    return false;
+            if (String.IsNullOrEmpty(path))
+                return false;
 
-            //FileVersionInfo ver = FileVersionInfo.GetVersionInfo(path);
-            //if (ver.FileVersion == "3.5.5386.0")
-            //{
-            //    _Ver35Valid = true;
-            //    return true;
-            //}
-            //else
-            //{
-            //    _Ver35Valid = false;
-            //    return false;
-            //}
+            FileVersionInfo ver = FileVersionInfo.GetVersionInfo(path);
+            if (ver.FileVersion == "3.5.5692.0")
+            {
+                _Ver35Valid = true;
+                return true;
+            }
+            else
+            {
+                _Ver35Valid = false;
+                return false;
+            }
             return true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //if (!Check31version(tb31Path.Text) && !Check35version(tb35Path.Text))
-            //{
-            //    MessageBox.Show(this, "You must select at least one valid assembly version to continue.", "Wrong Version of Assembly!", MessageBoxButtons.OK);
-            //    return;
-            //}
+            if (!Check31version(tb31Path.Text) && !Check35version(tb35Path.Text))
+            {
+                MessageBox.Show(this, "You must select at least one valid assembly version to continue.", "Wrong Version of Assembly!", MessageBoxButtons.OK);
+                return;
+            }
 
             this.DialogResult = DialogResult.OK;
         }

@@ -383,6 +383,7 @@
             this.MaximizeBox = false;
             this.Name = "WizardForm";
             this.Text = "SQL Server to SQL Compact Edition Database Copy";
+            this.Load += new System.EventHandler(this.WizardForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
