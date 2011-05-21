@@ -1,0 +1,135 @@
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.exe
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.pdb
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\ResolveAssemblyReference.cache
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Form1.resources
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Properties.Resources.resources
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.GenerateResource.Cache
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.exe
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.pdb
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.MSACAL.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.SHDocVw.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.stdole.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\AxInterop.MSACAL.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\AxInterop.SHDocVw.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.MSACAL.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.SHDocVw.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.stdole.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\AxInterop.MSACAL.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\AxInterop.SHDocVw.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.ResolveComReference.cache
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Winista.HtmlParser.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Winista.HtmlParser.pdb
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.MLApp.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitting.ctf
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.MLApp.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.dll
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.xml
+F:\项目开发进度2009年4月27日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.ctf
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.MLApp.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.MSACAL.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.SHDocVw.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.stdole.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\AxInterop.MSACAL.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\AxInterop.SHDocVw.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.ResolveComReference.cache
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.exe
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.pdb
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.exe
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Winista.HtmlParser.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.xml
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Winista.HtmlParser.pdb
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitting.ctf
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.ctf
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\ResolveAssemblyReference.cache
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Form1.resources
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Properties.Resources.resources
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.GenerateResource.Cache
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.pdb
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.MLApp.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.MSACAL.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.SHDocVw.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.stdole.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\AxInterop.MSACAL.dll
+F:\项目开发进度2009年5月17日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\AxInterop.SHDocVw.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.MLApp.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.MSACAL.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.SHDocVw.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.stdole.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\AxInterop.MSACAL.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\AxInterop.SHDocVw.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.ResolveComReference.cache
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.exe
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.pdb
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\ResolveAssemblyReference.cache
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Form1.resources
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Properties.Resources.resources
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.GenerateResource.Cache
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.exe
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.pdb
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Winista.HtmlParser.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.xml
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Winista.HtmlParser.pdb
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitting.ctf
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.ctf
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.MLApp.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.MSACAL.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.SHDocVw.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.stdole.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\AxInterop.MSACAL.dll
+F:\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\AxInterop.SHDocVw.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.MLApp.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.MSACAL.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.SHDocVw.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.stdole.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\AxInterop.MSACAL.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\AxInterop.SHDocVw.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.ResolveComReference.cache
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.exe
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.pdb
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.exe
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Winista.HtmlParser.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.xml
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Winista.HtmlParser.pdb
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitting.ctf
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.ctf
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\ResolveAssemblyReference.cache
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Form1.resources
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Properties.Resources.resources
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.GenerateResource.Cache
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.pdb
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.MLApp.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.MSACAL.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.SHDocVw.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.stdole.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\AxInterop.MSACAL.dll
+D:\项目开发LIB\项目开发进度2009年5月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\AxInterop.SHDocVw.dll
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.MLApp.dll
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Interop.MSACAL.dll
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.ResolveComReference.cache
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.exe
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.pdb
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.exe
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.pdb
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.dll
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.xml
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitting.ctf
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\CurveFitCom.ctf
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.MLApp.dll
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Interop.MSACAL.dll
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\ResolveAssemblyReference.cache
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Form1.resources
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer_Score_Forecast.Properties.Resources.resources
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\obj\Debug\Soccer Score Forecast.csproj.GenerateResource.Cache
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\HtmlAgilityPack.dll
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\HtmlAgilityPack.pdb
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\HtmlAgilityPack.xml
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Soccer Score Forecast.exe.config
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\office.dll
+F:\项目开发LIB\项目开发进度2010年6月30日\Soccer Score Forecast\Soccer Score Forecast\bin\Debug\Microsoft.Vbe.Interop.dll
