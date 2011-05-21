@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="G:\htmlconvertsql\match_analysis_pdm.mdf" EntityNamespace="Soccer_Score_Forecast.LinqSql" ContextNamespace="Soccer_Score_Forecast.LinqSql" Class="DataClassesMatchDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.live_Aibo" Member="Live_Aibo">
+    <Type Name="Live_Aibo">
+      <Column Name="live_Aibo_id" Member="Live_Aibo_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KeyValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LeagueName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_time" Member="Match_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchOrder1_HomeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchOrder1_HandicapNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchOrder1_AwayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.live_Aibo_tracking" Member="Live_Aibo_tracking">
+    <Type Name="Live_Aibo_tracking">
+      <Column Name="live_Aibo_id" Member="Live_Aibo_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="update_scope_local_id" Member="Update_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_key" Member="Scope_update_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_timestamp" Member="Scope_update_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_update_peer_key" Member="Local_update_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_update_peer_timestamp" Member="Local_update_peer_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="create_scope_local_id" Member="Create_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_key" Member="Scope_create_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_timestamp" Member="Scope_create_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_create_peer_key" Member="Local_create_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_create_peer_timestamp" Member="Local_create_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sync_row_is_tombstone" Member="Sync_row_is_tombstone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="restore_timestamp" Member="Restore_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="last_change_datetime" Member="Last_change_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.live_okoo" Member="Live_okoo">
+    <Type Name="Live_okoo">
+      <Column Name="live_okoo_id" Member="Live_okoo_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KeyValue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LeagueName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_time" Member="Match_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchOrder1_HomeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchOrder1_HandicapNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchOrder1_AwayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ok_1_0" Member="Ok_1_0" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ok_1_1" Member="Ok_1_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ok_1_2" Member="Ok_1_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchInfo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Match_1_Win" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Match_1_Drawn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Match_1_Lost" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.live_okoo_tracking" Member="Live_okoo_tracking">
+    <Type Name="Live_okoo_tracking">
+      <Column Name="live_okoo_id" Member="Live_okoo_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="update_scope_local_id" Member="Update_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_key" Member="Scope_update_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_timestamp" Member="Scope_update_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_update_peer_key" Member="Local_update_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_update_peer_timestamp" Member="Local_update_peer_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="create_scope_local_id" Member="Create_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_key" Member="Scope_create_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_timestamp" Member="Scope_create_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_create_peer_key" Member="Local_create_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_create_peer_timestamp" Member="Local_create_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sync_row_is_tombstone" Member="Sync_row_is_tombstone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="restore_timestamp" Member="Restore_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="last_change_datetime" Member="Last_change_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.live_Table" Member="Live_Table">
+    <Type Name="Live_Table">
+      <Column Name="live_table_id" Member="Live_table_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="html_position" Member="Html_position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_team_big" Member="Home_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team_big" Member="Away_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_type" Member="Match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="s_date" Member="S_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="s_time" Member="S_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="status" Member="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_team" Member="Home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team" Member="Away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="full_time_score" Member="Full_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="half_time_score" Member="Half_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.live_Table_lib" Member="Live_Table_lib">
+    <Type Name="Live_Table_lib">
+      <Column Name="live_table_lib_id" Member="Live_table_lib_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="html_position" Member="Html_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_team_big" Member="Home_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="away_team_big" Member="Away_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="match_type" Member="Match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_time" Member="Match_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Member="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_team" Member="Home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team" Member="Away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_red_card" Member="Home_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="away_red_card" Member="Away_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_home_goals" Member="Full_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_away_goals" Member="Full_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="half_home_goals" Member="Half_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="half_away_goals" Member="Half_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.live_Table_lib_tracking" Member="Live_Table_lib_tracking">
+    <Type Name="Live_Table_lib_tracking">
+      <Column Name="live_table_lib_id" Member="Live_table_lib_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="update_scope_local_id" Member="Update_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_key" Member="Scope_update_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_timestamp" Member="Scope_update_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_update_peer_key" Member="Local_update_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_update_peer_timestamp" Member="Local_update_peer_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="create_scope_local_id" Member="Create_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_key" Member="Scope_create_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_timestamp" Member="Scope_create_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_create_peer_key" Member="Local_create_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_create_peer_timestamp" Member="Local_create_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sync_row_is_tombstone" Member="Sync_row_is_tombstone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="restore_timestamp" Member="Restore_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="last_change_datetime" Member="Last_change_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.live_Table_tracking" Member="Live_Table_tracking">
+    <Type Name="Live_Table_tracking">
+      <Column Name="live_table_id" Member="Live_table_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="update_scope_local_id" Member="Update_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_key" Member="Scope_update_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_timestamp" Member="Scope_update_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_update_peer_key" Member="Local_update_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_update_peer_timestamp" Member="Local_update_peer_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="create_scope_local_id" Member="Create_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_key" Member="Scope_create_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_timestamp" Member="Scope_create_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_create_peer_key" Member="Local_create_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_create_peer_timestamp" Member="Local_create_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sync_row_is_tombstone" Member="Sync_row_is_tombstone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="restore_timestamp" Member="Restore_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="last_change_datetime" Member="Last_change_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.match_analysis_collection" Member="Match_analysis_collection">
+    <Type Name="Match_analysis_collection">
+      <Column Name="analysis_collection_id" Member="Analysis_collection_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="live_table_lib_id" Member="Live_table_lib_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="result_tb_lib_id" Member="Result_tb_lib_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.match_analysis_collection_tracking" Member="Match_analysis_collection_tracking">
+    <Type Name="Match_analysis_collection_tracking">
+      <Column Name="analysis_collection_id" Member="Analysis_collection_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="update_scope_local_id" Member="Update_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_key" Member="Scope_update_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_timestamp" Member="Scope_update_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_update_peer_key" Member="Local_update_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_update_peer_timestamp" Member="Local_update_peer_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="create_scope_local_id" Member="Create_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_key" Member="Scope_create_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_timestamp" Member="Scope_create_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_create_peer_key" Member="Local_create_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_create_peer_timestamp" Member="Local_create_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sync_row_is_tombstone" Member="Sync_row_is_tombstone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="restore_timestamp" Member="Restore_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="last_change_datetime" Member="Last_change_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.match_analysis_result" Member="Match_analysis_result">
+    <Type Name="Match_analysis_result">
+      <Column Name="analysis_result_id" Member="Analysis_result_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="live_table_lib_id" Member="Live_table_lib_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="result_tb_lib_id" Member="Result_tb_lib_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pre_algorithm" Member="Pre_algorithm" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="pre_match_count" Member="Pre_match_count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_w" Member="Home_w" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_d" Member="Home_d" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_l" Member="Home_l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_goals" Member="Home_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="away_goals" Member="Away_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="fit_win_loss" Member="Fit_win_loss" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="fit_goals" Member="Fit_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="fit_odd_even" Member="Fit_odd_even" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="result_fit" Member="Result_fit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="result_goals" Member="Result_goals" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="result_wdl" Member="Result_wdl" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.match_analysis_result_tracking" Member="Match_analysis_result_tracking">
+    <Type Name="Match_analysis_result_tracking">
+      <Column Name="analysis_result_id" Member="Analysis_result_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="update_scope_local_id" Member="Update_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_key" Member="Scope_update_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_timestamp" Member="Scope_update_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_update_peer_key" Member="Local_update_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_update_peer_timestamp" Member="Local_update_peer_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="create_scope_local_id" Member="Create_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_key" Member="Scope_create_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_timestamp" Member="Scope_create_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_create_peer_key" Member="Local_create_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_create_peer_timestamp" Member="Local_create_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sync_row_is_tombstone" Member="Sync_row_is_tombstone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="restore_timestamp" Member="Restore_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="last_change_datetime" Member="Last_change_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.match_table_xpath" Member="Match_table_xpath">
+    <Type Name="Match_table_xpath">
+      <Column Name="uri_host_id" Member="Uri_host_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uri_host" Member="Uri_host" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="max_table_xpath" Member="Max_table_xpath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="max_table_id_value" Member="Max_table_id_value" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="second_table_xpath" Member="Second_table_xpath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="second_table_id_value" Member="Second_table_id_value" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="order_table_id" Member="Order_table_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.match_table_xpath_tracking" Member="Match_table_xpath_tracking">
+    <Type Name="Match_table_xpath_tracking">
+      <Column Name="uri_host_id" Member="Uri_host_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="update_scope_local_id" Member="Update_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_key" Member="Scope_update_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_timestamp" Member="Scope_update_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_update_peer_key" Member="Local_update_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_update_peer_timestamp" Member="Local_update_peer_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="create_scope_local_id" Member="Create_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_key" Member="Scope_create_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_timestamp" Member="Scope_create_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_create_peer_key" Member="Local_create_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_create_peer_timestamp" Member="Local_create_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sync_row_is_tombstone" Member="Sync_row_is_tombstone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="restore_timestamp" Member="Restore_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="last_change_datetime" Member="Last_change_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.result_tb" Member="Result_tb">
+    <Type Name="Result_tb">
+      <Column Name="result_tb_id" Member="Result_tb_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="html_position" Member="Html_position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_team_big" Member="Home_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team_big" Member="Away_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_type" Member="Match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="s_date" Member="S_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="s_time" Member="S_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_team" Member="Home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team" Member="Away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="full_time_score" Member="Full_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="half_time_score" Member="Half_time_score" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="odds" Member="Odds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="win_loss_big" Member="Win_loss_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.result_tb_lib" Member="Result_tb_lib">
+    <Type Name="Result_tb_lib">
+      <Column Name="result_tb_lib_id" Member="Result_tb_lib_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="html_position" Member="Html_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_team_big" Member="Home_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="away_team_big" Member="Away_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="match_type" Member="Match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_time" Member="Match_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="home_team" Member="Home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team" Member="Away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="odds" Member="Odds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="win_loss_big" Member="Win_loss_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="home_red_card" Member="Home_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="away_red_card" Member="Away_red_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_home_goals" Member="Full_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_away_goals" Member="Full_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="half_home_goals" Member="Half_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="half_away_goals" Member="Half_away_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.result_tb_lib_tracking" Member="Result_tb_lib_tracking">
+    <Type Name="Result_tb_lib_tracking">
+      <Column Name="result_tb_lib_id" Member="Result_tb_lib_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="update_scope_local_id" Member="Update_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_key" Member="Scope_update_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_timestamp" Member="Scope_update_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_update_peer_key" Member="Local_update_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_update_peer_timestamp" Member="Local_update_peer_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="create_scope_local_id" Member="Create_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_key" Member="Scope_create_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_timestamp" Member="Scope_create_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_create_peer_key" Member="Local_create_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_create_peer_timestamp" Member="Local_create_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sync_row_is_tombstone" Member="Sync_row_is_tombstone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="restore_timestamp" Member="Restore_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="last_change_datetime" Member="Last_change_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.result_tb_tracking" Member="Result_tb_tracking">
+    <Type Name="Result_tb_tracking">
+      <Column Name="result_tb_id" Member="Result_tb_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="update_scope_local_id" Member="Update_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_key" Member="Scope_update_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_update_peer_timestamp" Member="Scope_update_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_update_peer_key" Member="Local_update_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_update_peer_timestamp" Member="Local_update_peer_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="create_scope_local_id" Member="Create_scope_local_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_key" Member="Scope_create_peer_key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scope_create_peer_timestamp" Member="Scope_create_peer_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="local_create_peer_key" Member="Local_create_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="local_create_peer_timestamp" Member="Local_create_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sync_row_is_tombstone" Member="Sync_row_is_tombstone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="restore_timestamp" Member="Restore_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="last_change_datetime" Member="Last_change_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.schema_info" Member="Schema_info">
+    <Type Name="Schema_info">
+      <Column Name="schema_major_version" Member="Schema_major_version" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="schema_minor_version" Member="Schema_minor_version" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="schema_extended_info" Member="Schema_extended_info" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.scope_config" Member="Scope_config">
+    <Type Name="Scope_config">
+      <Column Name="config_id" Member="Config_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="config_data" Member="Config_data" Type="System.Xml.Linq.XElement" DbType="Xml NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="scope_status" Member="Scope_status" Type="System.String" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.scope_info" Member="Scope_info">
+    <Type Name="Scope_info">
+      <Column Name="scope_local_id" Member="Scope_local_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="scope_id" Member="Scope_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="sync_scope_name" Member="Sync_scope_name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="scope_sync_knowledge" Member="Scope_sync_knowledge" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="scope_tombstone_cleanup_knowledge" Member="Scope_tombstone_cleanup_knowledge" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="scope_timestamp" Member="Scope_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="scope_config_id" Member="Scope_config_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="scope_restore_count" Member="Scope_restore_count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="scope_user_comment" Member="Scope_user_comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
