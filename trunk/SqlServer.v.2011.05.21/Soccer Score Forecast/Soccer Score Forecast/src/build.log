@@ -1,0 +1,51 @@
+Compiler version: 4.7 (R2007b) 
+Warning: Duplicate directory name: d:\My Documents\MATLAB. 
+mcc -W 'dotnet:CurveFitCom,CurveFitComclass,0.0,private' -d 'd:\My Documents\MATLAB\CurveFitCom\src' -T 'link:lib' -v 'class{CurveFitComclass:d:\My Documents\MATLAB\mypolyfit.m,d:\My Documents\MATLAB\mymeshgrid.m,d:\My Documents\MATLAB\myinterp2.m,d:\My Documents\MATLAB\myinterp1.m,d:\My Documents\MATLAB\mygriddata.m,d:\My Documents\MATLAB\myfinemeshgrid.m,d:\My Documents\MATLAB\myplus.m,d:\My Documents\MATLAB\mypolyval.m}'  
+Processing C:\Program Files\MATLAB\R2007b\toolbox\matlab\mcc.enc 
+Processing include files... 
+2 item(s) added. 
+Processing directories installed with MCR... 
+The file d:\My Documents\MATLAB\CurveFitCom\src\mccExcludedFiles.log contains a list of functions excluded from the CTF archive. 
+1 item(s) added. 
+Generating MATLAB path for the compiled application... 
+Created 35 path items. 
+Begin validation of MEX files: Tue May 05 13:55:14 2009 
+Validating 'C:\Program Files\MATLAB\R2007b\toolbox\compiler\deploy\deploywhich.mexw32'. 
+No conflicting M-file found. 
+Validating 'C:\Program Files\MATLAB\R2007b\toolbox\compiler\deploy\readline.mexw32'. 
+No conflicting M-file found. 
+End validation of MEX files: Tue May 05 13:55:14 2009 
+Deleting 2 temporary MEX authorization files. 
+Removing: 'C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\mathworks_tmp_5360_1032.auth'. 
+Removing: 'C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\mathworks_tmp_10124_1032.auth'. 
+Parsing file "d:\My Documents\MATLAB\mypolyfit.m" 
+	(Referenced from: "Compiler Command Line"). 
+Parsing file "d:\My Documents\MATLAB\mymeshgrid.m" 
+	(Referenced from: "Compiler Command Line"). 
+Parsing file "d:\My Documents\MATLAB\myinterp2.m" 
+	(Referenced from: "Compiler Command Line"). 
+Parsing file "d:\My Documents\MATLAB\myinterp1.m" 
+	(Referenced from: "Compiler Command Line"). 
+Parsing file "d:\My Documents\MATLAB\mygriddata.m" 
+	(Referenced from: "Compiler Command Line"). 
+Parsing file "d:\My Documents\MATLAB\myfinemeshgrid.m" 
+	(Referenced from: "Compiler Command Line"). 
+Parsing file "d:\My Documents\MATLAB\myplus.m" 
+	(Referenced from: "Compiler Command Line"). 
+Parsing file "d:\My Documents\MATLAB\mypolyval.m" 
+	(Referenced from: "Compiler Command Line"). 
+Parsing file "C:\Program Files\MATLAB\R2007b\toolbox\compiler\deploy\deployprint.m" 
+	(Referenced from: "Compiler Command Line"). 
+Parsing file "C:\Program Files\MATLAB\R2007b\toolbox\compiler\deploy\printdlg.m" 
+	(Referenced from: "Compiler Command Line"). 
+Generating file "d:\My Documents\MATLAB\CurveFitCom\src\CurveFitComclass.cs". 
+Generating file "d:\My Documents\MATLAB\CurveFitCom\src\readme.txt". 
+Generating file "d:\My Documents\MATLAB\CurveFitCom\src\CurveFitCom_mcc_component_data.cs". 
+Executing command: C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\csc.exe /nologo /optimize /doc:"d:\My Documents\MATLAB\CurveFitCom\src\CurveFitCom.xml" /t:library /r:"C:\Program Files\MATLAB\R2007b\toolbox\dotnetbuilder\bin\win32\v2.0\MWArray.dll" /linkres:"d:\My Documents\MATLAB\CurveFitCom\src\CurveFitCom.ctf" /out:"d:\My Documents\MATLAB\CurveFitCom\src\CurveFitCom.dll" "d:\My Documents\MATLAB\CurveFitCom\src\CurveFitComclass.cs" "d:\My Documents\MATLAB\CurveFitCom\src\CurveFitCom_mcc_component_data.cs" 
+Warning: Duplicate directory name: d:\My Documents\MATLAB. 
+Warning: Duplicate directory name: d:\My Documents\MATLAB. 
+Warning: Duplicate directory name: d:\My Documents\MATLAB. 
+Warning: Duplicate directory name: d:\My Documents\MATLAB. 
+Warning: Duplicate directory name: d:\My Documents\MATLAB. 
+Warning: Duplicate directory name: d:\My Documents\MATLAB. 
+Warning: Duplicate directory name: d:\My Documents\MATLAB. 

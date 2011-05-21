@@ -1,0 +1,32 @@
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\bin\Release\Soccer Score Forecast.exe.config
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\bin\Release\Soccer Score Forecast.exe
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\bin\Release\Soccer Score Forecast.pdb
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\bin\Release\HtmlAgilityPack.dll
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\bin\Release\myCurveFit.dll
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\bin\Release\HtmlAgilityPack.pdb
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\bin\Release\HtmlAgilityPack.xml
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\bin\Release\myCurveFit.ctf
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\obj\Release\ResolveAssemblyReference.cache
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Soccer Score Forecast.csproj.ResolveComReference.cache
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Soccer_Score_Forecast.Form1.resources
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Soccer_Score_Forecast.Properties.Resources.resources
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\obj\Release\GenerateResource.read.1.tlog
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\obj\Release\GenerateResource.write.1.tlog
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Soccer Score Forecast.exe
+G:\htmlconvertsql\SqlServer\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Soccer Score Forecast.pdb
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\bin\Release\Soccer Score Forecast.exe.config
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Soccer Score Forecast.csproj.ResolveComReference.cache
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Soccer Score Forecast.exe
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Soccer Score Forecast.pdb
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\bin\Release\Soccer Score Forecast.exe
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\bin\Release\Soccer Score Forecast.pdb
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\bin\Release\HtmlAgilityPack.dll
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\bin\Release\myCurveFit.dll
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\bin\Release\HtmlAgilityPack.pdb
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\bin\Release\HtmlAgilityPack.xml
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\bin\Release\myCurveFit.ctf
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\obj\Release\ResolveAssemblyReference.cache
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Soccer_Score_Forecast.Form1.resources
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\obj\Release\Soccer_Score_Forecast.Properties.Resources.resources
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\obj\Release\GenerateResource.read.1.tlog
+G:\htmlconvertsql\SqlServer_20110520\Soccer Score Forecast\Soccer Score Forecast\obj\Release\GenerateResource.write.1.tlog
