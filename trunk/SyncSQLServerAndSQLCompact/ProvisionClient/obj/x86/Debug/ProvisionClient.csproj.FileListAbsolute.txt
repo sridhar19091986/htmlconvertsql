@@ -1,0 +1,6 @@
+G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ProvisionClient\bin\Debug\ProvisionClient.exe
+G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ProvisionClient\bin\Debug\ProvisionClient.pdb
+G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ProvisionClient\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ProvisionClient\obj\x86\Debug\ProvisionClient.exe
+G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ProvisionClient\obj\x86\Debug\ProvisionClient.pdb
+G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ProvisionClient\bin\Debug\ProvisionClient.exe.config
