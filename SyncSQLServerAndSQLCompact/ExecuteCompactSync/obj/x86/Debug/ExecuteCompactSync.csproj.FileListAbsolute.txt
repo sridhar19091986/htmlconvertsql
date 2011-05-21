@@ -1,6 +1,0 @@
-G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ExecuteCompactSync\bin\Debug\ExecuteCompactSync.exe.config
-G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ExecuteCompactSync\bin\Debug\ExecuteCompactSync.exe
-G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ExecuteCompactSync\bin\Debug\ExecuteCompactSync.pdb
-G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ExecuteCompactSync\obj\x86\Debug\ResolveAssemblyReference.cache
-G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ExecuteCompactSync\obj\x86\Debug\ExecuteCompactSync.exe
-G:\htmlconvertsql\SqlCompact_20110520\Tools\SyncSQLServerAndSQLCompact\ExecuteCompactSync\obj\x86\Debug\ExecuteCompactSync.pdb
