@@ -10,16 +10,22 @@ namespace 注册机
         {
             InitializeComponent();
         }
-
-        string startPath = Application.StartupPath;
-
         LicenseCheck lc = new LicenseCheck();
-
+        LicenseString ls = new LicenseString();
         void 生成注册号Btn_Click(object sender, EventArgs e)
         {
             textBox2.Text += lc.GetRegHead2(textBox1.Text);
             textBox2.Text += "-";
             textBox2.Text += lc.GetRegTail3(textBox1.Text);
+
+            ls.regLicense = textBox2.Text;
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "License File|*.lic";
+            saveFileDialog1.Title = "Save an License File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+                lc.keyfile=saveFileDialog1.FileName;
 
             if (File.Exists(lc.keyfile) == true)
             {
@@ -39,18 +45,25 @@ namespace 注册机
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DateTime dt = DateTime.Now;
-            DateTime dt1 = DateTime.Now.AddDays(7);
-            textBox1.Text = lc.获取机器码(textBox2.Text);
-            textBox3.Text = "30";
-            textBox4.Text = dt1.ToString();
-            textBox5.Text = dt.ToFileTime().ToString();
+            ls.machineNum= textBox1.Text = lc.获取机器码(textBox2.Text);
+            ls.expTimes=textBox3.Text = "30";
+            ls.expireDate=textBox4.Text =  ls.regDateTime.AddDays(7).ToString();
+            ls.regDate=textBox5.Text = ls.regDateTime.ToFileTime().ToString();
 
             //textBox5.Text = "shanghai china mobile 1";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            OpenFileDialog dlgOpenfile = new OpenFileDialog();
+            dlgOpenfile.Filter = "Request File|*.req|License File|*.lic";
+            dlgOpenfile.Title = "Open an Request File or an License File ";
+            dlgOpenfile.ShowDialog();
+            dlgOpenfile.RestoreDirectory = true;
+            if (!string.IsNullOrEmpty(dlgOpenfile.FileName))
+            {
+                lc.keyfile = dlgOpenfile.FileName;
+            }
             if (File.Exists(lc.keyfile) == true)
             {
                 StreamReader reader = new StreamReader(lc.keyfile);

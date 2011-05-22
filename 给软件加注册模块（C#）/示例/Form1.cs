@@ -5,13 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
 using System.IO;
-
-
 using System.Management;
 using System.Security.Cryptography;
-using Soccer.Score.Forecast.LicenseCheck;
 
 namespace 示例
 {
@@ -21,18 +17,8 @@ namespace 示例
         {
             InitializeComponent();
         }
-
-        string serialNum;
-        string machineNum;
-        string regNum;
-        string regDate;
-        string regTimes;
-
-        bool bRegOK = true;
-
+        LincenseString ls = new LincenseString();
         LicenseCheck lc = new LicenseCheck();
-        DateTime dt = DateTime.Now;
-
         private void Form1_Load(object sender, EventArgs e)
         {
             //加密模块开始 
@@ -49,15 +35,15 @@ namespace 示例
             }
             //加密模块检查序列号 
             StreamReader reader = new StreamReader(licPath);
-            machineNum = reader.ReadLine();
-            regNum = reader.ReadLine();
-            regTimes = reader.ReadLine();
-            regDate = reader.ReadLine();
-            serialNum = reader.ReadLine();
+            ls.machineNum = reader.ReadLine();
+            ls.regNum = reader.ReadLine();
+            ls.regTimes = reader.ReadLine();
+            ls.regDate = reader.ReadLine();
+            ls.serialNum = reader.ReadLine();
             string licDate = reader.ReadLine();
             string licQQ = reader.ReadLine();
             reader.Close();
-            if (machineNum == null || regNum == null || regTimes == null || regDate == null || licDate == null || licQQ == null)
+            if (ls.machineNum == null || ls.regNum == null || ls.regTimes == null || ls.regDate == null || licDate == null || licQQ == null)
             {
                 form.ShowDialog();
                 this.Close();
@@ -70,27 +56,27 @@ namespace 示例
                 this.Close();
                 return;
             }
-            regNum = lc.Decrypt(regNum, "icomicom");
-            machineNum = lc.Decrypt(machineNum, "icomicom");
-            if (!lc.CheckRegHead(machineNum, regNum))
+            ls.regNum = lc.Decrypt(ls.regNum, "icomicom");
+            ls.machineNum = lc.Decrypt(ls.machineNum, "icomicom");
+            if (!lc.CheckRegHead(ls.machineNum, ls.regNum))
             {
                 MessageBox.Show("序列号不正确，系统将退出，请与软件供应商联系！");
                 this.Close();
                 return;
             }
             licDate = lc.Decrypt(licDate, "icdredge");//新写入
-            regDate = lc.Decrypt(regDate, "icomicom");
+            ls.regDate = lc.Decrypt(ls.regDate, "icomicom");
             DateTime trial = DateTime.Parse(licDate);
-            DateTime YouregDate = DateTime.Parse(regDate);
+            DateTime YouregDate = DateTime.Parse(ls.regDate);
             if (DateTime.Compare(trial, YouregDate) > 0)
             {
                 MessageBox.Show("试用期限超出，系统将退出，请与软件供应商联系！");
                 this.Close();
                 return;
             }
-            regTimes = lc.Decrypt(regTimes, "icomicom");
-            long YouregTimes = Int64.Parse(regTimes);
-            serialNum = lc.Decrypt(serialNum, "icomicom");
+            ls.regTimes = lc.Decrypt(ls.regTimes, "icomicom");
+            long YouregTimes = Int64.Parse(ls.regTimes);
+            ls.serialNum = lc.Decrypt(ls.serialNum, "icomicom");
             if (YouregTimes == 0)
             {
                 MessageBox.Show("试用次数超出，系统将退出，请与软件供应商联系！");
@@ -104,11 +90,11 @@ namespace 示例
                     File.Delete(licPath);
                 }
                 StreamWriter sw = File.CreateText(licPath);
-                sw.WriteLine(lc.Encrypt(machineNum, "icomicom"));
-                sw.WriteLine(lc.Encrypt(regNum, "icomicom"));
+                sw.WriteLine(lc.Encrypt(ls.machineNum, "icomicom"));
+                sw.WriteLine(lc.Encrypt(ls.regNum, "icomicom"));
                 sw.WriteLine(lc.Encrypt((YouregTimes - 1).ToString(), "icomicom"));
-                sw.WriteLine(lc.Encrypt(regDate, "icomicom"));
-                sw.WriteLine(lc.Encrypt(serialNum, "icomicom"));
+                sw.WriteLine(lc.Encrypt(ls.regDate, "icomicom"));
+                sw.WriteLine(lc.Encrypt(ls.serialNum, "icomicom"));
                 DateTime dt = DateTime.Now;
                 licDate = dt.ToString();
                 sw.WriteLine(lc.Encrypt(licDate, "icdredge"));
@@ -121,17 +107,17 @@ namespace 示例
         private void 校验注册号代码Btn_Click(object sender, EventArgs e)
         {
             //检验注册号，把检验结果找一内存保存起来。不要在校验结果代码附近做任何影响程序正常工作的处理，这样不易被跟踪。
-            string regTail3 =lc. GetRegTail3ByMac(serialNum);
-            if (string.Compare(regTail3, 0, regNum, 12, 17) == 0)
-                bRegOK = true;
+            string regTail3 =lc. GetRegTail3ByMac(ls.serialNum);
+            if (string.Compare(regTail3, 0, ls.regNum, 12, 17) == 0)
+                ls.bRegOK = true;
             else
-                bRegOK = false;
+                ls.bRegOK = false;
         }
 
         private void 核心功能代码代表Btn_Click(object sender, EventArgs e)
         {
             int result;
-            if (bRegOK)
+            if (ls.bRegOK)
             {
                 result = 10 + 10;
             }

@@ -15,8 +15,12 @@ D:\项目开发LIB\项目开发进度2009年1月31日\给软件加注册模块�
 D:\项目开发LIB\项目开发进度2009年1月31日\给软件加注册模块（C#）\示例\obj\Debug\示例.exe
 D:\项目开发LIB\项目开发进度2009年1月31日\给软件加注册模块（C#）\示例\obj\Debug\示例.pdb
 G:\htmlconvertsql\给软件加注册模块（C#）\示例\obj\Debug\ResolveAssemblyReference.cache
-G:\htmlconvertsql\给软件加注册模块（C#）\示例\obj\Debug\Soccer.Score.Forecast.Example.Form1.resources
 G:\htmlconvertsql\给软件加注册模块（C#）\示例\obj\Debug\示例.Properties.Resources.resources
 G:\htmlconvertsql\给软件加注册模块（C#）\示例\obj\Debug\GenerateResource.read.1.tlog
 G:\htmlconvertsql\给软件加注册模块（C#）\示例\obj\Debug\GenerateResource.write.1.tlog
 G:\htmlconvertsql\给软件加注册模块（C#）\示例\obj\Debug\示例.Form1.resources
+G:\htmlconvertsql\给软件加注册模块（C#）\bin\示例.exe.config
+G:\htmlconvertsql\给软件加注册模块（C#）\bin\示例.exe
+G:\htmlconvertsql\给软件加注册模块（C#）\bin\示例.pdb
+G:\htmlconvertsql\给软件加注册模块（C#）\示例\obj\Debug\示例.exe
+G:\htmlconvertsql\给软件加注册模块（C#）\示例\obj\Debug\示例.pdb
