@@ -6,18 +6,17 @@ using System.Management;
 using System;
 
 
-namespace 注册机
+namespace 示例
 {
-    public class LicenseString
+    public class LincenseString
     {
         public string serialNum { get; set; }
         public string machineNum { get; set; }
-        public string regLicense { get; set; }
+        public string regNum { get; set; }
         public string regDate { get; set; }
-        public string expireDate { get; set; }
-        public string expTimes { get; set; }
+        public string regTimes { get; set; }
         public bool bRegOK { get; set; }
-        public DateTime regDateTime { get { return DateTime.Now; } set; }
+        public DateTime dt { get { return DateTime.Now; } set; }
     }
     public class LicenseCheck
     {

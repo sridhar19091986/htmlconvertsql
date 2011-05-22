@@ -10,38 +10,31 @@ namespace 注册
         {
             InitializeComponent();
         }
-        string serialNum;
-        string machineNum;
-        string regNum;
-        string regDate;
-        string regTimes;
-        string serialNum1;
-        string machineNum1;
-        string regNum1;
-        string regDate1;
-        string regTimes1;
-        string regEmail;
-       
-        DateTime dt = DateTime.Now;
-        SsfLicenseCheck.LicenseCheck lc = new SsfLicenseCheck.LicenseCheck();
+        LicenseCheck lc = new LicenseCheck();
+        LicenseString ls = new LicenseString();
         private void 生成机器码Btn_Click(object sender, EventArgs e)
         {
-            string appPath = Application.StartupPath.ToString();
-            string licPath = appPath + "\\LAY3-T.lic";
-            string licDate = dt.ToString();
+            ls.regEmail = textBox1.Text;
+            textBox2.Text = ls.regDateFile;
+            textBox3.Text = ls.machineNum;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Request File|*.req";
+            saveFileDialog1.Title = "Save an Request File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+                生成注册号(saveFileDialog1.FileName);
 
-
-            OpenFileDialog dlgOpenfile = new OpenFileDialog();
-            string strFileFullName = null;
-            dlgOpenfile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            dlgOpenfile.Title = "Open";
-            dlgOpenfile.ShowDialog();
-            dlgOpenfile.RestoreDirectory = true;
-            if (!string.IsNullOrEmpty(dlgOpenfile.FileName))
-            {
-                strFileFullName = dlgOpenfile.FileName;
-            }
-
+        }
+        void 生成注册号(string reqFile)
+        {
+            if (File.Exists(reqFile) == true)
+                File.Delete(reqFile);
+            StreamWriter sw = File.CreateText(reqFile);
+            sw.WriteLine(lc.Encrypt(ls.regEmail, lc.keyStr));
+            sw.WriteLine(lc.Encrypt(ls.regDateFile, lc.keyStr));
+            sw.WriteLine(lc.Encrypt(ls.machineNum, lc.keyStr));
+            sw.Flush();
+            sw.Close();
         }
         private void 注册Btn_Click(object sender, EventArgs e)
         {
@@ -104,9 +97,11 @@ namespace 注册
             }
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ls.regDateFile= ls.regDateTime.ToFileTime().ToString();
+            ls.machineNum = lc.获取机器码(ls.regDateFile);
         }
     }
 }

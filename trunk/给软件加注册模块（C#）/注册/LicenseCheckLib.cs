@@ -6,11 +6,24 @@ using System.Management;
 using System;
 
 
-namespace 注册机
+namespace 注册
 {
     public class LicenseString
     {
-        public string serialNum { get; set; }
+        string serialNum;
+       
+        string regNum;
+        string regDate;
+        string regTimes;
+        string serialNum1;
+        string machineNum1;
+        string regNum1;
+        string regDate1;
+        string regTimes1;
+        public string regEmail { get; set; }
+        DateTime dt = DateTime.Now;
+
+        public string regDateFile { get; set; }
         public string machineNum { get; set; }
         public string regLicense { get; set; }
         public string regDate { get; set; }
