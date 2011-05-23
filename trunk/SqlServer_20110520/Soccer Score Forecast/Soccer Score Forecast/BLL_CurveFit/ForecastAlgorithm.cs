@@ -13,8 +13,8 @@ namespace Soccer_Score_Forecast
         {
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
-                var idLive = matches.Live_Table_lib.Select(e => e.Live_table_lib_id);
-                var idAnalysis = matches.Match_analysis_result.Select(e =>(int) e.Live_table_lib_id);
+                var idLive = matches.Live_Table_lib.Select(e => e.Live_table_lib_id).ToList();//立即加载效率高？
+                var idAnalysis = matches.Match_analysis_result.Select(e => e.Live_table_lib_id??0).ToList();//可空类型转换
                 idExc = idLive.Except(idAnalysis).ToList();   //except序列A有的元素序列B没有
             }
         }
@@ -30,7 +30,7 @@ namespace Soccer_Score_Forecast
                     Application.DoEvents();
                     RowNumberLimit r = new RowNumberLimit(id);
                     Match_analysis_result mar = new Match_analysis_result();
-                    mar.Live_table_lib_id = r.id;
+                    mar.Live_table_lib_id = r.live_id;
                     mar.Pre_algorithm = "top20";
                     mar.Pre_match_count = r.Top20Count;
                     mar.Home_goals = r.HomeGoals;
