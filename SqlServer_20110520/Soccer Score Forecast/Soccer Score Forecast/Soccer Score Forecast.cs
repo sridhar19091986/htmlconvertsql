@@ -40,8 +40,10 @@ namespace Soccer_Score_Forecast
 
             loaddatatree.initTreeNode(ViewMatchOverDays, matchlist, false);
         }
+        #region 软件加密模块1,检验注册码
         private void Form1_Load(object sender, EventArgs ee)
         {
+            注册LicenseCheck();
             dataGridView5.Visible = false;
             toolStripStatusLabel2.Text = dateTimePicker2.Value.ToString("yyyy-MM-dd");//日历组建日期字符串格式化方法
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
@@ -55,12 +57,67 @@ namespace Soccer_Score_Forecast
             dateTimePicker1.Value = DateTime.Parse(toolStripStatusLabel3.Text);
 
         }
+        LincenseString ls = new LincenseString();
+        LicenseCheck lc = new LicenseCheck();
+        private void 注册LicenseCheck()
+        {
+            string appPath = Application.StartupPath.ToString();
+            string licPath = appPath + "\\machine.lic";
+            LicenseReadLib lr = new LicenseReadLib(ls, lc);
+            if (lr.ReadLicense(licPath))
+            {
+                if (lr.CheckLicenseUse())
+                {
+                    if (lr.CheckLicenseSeries())
+                    {
+                        if (lr.CheckLicenseDate())
+                        {
+                            if (lr.CheckLicenseTimes()) { lr.WriteLicense(licPath); }
+                            else { this.Close(); Application.ExitThread(); Application.Exit(); }
+                        }
+                        else
+                        { this.Close(); Application.ExitThread(); Application.Exit(); }
+                    }
+                    else
+                    { this.Close(); Application.ExitThread(); Application.Exit(); }
+                }
+                else
+                { this.Close(); Application.ExitThread(); Application.Exit(); }
+            }
+            else
+            { this.Close(); Application.ExitThread(); Application.Exit(); }
+        }
+        private void 校验注册号代码Btn_Click()
+        {
+            //检验注册号，把检验结果找一内存保存起来。不要在校验结果代码附近做任何影响程序正常工作的处理，这样不易被跟踪。
+            string regTail3 = lc.GetRegTail3ByMac(ls.regDateFile);
+            if (string.Compare(regTail3, 0, ls.regLicense, 12, 17) == 0)
+                ls.bRegOK = true;
+            else
+                ls.bRegOK = false;
+        }
+        private int 核心功能代码代表Btn_Click()
+        {
+            int result;
+            if (ls.bRegOK)
+            {
+                result = 10 + 10;
+            }
+            else
+            {
+                result = 10 + 10 + 1;  //发现注册码正常的标记为false时,对核心功能代码进行不易发觉的修改，导致结果无法使用，注：不要弹出易被跟踪的消息事件等。
+            }
+            return result;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
+            校验注册号代码Btn_Click();
             toolStripStatusLabel1.Text = "download table......";
             liveLib = true;
             textBox1.Text = "http://live2.7m.cn/cpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=";
         }
+        #endregion
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             //toolStripStatusLabel1.Text = "download table......";
@@ -181,11 +238,16 @@ namespace Soccer_Score_Forecast
             toolStripProgressBar1.Value = i;
             toolStripLabel2.Text = i.ToString();
         }
+        #region 软件加密模块2，注册验证码不正确不能入库
         private void toolStripButton_iniToday_Click(object sender, EventArgs e)
         {
-            SevenmLiveToSql sevenm = new SevenmLiveToSql();
-            sevenm.UpdateTodayMatch();
+            if (ls.bRegOK)
+            {
+                SevenmLiveToSql sevenm = new SevenmLiveToSql();
+                sevenm.UpdateTodayMatch();
+            }
         }
+        #endregion
         private void toolStripButton_exitSystem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -818,6 +880,29 @@ namespace Soccer_Score_Forecast
                 file.WriteLine(treeView5.SelectedNode.Text);
             }
 
+        }
+
+        private void toolStripLabel2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        #region 自动升级系统
+        private void toolStripButton_autoUpateSystem_Click(object sender, EventArgs e)
+        {
+            AutoUpdate.FrmUpdate autoupdateform = new AutoUpdate.FrmUpdate();
+            autoupdateform.ShowDialog();
+        }
+        #endregion
+
+        private void importCompactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Conn.ImportSdfFile();
+        }
+
+        private void importUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Conn.ImportUpdateFile();
         }
     }
 }
