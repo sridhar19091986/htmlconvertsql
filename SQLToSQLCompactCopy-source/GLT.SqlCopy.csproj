@@ -12,7 +12,8 @@
     <AssemblyName>GLT.SqlCopy</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>GLT.SqlCopy.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
     <ApplicationIcon>Data Blue Add.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
