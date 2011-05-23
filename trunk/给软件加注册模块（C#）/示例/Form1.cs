@@ -21,94 +21,35 @@ namespace 示例
         LicenseCheck lc = new LicenseCheck();
         private void Form1_Load(object sender, EventArgs e)
         {
-            //加密模块开始 
             string appPath = Application.StartupPath.ToString();
-            string licPath = appPath + "\\LAY3-T.lic";
-            注册.Form1 form = new 注册.Form1();
-            if (!File.Exists(licPath))
+            string licPath = appPath + "\\machine.lic";
+            LicenseReadLib lr = new LicenseReadLib(ls, lc);
+            if (lr.ReadLicense(licPath))
             {
-                if (!File.Exists(licPath))
+                if (lr.CheckLicenseUse())
                 {
-                    this.Close();
-                    return;
+                    if (lr.CheckLicenseSeries())
+                    {
+                        if (lr.CheckLicenseDate())
+                        {
+                            if (lr.CheckLicenseTimes()) { lr.WriteLicense(licPath); }
+                            else { this.Close(); }
+                        }
+                        else { this.Close(); }
+                    }
+                    else { this.Close(); }
                 }
+                else { this.Close(); }
             }
-            //加密模块检查序列号 
-            StreamReader reader = new StreamReader(licPath);
-            ls.machineNum = reader.ReadLine();
-            ls.regNum = reader.ReadLine();
-            ls.regTimes = reader.ReadLine();
-            ls.regDate = reader.ReadLine();
-            ls.serialNum = reader.ReadLine();
-            string licDate = reader.ReadLine();
-            string licQQ = reader.ReadLine();
-            reader.Close();
-            if (ls.machineNum == null || ls.regNum == null || ls.regTimes == null || ls.regDate == null || licDate == null || licQQ == null)
-            {
-                form.ShowDialog();
-                this.Close();
-                return;
-            }
-            licQQ = lc.Decrypt(licQQ, "icdredge");//新写入
-            if (licQQ != "QQ-619498525")
-            {
-                MessageBox.Show("注册号不正确，系统将退出，请与软件供应商联系！");
-                this.Close();
-                return;
-            }
-            ls.regNum = lc.Decrypt(ls.regNum, "icomicom");
-            ls.machineNum = lc.Decrypt(ls.machineNum, "icomicom");
-            if (!lc.CheckRegHead(ls.machineNum, ls.regNum))
-            {
-                MessageBox.Show("序列号不正确，系统将退出，请与软件供应商联系！");
-                this.Close();
-                return;
-            }
-            licDate = lc.Decrypt(licDate, "icdredge");//新写入
-            ls.regDate = lc.Decrypt(ls.regDate, "icomicom");
-            DateTime trial = DateTime.Parse(licDate);
-            DateTime YouregDate = DateTime.Parse(ls.regDate);
-            if (DateTime.Compare(trial, YouregDate) > 0)
-            {
-                MessageBox.Show("试用期限超出，系统将退出，请与软件供应商联系！");
-                this.Close();
-                return;
-            }
-            ls.regTimes = lc.Decrypt(ls.regTimes, "icomicom");
-            long YouregTimes = Int64.Parse(ls.regTimes);
-            ls.serialNum = lc.Decrypt(ls.serialNum, "icomicom");
-            if (YouregTimes == 0)
-            {
-                MessageBox.Show("试用次数超出，系统将退出，请与软件供应商联系！");
-                this.Close();
-                return;
-            }
-            else
-            {
-                if (File.Exists(licPath) == true)
-                {
-                    File.Delete(licPath);
-                }
-                StreamWriter sw = File.CreateText(licPath);
-                sw.WriteLine(lc.Encrypt(ls.machineNum, "icomicom"));
-                sw.WriteLine(lc.Encrypt(ls.regNum, "icomicom"));
-                sw.WriteLine(lc.Encrypt((YouregTimes - 1).ToString(), "icomicom"));
-                sw.WriteLine(lc.Encrypt(ls.regDate, "icomicom"));
-                sw.WriteLine(lc.Encrypt(ls.serialNum, "icomicom"));
-                DateTime dt = DateTime.Now;
-                licDate = dt.ToString();
-                sw.WriteLine(lc.Encrypt(licDate, "icdredge"));
-                sw.WriteLine(lc.Encrypt(licQQ, "icdredge"));
-                sw.Flush();
-                sw.Close();
-            }
+            else { this.Close(); }
         }
+
 
         private void 校验注册号代码Btn_Click(object sender, EventArgs e)
         {
             //检验注册号，把检验结果找一内存保存起来。不要在校验结果代码附近做任何影响程序正常工作的处理，这样不易被跟踪。
-            string regTail3 =lc. GetRegTail3ByMac(ls.serialNum);
-            if (string.Compare(regTail3, 0, ls.regNum, 12, 17) == 0)
+            string regTail3 = lc.GetRegTail3ByMac(ls.regDateFile);
+            if (string.Compare(regTail3, 0, ls.regLicense, 12, 17) == 0)
                 ls.bRegOK = true;
             else
                 ls.bRegOK = false;

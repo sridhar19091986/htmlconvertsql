@@ -10,27 +10,10 @@ namespace 注册
 {
     public class LicenseString
     {
-        string serialNum;
-       
-        string regNum;
-        string regDate;
-        string regTimes;
-        string serialNum1;
-        string machineNum1;
-        string regNum1;
-        string regDate1;
-        string regTimes1;
         public string regEmail { get; set; }
-        DateTime dt = DateTime.Now;
-
         public string regDateFile { get; set; }
         public string machineNum { get; set; }
-        public string regLicense { get; set; }
-        public string regDate { get; set; }
-        public string expireDate { get; set; }
-        public string expTimes { get; set; }
-        public bool bRegOK { get; set; }
-        public DateTime regDateTime { get { return DateTime.Now; } set; }
+        public DateTime regDateTime { get { return DateTime.Now; } }
     }
     public class LicenseCheck
     {
