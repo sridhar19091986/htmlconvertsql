@@ -3,6 +3,7 @@ using System.Linq;
 using System.Data;
 using SoccerScore.Compact.Linq;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Soccer_Score_Forecast
 {
@@ -38,30 +39,37 @@ namespace Soccer_Score_Forecast
                     rt.S_date = HtmlDateToStrResult(aa[2].ToString());
                     rt.Home_team_big = HtmlHrefToStr(aa[3].ToString());
                     rt.Away_team_big = HtmlHrefToStr(aa[5].ToString());
-
                     match.Result_tb.InsertOnSubmit(rt);
-                    match.SubmitChanges();
-                    
                 }
             }
-           
+            match.SubmitChanges();
+
             return match.Result_tb.Select(e => e.Result_tb_id).Max();
         }
         //设置一个空的构造函数，调用后面的方法
         public SevenmResultToSql()
         {
-     
+
         }
         private string temp_time = null;
         private int last_line = 0;
-        public  void UpdateLastMatch()
+        public void UpdateLastMatch()
         {
             int i = 0;
-            DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn .conn );
+            DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn);
             var rt = matches.Result_tb.OrderBy(o => o.S_date).ThenBy(p => p.S_time);//用lambda表达式简洁
 
             //取临时变量监视
-            DateTime lib_max_match_time = matches.Result_tb_lib.Select(p => p.Match_time).Max().Value.AddDays(-2);
+            DateTime lib_max_match_time = matches.Result_tb_lib
+                .Max(p => p.Match_time).Value.AddDays(-3);
+
+            //取临时表做监视
+            List<Result_tb_lib> temp_tb = matches.Result_tb_lib
+                .Where(p => p.Match_time > lib_max_match_time).ToList();
+
+            //取临时表插入
+            List<Result_tb_lib> update_tb = new List<Result_tb_lib>();
+
             foreach (var m in rt)
             {
                 i++;
@@ -75,14 +83,14 @@ namespace Soccer_Score_Forecast
                     rtl.Away_team_big = Int32.Parse(GetNumber(m.Away_team_big));
                     rtl.Match_type = m.Match_type.Trim();
                     last_line = m.S_time.LastIndexOf("\n");
-                    temp_time=m.S_time.Substring(last_line,m.S_time.Length-last_line-1);
+                    temp_time = m.S_time.Substring(last_line, m.S_time.Length - last_line - 1);
                     rtl.Match_time = DateTime.Parse(m.S_date.Substring(0, 10) + " " + temp_time);
                     rtl.Odds = m.Odds.Trim();
                     rtl.Win_loss_big = m.Win_loss_big.Trim();
                     rtl.Home_team = m.Home_team.Trim();
                     rtl.Away_team = m.Away_team.Trim();
                     rtl.Home_red_card = StringCount(m.Home_team, "&nbsp;", 0);
-                    rtl.Away_red_card =StringCount(m.Away_team, "&nbsp;", 0);
+                    rtl.Away_red_card = StringCount(m.Away_team, "&nbsp;", 0);
                     string bf = m.Full_time_score.Replace("&nbsp;", "").Replace("&nbsp;", "");
                     if (m.Full_time_score.IndexOf("-") > 0)
                     {
@@ -99,7 +107,7 @@ namespace Soccer_Score_Forecast
                     if (rtl.Match_time > lib_max_match_time)
                     {
                         //数据分区，层次化查询
-                        var rtExist = from p in matches.Result_tb_lib
+                        var rtExist = from p in temp_tb  //历史库中的临时表
                                       where p.Match_time == rtl.Match_time
                                       where p.Home_team_big == rtl.Home_team_big
                                       where p.Away_team_big == rtl.Away_team_big
@@ -108,19 +116,17 @@ namespace Soccer_Score_Forecast
                         //库中没有记录直接插入
                         if (!rtExist.Any())
                         {
-                            matches.Result_tb_lib.InsertOnSubmit(rtl);
-                            matches.SubmitChanges();
+                            temp_tb.Add(rtl);  //历史库中的临时表做更新
+                            update_tb.Add(rtl);
                         }
                     }
-
                     //更新后删除
                     matches.Result_tb.DeleteOnSubmit(m);
-                    matches.SubmitChanges();
-                    
                 }
             }
+            matches.Result_tb_lib.InsertAllOnSubmit(update_tb);
+            matches.SubmitChanges();
             MessageBox.Show("OK");
-            //dataGridView1.DataSource = matches.result_tb_lib;
         }
     }
 }

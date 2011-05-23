@@ -18,13 +18,15 @@ namespace Soccer_Score_Forecast
         {
             InitializeComponent();
             ProgressBarDelegate.sendPEvent += new ProgressBarDelegate.SendPMessage(this.fileConvertListProgress);
+            ViewMatchOverDays = -2;
+            loaddatatree = new LoadDataToTree(ViewMatchOverDays);
         }
         string appPath = Application.StartupPath.ToString();
         string textboxDate;
         bool liveLib;
         bool insertComplete;
-        static int ViewMatchOverDays = -1;
-        LoadDataToTree loaddatatree = new LoadDataToTree(ViewMatchOverDays);
+        int ViewMatchOverDays ;
+        LoadDataToTree loaddatatree ;
         private void initTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(ViewMatchOverDays.ToString());
@@ -568,6 +570,7 @@ namespace Soccer_Score_Forecast
         {
             MessageBox.Show(ViewMatchOverDays.ToString());
             AuditForecastAlgorithm f = new AuditForecastAlgorithm(ViewMatchOverDays);
+            if (f.idExc == null) return;
             int pb = f.idExc.Count();
             MessageBox.Show(pb.ToString());
             if (pb != 0)

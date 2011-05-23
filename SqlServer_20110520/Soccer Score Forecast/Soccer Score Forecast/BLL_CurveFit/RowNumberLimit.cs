@@ -7,7 +7,7 @@ namespace Soccer_Score_Forecast
 {
     public class RowNumberLimit
     {
-        public int id;
+        public int live_id;
         public int? home_team_big;
         public int? away_team_big;
         public DateTime? matchtime;
@@ -25,7 +25,7 @@ Func<T, TResult> 委托
         }
         //private DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
 
-        public RowNumberLimit(int id)
+        public RowNumberLimit(int liveid)
         {
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
@@ -34,8 +34,8 @@ Func<T, TResult> 委托
                     dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
                     dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
                 }
-                this.id = id;
-                var l = matches.Live_Table_lib.Where(e => e.Live_table_lib_id == id).First();
+                this.live_id = liveid;
+                var l = matches.Live_Table_lib.Where(e => e.Live_table_lib_id == liveid).First();
                 home_team_big = l.Home_team_big;
                 away_team_big = l.Away_team_big;
                 matchtime = l.Match_time;

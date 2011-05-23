@@ -15,92 +15,8 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0843639D722A4230A43C510637FD5A3F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_18195D2950F94E59922937DC4BD89D65"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1A5929D4339242CE8103C65796511ADA"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1A9F258F9E05455C995022B4423F7FFD"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1C597FE6FD9C87D0FC2EE39BC1C7AF72"
-        "OwnerKey" = "8:_ECFC58A686D54BC4B45B154869A7C992"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1C597FE6FD9C87D0FC2EE39BC1C7AF72"
-        "OwnerKey" = "8:_9D73250F28D643ABB1ACB20B2F724034"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_20B4E6F6FD194030A9C93B93A7A98C88"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_220A4EC3C338401BB0890A107E205BD4"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_281A7BCCC71C429C9CE1B307E587A1BE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2C3565CE98F745C88F9E15004F855B74"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3A67D4DB61D84797BCB4148F7A681B14"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_429CECE813B0DBAE7F7739B2A0BD9603"
-        "OwnerKey" = "8:_6AC41B5FC3AE2C54F7E11F6BE60DA64E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_429CECE813B0DBAE7F7739B2A0BD9603"
         "OwnerKey" = "8:_B834D339A2124C3C95EF2F315E935937"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_429CECE813B0DBAE7F7739B2A0BD9603"
-        "OwnerKey" = "8:_9D73250F28D643ABB1ACB20B2F724034"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_429CECE813B0DBAE7F7739B2A0BD9603"
-        "OwnerKey" = "8:_ECFC58A686D54BC4B45B154869A7C992"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -111,37 +27,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_513CC25A18104E05B9D8E0030BA4D374"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5D8FCFB3F7524DA28AE86493A29DFD72"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5FECBAE3FF6B4DD7979ECBCBD0C662F9"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6AC41B5FC3AE2C54F7E11F6BE60DA64E"
-        "OwnerKey" = "8:_ECFC58A686D54BC4B45B154869A7C992"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6AC41B5FC3AE2C54F7E11F6BE60DA64E"
-        "OwnerKey" = "8:_9D73250F28D643ABB1ACB20B2F724034"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6E53393787FD45EB82AEA9DA38EA5466"
+        "MsmKey" = "8:_5506B0547B2E4AA5A675E6B6518D45A8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -153,85 +39,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_75E3788137854577A0B2BBF6030F1F40"
+        "MsmKey" = "8:_9F8ADBE1DD08466485C8ED206B3C8B10"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_79C97277FA32AF500ED114F9542C4A34"
-        "OwnerKey" = "8:_6AC41B5FC3AE2C54F7E11F6BE60DA64E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_79C97277FA32AF500ED114F9542C4A34"
-        "OwnerKey" = "8:_9D73250F28D643ABB1ACB20B2F724034"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_79C97277FA32AF500ED114F9542C4A34"
-        "OwnerKey" = "8:_ECFC58A686D54BC4B45B154869A7C992"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_79C97277FA32AF500ED114F9542C4A34"
-        "OwnerKey" = "8:_1C597FE6FD9C87D0FC2EE39BC1C7AF72"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8116B296A02170F5B3823FEE93ACC65F"
-        "OwnerKey" = "8:_79C97277FA32AF500ED114F9542C4A34"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8116B296A02170F5B3823FEE93ACC65F"
-        "OwnerKey" = "8:_ECFC58A686D54BC4B45B154869A7C992"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8116B296A02170F5B3823FEE93ACC65F"
-        "OwnerKey" = "8:_1C597FE6FD9C87D0FC2EE39BC1C7AF72"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8116B296A02170F5B3823FEE93ACC65F"
-        "OwnerKey" = "8:_6AC41B5FC3AE2C54F7E11F6BE60DA64E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_81CD02C613BC4F6BAE360957FD864EE3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9D73250F28D643ABB1ACB20B2F724034"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A50F3FE8313D41E6A2B624FAB656B19E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A6AE758407EC47DE907DC0364B1DDA04"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AAD8EFEF4673427493F4BC1650D412AF"
+        "MsmKey" = "8:_AA45D0CEB3574762AB7AE006E481A694"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -249,43 +63,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BAAF9BD309FB4B22834DE5BD9FC5E180"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_BEE3E7BE775B004FD0B61E9D15A084D2"
         "OwnerKey" = "8:_B834D339A2124C3C95EF2F315E935937"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D1BFFB82BC10D109546659EB863BA447"
-        "OwnerKey" = "8:_F53582AE856D42F7A84F92163E7BE0F6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D1BFFB82BC10D109546659EB863BA447"
-        "OwnerKey" = "8:_0843639D722A4230A43C510637FD5A3F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D1BFFB82BC10D109546659EB863BA447"
-        "OwnerKey" = "8:_E24893776BDB4C8CB98D2D516236103E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D9B74D3D54894A0BA6F8868D5B68423A"
+        "MsmKey" = "8:_C8EF40BC14FE4C71B429AE5B82BBA013"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_DA7E68BCCCB14EF7867890D9762A790F"
+        "MsmKey" = "8:_D751A82BC9E34CB29699EFBB85B221E6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D753D2A872F14D6A8442C5F415A18884"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -297,56 +93,32 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E24893776BDB4C8CB98D2D516236103E"
+        "MsmKey" = "8:_EE75818743E14DEC9AE7A425E53FC69B"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_ECFC58A686D54BC4B45B154869A7C992"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_EE43CF2DA8C56DE6CA320B6A792E5526"
-        "OwnerKey" = "8:_81CD02C613BC4F6BAE360957FD864EE3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F3523DC37D754825B64D2309C217CCF2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F53582AE856D42F7A84F92163E7BE0F6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F57926F1D20549F4B4DFAFE12AF1B9EB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FB26B0AB4D714F079061A6B39113858A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1A9F258F9E05455C995022B4423F7FFD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_B834D339A2124C3C95EF2F315E935937"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_EE75818743E14DEC9AE7A425E53FC69B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D753D2A872F14D6A8442C5F415A18884"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C8EF40BC14FE4C71B429AE5B82BBA013"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -370,103 +142,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_18195D2950F94E59922937DC4BD89D65"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F53582AE856D42F7A84F92163E7BE0F6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EE43CF2DA8C56DE6CA320B6A792E5526"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_ECFC58A686D54BC4B45B154869A7C992"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E24893776BDB4C8CB98D2D516236103E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D1BFFB82BC10D109546659EB863BA447"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9D73250F28D643ABB1ACB20B2F724034"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_81CD02C613BC4F6BAE360957FD864EE3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8116B296A02170F5B3823FEE93ACC65F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_79C97277FA32AF500ED114F9542C4A34"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6AC41B5FC3AE2C54F7E11F6BE60DA64E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_429CECE813B0DBAE7F7739B2A0BD9603"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3A67D4DB61D84797BCB4148F7A681B14"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_20B4E6F6FD194030A9C93B93A7A98C88"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1C597FE6FD9C87D0FC2EE39BC1C7AF72"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0843639D722A4230A43C510637FD5A3F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1A5929D4339242CE8103C65796511ADA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -494,6 +170,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
         "Release"
@@ -515,7 +204,7 @@
             {
             "Enabled" = "11:TRUE"
             "PromptEnabled" = "11:TRUE"
-            "PrerequisitesLocation" = "2:2"
+            "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
                 "Items"
@@ -561,283 +250,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0843639D722A4230A43C510637FD5A3F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:vshost, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_0843639D722A4230A43C510637FD5A3F"
-                    {
-                    "Name" = "8:Soccer Score Forecast.vshost.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\Soccer Score Forecast.vshost.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_18195D2950F94E59922937DC4BD89D65"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SoftwareRegister, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_18195D2950F94E59922937DC4BD89D65"
-                    {
-                    "Name" = "8:SoftwareRegister.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\Dotfuscated\\SoftwareRegister.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1A5929D4339242CE8103C65796511ADA"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AutoUpdate, Version=1.0.4160.30566, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_1A5929D4339242CE8103C65796511ADA"
-                    {
-                    "Name" = "8:AutoUpdate.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\Dotfuscated\\AutoUpdate.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1A9F258F9E05455C995022B4423F7FFD"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AutoUpdate, Version=1.0.2103.42856, Culture=neutral"
-                "ScatterAssemblies"
-                {
-                    "_1A9F258F9E05455C995022B4423F7FFD"
-                    {
-                    "Name" = "8:AutoUpdate.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\AutoUpdate.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1C597FE6FD9C87D0FC2EE39BC1C7AF72"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Synchronization.Data.SqlServer, Version=3.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_1C597FE6FD9C87D0FC2EE39BC1C7AF72"
-                    {
-                    "Name" = "8:Microsoft.Synchronization.Data.SqlServer.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.Synchronization.Data.SqlServer.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_20B4E6F6FD194030A9C93B93A7A98C88"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MathNet.Iridium, Version=1.0.0.26340, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_20B4E6F6FD194030A9C93B93A7A98C88"
-                    {
-                    "Name" = "8:MathNet.Iridium.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\MathNet.Iridium.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_220A4EC3C338401BB0890A107E205BD4"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ExecuteCompactSync.vshost.exe.config"
-            "TargetName" = "8:ExecuteCompactSync.vshost.exe.config"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_281A7BCCC71C429C9CE1B307E587A1BE"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\AutoUpdate.pdb"
-            "TargetName" = "8:AutoUpdate.pdb"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2C3565CE98F745C88F9E15004F855B74"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ExecuteCompactSync.pdb"
-            "TargetName" = "8:ExecuteCompactSync.pdb"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3A67D4DB61D84797BCB4148F7A681B14"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_3A67D4DB61D84797BCB4148F7A681B14"
-                    {
-                    "Name" = "8:HtmlAgilityPack.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\HtmlAgilityPack.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_429CECE813B0DBAE7F7739B2A0BD9603"
             {
             "AssemblyRegister" = "3:1"
@@ -889,101 +301,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_513CC25A18104E05B9D8E0030BA4D374"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5506B0547B2E4AA5A675E6B6518D45A8"
             {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\UpdateList.xml"
-            "TargetName" = "8:UpdateList.xml"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5D8FCFB3F7524DA28AE86493A29DFD72"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\SoftwareRegister.pdb"
-            "TargetName" = "8:SoftwareRegister.pdb"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5FECBAE3FF6B4DD7979ECBCBD0C662F9"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ProvisionClient.exe.config"
-            "TargetName" = "8:ProvisionClient.exe.config"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6AC41B5FC3AE2C54F7E11F6BE60DA64E"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Synchronization.Data.SqlServerCe, Version=3.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_6AC41B5FC3AE2C54F7E11F6BE60DA64E"
-                    {
-                    "Name" = "8:Microsoft.Synchronization.Data.SqlServerCe.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.Synchronization.Data.SqlServerCe.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6E53393787FD45EB82AEA9DA38EA5466"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\Soccer Score Forecast.vshost.exe.config"
-            "TargetName" = "8:Soccer Score Forecast.vshost.exe.config"
+            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\machine.lic"
+            "TargetName" = "8:machine.lic"
             "Tag" = "8:"
             "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
             "Condition" = "8:"
@@ -1031,10 +352,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_75E3788137854577A0B2BBF6030F1F40"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9F8ADBE1DD08466485C8ED206B3C8B10"
             {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ProvisionClient.vshost.exe.manifest"
-            "TargetName" = "8:ProvisionClient.vshost.exe.manifest"
+            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\SyncSoccerScore.sdf"
+            "TargetName" = "8:SyncSoccerScore.sdf"
             "Tag" = "8:"
             "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
             "Condition" = "8:"
@@ -1051,174 +372,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_79C97277FA32AF500ED114F9542C4A34"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AA45D0CEB3574762AB7AE006E481A694"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Synchronization.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_79C97277FA32AF500ED114F9542C4A34"
-                    {
-                    "Name" = "8:Microsoft.Synchronization.Data.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.Synchronization.Data.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8116B296A02170F5B3823FEE93ACC65F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Synchronization, Version=2.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_8116B296A02170F5B3823FEE93ACC65F"
-                    {
-                    "Name" = "8:Microsoft.Synchronization.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.Synchronization.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_81CD02C613BC4F6BAE360957FD864EE3"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:vshost, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_81CD02C613BC4F6BAE360957FD864EE3"
-                    {
-                    "Name" = "8:AutoUpdate.vshost.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\AutoUpdate.vshost.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9D73250F28D643ABB1ACB20B2F724034"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ProvisionClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_9D73250F28D643ABB1ACB20B2F724034"
-                    {
-                    "Name" = "8:ProvisionClient.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ProvisionClient.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A50F3FE8313D41E6A2B624FAB656B19E"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ExecuteCompactSync.exe.config"
-            "TargetName" = "8:ExecuteCompactSync.exe.config"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A6AE758407EC47DE907DC0364B1DDA04"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ProvisionClient.pdb"
-            "TargetName" = "8:ProvisionClient.pdb"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AAD8EFEF4673427493F4BC1650D412AF"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ProvisionClient.vshost.exe.config"
-            "TargetName" = "8:ProvisionClient.vshost.exe.config"
+            "SourcePath" = "8:..\\Uninstall\\Recycle Bin.ico"
+            "TargetName" = "8:Recycle Bin.ico"
             "Tag" = "8:"
             "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
             "Condition" = "8:"
@@ -1286,26 +443,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BAAF9BD309FB4B22834DE5BD9FC5E180"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\machine.lic"
-            "TargetName" = "8:machine.lic"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BEE3E7BE775B004FD0B61E9D15A084D2"
             {
             "AssemblyRegister" = "3:1"
@@ -1337,41 +474,21 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D1BFFB82BC10D109546659EB863BA447"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C8EF40BC14FE4C71B429AE5B82BBA013"
             {
             "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.HostingProcess.Utilities.Sync, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MathNet.Iridium, Version=1.0.0.26340, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D1BFFB82BC10D109546659EB863BA447"
+                    "_C8EF40BC14FE4C71B429AE5B82BBA013"
                     {
-                    "Name" = "8:Microsoft.VisualStudio.HostingProcess.Utilities.Sync.dll"
+                    "Name" = "8:MathNet.Iridium.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Microsoft.VisualStudio.HostingProcess.Utilities.Sync.dll"
+            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\MathNet.Iridium.dll"
             "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D9B74D3D54894A0BA6F8868D5B68423A"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ExecuteCompactSync.vshost.exe.manifest"
-            "TargetName" = "8:ExecuteCompactSync.vshost.exe.manifest"
             "Tag" = "8:"
             "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
             "Condition" = "8:"
@@ -1388,10 +505,41 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DA7E68BCCCB14EF7867890D9762A790F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D751A82BC9E34CB29699EFBB85B221E6"
             {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\Soccer Score Forecast.exe.config"
-            "TargetName" = "8:Soccer Score Forecast.exe.config"
+            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\UpdateList.xml"
+            "TargetName" = "8:UpdateList.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D753D2A872F14D6A8442C5F415A18884"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_D753D2A872F14D6A8442C5F415A18884"
+                    {
+                    "Name" = "8:HtmlAgilityPack.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\HtmlAgilityPack.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
             "Condition" = "8:"
@@ -1412,7 +560,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AutoUpdate, Version=1.0.4160.30566, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:AutoUpdate, Version=1.0.4160.40847, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_DB26C12FBDAE515194C8B302C48C0DFC"
@@ -1439,174 +587,21 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E24893776BDB4C8CB98D2D516236103E"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EE75818743E14DEC9AE7A425E53FC69B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:vshost32-clr2, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:Uninstall, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E24893776BDB4C8CB98D2D516236103E"
+                    "_EE75818743E14DEC9AE7A425E53FC69B"
                     {
-                    "Name" = "8:ExecuteCompactSync.vshost.exe"
+                    "Name" = "8:Uninstall.exe"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ExecuteCompactSync.vshost.exe"
+            "SourcePath" = "8:..\\Uninstall\\bin\\Release\\Uninstall.exe"
             "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_ECFC58A686D54BC4B45B154869A7C992"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ExecuteCompactSync, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_ECFC58A686D54BC4B45B154869A7C992"
-                    {
-                    "Name" = "8:ExecuteCompactSync.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ExecuteCompactSync.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EE43CF2DA8C56DE6CA320B6A792E5526"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.HostingProcess.Utilities.Sync, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_EE43CF2DA8C56DE6CA320B6A792E5526"
-                    {
-                    "Name" = "8:Microsoft.VisualStudio.HostingProcess.Utilities.Sync.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.VisualStudio.HostingProcess.Utilities.Sync.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F3523DC37D754825B64D2309C217CCF2"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\Soccer Score Forecast.vshost.exe.manifest"
-            "TargetName" = "8:Soccer Score Forecast.vshost.exe.manifest"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F53582AE856D42F7A84F92163E7BE0F6"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:vshost32-clr2, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_F53582AE856D42F7A84F92163E7BE0F6"
-                    {
-                    "Name" = "8:ProvisionClient.vshost.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\ProvisionClient.vshost.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F57926F1D20549F4B4DFAFE12AF1B9EB"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Debug\\SyncSoccerScore.sdf"
-            "TargetName" = "8:SyncSoccerScore.sdf"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FB26B0AB4D714F079061A6B39113858A"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\Soccer Score Forecast.pdb"
-            "TargetName" = "8:Soccer Score Forecast.pdb"
             "Tag" = "8:"
             "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
             "Condition" = "8:"
@@ -1650,6 +645,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_8E97D5EEFFAF4CD6A320AA8AC52A096C"
+                    {
+                    "Name" = "8:SSF"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_3CE4290BF338477B8905B7FB7E0AD1E2"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_AE4B005BB02D4B589C03B731CE572754"
@@ -1680,11 +686,11 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ssf"
         "ProductCode" = "8:{211BEAAB-0974-4028-8A8B-9651EFE5F187}"
-        "PackageCode" = "8:{9FA6C820-4822-4B78-8067-70F95F31361A}"
+        "PackageCode" = "8:{B437A593-C780-4C86-88D3-BD1820D612DD}"
         "UpgradeCode" = "8:{06E15C3E-8697-4141-AD19-EBB73D4E2F3D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
@@ -1800,6 +806,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_48B2D6FC9F3A4F53BB3178EF4211B27B"
+            {
+            "Name" = "8:Uninstall SSF"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_EE75818743E14DEC9AE7A425E53FC69B"
+            "Folder" = "8:_8E97D5EEFFAF4CD6A320AA8AC52A096C"
+            "WorkingFolder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
+            "Icon" = "8:_AA45D0CEB3574762AB7AE006E481A694"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_601DCA979B4F45BDBCBA51F534F20A5C"
             {
             "Name" = "8:Soccer Score Forecast"
@@ -1809,7 +829,7 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_B834D339A2124C3C95EF2F315E935937"
-            "Folder" = "8:_83B9D91DDCF04CFB83646AA53E531EDD"
+            "Folder" = "8:_8E97D5EEFFAF4CD6A320AA8AC52A096C"
             "WorkingFolder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
             "Icon" = "8:_4EBF62D1011E4CB5BA7EBEA92F1058B1"
             "Feature" = "8:"

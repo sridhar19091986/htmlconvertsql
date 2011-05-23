@@ -16,10 +16,10 @@ namespace Soccer_Score_Forecast
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
                 //todaytime = DateTime.Now;
-                var idLive = matches.Live_Table_lib
+                var idExc = matches.Live_Table_lib
                     .Where(e => e.Match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
-                    .Select(e => e.Live_table_lib_id);
-                idExc = idLive.ToList();
+                    .Select(e => e.Live_table_lib_id)
+                    .ToList();
             }
         }
         public void top20Algorithm()
@@ -27,15 +27,15 @@ namespace Soccer_Score_Forecast
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
                 int i = 0;
-                foreach (var id in idExc)
+                foreach (int liveid in idExc)
                 {
                     i++;
                     ProgressBarDelegate.DoSendPMessage(i);
                     Application.DoEvents();
-                    RowNumberLimit r = new RowNumberLimit(id);
+                    RowNumberLimit r = new RowNumberLimit(liveid);
                     //match_analysis_result mar = new match_analysis_result();
-                    var mar = matches.Match_analysis_result.Where(e => e.Live_table_lib_id == id).First();//查找需要更新的数据
-                    mar.Live_table_lib_id = r.id;
+                    var mar = matches.Match_analysis_result.Where(e => e.Live_table_lib_id == liveid).First();//查找需要更新的数据
+                    mar.Live_table_lib_id = r.live_id;
                     mar.Pre_algorithm = "top20";
                     mar.Pre_match_count  = r.Top20Count;
                     mar.Home_goals = r.HomeGoals;

@@ -22,27 +22,5 @@ namespace Soccer_Score_Forecast.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=match_analysis_pdm;Integrated Security=True" +
-            "")]
-        public string match_analysis_pdmConnectionString {
-            get {
-                return ((string)(this["match_analysis_pdmConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=\"G:\\htmlconvertsql\\match_analysis_pdm.mdf\";" +
-            "Integrated Security=True")]
-        public string D__MDF_FILES_MATCH_ANALYSIS_PDM_MDFConnectionString {
-            get {
-                return ((string)(this["D__MDF_FILES_MATCH_ANALYSIS_PDM_MDFConnectionString"]));
-            }
-        }
     }
 }
