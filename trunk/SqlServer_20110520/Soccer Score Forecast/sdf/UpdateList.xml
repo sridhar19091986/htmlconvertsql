@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gb2312"?>
+<AutoUpdater>
+  <description>Application autoUpdate</description>
+  <Updater>
+	<Url>http://localhost/IP_stream/</Url>
+	<LastUpdateTime>2010-05-21</LastUpdateTime>
+  </Updater>
+  <Application applicationId="Soccer Score Forecast">
+    <EntryPoint>Soccer Score Forecast.exe</EntryPoint>
+    <Location>.</Location>
+    <Version>1.0.0.0</Version>
+  </Application>
+  <Files>
+	   <File Ver="1.0.0.0" Name="Soccer Score Forecast.exe" />
+	   <File Ver="1.0.0.0" Name="Soccer Score Forecast.exe.config"/>
+	   <File Ver="1.0.0.0" Name="Soccer Score Forecast.pdb"/>
+	   <File Ver="1.0.0.0" Name="Soccer Score Forecast.vshost.exe"/>
+	   <File Ver="1.0.0.0" Name="Soccer Score Forecast.vshost.exe.config"/>
+	   <File Ver="1.0.0.0" Name="Soccer Score Forecast.vshost.exe.manifest"/>
+	   <File Ver="1.0.0.0" Name="SyncSoccerScore.sdf"/>
+	   <File Ver="1.0.0.0" Name="MathNet.Iridium.dll"/>
+	   <File Ver="1.0.0.0" Name="HtmlAgilityPack.dll"/>
+  </Files>
+</AutoUpdater>
