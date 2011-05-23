@@ -84,6 +84,8 @@
     </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Microsoft Chart Controls\Assemblies\System.Windows.Forms.DataVisualization.dll</HintPath>
@@ -112,6 +114,8 @@
     <Compile Include="BLL_CurveFit\RowNumberLimit.cs" />
     <Compile Include="BLL_CurveFit\UpdateAnalysisResult.cs" />
     <Compile Include="BLL_CurveFit\AuditForecastAlgorithm.cs" />
+    <Compile Include="Config\LicenseCheckLib.cs" />
+    <Compile Include="Config\LicenseReadLib.cs" />
     <Compile Include="DAL_HtmlSql\AiboLiveToSql.cs" />
     <Compile Include="DAL_HtmlSql\HtmlAgilityPackTableXpath.cs" />
     <Compile Include="DAL_HtmlSql\SqlAgilityPackTableXpath.cs" />
@@ -201,7 +205,16 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AutoUpdate\AutoUpdate.csproj">
+      <Project>{300DF611-E6A4-447F-86CB-FD409C50CE8A}</Project>
+      <Name>AutoUpdate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\注册\SoftwareRegister.csproj">
+      <Project>{9D327DA5-5A95-4CC1-815A-B5E45B0F669B}</Project>
+      <Name>SoftwareRegister</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
