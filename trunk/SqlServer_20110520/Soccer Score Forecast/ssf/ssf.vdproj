@@ -339,6 +339,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F57926F1D20549F4B4DFAFE12AF1B9EB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_FB26B0AB4D714F079061A6B39113858A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -575,7 +581,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AutoUpdate, Version=1.0.4160.27372, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:AutoUpdate, Version=1.0.4160.29702, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_019BE4D91D5E4016B07C8D509B2C1118"
@@ -1655,6 +1661,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F57926F1D20549F4B4DFAFE12AF1B9EB"
+            {
+            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Debug\\SyncSoccerScore.sdf"
+            "TargetName" = "8:SyncSoccerScore.sdf"
+            "Tag" = "8:"
+            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FB26B0AB4D714F079061A6B39113858A"
             {
             "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\Soccer Score Forecast.pdb"
@@ -1732,7 +1758,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ssf"
         "ProductCode" = "8:{211BEAAB-0974-4028-8A8B-9651EFE5F187}"
-        "PackageCode" = "8:{12098123-DFFD-4C16-B7E4-63F8DF927ABA}"
+        "PackageCode" = "8:{9FA6C820-4822-4B78-8067-70F95F31361A}"
         "UpgradeCode" = "8:{06E15C3E-8697-4141-AD19-EBB73D4E2F3D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
