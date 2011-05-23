@@ -2,6 +2,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soccer Score Forecast", "Soccer Score Forecast\Soccer Score Forecast.csproj", "{18837386-74FE-4D22-A30C-3984B0D73167}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareRegister", "зЂВс\SoftwareRegister.csproj", "{9D327DA5-5A95-4CC1-815A-B5E45B0F669B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpdate", "AutoUpdate\AutoUpdate.csproj", "{300DF611-E6A4-447F-86CB-FD409C50CE8A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ssf", "ssf\ssf.vdproj", "{A7B4F957-DCC6-499C-92E7-957CAAEBB0B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,6 +18,16 @@ Global
 		{18837386-74FE-4D22-A30C-3984B0D73167}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18837386-74FE-4D22-A30C-3984B0D73167}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18837386-74FE-4D22-A30C-3984B0D73167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D327DA5-5A95-4CC1-815A-B5E45B0F669B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D327DA5-5A95-4CC1-815A-B5E45B0F669B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D327DA5-5A95-4CC1-815A-B5E45B0F669B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D327DA5-5A95-4CC1-815A-B5E45B0F669B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{300DF611-E6A4-447F-86CB-FD409C50CE8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{300DF611-E6A4-447F-86CB-FD409C50CE8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{300DF611-E6A4-447F-86CB-FD409C50CE8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{300DF611-E6A4-447F-86CB-FD409C50CE8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7B4F957-DCC6-499C-92E7-957CAAEBB0B4}.Debug|Any CPU.ActiveCfg = Debug
+		{A7B4F957-DCC6-499C-92E7-957CAAEBB0B4}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
