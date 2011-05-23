@@ -10,14 +10,16 @@ namespace 注册机
 {
     public class LicenseString
     {
-        public string serialNum { get; set; }
-        public string machineNum { get; set; }
-        public string regLicense { get; set; }
-        public string regDate { get; set; }
-        public string expireDate { get; set; }
-        public string expTimes { get; set; }
-        public bool bRegOK { get; set; }
-        public DateTime regDateTime { get { return DateTime.Now; } set; }
+        public string machineNum { get; set; }//1
+        public string regLicense { get; set; }//2
+        public string expTimes { get; set; }//3
+        public string expireDate { get; set; }//4
+        public string regDateFile { get; set; }//5
+        public string regEmail { get; set; }//6
+        public string regDate { get; set; }//7
+        public string licDate { get; set; }//8
+        public string licMachine { get; set; }//9
+        public DateTime regDateTime { get { return DateTime.Now; } }
     }
     public class LicenseCheck
     {

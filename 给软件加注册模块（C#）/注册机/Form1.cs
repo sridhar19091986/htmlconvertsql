@@ -39,18 +39,20 @@ namespace 注册机
             sw.WriteLine(lc.Encrypt(textBox3.Text, lc.keyStr));
             sw.WriteLine(lc.Encrypt(textBox4.Text, lc.keyStr));
             sw.WriteLine(lc.Encrypt(textBox5.Text, lc.keyStr));
+            sw.WriteLine(lc.Encrypt(textBox6.Text, lc.keyStr));
+            sw.WriteLine(lc.Encrypt(textBox7.Text, lc.keyStr));
             sw.Flush();
             sw.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ls.machineNum= textBox1.Text = lc.获取机器码(textBox2.Text);
+            ls.regDateFile= textBox5.Text = ls.regDateTime.ToFileTime().ToString();
+            ls.machineNum = textBox1.Text = lc.获取机器码(ls.regDateFile);
             ls.expTimes=textBox3.Text = "30";
             ls.expireDate=textBox4.Text =  ls.regDateTime.AddDays(7).ToString();
-            ls.regDate=textBox5.Text = ls.regDateTime.ToFileTime().ToString();
-
-            //textBox5.Text = "shanghai china mobile 1";
+            ls.regEmail = textBox6.Text = "cn.wei.hp@gmail.com";
+            ls.regDate = textBox7.Text = ls.regDateTime.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,20 +69,28 @@ namespace 注册机
             if (File.Exists(lc.keyfile) == true)
             {
                 StreamReader reader = new StreamReader(lc.keyfile);
-                for (int i = 0; i < 5; i++)
+                if (Path.GetExtension(lc.keyfile) == ".req")
                 {
-                    string line1 = reader.ReadLine();
-                    richTextBox1.AppendText(line1 + Environment.NewLine);
-                    line1 = lc.Decrypt(line1, lc.keyStr);
-                    richTextBox1.AppendText(line1 + Environment.NewLine);
+                    textBox6.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                    textBox5.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                    textBox1.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                    textBox7.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
                 }
-
-                for (int j = 0; j < 2; j++)
+                else
                 {
-                    string line2 = reader.ReadLine();
-                    richTextBox1.AppendText(line2 + Environment.NewLine);
-                    line2 = lc.Decrypt(line2, "icdredge");
-                    richTextBox1.AppendText(line2 + Environment.NewLine);
+                    textBox1.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                    textBox2.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                    textBox3.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                    textBox4.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                    textBox5.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                    textBox6.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                    textBox7.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                    if (lc.keyfile.IndexOf("machine.lic") != -1)
+                    {
+                        textBox8.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+                        textBox9.Text = lc.Decrypt(reader.ReadLine(), lc.keyStr);
+
+                    }
                 }
             }
         }
