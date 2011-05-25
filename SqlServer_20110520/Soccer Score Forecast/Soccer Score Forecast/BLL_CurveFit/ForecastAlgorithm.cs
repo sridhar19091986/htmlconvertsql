@@ -29,6 +29,7 @@ namespace Soccer_Score_Forecast
                     ProgressBarDelegate.DoSendPMessage(i);
                     Application.DoEvents();
                     RowNumberLimit r = new RowNumberLimit(id);
+                    r.initCurveFit();
                     Match_analysis_result mar = new Match_analysis_result();
                     mar.Live_table_lib_id = r.live_id;
                     mar.Pre_algorithm = "top20";
@@ -38,11 +39,10 @@ namespace Soccer_Score_Forecast
                     mar.Home_w = r.hWin;
                     mar.Home_d = r.hDraw;
                     mar.Home_l = r.hLose;
-                    mar.Fit_win_loss = r.CureFitWinLoss ;
-                    mar.Fit_goals = r.CureFitGoals ;
-                    mar.Fit_odd_even = r.CureFitOddEven ;
-                    matches.Match_analysis_result.InsertOnSubmit(mar);
-                   
+                    mar.Fit_win_loss = r.CureFitWinLoss() ;
+                    mar.Fit_goals = r.CureFitGoals() ;
+                    mar.Fit_odd_even = r.CureFitOddEven() ;
+                    matches.Match_analysis_result.InsertOnSubmit(mar);      
                 }
                 matches.SubmitChanges();
             }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using SoccerScore.Compact.Linq;
 using System.Linq;
+using System.Reflection;
 
 namespace Soccer_Score_Forecast
 {
@@ -14,9 +15,9 @@ namespace Soccer_Score_Forecast
         public int Top20Count;
         public List<Result_tb_lib> Top20;
         /*
-Func<T, TResult> 委托
-在此似乎没有实用价值
- **/
+        Func<T, TResult> 委托
+        在此似乎没有实用价值
+         **/
         private TResult Sum<T, TResult>(IEnumerable<T> sequence, TResult total, Func<T, TResult, TResult> accumulator)
         {
             foreach (T item in sequence)
@@ -76,7 +77,7 @@ Func<T, TResult> 委托
                 }
                 return _homeGoals;
             }
-            //set { _homeGoals = value; }
+            set { _homeGoals = value; }
         }
         //客进
         private double _awayGoals;
@@ -104,7 +105,7 @@ Func<T, TResult> 委托
                 }
                 return _awayGoals;
             }
-            //set { _awayGoals = value; }
+            set { _awayGoals = value; }
         }
         //胜
         private int _hWin;
@@ -127,7 +128,7 @@ Func<T, TResult> 委托
                 }
                 return _hWin;
             }
-            //set { _hWin = value; }
+            set { _hWin = value; }
         }
         //平
         private int _hDraw;
@@ -144,7 +145,7 @@ Func<T, TResult> 委托
                 }
                 return _hDraw;
             }
-            //set { _hDraw = value; }
+            set { _hDraw = value; }
         }
         //负
         private int _hLose;
@@ -167,114 +168,7 @@ Func<T, TResult> 委托
                 }
                 return _hLose;
             }
-            //set { _hLose = value; }
-        }
-        private List<MatchPoint<float>> _curveFit;
-        public List<MatchPoint<float>> CurveFit
-        {
-            get
-            {
-                if (_curveFit == null)
-                {
-                    List<MatchPoint<float>> fit = new List<MatchPoint<float>>();
-                    fit = CsharpMatlab.ployfitSeries(ListMatchPointData, NowMatchTimeDiff);
-                    _curveFit = fit;
-                }
-                return _curveFit;
-            }
-            //set { curveFit = value; }
-        }
-        private MatchPoint<float> _curveFitValue;
-        public MatchPoint<float> CurveFitValue
-        {
-            get
-            {
-                if (_curveFitValue == null)
-                {
-                    var curvefit = CurveFit.Last();
-                    _curveFitValue = curvefit;
-                }
-                return _curveFitValue;
-            }
-            //set { _curveFitValue = value; }
-        }
-        //预测值 胜平负
-        private double _curveFitWinLoss;
-        public double CureFitWinLoss
-        {
-            get
-            {
-                if (_curveFitWinLoss == 0.0)
-                {
-                    //剔除没有记录的
-                    if (Top20Count < 10) return 0;
-                    //double curvefit = CsharpMatlab.ployfitNowWDL(ListMatchPointData, NowMatchTimeDiff);
-                    double curvefit = CurveFitValue.LastMatchWDL;
-                    //double.NaN无穷大的问题
-                    if (double.IsNaN(curvefit))
-                    {
-                        _curveFitWinLoss = 0;
-                    }
-                    else
-                    {
-                        _curveFitWinLoss = curvefit;
-                    }
-                }
-                return _curveFitWinLoss;
-            }
-            //set { _curveFitWinLoss = value; }
-        }
-        //预测值 进球数
-        private double _curveFitGoals;
-        public double CureFitGoals
-        {
-            get
-            {
-                if (_curveFitGoals == 0.0)
-                {
-                    //剔除没有记录的
-                    if (Top20Count < 10) return 0;
-                    double curvefit = CurveFitValue.LastMatchGoals;
-                    //double curvefit = CsharpMatlab.ployfitNowGoals (ListMatchPointData, NowMatchTimeDiff);
-                    //double.NaN无穷大的问题
-                    if (double.IsNaN(curvefit))
-                    {
-                        _curveFitGoals = 0;
-                    }
-                    else
-                    {
-                        _curveFitGoals = curvefit;
-                    }
-                }
-                return _curveFitGoals;
-            }
-            //set { _curveFitGoals = value; }
-        }
-        //预测值 单双
-        private double _curveFitOddEven;
-        public double CureFitOddEven
-        {
-            get
-            {
-                if (_curveFitOddEven == 0.0)
-                {
-                    //剔除没有记录的
-                    if (Top20Count < 10) return 0;
-                    double curvefit = CurveFitValue.LastMatchOddEven;
-                    //double curvefit = CsharpMatlab.ployfitNowOE (ListMatchPointData, NowMatchTimeDiff);
-                    //double.NaN无穷大的问题
-                    if (double.IsNaN(curvefit))
-                    {
-                        _curveFitOddEven = 0;
-                    }
-                    else
-                    {
-                        _curveFitOddEven = curvefit;
-                    }
-                }
-                return _curveFitOddEven;
-            }
-            //set { _curveFitOddEven = value; }
+            set { _hLose = value; }
         }
         //最早的时间值
         private DateTime? _firstMatchTime;
@@ -292,7 +186,7 @@ Func<T, TResult> 委托
                 }
                 return _firstMatchTime;
             }
-            //set { _firstMatchTime = value; }
+            set { _firstMatchTime = value; }
         }
         //最大日期差
         private int _nowMatchTimeDiff;
@@ -307,8 +201,9 @@ Func<T, TResult> 委托
                 }
                 return _nowMatchTimeDiff;
             }
-            //set { _nowMatchTimeDiff = value; }
+            set { _nowMatchTimeDiff = value; }
         }
+    
         //预测输入数据源
         private List<MatchPoint<int>> _listMatchPointData;
         public List<MatchPoint<int>> ListMatchPointData
@@ -342,8 +237,100 @@ Func<T, TResult> 委托
                 }
                 return _listMatchPointData;
             }
-            //set { _listMatchPointData = value; }
+            set { _listMatchPointData = value; }
         }
+        public List<MatchPoint<float>> CurveFit;
+        private MatchPoint<float> CurveFitValue;
+        public void initCurveFit()
+        {
+            if (Top20Count > 10)
+            {
+                CurveFit = ployfitSeries(ListMatchPointData, NowMatchTimeDiff);
+                CurveFitValue = CurveFit.Last();
+            }
+        }
+        
+        #region Matlab和Csharp混合编程的方法，利用Matlab运算得出想要的一系列数据 之前数据
+        // 反射的经典实现，变量的反复抽象，把变化部分减少到最小，增强稳定部分，有利于扩展
+        private List<MatchPoint<float>> ployfitSeries(List<MatchPoint<int>> result, int LastNowDiff)
+        {
+            List<MatchPoint<float>> fitseries = new List<MatchPoint<float>>();
+            //在此反射数据系列，计算需要拟合的成员，由于输入和输出的数据类型不同，使用泛型<>，T
+            PropertyInfo[] field = typeof(MatchPoint<>).GetProperties();
+            int size = result.Count();
+            var fisfilter = field.Where(e => e.Name == "LastMatchWDL" || e.Name == "LastMatchGoals" || e.Name == "LastMatchOddEven");
+            foreach (PropertyInfo fi in fisfilter)
+            {
+                double[] Y = new double[size];
+                double[] X = new double[size];
+                double[] X1 = new double[size];
+                for (int i = 0; i < size; i++)
+                {
+                    //在此指定<>类型是整数
+                    PropertyInfo fiIn = typeof(MatchPoint<int>).GetProperty(fi.Name);
+                    //反射获取值
+                    Y[i] = Convert.ToDouble(fiIn.GetValue(result[i],null));
+                    X[i] = Convert.ToDouble(result[i].LastMatchOverTime);
+                    if (i != size - 1)
+                        X1[i] = Convert.ToDouble(result[i + 1].LastMatchOverTime);
+                    else
+                        X1[i] = Convert.ToDouble(LastNowDiff);
+                    MatchPoint<float> f = new MatchPoint<float>();
+                    f.LastMatchOverTime = (float)X1[i];
+                    if (fitseries.Count == i) fitseries.Add(f);  //如果累加就不行，这种方式，最大值不超过i
+                }
+                myCurveFitclass mmm = new myCurveFitclass(X, Y);
+                mmm.CurvefitValue(LastNowDiff);
+                //在此指定<>类型是小数
+                PropertyInfo fiOut = typeof(MatchPoint<float>).GetProperty(fi.Name); //这里改属性
+                //反射设定值 
+                for (int j = 0; j < mmm.PredictionsNew.Length; j++) { fiOut.SetValue(fitseries[j], (float)mmm.PredictionsNew[j], null); }
+            }
+            return fitseries;
+        }
+        #endregion
+    
+        //预测值 胜平负
+        public double CureFitWinLoss()
+        {
+            //剔除没有记录的
+            if (Top20Count < 10) return 0;
+            //double curvefit = CsharpMatlab.ployfitNowWDL(ListMatchPointData, NowMatchTimeDiff);
+            double curvefit = CurveFitValue.LastMatchWDL;
+            //double.NaN无穷大的问题
+            if (double.IsNaN(curvefit))
+                return 0;
+            else
+                return curvefit;
+        }
+        //预测值 进球数
+        public double CureFitGoals()
+        {
+
+            //剔除没有记录的
+            if (Top20Count < 10) return 0;
+            double curvefit = CurveFitValue.LastMatchGoals;
+            //double curvefit = CsharpMatlab.ployfitNowGoals (ListMatchPointData, NowMatchTimeDiff);
+            //double.NaN无穷大的问题
+            if (double.IsNaN(curvefit))
+                return 0;
+            else
+                return curvefit;
+        }
+        //预测值 单双
+        public double CureFitOddEven()
+        {
+            //剔除没有记录的
+            if (Top20Count < 10) return 0;
+            double curvefit = CurveFitValue.LastMatchOddEven;
+            //double curvefit = CsharpMatlab.ployfitNowOE (ListMatchPointData, NowMatchTimeDiff);
+            //double.NaN无穷大的问题
+            if (double.IsNaN(curvefit))
+                return 0;
+            else
+                return curvefit;
+        }
+
         private int ConvertGoalsToWDL(int goals)
         {
             int wdl = 0;
@@ -380,7 +367,7 @@ Func<T, TResult> 委托
                 return _listLastJZ;
 
             }
-            //set { _listLastJZ = value; }
+            set { _listLastJZ = value; }
         }
     }
 }
