@@ -15,6 +15,7 @@ namespace Soccer_Score_Forecast
             string forecast = null;
 
             RowNumberLimit rnl = new RowNumberLimit(id);
+            rnl.initCurveFit();
             matchpoints = rnl.ListMatchPointData;  //生成历史数据
             fit = rnl.CurveFit;//生成预测数据
 

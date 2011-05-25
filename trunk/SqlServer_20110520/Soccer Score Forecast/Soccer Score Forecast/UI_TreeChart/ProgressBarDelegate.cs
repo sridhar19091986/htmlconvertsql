@@ -1,7 +1,11 @@
 ﻿using System.Windows.Forms;
 using System.Data.SqlServerCe;
 using System.IO;
-
+using SoccerScore.Compact.Linq;
+using System.Data.Linq;
+using System.Reflection;
+using System;
+using System.Linq;
 
 namespace Soccer_Score_Forecast
 {
@@ -26,6 +30,52 @@ namespace Soccer_Score_Forecast
         private static string dbpath = Application.StartupPath + @"\SyncSoccerScore.sdf";
         private static string updatepath = Application.StartupPath + @"\UpdateList.xml";
         public static SqlCeConnection conn = new SqlCeConnection(@"Data Source='" + dbpath + "'");
+        public static void CompressCompact()
+        {
+            SqlCeEngine engine = new SqlCeEngine(@"Data Source='" + dbpath + "'");
+            //Specifynulldestinationconnectionstringforin-placecompaction
+            //
+            engine.Shrink();
+            //Specifyconnectionstringfornewdatabaseoptions.Thefollowing
+            //tokensarevalid:
+            //-Password
+            //-LCID
+            //-Encrypt
+            //
+            //AllotherSqlCeConnection.ConnectionStringtokensareignored
+            //
+            //engine.Compact("DataSource=;Password=a@3!7f$dQ;");
+        }
+        public static bool CreateTable(Type linqTableClass)
+        {
+            bool suc = true;
+            try
+            {
+                using (DataClassesMatchDataContext match = new DataClassesMatchDataContext(Conn.conn))
+                {
+                    var metaTable = match.Mapping.GetTable(linqTableClass);
+                    var typeName = "System.Data.Linq.SqlClient.SqlBuilder";
+                    var type = typeof(DataContext).Assembly.GetType(typeName);
+                    var bf = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.InvokeMethod;
+                    var sql = type.InvokeMember("GetCreateTableCommand", bf, null, null, new[] { metaTable });
+                    #region //这里和sql2008不同
+                    var sqlAsString = sql.ToString().Replace("(MAX)", "");
+                    string querytable = @"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='"
+                        + linqTableClass.Name + @"' AND TABLE_TYPE='TABLE'";
+                    int exists = match.ExecuteQuery<int>(querytable).First();
+                    if (exists > 0)
+                        match.ExecuteCommand("drop table " + linqTableClass.Name);
+                    #endregion
+                    match.ExecuteCommand(sqlAsString);
+                }
+            }
+            catch (Exception ex)
+            {
+                suc = false;
+                MessageBox.Show(ex.ToString());
+            }
+            return suc;
+        }
 
         public static void ImportSdfFile()
         {

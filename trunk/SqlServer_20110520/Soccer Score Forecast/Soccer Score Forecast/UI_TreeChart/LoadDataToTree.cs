@@ -21,10 +21,10 @@ namespace Soccer_Score_Forecast
         private Match_analysis_result mar;
         private string strNode;
         //private  TreeNode _treeViewMatch;
-       
-        public LoadDataToTree(int daysDiff)
+
+        public LoadDataToTree(int daysDiff, string filterMatchPath)
         {
-            string filterMatchPath = Application.StartupPath + @"\FilterMatch";
+            //string filterMatchPath = Application.StartupPath + @"\FilterMatch";
             List<string> matchlist = new List<string>();
             using (StreamReader r = new StreamReader(filterMatchPath, System.Text.Encoding.Default))
             {

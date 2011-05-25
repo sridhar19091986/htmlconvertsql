@@ -16,16 +16,16 @@ namespace Soccer_Score_Forecast
             SevenmLive = new HtmlAgilityPackGeneric(_html, tbTag.tbTag, 0);
             //SevenmLive = new HtmlAgilityPackGeneric(_html, "//table[@id='live_Table']", 0); 
         }
-
         public decimal InsertLiveHtmlTableToDB()
         {
             DataTable dt = SevenmLive.GetHtmlTable();
 
             DataClassesMatchDataContext match = new DataClassesMatchDataContext(Conn.conn);
 
-            var result = match.Live_Table.Where(r => r.Live_table_id > 0);
-            match.Live_Table.DeleteAllOnSubmit(result);
-            match.SubmitChanges();
+            if (!Conn.CreateTable(typeof(Live_Table))) return 0;
+            //var result = match.Live_Table.Where(r => r.Live_table_id > 0);
+            //match.Live_Table.DeleteAllOnSubmit(result);
+            //match.SubmitChanges();
 
             string ddate = null;
             Queue<string> todayDate = new Queue<string>();
@@ -61,18 +61,18 @@ namespace Soccer_Score_Forecast
                     lt.Away_team_big = HtmlHrefToStr(aa[7].ToString());
 
                     match.Live_Table.InsertOnSubmit(lt);
-                    match.SubmitChanges();
-                    
+
+
                 }
             }
-            
-            return match.Live_Table.Select(e => e.Live_table_id).Max();
+            match.SubmitChanges();
+            return match.Live_Table.Max(e => e.Live_table_id);
         }
 
         //设置一个空的构造函数，调用后面的方法
         public SevenmLiveToSql()
         {
-            
+
         }
 
         private string temp_date = null;
@@ -132,7 +132,7 @@ namespace Soccer_Score_Forecast
                     else
                     {
                         matches.Live_Table_lib.InsertOnSubmit(ltl);
-                        matches.SubmitChanges();
+                        //matches.SubmitChanges();
                     }
                 }
             }

@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soccer Score Forecast", "Soccer Score Forecast\Soccer Score Forecast.csproj", "{18837386-74FE-4D22-A30C-3984B0D73167}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerScoreForecast", "Soccer Score Forecast\SoccerScoreForecast.csproj", "{18837386-74FE-4D22-A30C-3984B0D73167}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareRegister", "зЂВс\SoftwareRegister.csproj", "{9D327DA5-5A95-4CC1-815A-B5E45B0F669B}"
 EndProject

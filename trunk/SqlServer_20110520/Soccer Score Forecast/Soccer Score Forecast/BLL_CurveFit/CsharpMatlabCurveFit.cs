@@ -6,7 +6,35 @@ using System.Linq;
 
 namespace Soccer_Score_Forecast
 {
-    class CsharpMatlab
+    public class MatchPoint<T>
+    {
+        private T lastmatchovertime_;
+        public T LastMatchOverTime { get { return lastmatchovertime_; } set { lastmatchovertime_ = value; } }
+        private T lastmatchscore_;
+        public T LastMatchScore { get { return lastmatchscore_; } set { lastmatchscore_ = value; } }
+
+        private T lastmatchwdl_;
+        public T LastMatchWDL { get { return lastmatchwdl_; } set { lastmatchwdl_ = value; } }
+        private T lastmatchgoals_;
+        public T LastMatchGoals { get { return lastmatchgoals_; } set { lastmatchgoals_ = value; } }
+        private T lastmatchoddeven_;
+        public T LastMatchOddEven { get { return lastmatchoddeven_; } set { lastmatchoddeven_ = value; } }
+
+        //public T RealScore;
+        private DateTime? matchtime_;
+        public DateTime? matchTime { get { return matchtime_; } set { matchtime_ = value; } }
+        private string matchdetail_;
+        public string matchDetail { get { return matchdetail_; } set { matchdetail_ = value; } }
+        //public string Sdate;
+    }
+    public static class dMatch
+    {
+        public static ILookup<int?, Result_tb_lib> dHome = null;
+        public static ILookup<int?, Result_tb_lib> dAway = null;
+
+    }
+
+    public class CsharpMatlab
     {
         #region   //Matlab和Csharp混合编程的方法，利用Matlab运算得出想要的一个单数据
         public static float ployfitNowValue(List<MatchPoint<int>> result, int LastNowDiff, string key)
@@ -65,27 +93,5 @@ namespace Soccer_Score_Forecast
             return fitseries;
         }
         #endregion
-    }
-
-
-    public class MatchPoint<T>
-    {
-        public T LastMatchOverTime;
-        public T LastMatchScore;
-
-        public T LastMatchWDL;
-        public T LastMatchGoals;
-        public T LastMatchOddEven;
-
-        //public T RealScore;
-        public DateTime? matchTime;
-        public string matchDetail;
-        //public string Sdate;
-    }
-    static class dMatch
-    {
-        public static ILookup<int?, Result_tb_lib> dHome;
-        public static ILookup<int?, Result_tb_lib> dAway;
-
     }
 }
