@@ -29,50 +29,50 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem55 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem56 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem57 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem58 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem59 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem60 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem61 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem62 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem63 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem64 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem65 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem66 = new System.Windows.Forms.ListViewItem("");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dataCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oddsCollectionOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,14 +89,6 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton_resultEvaluate = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_todayEvaluate = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_iniToday = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_iniLast = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_autoUpateSystem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_exitSystem = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -234,7 +226,6 @@
             this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.splitContainer9 = new System.Windows.Forms.SplitContainer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
@@ -243,6 +234,15 @@
             this.button18 = new System.Windows.Forms.Button();
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripButton_iniLast = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_iniToday = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_resultEvaluate = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_todayEvaluate = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_autoUpateSystem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_exitSystem = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -333,8 +333,8 @@
             this.splitContainer9.Panel1.SuspendLayout();
             this.splitContainer9.Panel2.SuspendLayout();
             this.splitContainer9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -457,11 +457,11 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton_iniLast,
+            this.toolStripButton_iniToday,
             this.toolStripButton_resultEvaluate,
             this.toolStripButton2,
             this.toolStripButton_todayEvaluate,
-            this.toolStripButton_iniToday,
-            this.toolStripButton_iniLast,
             this.toolStripButton1,
             this.toolStripButton_autoUpateSystem,
             this.toolStripButton_exitSystem,
@@ -471,86 +471,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(864, 35);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton_resultEvaluate
-            // 
-            this.toolStripButton_resultEvaluate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_resultEvaluate.Image")));
-            this.toolStripButton_resultEvaluate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_resultEvaluate.Name = "toolStripButton_resultEvaluate";
-            this.toolStripButton_resultEvaluate.Size = new System.Drawing.Size(93, 32);
-            this.toolStripButton_resultEvaluate.Text = "resultEvaluate";
-            this.toolStripButton_resultEvaluate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_resultEvaluate.Click += new System.EventHandler(this.toolStripButton_resultEvaluate_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(87, 32);
-            this.toolStripButton2.Text = "auditAnalysis";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton_todayEvaluate
-            // 
-            this.toolStripButton_todayEvaluate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_todayEvaluate.Image")));
-            this.toolStripButton_todayEvaluate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_todayEvaluate.Name = "toolStripButton_todayEvaluate";
-            this.toolStripButton_todayEvaluate.Size = new System.Drawing.Size(129, 32);
-            this.toolStripButton_todayEvaluate.Text = "updateResultAnalysis";
-            this.toolStripButton_todayEvaluate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_todayEvaluate.Click += new System.EventHandler(this.toolStripButton_todayEvaluate_Click);
-            // 
-            // toolStripButton_iniToday
-            // 
-            this.toolStripButton_iniToday.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_iniToday.Image")));
-            this.toolStripButton_iniToday.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_iniToday.Name = "toolStripButton_iniToday";
-            this.toolStripButton_iniToday.Size = new System.Drawing.Size(99, 32);
-            this.toolStripButton_iniToday.Text = "updateLiveTable";
-            this.toolStripButton_iniToday.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_iniToday.Click += new System.EventHandler(this.toolStripButton_iniToday_Click);
-            // 
-            // toolStripButton_iniLast
-            // 
-            this.toolStripButton_iniLast.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_iniLast.Image")));
-            this.toolStripButton_iniLast.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_iniLast.Name = "toolStripButton_iniLast";
-            this.toolStripButton_iniLast.Size = new System.Drawing.Size(111, 32);
-            this.toolStripButton_iniLast.Text = "updateResultTable";
-            this.toolStripButton_iniLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_iniLast.Click += new System.EventHandler(this.toolStripButton_iniLast_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(87, 32);
-            this.toolStripButton1.Text = "emptyAnalysis";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton_autoUpateSystem
-            // 
-            this.toolStripButton_autoUpateSystem.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_autoUpateSystem.Image")));
-            this.toolStripButton_autoUpateSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_autoUpateSystem.Name = "toolStripButton_autoUpateSystem";
-            this.toolStripButton_autoUpateSystem.Size = new System.Drawing.Size(99, 32);
-            this.toolStripButton_autoUpateSystem.Text = "autoUpateSystem";
-            this.toolStripButton_autoUpateSystem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_autoUpateSystem.Click += new System.EventHandler(this.toolStripButton_autoUpateSystem_Click);
-            // 
-            // toolStripButton_exitSystem
-            // 
-            this.toolStripButton_exitSystem.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_exitSystem.Image")));
-            this.toolStripButton_exitSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_exitSystem.Name = "toolStripButton_exitSystem";
-            this.toolStripButton_exitSystem.Size = new System.Drawing.Size(69, 32);
-            this.toolStripButton_exitSystem.Text = "exitSystem";
-            this.toolStripButton_exitSystem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_exitSystem.Click += new System.EventHandler(this.toolStripButton_exitSystem_Click);
             // 
             // toolStripLabel2
             // 
@@ -698,54 +618,54 @@
             this.chart1.BorderlineColor = System.Drawing.SystemColors.ActiveCaption;
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chart1.BorderlineWidth = 2;
-            chartArea2.Name = "Default";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "Default";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series8.ChartArea = "Default";
-            series8.Legend = "Legend1";
-            series8.Name = "RealScore";
-            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series8.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series8.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series9.ChartArea = "Default";
-            series9.Legend = "Legend1";
-            series9.Name = "RealWDL";
-            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series10.ChartArea = "Default";
-            series10.Legend = "Legend1";
-            series10.Name = "RealGoals";
-            series10.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series11.ChartArea = "Default";
-            series11.Legend = "Legend1";
-            series11.Name = "RealOddEven";
-            series12.ChartArea = "Default";
-            series12.Legend = "Legend1";
-            series12.Name = "ForeWDL";
-            series13.ChartArea = "Default";
-            series13.Legend = "Legend1";
-            series13.Name = "ForeGoals";
-            series13.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series14.ChartArea = "Default";
-            series14.Legend = "Legend1";
-            series14.Name = "ForeOddEven";
-            this.chart1.Series.Add(series8);
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Series.Add(series11);
-            this.chart1.Series.Add(series12);
-            this.chart1.Series.Add(series13);
-            this.chart1.Series.Add(series14);
+            series1.ChartArea = "Default";
+            series1.Legend = "Legend1";
+            series1.Name = "RealScore";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series1.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.ChartArea = "Default";
+            series2.Legend = "Legend1";
+            series2.Name = "RealWDL";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series3.ChartArea = "Default";
+            series3.Legend = "Legend1";
+            series3.Name = "RealGoals";
+            series3.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series4.ChartArea = "Default";
+            series4.Legend = "Legend1";
+            series4.Name = "RealOddEven";
+            series5.ChartArea = "Default";
+            series5.Legend = "Legend1";
+            series5.Name = "ForeWDL";
+            series6.ChartArea = "Default";
+            series6.Legend = "Legend1";
+            series6.Name = "ForeGoals";
+            series6.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series7.ChartArea = "Default";
+            series7.Legend = "Legend1";
+            series7.Name = "ForeOddEven";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Series.Add(series7);
             this.chart1.Size = new System.Drawing.Size(844, 150);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title2.Name = "Title1";
-            this.chart1.Titles.Add(title2);
+            title1.Name = "Title1";
+            this.chart1.Titles.Add(title1);
             // 
             // panel1
             // 
@@ -1322,7 +1242,7 @@
             this.tabPage9.Controls.Add(this.splitContainer15);
             this.tabPage9.Location = new System.Drawing.Point(4, 21);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(891, 328);
+            this.tabPage9.Size = new System.Drawing.Size(848, 297);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "System.Net.Webclient->html";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1342,8 +1262,8 @@
             this.splitContainer15.Panel2.Controls.Add(this.button31);
             this.splitContainer15.Panel2.Controls.Add(this.button12);
             this.splitContainer15.Panel2.Controls.Add(this.button13);
-            this.splitContainer15.Size = new System.Drawing.Size(891, 328);
-            this.splitContainer15.SplitterDistance = 673;
+            this.splitContainer15.Size = new System.Drawing.Size(848, 297);
+            this.splitContainer15.SplitterDistance = 640;
             this.splitContainer15.TabIndex = 3;
             // 
             // richTextBox5
@@ -1351,7 +1271,7 @@
             this.richTextBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox5.Location = new System.Drawing.Point(0, 0);
             this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(673, 328);
+            this.richTextBox5.Size = new System.Drawing.Size(640, 297);
             this.richTextBox5.TabIndex = 0;
             this.richTextBox5.Text = "";
             // 
@@ -1392,7 +1312,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 21);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(891, 328);
+            this.tabPage6.Size = new System.Drawing.Size(848, 297);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "html->txt";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1412,7 +1332,7 @@
             this.richTextBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox4.Location = new System.Drawing.Point(3, 3);
             this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(885, 322);
+            this.richTextBox4.Size = new System.Drawing.Size(842, 291);
             this.richTextBox4.TabIndex = 0;
             this.richTextBox4.Text = "";
             // 
@@ -1424,7 +1344,7 @@
             this.tabPage7.Controls.Add(this.listView1);
             this.tabPage7.Location = new System.Drawing.Point(4, 21);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(891, 328);
+            this.tabPage7.Size = new System.Drawing.Size(848, 297);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "html->listview";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1480,42 +1400,42 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem34,
-            listViewItem35,
-            listViewItem36,
-            listViewItem37,
-            listViewItem38,
-            listViewItem39,
-            listViewItem40,
-            listViewItem41,
-            listViewItem42,
-            listViewItem43,
-            listViewItem44,
-            listViewItem45,
-            listViewItem46,
-            listViewItem47,
-            listViewItem48,
-            listViewItem49,
-            listViewItem50,
-            listViewItem51,
-            listViewItem52,
-            listViewItem53,
-            listViewItem54,
-            listViewItem55,
-            listViewItem56,
-            listViewItem57,
-            listViewItem58,
-            listViewItem59,
-            listViewItem60,
-            listViewItem61,
-            listViewItem62,
-            listViewItem63,
-            listViewItem64,
-            listViewItem65,
-            listViewItem66});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19,
+            listViewItem20,
+            listViewItem21,
+            listViewItem22,
+            listViewItem23,
+            listViewItem24,
+            listViewItem25,
+            listViewItem26,
+            listViewItem27,
+            listViewItem28,
+            listViewItem29,
+            listViewItem30,
+            listViewItem31,
+            listViewItem32,
+            listViewItem33});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(891, 328);
+            this.listView1.Size = new System.Drawing.Size(848, 297);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -1524,7 +1444,7 @@
             this.tabPage8.Controls.Add(this.splitContainer14);
             this.tabPage8.Location = new System.Drawing.Point(4, 21);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(891, 328);
+            this.tabPage8.Size = new System.Drawing.Size(848, 297);
             this.tabPage8.TabIndex = 3;
             this.tabPage8.Text = "html->treeview";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1542,8 +1462,8 @@
             // splitContainer14.Panel2
             // 
             this.splitContainer14.Panel2.Controls.Add(this.splitContainer16);
-            this.splitContainer14.Size = new System.Drawing.Size(891, 328);
-            this.splitContainer14.SplitterDistance = 208;
+            this.splitContainer14.Size = new System.Drawing.Size(848, 297);
+            this.splitContainer14.SplitterDistance = 197;
             this.splitContainer14.TabIndex = 3;
             // 
             // treeView3
@@ -1551,7 +1471,7 @@
             this.treeView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView3.Location = new System.Drawing.Point(0, 0);
             this.treeView3.Name = "treeView3";
-            this.treeView3.Size = new System.Drawing.Size(208, 328);
+            this.treeView3.Size = new System.Drawing.Size(197, 297);
             this.treeView3.TabIndex = 2;
             this.treeView3.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView3_AfterSelect);
             // 
@@ -1571,8 +1491,8 @@
             // 
             this.splitContainer16.Panel2.Controls.Add(this.button8);
             this.splitContainer16.Panel2.Controls.Add(this.richTextBox6);
-            this.splitContainer16.Size = new System.Drawing.Size(679, 328);
-            this.splitContainer16.SplitterDistance = 163;
+            this.splitContainer16.Size = new System.Drawing.Size(647, 297);
+            this.splitContainer16.SplitterDistance = 147;
             this.splitContainer16.TabIndex = 1;
             // 
             // numericUpDown2
@@ -1590,7 +1510,7 @@
             this.listBox3.ItemHeight = 12;
             this.listBox3.Location = new System.Drawing.Point(0, 0);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(679, 163);
+            this.listBox3.Size = new System.Drawing.Size(647, 147);
             this.listBox3.TabIndex = 0;
             this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
@@ -1609,7 +1529,7 @@
             this.richTextBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox6.Location = new System.Drawing.Point(0, 0);
             this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(679, 161);
+            this.richTextBox6.Size = new System.Drawing.Size(647, 146);
             this.richTextBox6.TabIndex = 0;
             this.richTextBox6.Text = "";
             // 
@@ -1631,7 +1551,7 @@
             this.tabPage13.Controls.Add(this.dataGridView4);
             this.tabPage13.Location = new System.Drawing.Point(4, 21);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(891, 328);
+            this.tabPage13.Size = new System.Drawing.Size(848, 297);
             this.tabPage13.TabIndex = 5;
             this.tabPage13.Text = "html->query.table";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -1757,7 +1677,7 @@
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowTemplate.Height = 23;
-            this.dataGridView4.Size = new System.Drawing.Size(633, 328);
+            this.dataGridView4.Size = new System.Drawing.Size(633, 297);
             this.dataGridView4.TabIndex = 0;
             // 
             // tabPage10
@@ -2047,15 +1967,6 @@
             this.splitContainer9.SplitterDistance = 128;
             this.splitContainer9.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(615, 128);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // treeView1
             // 
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -2126,8 +2037,97 @@
             this.treeView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView4.Location = new System.Drawing.Point(0, 0);
             this.treeView4.Name = "treeView4";
-            this.treeView4.Size = new System.Drawing.Size(899, 384);
+            this.treeView4.Size = new System.Drawing.Size(856, 353);
             this.treeView4.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(615, 128);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // toolStripButton_iniLast
+            // 
+            this.toolStripButton_iniLast.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_iniLast.Image")));
+            this.toolStripButton_iniLast.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_iniLast.Name = "toolStripButton_iniLast";
+            this.toolStripButton_iniLast.Size = new System.Drawing.Size(111, 32);
+            this.toolStripButton_iniLast.Text = "updateResultTable";
+            this.toolStripButton_iniLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_iniLast.Click += new System.EventHandler(this.toolStripButton_iniLast_Click);
+            // 
+            // toolStripButton_iniToday
+            // 
+            this.toolStripButton_iniToday.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_iniToday.Image")));
+            this.toolStripButton_iniToday.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_iniToday.Name = "toolStripButton_iniToday";
+            this.toolStripButton_iniToday.Size = new System.Drawing.Size(99, 32);
+            this.toolStripButton_iniToday.Text = "updateLiveTable";
+            this.toolStripButton_iniToday.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_iniToday.Click += new System.EventHandler(this.toolStripButton_iniToday_Click);
+            // 
+            // toolStripButton_resultEvaluate
+            // 
+            this.toolStripButton_resultEvaluate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_resultEvaluate.Image")));
+            this.toolStripButton_resultEvaluate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_resultEvaluate.Name = "toolStripButton_resultEvaluate";
+            this.toolStripButton_resultEvaluate.Size = new System.Drawing.Size(93, 32);
+            this.toolStripButton_resultEvaluate.Text = "resultEvaluate";
+            this.toolStripButton_resultEvaluate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_resultEvaluate.Click += new System.EventHandler(this.toolStripButton_resultEvaluate_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::Soccer_Score_Forecast.Properties.Resources.check1;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(87, 32);
+            this.toolStripButton2.Text = "auditAnalysis";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton_todayEvaluate
+            // 
+            this.toolStripButton_todayEvaluate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_todayEvaluate.Image")));
+            this.toolStripButton_todayEvaluate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_todayEvaluate.Name = "toolStripButton_todayEvaluate";
+            this.toolStripButton_todayEvaluate.Size = new System.Drawing.Size(129, 32);
+            this.toolStripButton_todayEvaluate.Text = "updateResultAnalysis";
+            this.toolStripButton_todayEvaluate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_todayEvaluate.Click += new System.EventHandler(this.toolStripButton_todayEvaluate_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(87, 32);
+            this.toolStripButton1.Text = "emptyAnalysis";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton_autoUpateSystem
+            // 
+            this.toolStripButton_autoUpateSystem.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_autoUpateSystem.Image")));
+            this.toolStripButton_autoUpateSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_autoUpateSystem.Name = "toolStripButton_autoUpateSystem";
+            this.toolStripButton_autoUpateSystem.Size = new System.Drawing.Size(99, 32);
+            this.toolStripButton_autoUpateSystem.Text = "autoUpateSystem";
+            this.toolStripButton_autoUpateSystem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_autoUpateSystem.Click += new System.EventHandler(this.toolStripButton_autoUpateSystem_Click);
+            // 
+            // toolStripButton_exitSystem
+            // 
+            this.toolStripButton_exitSystem.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_exitSystem.Image")));
+            this.toolStripButton_exitSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_exitSystem.Name = "toolStripButton_exitSystem";
+            this.toolStripButton_exitSystem.Size = new System.Drawing.Size(69, 32);
+            this.toolStripButton_exitSystem.Text = "exitSystem";
+            this.toolStripButton_exitSystem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_exitSystem.Click += new System.EventHandler(this.toolStripButton_exitSystem_Click);
             // 
             // Form1
             // 
@@ -2245,9 +2245,9 @@
             this.splitContainer9.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
             this.splitContainer9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

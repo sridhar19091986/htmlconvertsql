@@ -217,6 +217,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\Calculator.ico" />
+    <None Include="ico\check.png" />
+    <None Include="ico\audit.png" />
+    <None Include="ico\Good or Tick.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
