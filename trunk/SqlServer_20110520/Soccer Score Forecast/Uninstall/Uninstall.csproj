@@ -72,7 +72,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Recycle Bin Empty.ico" />
+    <Content Include="Recycle Bin Full.ico" />
     <Content Include="Recycle Bin.ico" />
+    <Content Include="Trash.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
