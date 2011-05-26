@@ -49,9 +49,12 @@ namespace Soccer_Score_Forecast
         public static bool CreateTable(Type linqTableClass)
         {
             bool suc = true;
-            try
+            string createtable = linqTableClass.Name;
+            //MessageBox.Show(createtable);
+            //混淆以后反射名称被改变出现问题
+            using (DataClassesMatchDataContext match = new DataClassesMatchDataContext(Conn.conn))
             {
-                using (DataClassesMatchDataContext match = new DataClassesMatchDataContext(Conn.conn))
+                try
                 {
                     var metaTable = match.Mapping.GetTable(linqTableClass);
                     var typeName = "System.Data.Linq.SqlClient.SqlBuilder";
@@ -61,18 +64,18 @@ namespace Soccer_Score_Forecast
                     #region //这里和sql2008不同
                     var sqlAsString = sql.ToString().Replace("(MAX)", "");
                     string querytable = @"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='"
-                        + linqTableClass.Name + @"' AND TABLE_TYPE='TABLE'";
+                        + createtable + @"' AND TABLE_TYPE='TABLE'";
                     int exists = match.ExecuteQuery<int>(querytable).First();
                     if (exists > 0)
-                        match.ExecuteCommand("drop table " + linqTableClass.Name);
+                        match.ExecuteCommand("drop table " + createtable);
                     #endregion
                     match.ExecuteCommand(sqlAsString);
                 }
-            }
-            catch (Exception ex)
-            {
-                suc = false;
-                MessageBox.Show(ex.ToString());
+                catch (Exception ex)
+                {
+                    suc = false;
+                    MessageBox.Show(ex.ToString());
+                }
             }
             return suc;
         }

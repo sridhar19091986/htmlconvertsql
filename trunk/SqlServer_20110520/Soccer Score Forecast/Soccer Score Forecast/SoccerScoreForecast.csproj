@@ -122,6 +122,9 @@
     <Compile Include="DAL_HtmlSql\AiboLiveToSql.cs" />
     <Compile Include="DAL_HtmlSql\HtmlAgilityPackTableXpath.cs" />
     <Compile Include="DAL_HtmlSql\SqlAgilityPackTableXpath.cs" />
+    <Compile Include="LinqSql\SoccerScoreCompact.cs">
+      <DependentUpon>SoccerScoreCompact.dbml</DependentUpon>
+    </Compile>
     <Compile Include="LinqSql\SoccerScoreCompact.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
