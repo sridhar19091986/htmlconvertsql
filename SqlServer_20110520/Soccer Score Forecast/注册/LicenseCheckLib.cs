@@ -5,7 +5,6 @@ using System.Security.Cryptography;
 using System.Management;
 using System;
 
-
 namespace SoftwareRegister
 {
     public class LicenseString

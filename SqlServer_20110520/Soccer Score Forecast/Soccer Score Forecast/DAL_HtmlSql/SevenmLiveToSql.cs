@@ -16,13 +16,13 @@ namespace Soccer_Score_Forecast
             SevenmLive = new HtmlAgilityPackGeneric(_html, tbTag.tbTag, 0);
             //SevenmLive = new HtmlAgilityPackGeneric(_html, "//table[@id='live_Table']", 0); 
         }
-        public decimal InsertLiveHtmlTableToDB()
+        public int InsertLiveHtmlTableToDB()
         {
             DataTable dt = SevenmLive.GetHtmlTable();
 
             DataClassesMatchDataContext match = new DataClassesMatchDataContext(Conn.conn);
 
-            if (!Conn.CreateTable(typeof(Live_Table))) return 0;
+            if (!Conn.CreateTable(typeof(Live_Table))) { return 0; }
             //var result = match.Live_Table.Where(r => r.Live_table_id > 0);
             //match.Live_Table.DeleteAllOnSubmit(result);
             //match.SubmitChanges();

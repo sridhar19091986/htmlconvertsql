@@ -289,8 +289,9 @@ namespace Soccer_Score_Forecast
         #endregion
         private void toolStripButton_exitSystem_Click(object sender, EventArgs e)
         {
-            this.Close();
             this.Dispose();
+            this.Close();
+            
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -731,6 +732,7 @@ namespace Soccer_Score_Forecast
             if (liveLib == true)
             {
                 toolStripLabel2.Text = Update_live_Table(richTextBox1.Text).ToString();
+                if (toolStripLabel2.Text== "0") textBox1.Text = "about:blank";
             }
             else
             {
@@ -739,7 +741,7 @@ namespace Soccer_Score_Forecast
             insertComplete = true;
             toolStripStatusLabel1.Text = "update table complete!";
         }
-        private decimal Update_live_Table(string html)
+        private int Update_live_Table(string html)
         {
             SevenmLiveToSql sevenlive = new SevenmLiveToSql(html);
             return sevenlive.InsertLiveHtmlTableToDB();

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -72,7 +73,6 @@
             System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem("");
             System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem("");
             System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem("");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dataCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oddsCollectionOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,6 +89,14 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton_iniLast = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_iniToday = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_resultEvaluate = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_todayEvaluate = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_autoUpateSystem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_exitSystem = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -226,6 +234,7 @@
             this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.splitContainer9 = new System.Windows.Forms.SplitContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
@@ -234,15 +243,6 @@
             this.button18 = new System.Windows.Forms.Button();
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripButton_iniLast = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_iniToday = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_resultEvaluate = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_todayEvaluate = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_autoUpateSystem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_exitSystem = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -333,8 +333,8 @@
             this.splitContainer9.Panel1.SuspendLayout();
             this.splitContainer9.Panel2.SuspendLayout();
             this.splitContainer9.SuspendLayout();
-            this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage11.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -471,6 +471,86 @@
             this.toolStrip1.Size = new System.Drawing.Size(864, 35);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton_iniLast
+            // 
+            this.toolStripButton_iniLast.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_iniLast.Image")));
+            this.toolStripButton_iniLast.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_iniLast.Name = "toolStripButton_iniLast";
+            this.toolStripButton_iniLast.Size = new System.Drawing.Size(111, 32);
+            this.toolStripButton_iniLast.Text = "updateResultTable";
+            this.toolStripButton_iniLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_iniLast.Click += new System.EventHandler(this.toolStripButton_iniLast_Click);
+            // 
+            // toolStripButton_iniToday
+            // 
+            this.toolStripButton_iniToday.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_iniToday.Image")));
+            this.toolStripButton_iniToday.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_iniToday.Name = "toolStripButton_iniToday";
+            this.toolStripButton_iniToday.Size = new System.Drawing.Size(99, 32);
+            this.toolStripButton_iniToday.Text = "updateLiveTable";
+            this.toolStripButton_iniToday.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_iniToday.Click += new System.EventHandler(this.toolStripButton_iniToday_Click);
+            // 
+            // toolStripButton_resultEvaluate
+            // 
+            this.toolStripButton_resultEvaluate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_resultEvaluate.Image")));
+            this.toolStripButton_resultEvaluate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_resultEvaluate.Name = "toolStripButton_resultEvaluate";
+            this.toolStripButton_resultEvaluate.Size = new System.Drawing.Size(93, 32);
+            this.toolStripButton_resultEvaluate.Text = "resultEvaluate";
+            this.toolStripButton_resultEvaluate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_resultEvaluate.Click += new System.EventHandler(this.toolStripButton_resultEvaluate_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::Soccer_Score_Forecast.Properties.Resources.check1;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(87, 32);
+            this.toolStripButton2.Text = "auditAnalysis";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton_todayEvaluate
+            // 
+            this.toolStripButton_todayEvaluate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_todayEvaluate.Image")));
+            this.toolStripButton_todayEvaluate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_todayEvaluate.Name = "toolStripButton_todayEvaluate";
+            this.toolStripButton_todayEvaluate.Size = new System.Drawing.Size(129, 32);
+            this.toolStripButton_todayEvaluate.Text = "updateResultAnalysis";
+            this.toolStripButton_todayEvaluate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_todayEvaluate.Click += new System.EventHandler(this.toolStripButton_todayEvaluate_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(87, 32);
+            this.toolStripButton1.Text = "emptyAnalysis";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton_autoUpateSystem
+            // 
+            this.toolStripButton_autoUpateSystem.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_autoUpateSystem.Image")));
+            this.toolStripButton_autoUpateSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_autoUpateSystem.Name = "toolStripButton_autoUpateSystem";
+            this.toolStripButton_autoUpateSystem.Size = new System.Drawing.Size(99, 32);
+            this.toolStripButton_autoUpateSystem.Text = "autoUpateSystem";
+            this.toolStripButton_autoUpateSystem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_autoUpateSystem.Click += new System.EventHandler(this.toolStripButton_autoUpateSystem_Click);
+            // 
+            // toolStripButton_exitSystem
+            // 
+            this.toolStripButton_exitSystem.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_exitSystem.Image")));
+            this.toolStripButton_exitSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_exitSystem.Name = "toolStripButton_exitSystem";
+            this.toolStripButton_exitSystem.Size = new System.Drawing.Size(69, 32);
+            this.toolStripButton_exitSystem.Text = "exitSystem";
+            this.toolStripButton_exitSystem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_exitSystem.Click += new System.EventHandler(this.toolStripButton_exitSystem_Click);
             // 
             // toolStripLabel2
             // 
@@ -1967,6 +2047,15 @@
             this.splitContainer9.SplitterDistance = 128;
             this.splitContainer9.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(615, 128);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // treeView1
             // 
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -2039,95 +2128,6 @@
             this.treeView4.Name = "treeView4";
             this.treeView4.Size = new System.Drawing.Size(856, 353);
             this.treeView4.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(615, 128);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // toolStripButton_iniLast
-            // 
-            this.toolStripButton_iniLast.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_iniLast.Image")));
-            this.toolStripButton_iniLast.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_iniLast.Name = "toolStripButton_iniLast";
-            this.toolStripButton_iniLast.Size = new System.Drawing.Size(111, 32);
-            this.toolStripButton_iniLast.Text = "updateResultTable";
-            this.toolStripButton_iniLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_iniLast.Click += new System.EventHandler(this.toolStripButton_iniLast_Click);
-            // 
-            // toolStripButton_iniToday
-            // 
-            this.toolStripButton_iniToday.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_iniToday.Image")));
-            this.toolStripButton_iniToday.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_iniToday.Name = "toolStripButton_iniToday";
-            this.toolStripButton_iniToday.Size = new System.Drawing.Size(99, 32);
-            this.toolStripButton_iniToday.Text = "updateLiveTable";
-            this.toolStripButton_iniToday.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_iniToday.Click += new System.EventHandler(this.toolStripButton_iniToday_Click);
-            // 
-            // toolStripButton_resultEvaluate
-            // 
-            this.toolStripButton_resultEvaluate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_resultEvaluate.Image")));
-            this.toolStripButton_resultEvaluate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_resultEvaluate.Name = "toolStripButton_resultEvaluate";
-            this.toolStripButton_resultEvaluate.Size = new System.Drawing.Size(93, 32);
-            this.toolStripButton_resultEvaluate.Text = "resultEvaluate";
-            this.toolStripButton_resultEvaluate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_resultEvaluate.Click += new System.EventHandler(this.toolStripButton_resultEvaluate_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = global::Soccer_Score_Forecast.Properties.Resources.check1;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(87, 32);
-            this.toolStripButton2.Text = "auditAnalysis";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton_todayEvaluate
-            // 
-            this.toolStripButton_todayEvaluate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_todayEvaluate.Image")));
-            this.toolStripButton_todayEvaluate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_todayEvaluate.Name = "toolStripButton_todayEvaluate";
-            this.toolStripButton_todayEvaluate.Size = new System.Drawing.Size(129, 32);
-            this.toolStripButton_todayEvaluate.Text = "updateResultAnalysis";
-            this.toolStripButton_todayEvaluate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_todayEvaluate.Click += new System.EventHandler(this.toolStripButton_todayEvaluate_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(87, 32);
-            this.toolStripButton1.Text = "emptyAnalysis";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton_autoUpateSystem
-            // 
-            this.toolStripButton_autoUpateSystem.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_autoUpateSystem.Image")));
-            this.toolStripButton_autoUpateSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_autoUpateSystem.Name = "toolStripButton_autoUpateSystem";
-            this.toolStripButton_autoUpateSystem.Size = new System.Drawing.Size(99, 32);
-            this.toolStripButton_autoUpateSystem.Text = "autoUpateSystem";
-            this.toolStripButton_autoUpateSystem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_autoUpateSystem.Click += new System.EventHandler(this.toolStripButton_autoUpateSystem_Click);
-            // 
-            // toolStripButton_exitSystem
-            // 
-            this.toolStripButton_exitSystem.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_exitSystem.Image")));
-            this.toolStripButton_exitSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_exitSystem.Name = "toolStripButton_exitSystem";
-            this.toolStripButton_exitSystem.Size = new System.Drawing.Size(69, 32);
-            this.toolStripButton_exitSystem.Text = "exitSystem";
-            this.toolStripButton_exitSystem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_exitSystem.Click += new System.EventHandler(this.toolStripButton_exitSystem_Click);
             // 
             // Form1
             // 
@@ -2245,9 +2245,9 @@
             this.splitContainer9.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
             this.splitContainer9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
