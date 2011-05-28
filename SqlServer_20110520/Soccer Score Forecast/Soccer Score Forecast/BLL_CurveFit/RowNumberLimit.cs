@@ -295,6 +295,7 @@ namespace Soccer_Score_Forecast
         {
             //剔除没有记录的
             if (Top20Count < 10) return 0;
+            if (CurveFitValue == null) return 0;
             //double curvefit = CsharpMatlab.ployfitNowWDL(ListMatchPointData, NowMatchTimeDiff);
             double curvefit = CurveFitValue.LastMatchWDL;
             //double.NaN无穷大的问题
@@ -309,6 +310,7 @@ namespace Soccer_Score_Forecast
 
             //剔除没有记录的
             if (Top20Count < 10) return 0;
+            if (CurveFitValue == null) return 0;
             double curvefit = CurveFitValue.LastMatchGoals;
             //double curvefit = CsharpMatlab.ployfitNowGoals (ListMatchPointData, NowMatchTimeDiff);
             //double.NaN无穷大的问题
@@ -322,6 +324,7 @@ namespace Soccer_Score_Forecast
         {
             //剔除没有记录的
             if (Top20Count < 10) return 0;
+            if (CurveFitValue == null) return 0;
             double curvefit = CurveFitValue.LastMatchOddEven;
             //double curvefit = CsharpMatlab.ployfitNowOE (ListMatchPointData, NowMatchTimeDiff);
             //double.NaN无穷大的问题
