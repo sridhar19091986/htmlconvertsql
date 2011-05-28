@@ -45,6 +45,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_85F8A4DECC3C4E7BB62A72F08D283E82"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A2E25E9232FA4FBCB29D3B9C99304CBF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BEE3E7BE775B004FD0B61E9D15A084D2"
         "OwnerKey" = "8:_80A9DCD0D5EC4B0B9C7BD1FDF234BA4A"
         "MsmSig" = "8:_UNDEFINED"
@@ -52,12 +64,6 @@
         "Entry"
         {
         "MsmKey" = "8:_C8EF40BC14FE4C71B429AE5B82BBA013"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CD154995CE4E4141A29B49B49E1BB1AE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -87,7 +93,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E62CD98D1C0145E8AA2848D800DEAC2B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_EE75818743E14DEC9AE7A425E53FC69B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F04640FC7E76465CB67CC06F8C11E56A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -100,13 +118,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6C6F6F4570BD4764978C4F2FC15DF953"
+        "OwnerKey" = "8:_D753D2A872F14D6A8442C5F415A18884"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_495FABA501FC498DA610EAA827164F32"
+        "OwnerKey" = "8:_C8EF40BC14FE4C71B429AE5B82BBA013"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -136,19 +154,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6C6F6F4570BD4764978C4F2FC15DF953"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_495FABA501FC498DA610EAA827164F32"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_429CECE813B0DBAE7F7739B2A0BD9603"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D753D2A872F14D6A8442C5F415A18884"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C8EF40BC14FE4C71B429AE5B82BBA013"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -322,7 +340,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AutoUpdate, Version=1.0.4162.39445, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:AutoUpdate, Version=1.0.4164.7619, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_6C6F6F4570BD4764978C4F2FC15DF953"
@@ -411,6 +429,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_85F8A4DECC3C4E7BB62A72F08D283E82"
+            {
+            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\FilterMatch.sdf"
+            "TargetName" = "8:FilterMatch.sdf"
+            "Tag" = "8:"
+            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A2E25E9232FA4FBCB29D3B9C99304CBF"
+            {
+            "SourcePath" = "8:..\\Soccer Score Forecast\\lib\\sqlceqp35.dll"
+            "TargetName" = "8:sqlceqp35.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_840539C3627D4F72ABC60F5F67A48E83"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BEE3E7BE775B004FD0B61E9D15A084D2"
             {
             "AssemblyRegister" = "3:1"
@@ -457,26 +515,6 @@
                 }
             "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\MathNet.Iridium.dll"
             "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CD154995CE4E4141A29B49B49E1BB1AE"
-            {
-            "SourcePath" = "8:..\\Soccer Score Forecast\\bin\\Release\\FilterMatch.sdf"
-            "TargetName" = "8:FilterMatch.sdf"
             "Tag" = "8:"
             "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
             "Condition" = "8:"
@@ -568,7 +606,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AutoUpdate, Version=1.0.4162.39445, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:AutoUpdate, Version=1.0.4164.7619, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_DB26C12FBDAE515194C8B302C48C0DFC"
@@ -595,6 +633,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E62CD98D1C0145E8AA2848D800DEAC2B"
+            {
+            "SourcePath" = "8:..\\Soccer Score Forecast\\lib\\sqlceme35.dll"
+            "TargetName" = "8:sqlceme35.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_840539C3627D4F72ABC60F5F67A48E83"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EE75818743E14DEC9AE7A425E53FC69B"
             {
             "AssemblyRegister" = "3:1"
@@ -612,6 +670,26 @@
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0DE1C31491DA41FB8815AE8565B6C574"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F04640FC7E76465CB67CC06F8C11E56A"
+            {
+            "SourcePath" = "8:..\\Soccer Score Forecast\\lib\\sqlcese35.dll"
+            "TargetName" = "8:sqlcese35.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_840539C3627D4F72ABC60F5F67A48E83"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -664,6 +742,17 @@
                         {
                         }
                     }
+                }
+            }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_840539C3627D4F72ABC60F5F67A48E83"
+            {
+            "Name" = "8:#1924"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:WindowsFolder"
+                "Folders"
+                {
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_AE4B005BB02D4B589C03B731CE572754"
