@@ -28,6 +28,7 @@ namespace Soccer_Score_Forecast
             //match.SubmitChanges();
 
             string ddate = null;
+            string ndate = null; //修改当天完场的问题  2011.6.11
             Queue<string> todayDate = new Queue<string>();
 
             foreach (DataRow aa in dt.Rows)
@@ -42,7 +43,9 @@ namespace Soccer_Score_Forecast
                     }
                     else
                     {
-                        ddate = todayDate.Dequeue();
+                        todayDate.Dequeue();//删除第1条  2011.6.11 
+                        ndate = todayDate.Peek();//取第1个元素  2011.6.11
+                        ddate = ndate;
                     }
                 }
 

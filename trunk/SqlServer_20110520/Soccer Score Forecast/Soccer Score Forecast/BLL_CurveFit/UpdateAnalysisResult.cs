@@ -32,7 +32,10 @@ namespace Soccer_Score_Forecast
             //var lvls = matches.live_Table_lib.ToDictionary(e => e.live_table_lib_id);
             var lvls = matches.Live_Table_lib.ToDictionary(e => e.Live_table_lib_id);
             //var rtls = matches.result_tb_lib.ToDictionary(e => e.match_time.ToString() + "-" + e.home_team_big + "-" + e.away_team_big);
-            var rtls = matches.Result_tb_lib.ToDictionary(e => e.Match_time.ToString() + "-" + e.Home_team_big + "-" + e.Away_team_big);
+
+            //修改无法更新完场数据的问题 2011.6.11
+            var rtls = matches.Result_tb_lib.ToLookup(e => ((DateTime)e.Match_time).ToShortDateString() 
+                + "-" + e.Home_team_big + "-" + e.Away_team_big);
 
             foreach (var m in mar)
             {
@@ -59,10 +62,18 @@ namespace Soccer_Score_Forecast
                 //{
                 //得出result中的id
                 //var rtl = rtls.First();
-                if (rtls.ContainsKey(match_time.ToString() + "-" + home_team_big + "-" + away_team_big))
+
+                //修改无法更新完场数据的问题 2011.6.11
+
+                string comparekey = ((DateTime)match_time).ToShortDateString()
+                    + "-" + home_team_big + "-" + away_team_big;
+
+                if (rtls.Contains(comparekey ))
                 {
-                    var rtl = rtls[match_time.ToString() + "-" + home_team_big + "-" + away_team_big];
+                    var rtl = rtls[comparekey].FirstOrDefault(); //修改无法更新完场数据的问题 2011.6.11
+
                     result_tb_lib_id = rtl.Result_tb_lib_id;
+
                     m.Result_tb_lib_id = result_tb_lib_id;
 
                     if ((rtl.Full_home_goals - rtl.Full_away_goals) * m.Fit_win_loss > 0)
