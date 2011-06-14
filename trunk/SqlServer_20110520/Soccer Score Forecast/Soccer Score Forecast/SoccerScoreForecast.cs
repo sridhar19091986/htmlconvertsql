@@ -371,7 +371,10 @@ namespace Soccer_Score_Forecast
         {
             this.tabControl1.SelectedTab = this.tabPage12;
 
-            UpdateAnalysisResult u = new UpdateAnalysisResult();
+            //修正完场数据入库后不能修正错误的问题 2011.6.14
+
+            UpdateAnalysisResult u = new UpdateAnalysisResult(ViewMatchOverDays);
+           
             int pb = u.ExecUpateCount;
             MessageBox.Show(pb.ToString());
             toolStripProgressBar1.Maximum = pb;
