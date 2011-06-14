@@ -18,13 +18,21 @@ namespace Soccer_Score_Forecast
         //private decimal live_table_lib_id;
         private int result_tb_lib_id;
 
-        public UpdateAnalysisResult()
+        public UpdateAnalysisResult(int overday)
         {
             //mar=matches.match_analysis_result.Where(e => e.analysis_result_id == null);
-            mar = matches.Match_analysis_result.Where(e => e.Result_tb_lib_id == null);
+
+            //修正完场数据入库后不能修正错误的问题 2011.6.14
+
+            if (overday == -1)
+                mar = matches.Match_analysis_result.Where(e => e.Result_tb_lib_id == null);
+            else
+                mar = matches.Match_analysis_result;
+
             ExecUpateCount = mar.Count();
 
         }
+
         public void ExecUpdate()
         {
 

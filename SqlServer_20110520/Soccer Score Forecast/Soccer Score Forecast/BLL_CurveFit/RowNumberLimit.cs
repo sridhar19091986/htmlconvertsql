@@ -39,10 +39,15 @@ namespace Soccer_Score_Forecast
                 var l = matches.Live_Table_lib.Where(e => e.Live_table_lib_id == liveid).First();
                 home_team_big = l.Home_team_big;
                 away_team_big = l.Away_team_big;
-                matchtime = l.Match_time;
+                matchtime = l.Match_time; 
+
                 var top20h = dMatch.dHome[home_team_big].Union(dMatch.dHome[away_team_big]).
                     Union(dMatch.dAway[home_team_big]).Union(dMatch.dAway[away_team_big]);
-                Top20 = top20h.Where(e => e.Match_time < matchtime).OrderByDescending(e => e.Match_time).Take(40).ToList();
+
+                //修正把比赛日期搞进去了 2011.6.14
+                var top20hh = top20h.Where(e => e.Match_time.Value.Date < matchtime.Value.Date);
+
+                Top20=top20hh.OrderByDescending(e => e.Match_time).Take(40).ToList();
 
                 //var top20h = matches.result_tb_lib.Where(e => e.home_team_big == l.home_team_big || e.away_team_big == l.away_team_big);
                 //var top20a = matches.result_tb_lib.Where(e => e.home_team_big == l.away_team_big || e.away_team_big == l.home_team_big);
