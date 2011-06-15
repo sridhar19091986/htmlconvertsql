@@ -113,10 +113,22 @@ namespace Soccer_Score_Forecast
                 if (mar != null)  //有运行过算法
                 {
                     //加入match_analysis数据
-                    strNode += "||" + mar.Result_fit + "::" + mar.Result_goals + "::" + mar.Result_wdl + "::" + mar.Fit_win_loss + "::" +
-                                    mar.Home_goals + "::" + mar.Away_goals + "::" + (mar.Home_goals - mar.Away_goals) + "::" +
-                                    mar.Home_w.ToString() + "::" + mar.Home_d.ToString() + "::" + mar.Home_l.ToString();
+
+                    //修正显示的问题  2011.6.15
+
+                    strNode += "||" + mar.Result_fit
+                        + "::" + mar.Result_goals 
+                        + "::" + mar.Result_wdl 
+                        + "::FitReslut:" + mar.Fit_win_loss 
+                        + "::" + mar.Home_goals
+                        + "::" + mar.Away_goals
+                        + "::Wgoals:" + (mar.Home_goals - mar.Away_goals)
+                        + "::MyWDL:" + mar.Home_w.ToString()
+                        + "::" + mar.Home_d.ToString()
+                        + "::" + mar.Home_l.ToString();
+
                     fDraw=ForecastDraw(mar.Home_w,mar.Home_d,mar.Home_l);
+
                     if (mar.Result_tb_lib_id != null)  //有导入了结果
                     {
                         //加入result_tb数据
@@ -147,7 +159,7 @@ namespace Soccer_Score_Forecast
                 //颜色处理
                 if (fit < 0) child.ForeColor = Color.Blue;
                 if (goals < 0) child.BackColor = Color.Orange;
-                if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Bold);
+                if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Italic);
                 if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
             }
         }
