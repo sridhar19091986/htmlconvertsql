@@ -223,6 +223,10 @@ namespace Soccer_Score_Forecast
         private void filterMatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             treeView5.Nodes.Clear();
+
+            //重新处理  2011.6.16
+            loaddatatree = new LoadDataToTree(ViewMatchOverDays,filterMatchPath);
+
             loaddatatree.TreeViewMatch(treeView5, "type");
         }
         //treeView过滤操作的方法

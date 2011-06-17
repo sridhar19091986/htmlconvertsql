@@ -36,7 +36,7 @@ namespace Soccer_Score_Forecast
                     //match_analysis_result mar = new match_analysis_result();
                     var mar = matches.Match_analysis_result.Where(e => e.Live_table_lib_id == liveid).First();//查找需要更新的数据
                     mar.Live_table_lib_id = r.live_id;
-                    mar.Pre_algorithm = "top20";
+                    mar.Pre_algorithm = r.LastJZ;   //2011.6.16
                     mar.Pre_match_count  = r.Top20Count;
                     mar.Home_goals = r.HomeGoals;
                     mar.Away_goals = r.AwayGoals;

@@ -590,7 +590,7 @@
             this.initTreeToolStripMenuItem,
             this.selectMatchToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 224);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 246);
             // 
             // filterMatchToolStripMenuItem
             // 
@@ -809,7 +809,7 @@
             this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridView5.Location = new System.Drawing.Point(361, 16);
+            this.dataGridView5.Location = new System.Drawing.Point(361, 33);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowTemplate.Height = 23;
             this.dataGridView5.Size = new System.Drawing.Size(454, 39);

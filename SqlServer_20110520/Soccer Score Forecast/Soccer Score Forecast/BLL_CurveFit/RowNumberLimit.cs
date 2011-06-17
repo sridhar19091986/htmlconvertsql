@@ -30,7 +30,7 @@ namespace Soccer_Score_Forecast
         {
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
-               if(dMatch.dHome==null||dMatch.dAway==null)
+                if (dMatch.dHome == null || dMatch.dAway == null)
                 {
                     dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
                     dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
@@ -39,7 +39,7 @@ namespace Soccer_Score_Forecast
                 var l = matches.Live_Table_lib.Where(e => e.Live_table_lib_id == liveid).First();
                 home_team_big = l.Home_team_big;
                 away_team_big = l.Away_team_big;
-                matchtime = l.Match_time; 
+                matchtime = l.Match_time;
 
                 var top20h = dMatch.dHome[home_team_big].Union(dMatch.dHome[away_team_big]).
                     Union(dMatch.dAway[home_team_big]).Union(dMatch.dAway[away_team_big]);
@@ -47,7 +47,7 @@ namespace Soccer_Score_Forecast
                 //修正把比赛日期搞进去了 2011.6.14
                 var top20hh = top20h.Where(e => e.Match_time.Value.Date < matchtime.Value.Date);
 
-                Top20=top20hh.OrderByDescending(e => e.Match_time).Take(40).ToList();
+                Top20 = top20hh.OrderByDescending(e => e.Match_time).Take(40).ToList();
 
                 //var top20h = matches.result_tb_lib.Where(e => e.home_team_big == l.home_team_big || e.away_team_big == l.away_team_big);
                 //var top20a = matches.result_tb_lib.Where(e => e.home_team_big == l.away_team_big || e.away_team_big == l.home_team_big);
@@ -208,7 +208,7 @@ namespace Soccer_Score_Forecast
             }
             set { _nowMatchTimeDiff = value; }
         }
-    
+
         //预测输入数据源
         private List<MatchPoint<int>> _listMatchPointData;
         public List<MatchPoint<int>> ListMatchPointData
@@ -254,7 +254,7 @@ namespace Soccer_Score_Forecast
                 CurveFitValue = CurveFit.Last();
             }
         }
-        
+
         #region Matlab和Csharp混合编程的方法，利用Matlab运算得出想要的一系列数据 之前数据
         // 反射的经典实现，变量的反复抽象，把变化部分减少到最小，增强稳定部分，有利于扩展
         private List<MatchPoint<float>> ployfitSeries(List<MatchPoint<int>> result, int LastNowDiff)
@@ -274,7 +274,7 @@ namespace Soccer_Score_Forecast
                     //在此指定<>类型是整数
                     PropertyInfo fiIn = typeof(MatchPoint<int>).GetProperty(fi.Name);
                     //反射获取值
-                    Y[i] = Convert.ToDouble(fiIn.GetValue(result[i],null));
+                    Y[i] = Convert.ToDouble(fiIn.GetValue(result[i], null));
                     X[i] = Convert.ToDouble(result[i].LastMatchOverTime);
                     if (i != size - 1)
                         X1[i] = Convert.ToDouble(result[i + 1].LastMatchOverTime);
@@ -294,7 +294,7 @@ namespace Soccer_Score_Forecast
             return fitseries;
         }
         #endregion
-    
+
         //预测值 胜平负
         public double CureFitWinLoss()
         {
@@ -352,6 +352,9 @@ namespace Soccer_Score_Forecast
             int wdl = goals % 2;
             return wdl;
         }
+
+        //修改于 2011.6.16   选比赛策略
+
         private string _listLastJZ;
         public string ListLastJZ
         {
@@ -360,22 +363,58 @@ namespace Soccer_Score_Forecast
                 if (_listLastJZ == null)
                 {
                     string jzText = null;
-                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+
+
+                    //提升速率不少   2011.6.16
+
+
+                    //using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                    //{
+                    var jz = dMatch.dHome[home_team_big]
+                        .Where(e => e.Away_team_big == away_team_big)
+                        .OrderByDescending(e => e.Match_time);
+                    //var jz = matches.Result_tb_lib.Where(e => e.Home_team_big == home_team_big && e.Away_team_big == away_team_big).OrderByDescending(e => e.Match_time);
+                    foreach (var m in jz)
                     {
-                        var jz = matches.Result_tb_lib.Where(e => e.Home_team_big == home_team_big && e.Away_team_big == away_team_big).OrderByDescending(e => e.Match_time);
-                        foreach (var m in jz)
-                        {
-                            jzText += m.Match_time.Value.ToShortDateString() + "::" +
-                                m.Full_home_goals.ToString() + "-" + m.Full_away_goals.ToString() + "::" +
-                                m.Odds + "::" + m.Win_loss_big + "::" + m.Home_team + "::" + m.Away_team + "\r\n";
-                        }
+                        jzText += m.Match_time.Value.ToShortDateString() + "::" +
+                            m.Full_home_goals.ToString() + "-" + m.Full_away_goals.ToString() + "::" +
+                            m.Odds + "::" + m.Win_loss_big + "::" + m.Home_team + "::" + m.Away_team + "\r\n";
                     }
+                    //}
                     _listLastJZ = jzText;
                 }
                 return _listLastJZ;
 
             }
             set { _listLastJZ = value; }
+        }
+        private string _LastJZ;
+        public string LastJZ
+        {
+            get
+            {
+                if (_LastJZ == null)
+                {
+                    string jzText = null;
+
+                    var jz = dMatch.dHome[home_team_big]
+                                   .Where(e => e.Away_team_big == away_team_big)
+                                   .Where(e=>e.Match_time.Value.Date<matchtime.Value.Date)   //这里很关键  2011.6.16
+                                   .OrderByDescending(e => e.Match_time).FirstOrDefault();
+
+                    if (jz == null) jzText = "1";
+                    else
+                    {
+                        if (jz.Full_home_goals > jz.Full_away_goals) jzText = "3";
+                        if (jz.Full_home_goals == jz.Full_away_goals) jzText = "1";
+                        if (jz.Full_home_goals < jz.Full_away_goals) jzText = "0";
+                    }
+
+                    _LastJZ = jzText;
+                }
+                return _LastJZ;
+            }
+            set { _LastJZ = value; }
         }
     }
 }
