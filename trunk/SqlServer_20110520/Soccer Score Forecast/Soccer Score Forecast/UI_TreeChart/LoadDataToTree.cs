@@ -105,8 +105,11 @@ namespace Soccer_Score_Forecast
         {
             foreach (var ltl in ltls)
             {
-                string fDraw="";
+                string fDraw = "";
                 double? fit = 0, goals = 0, wdl = 0;
+                string fjz = "";
+
+
                 //加入live_table数据
                 strNode = ltl.Live_table_lib_id + "," + ltl.Match_type + "," + ltl.Match_time + "::" + ltl.Home_team + "::" + ltl.Away_team + "::" + ltl.Status;
                 mar = marAll.Where(o => o.Live_table_lib_id == ltl.Live_table_lib_id).OrderByDescending(o => o.Analysis_result_id).FirstOrDefault();
@@ -117,9 +120,9 @@ namespace Soccer_Score_Forecast
                     //修正显示的问题  2011.6.15
 
                     strNode += "||" + mar.Result_fit
-                        + "::" + mar.Result_goals 
-                        + "::" + mar.Result_wdl 
-                        + "::FitReslut:" + mar.Fit_win_loss 
+                        + "::" + mar.Result_goals
+                        + "::" + mar.Result_wdl
+                        + "::FitReslut:" + mar.Fit_win_loss
                         + "::" + mar.Home_goals
                         + "::" + mar.Away_goals
                         + "::Wgoals:" + (mar.Home_goals - mar.Away_goals)
@@ -127,7 +130,11 @@ namespace Soccer_Score_Forecast
                         + "::" + mar.Home_d.ToString()
                         + "::" + mar.Home_l.ToString();
 
-                    fDraw=ForecastDraw(mar.Home_w,mar.Home_d,mar.Home_l);
+                    //2011.6.16数据修正
+
+                    fjz = mar.Pre_algorithm;
+
+                    fDraw = ForecastDraw(mar.Home_w, mar.Home_d, mar.Home_l);
 
                     if (mar.Result_tb_lib_id != null)  //有导入了结果
                     {
@@ -143,17 +150,26 @@ namespace Soccer_Score_Forecast
                 }
 
                 //加入bj单场数据
+
+                //由于单场玩法，去掉赔率这块，2011.6.16
+
+                /*
                 foreach (var lo in loAll)
                     if (ltl.Home_team.Contains(lo.MatchOrder1_HomeName) || ltl.Away_team.Contains(lo.MatchOrder1_AwayName))   //有匹配bj单场的数据
                         strNode += "{" + lo.KeyValue + "}" + lo.MatchOrder1_HandicapNumber + "***【赔率+拟合】";
                 if (ltl.Home_team.IndexOf("*") != -1) strNode += "++++++{3";
                 else strNode += "++++++{0";
+                 * */
+
+                strNode += "【交战】【概率+拟合】++++++{" + fjz + "}{";
 
                 strNode += fDraw;
 
                 if (fit < 0) strNode += "0}";
                 else strNode += "3}";
-                
+
+
+
                 TreeNode child = new TreeNode(strNode);
                 tn.Nodes.Add(child);
                 //颜色处理
