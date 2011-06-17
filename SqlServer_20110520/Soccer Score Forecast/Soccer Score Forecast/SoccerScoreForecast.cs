@@ -443,9 +443,27 @@ namespace Soccer_Score_Forecast
         private void button15_Click(object sender, EventArgs e)
         {
         }
-        private void button16_Click(object sender, EventArgs e)
+        private void button16_Click(object sender, EventArgs c)
         {
+            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+            {
+                var idExc = matches.Live_Table_lib
+                   .Where(e => e.Match_time.Value.Date >= DateTime.Now.AddDays(ViewMatchOverDays).Date)
+                   .Select(e => e.Match_type).Distinct();
+                foreach (string matchtype in idExc)
+                    treeView6.Nodes.Add(matchtype);
+            }
         }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(filterMatchPath, true, System.Text.Encoding.Default))
+            {
+                file.WriteLine("\n");
+                file.WriteLine(treeView6.SelectedNode.Text);
+            }
+        }
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             textBox3.Text = "http://1x2.bet007.com/";
@@ -496,9 +514,7 @@ namespace Soccer_Score_Forecast
             Thread.Sleep(500);//达不到要求的效果，后台axWebBrowser1，主程序全部暂停
             button17.PerformClick();
         }
-        private void button17_Click(object sender, EventArgs e)
-        {
-        }
+
         private void button18_Click(object sender, EventArgs e)
         {
         }
@@ -954,11 +970,7 @@ namespace Soccer_Score_Forecast
 
         private void selectMatchToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(filterMatchPath, true, System.Text.Encoding.Default))
-            {
-                file.WriteLine("\n");
-                file.WriteLine(treeView5.SelectedNode.Text);
-            }
+
         }
 
         private void toolStripLabel2_Click_1(object sender, EventArgs e)
@@ -982,6 +994,11 @@ namespace Soccer_Score_Forecast
         private void importUpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Conn.ImportUpdateFile();
+        }
+
+        private void checkedListBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

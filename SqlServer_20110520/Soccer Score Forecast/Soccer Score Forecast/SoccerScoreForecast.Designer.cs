@@ -30,49 +30,49 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.ListViewItem listViewItem67 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem68 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem69 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem70 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem71 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem72 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem73 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem74 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem75 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem76 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem77 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem78 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem79 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem80 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem81 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem82 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem83 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem84 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem85 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem86 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem87 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem88 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem89 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem90 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem91 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem92 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem93 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem94 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem95 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem96 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem97 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem98 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem99 = new System.Windows.Forms.ListViewItem("");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dataCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oddsCollectionOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,7 +109,6 @@
             this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caiPiaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.initTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectMatchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -212,13 +211,9 @@
             this.button32 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.button17 = new System.Windows.Forms.Button();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -243,6 +238,12 @@
             this.button18 = new System.Windows.Forms.Button();
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.treeView6 = new System.Windows.Forms.TreeView();
+            this.button17 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -335,6 +336,10 @@
             this.splitContainer9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage11.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -587,10 +592,9 @@
             this.treeColaToolStripMenuItem,
             this.tToolStripMenuItem,
             this.caiPiaoToolStripMenuItem,
-            this.initTreeToolStripMenuItem,
-            this.selectMatchToolStripMenuItem1});
+            this.initTreeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 246);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 224);
             // 
             // filterMatchToolStripMenuItem
             // 
@@ -655,13 +659,6 @@
             this.initTreeToolStripMenuItem.Text = "Init Tree";
             this.initTreeToolStripMenuItem.Click += new System.EventHandler(this.initTreeToolStripMenuItem_Click);
             // 
-            // selectMatchToolStripMenuItem1
-            // 
-            this.selectMatchToolStripMenuItem1.Name = "selectMatchToolStripMenuItem1";
-            this.selectMatchToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
-            this.selectMatchToolStripMenuItem1.Text = "SelectMatch";
-            this.selectMatchToolStripMenuItem1.Click += new System.EventHandler(this.selectMatchToolStripMenuItem1_Click);
-            // 
             // tabPage12
             // 
             this.tabPage12.Controls.Add(this.tableLayoutPanel1);
@@ -698,54 +695,54 @@
             this.chart1.BorderlineColor = System.Drawing.SystemColors.ActiveCaption;
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chart1.BorderlineWidth = 2;
-            chartArea1.Name = "Default";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "Default";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.ChartArea = "Default";
-            series1.Legend = "Legend1";
-            series1.Name = "RealScore";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series1.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series2.ChartArea = "Default";
-            series2.Legend = "Legend1";
-            series2.Name = "RealWDL";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series3.ChartArea = "Default";
-            series3.Legend = "Legend1";
-            series3.Name = "RealGoals";
-            series3.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series4.ChartArea = "Default";
-            series4.Legend = "Legend1";
-            series4.Name = "RealOddEven";
-            series5.ChartArea = "Default";
-            series5.Legend = "Legend1";
-            series5.Name = "ForeWDL";
-            series6.ChartArea = "Default";
-            series6.Legend = "Legend1";
-            series6.Name = "ForeGoals";
-            series6.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series7.ChartArea = "Default";
-            series7.Legend = "Legend1";
-            series7.Name = "ForeOddEven";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Series.Add(series7);
+            series15.ChartArea = "Default";
+            series15.Legend = "Legend1";
+            series15.Name = "RealScore";
+            series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series15.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series15.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series16.ChartArea = "Default";
+            series16.Legend = "Legend1";
+            series16.Name = "RealWDL";
+            series16.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series16.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series17.ChartArea = "Default";
+            series17.Legend = "Legend1";
+            series17.Name = "RealGoals";
+            series17.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series18.ChartArea = "Default";
+            series18.Legend = "Legend1";
+            series18.Name = "RealOddEven";
+            series19.ChartArea = "Default";
+            series19.Legend = "Legend1";
+            series19.Name = "ForeWDL";
+            series20.ChartArea = "Default";
+            series20.Legend = "Legend1";
+            series20.Name = "ForeGoals";
+            series20.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series21.ChartArea = "Default";
+            series21.Legend = "Legend1";
+            series21.Name = "ForeOddEven";
+            this.chart1.Series.Add(series15);
+            this.chart1.Series.Add(series16);
+            this.chart1.Series.Add(series17);
+            this.chart1.Series.Add(series18);
+            this.chart1.Series.Add(series19);
+            this.chart1.Series.Add(series20);
+            this.chart1.Series.Add(series21);
             this.chart1.Size = new System.Drawing.Size(844, 150);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title1.Name = "Title1";
-            this.chart1.Titles.Add(title1);
+            title3.Name = "Title1";
+            this.chart1.Titles.Add(title3);
             // 
             // panel1
             // 
@@ -1480,39 +1477,39 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12,
-            listViewItem13,
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18,
-            listViewItem19,
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24,
-            listViewItem25,
-            listViewItem26,
-            listViewItem27,
-            listViewItem28,
-            listViewItem29,
-            listViewItem30,
-            listViewItem31,
-            listViewItem32,
-            listViewItem33});
+            listViewItem67,
+            listViewItem68,
+            listViewItem69,
+            listViewItem70,
+            listViewItem71,
+            listViewItem72,
+            listViewItem73,
+            listViewItem74,
+            listViewItem75,
+            listViewItem76,
+            listViewItem77,
+            listViewItem78,
+            listViewItem79,
+            listViewItem80,
+            listViewItem81,
+            listViewItem82,
+            listViewItem83,
+            listViewItem84,
+            listViewItem85,
+            listViewItem86,
+            listViewItem87,
+            listViewItem88,
+            listViewItem89,
+            listViewItem90,
+            listViewItem91,
+            listViewItem92,
+            listViewItem93,
+            listViewItem94,
+            listViewItem95,
+            listViewItem96,
+            listViewItem97,
+            listViewItem98,
+            listViewItem99});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(848, 297);
@@ -1762,19 +1759,7 @@
             // 
             // tabPage10
             // 
-            this.tabPage10.Controls.Add(this.button25);
-            this.tabPage10.Controls.Add(this.button24);
-            this.tabPage10.Controls.Add(this.checkedListBox1);
-            this.tabPage10.Controls.Add(this.checkBox8);
-            this.tabPage10.Controls.Add(this.checkBox7);
-            this.tabPage10.Controls.Add(this.checkBox6);
-            this.tabPage10.Controls.Add(this.button17);
-            this.tabPage10.Controls.Add(this.checkBox5);
-            this.tabPage10.Controls.Add(this.checkBox4);
-            this.tabPage10.Controls.Add(this.checkBox3);
-            this.tabPage10.Controls.Add(this.checkBox2);
-            this.tabPage10.Controls.Add(this.checkBox1);
-            this.tabPage10.Controls.Add(this.button16);
+            this.tabPage10.Controls.Add(this.tableLayoutPanel2);
             this.tabPage10.Location = new System.Drawing.Point(4, 4);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Size = new System.Drawing.Size(856, 353);
@@ -1782,39 +1767,11 @@
             this.tabPage10.Text = "Live Collection Result";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(145, 267);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(75, 23);
-            this.button25.TabIndex = 12;
-            this.button25.Text = "button25";
-            this.button25.UseVisualStyleBackColor = true;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(145, 215);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(75, 23);
-            this.button24.TabIndex = 11;
-            this.button24.Text = "button24";
-            this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(253, 12);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(124, 372);
-            this.checkedListBox1.TabIndex = 10;
-            // 
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
             this.checkBox8.ForeColor = System.Drawing.Color.Red;
-            this.checkBox8.Location = new System.Drawing.Point(429, 295);
+            this.checkBox8.Location = new System.Drawing.Point(16, 246);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(240, 16);
             this.checkBox8.TabIndex = 9;
@@ -1826,7 +1783,7 @@
             // 
             this.checkBox7.AutoSize = true;
             this.checkBox7.ForeColor = System.Drawing.Color.Red;
-            this.checkBox7.Location = new System.Drawing.Point(429, 97);
+            this.checkBox7.Location = new System.Drawing.Point(16, 86);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(396, 16);
             this.checkBox7.TabIndex = 8;
@@ -1838,7 +1795,7 @@
             // 
             this.checkBox6.AutoSize = true;
             this.checkBox6.ForeColor = System.Drawing.Color.Red;
-            this.checkBox6.Location = new System.Drawing.Point(429, 256);
+            this.checkBox6.Location = new System.Drawing.Point(16, 281);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(216, 16);
             this.checkBox6.TabIndex = 7;
@@ -1846,20 +1803,10 @@
             this.checkBox6.UseVisualStyleBackColor = true;
             this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(145, 111);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 23);
-            this.button17.TabIndex = 6;
-            this.button17.Text = "->";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(429, 222);
+            this.checkBox5.Location = new System.Drawing.Point(16, 205);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(222, 16);
             this.checkBox5.TabIndex = 5;
@@ -1870,7 +1817,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(429, 161);
+            this.checkBox4.Location = new System.Drawing.Point(16, 171);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(96, 16);
             this.checkBox4.TabIndex = 4;
@@ -1881,7 +1828,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(429, 139);
+            this.checkBox3.Location = new System.Drawing.Point(16, 126);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(366, 16);
             this.checkBox3.TabIndex = 3;
@@ -1893,7 +1840,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.ForeColor = System.Drawing.Color.Red;
-            this.checkBox2.Location = new System.Drawing.Point(429, 65);
+            this.checkBox2.Location = new System.Drawing.Point(16, 55);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(264, 16);
             this.checkBox2.TabIndex = 2;
@@ -1904,7 +1851,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(429, 29);
+            this.checkBox1.Location = new System.Drawing.Point(16, 20);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(156, 16);
             this.checkBox1.TabIndex = 1;
@@ -1914,7 +1861,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(145, 44);
+            this.button16.Location = new System.Drawing.Point(3, 20);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(75, 23);
             this.button16.TabIndex = 0;
@@ -2129,6 +2076,76 @@
             this.treeView4.Size = new System.Drawing.Size(856, 353);
             this.treeView4.TabIndex = 0;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.92255F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.07746F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tableLayoutPanel2.Controls.Add(this.panel5, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel4, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel6, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(856, 353);
+            this.tableLayoutPanel2.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button17);
+            this.panel4.Controls.Add(this.button16);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(726, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(127, 347);
+            this.panel4.TabIndex = 7;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.checkBox1);
+            this.panel5.Controls.Add(this.checkBox8);
+            this.panel5.Controls.Add(this.checkBox2);
+            this.panel5.Controls.Add(this.checkBox6);
+            this.panel5.Controls.Add(this.checkBox7);
+            this.panel5.Controls.Add(this.checkBox5);
+            this.panel5.Controls.Add(this.checkBox3);
+            this.panel5.Controls.Add(this.checkBox4);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(514, 347);
+            this.panel5.TabIndex = 8;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.treeView6);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(523, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(197, 347);
+            this.panel6.TabIndex = 9;
+            // 
+            // treeView6
+            // 
+            this.treeView6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView6.Location = new System.Drawing.Point(0, 0);
+            this.treeView6.Name = "treeView6";
+            this.treeView6.Size = new System.Drawing.Size(197, 347);
+            this.treeView6.TabIndex = 0;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(3, 86);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 23);
+            this.button17.TabIndex = 6;
+            this.button17.Text = "->";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2228,7 +2245,6 @@
             this.tabPage13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPage10.ResumeLayout(false);
-            this.tabPage10.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.splitContainer6.Panel1.ResumeLayout(false);
             this.splitContainer6.Panel2.ResumeLayout(false);
@@ -2248,6 +2264,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2342,7 +2363,6 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.Button button17;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.CheckBox checkBox8;
@@ -2367,9 +2387,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitSystemSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oddsCollectionOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caiPiaoToolStripMenuItem;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button29;
@@ -2419,12 +2436,17 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.TreeView treeView5;
-        private System.Windows.Forms.ToolStripMenuItem selectMatchToolStripMenuItem1;
         private System.Windows.Forms.ToolStripButton toolStripButton_autoUpateSystem;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripMenuItem importCompactToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importUpdateToolStripMenuItem;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TreeView treeView6;
+        private System.Windows.Forms.Button button17;
 
     }
 }
