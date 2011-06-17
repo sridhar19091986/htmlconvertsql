@@ -12,6 +12,7 @@ namespace Soccer_Score_Forecast
         public int? home_team_big;
         public int? away_team_big;
         public DateTime? matchtime;
+        public string matchtype;
         public int Top20Count;
         public List<Result_tb_lib> Top20;
         /*
@@ -41,13 +42,17 @@ namespace Soccer_Score_Forecast
                 away_team_big = l.Away_team_big;
                 matchtime = l.Match_time;
 
+                //修正把比赛类型搞进去  2011.6.17
+                matchtype = l.Match_type;
+
                 var top20h = dMatch.dHome[home_team_big].Union(dMatch.dHome[away_team_big]).
                     Union(dMatch.dAway[home_team_big]).Union(dMatch.dAway[away_team_big]);
 
                 //修正把比赛日期搞进去了 2011.6.14
                 var top20hh = top20h.Where(e => e.Match_time.Value.Date < matchtime.Value.Date);
 
-                Top20 = top20hh.OrderByDescending(e => e.Match_time).Take(40).ToList();
+                //修正把比赛类型搞进去  2011.6.17
+                Top20 = top20hh.Where(e => e.Match_type == matchtype).OrderByDescending(e => e.Match_time).Take(40).ToList();
 
                 //var top20h = matches.result_tb_lib.Where(e => e.home_team_big == l.home_team_big || e.away_team_big == l.away_team_big);
                 //var top20a = matches.result_tb_lib.Where(e => e.home_team_big == l.away_team_big || e.away_team_big == l.home_team_big);
@@ -399,7 +404,7 @@ namespace Soccer_Score_Forecast
 
                     var jz = dMatch.dHome[home_team_big]
                                    .Where(e => e.Away_team_big == away_team_big)
-                                   .Where(e=>e.Match_time.Value.Date<matchtime.Value.Date)   //这里很关键  2011.6.16
+                                   .Where(e => e.Match_time.Value.Date < matchtime.Value.Date)   //这里很关键  2011.6.16
                                    .OrderByDescending(e => e.Match_time).FirstOrDefault();
 
                     if (jz == null) jzText = "1";

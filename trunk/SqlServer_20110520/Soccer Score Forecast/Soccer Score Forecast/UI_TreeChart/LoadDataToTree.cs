@@ -105,10 +105,11 @@ namespace Soccer_Score_Forecast
         {
             foreach (var ltl in ltls)
             {
-                string fDraw = "";
+                //string fDraw = "";
                 double? fit = 0, goals = 0, wdl = 0;
-                string fjz = "";
+                //string fjz = "";
 
+                string myfit;
 
                 //加入live_table数据
                 strNode = ltl.Live_table_lib_id + "," + ltl.Match_type + "," + ltl.Match_time + "::" + ltl.Home_team + "::" + ltl.Away_team + "::" + ltl.Status;
@@ -117,24 +118,33 @@ namespace Soccer_Score_Forecast
                 {
                     //加入match_analysis数据
 
+                    //2011.6.16数据修正
+
+                    strNode += "【" + mar.Pre_algorithm + "】{交战+概率1+拟合+进球+概率30}";
+
+
                     //修正显示的问题  2011.6.15
+
+                    myfit = mar.Fit_win_loss.ToString();
+                    myfit = myfit.Length < 5 ? myfit : myfit.Substring(0, 5);
 
                     strNode += "||" + mar.Result_fit
                         + "::" + mar.Result_goals
                         + "::" + mar.Result_wdl
-                        + "::FitReslut:" + mar.Fit_win_loss
-                        + "::" + mar.Home_goals
-                        + "::" + mar.Away_goals
+                        + "::FitReslut:" + myfit    //2011.6.17
+                        + "::hGoals:" + mar.Home_goals
+                        + "::aGoals:" + mar.Away_goals
                         + "::Wgoals:" + (mar.Home_goals - mar.Away_goals)
                         + "::MyWDL:" + mar.Home_w.ToString()
                         + "::" + mar.Home_d.ToString()
                         + "::" + mar.Home_l.ToString();
 
-                    //2011.6.16数据修正
 
-                    fjz = mar.Pre_algorithm;
 
-                    fDraw = ForecastDraw(mar.Home_w, mar.Home_d, mar.Home_l);
+
+                    //fjz = mar.Pre_algorithm;
+
+                    //fDraw = ForecastDraw(mar.Home_w, mar.Home_d, mar.Home_l);
 
                     if (mar.Result_tb_lib_id != null)  //有导入了结果
                     {
@@ -143,10 +153,14 @@ namespace Soccer_Score_Forecast
                         strNode += "||" + rtl.Match_time.Value.ToShortDateString() + "::" +
                                             rtl.Full_home_goals.ToString() + "-" + rtl.Full_away_goals.ToString() + "::" +
                                             rtl.Odds + "::" + rtl.Win_loss_big + "::" + rtl.Home_team + "::" + rtl.Away_team;
+
                     }
+
                     fit = mar.Fit_win_loss;
                     goals = mar.Home_goals - mar.Away_goals;
                     wdl = mar.Home_w - mar.Home_l;
+
+
                 }
 
                 //加入bj单场数据
@@ -161,12 +175,12 @@ namespace Soccer_Score_Forecast
                 else strNode += "++++++{0";
                  * */
 
-                strNode += "【交战】【概率+拟合】++++++{" + fjz + "}{";
+                //strNode += "【交战】【概率+拟合】++++++{" + fjz + "}{";
 
-                strNode += fDraw;
+                //strNode += fDraw;
 
-                if (fit < 0) strNode += "0}";
-                else strNode += "3}";
+                //if (fit < 0) strNode += "0}";
+                //else strNode += "3}";
 
 
 
@@ -210,10 +224,11 @@ namespace Soccer_Score_Forecast
             return double.Parse(number);
             // Console.WriteLine(number);
         }
-        private string ForecastDraw(int? w, int? d, int? l) {
+        private string ForecastDraw(int? w, int? d, int? l)
+        {
             int?[] wdl = { w, d, l };
-            if (d == wdl.Min() && d!=w && d!=l) return "";
-            else  return "1";
+            if (d == wdl.Min() && d != w && d != l) return "30";
+            else return "1";
         }
     }
 
