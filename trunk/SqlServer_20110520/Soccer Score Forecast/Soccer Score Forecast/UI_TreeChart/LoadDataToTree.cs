@@ -109,7 +109,11 @@ namespace Soccer_Score_Forecast
                 double? fit = 0, goals = 0, wdl = 0;
                 //string fjz = "";
 
-                string myfit;
+                string myfit = ""; ;
+
+                //double preresult=0;
+
+                string result = "";
 
                 //加入live_table数据
                 strNode = ltl.Live_table_lib_id + "," + ltl.Match_type + "," + ltl.Match_time + "::" + ltl.Home_team + "::" + ltl.Away_team + "::" + ltl.Status;
@@ -154,6 +158,15 @@ namespace Soccer_Score_Forecast
                                             rtl.Full_home_goals.ToString() + "-" + rtl.Full_away_goals.ToString() + "::" +
                                             rtl.Odds + "::" + rtl.Win_loss_big + "::" + rtl.Home_team + "::" + rtl.Away_team;
 
+
+
+
+                        if (rtl.Full_home_goals > rtl.Full_away_goals) result = "3";
+                        if (rtl.Full_home_goals == rtl.Full_away_goals) result = "1";
+                        if (rtl.Full_home_goals < rtl.Full_away_goals) result = "0";
+
+
+
                     }
 
                     fit = mar.Fit_win_loss;
@@ -191,6 +204,9 @@ namespace Soccer_Score_Forecast
                 if (goals < 0) child.BackColor = Color.Orange;
                 if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Italic);
                 if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
+
+                if (mar.Result_tb_lib_id != null)
+                    if (mar.Pre_algorithm.IndexOf(result) != -1) child.ForeColor = Color.Red;
             }
         }
         #endregion

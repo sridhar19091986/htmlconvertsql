@@ -63,10 +63,21 @@ namespace Soccer_Score_Forecast
         private string ForecastD(int? w, int? d, int? l)
         {
             int?[] wdl = { w, d, l };
-            if (d == wdl.Min() && d != w && d != l) return "30";
-            else return "1";
+            if (d == wdl.Min() && d != w && d != l)
+            {
+                if (w > l) return "3";
+                else
+                {
+                    if (w == l) return "1";
+                    else return "0";
+                }
+            }
+            else
+            {
+                return "1";
+            }
         }
-
+    
         //2011.6.17 算法更新，预测，进球，概率
 
         private string ForecastWL(double? Fit_win_loss, double? Home_goals, double? Away_goals, int? Home_w, int? Home_l)
