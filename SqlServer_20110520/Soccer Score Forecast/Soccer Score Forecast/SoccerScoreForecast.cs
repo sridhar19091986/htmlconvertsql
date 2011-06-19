@@ -802,12 +802,14 @@ namespace Soccer_Score_Forecast
                                           fitL = q.Where(e => e.Result_fit == "L").Count(),
                                           goalsW = q.Where(e => e.Result_goals == "W").Count(),
                                           goalsL = q.Where(e => e.Result_goals == "L").Count(),
-                                          wdlW = q.Where(e => e.Result_wdl == "W").Count(),
-                                          wdlL = q.Where(e => e.Result_wdl == "L").Count(),
+                                          交战_概率1_拟合_进球_概率30W = q.Where(e => e.Result_wdl == "W").Count(),
+                                          交战_概率1_拟合_进球_概率30L = q.Where(e => e.Result_wdl == "L").Count(),
                                       };
                         dataGridView5.DataSource = winrate;
                         var maxwin = winrate.FirstOrDefault();
-                        int[] maxw = { maxwin.fitW, maxwin.fitL, maxwin.goalsW, maxwin.goalsL, maxwin.wdlW, maxwin.wdlL };
+                        int[] maxw = { maxwin.fitW, maxwin.fitL, maxwin.goalsW, maxwin.goalsL, 
+                                         maxwin.交战_概率1_拟合_进球_概率30W, 
+                                         maxwin.交战_概率1_拟合_进球_概率30L };
                         label3.Text = maxw.Max().ToString();
                     }
                 }

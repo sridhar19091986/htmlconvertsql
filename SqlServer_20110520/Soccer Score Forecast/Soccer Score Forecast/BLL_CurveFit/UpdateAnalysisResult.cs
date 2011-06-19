@@ -45,6 +45,8 @@ namespace Soccer_Score_Forecast
             var rtls = matches.Result_tb_lib.ToLookup(e => ((DateTime)e.Match_time).ToShortDateString() 
                 + "-" + e.Home_team_big + "-" + e.Away_team_big);
 
+            string result = null;
+
             foreach (var m in mar)
             {
                 i++;
@@ -94,10 +96,27 @@ namespace Soccer_Score_Forecast
                     else
                         m.Result_goals = "L";
 
-                    if ((rtl.Full_home_goals - rtl.Full_away_goals) * (m.Home_w - m.Home_l) > 0)
+
+                    //if ((rtl.Full_home_goals - rtl.Full_away_goals) * (m.Home_w - m.Home_l) > 0)
+                    //    m.Result_wdl = "W";
+                    //else
+                    //    m.Result_wdl = "L";
+
+                    //此处需要增加一些预测字段  2011.6.19
+
+                    if (rtl.Full_home_goals > rtl.Full_away_goals) result = "3";
+                    if (rtl.Full_home_goals == rtl.Full_away_goals) result = "1";
+                    if (rtl.Full_home_goals < rtl.Full_away_goals) result = "0";
+
+                    if(m.Pre_algorithm.IndexOf(result) !=-1)
                         m.Result_wdl = "W";
                     else
                         m.Result_wdl = "L";
+
+                    //if ((rtl.Full_home_goals - rtl.Full_away_goals) * (m.Home_w - m.Home_l) > 0)
+                    //    m.Result_wdl = "W";
+                    //else
+                    //    m.Result_wdl = "L";
                 }
 
 
