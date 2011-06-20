@@ -384,10 +384,10 @@ namespace Soccer_Score_Forecast
             toolStripProgressBar1.Maximum = pb;
             u.ExecUpdate();
         }
-        private void selectMatchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            listBox2.Items.Add(toolStripStatusLabel3.Text);
-        }
+        //private void selectMatchToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    listBox2.Items.Add(toolStripStatusLabel3.Text);
+        //}
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
         }
@@ -778,52 +778,69 @@ namespace Soccer_Score_Forecast
         {
             try
             {
-                if (c.Node.Level == 1)
-                {
-                    dataGridView5.Visible = true;
-                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-                    {
-                        var mar = from a in matches.Match_analysis_result
-                                  join b in matches.Live_Table_lib on a.Live_table_lib_id equals b.Live_table_lib_id
-                                  select new
-                                  {
-                                      a.Result_wdl,
-                                      a.Result_fit,
-                                      a.Result_goals,
-                                      b.Match_type
-                                  };
-                        var winrate = from p in mar
-                                      where p.Match_type == c.Node.Text
-                                      group p by p.Match_type into q
-                                      select new
-                                      {
-                                          q.Key,
-                                          fitW = q.Where(e => e.Result_fit == "W").Count(),
-                                          fitL = q.Where(e => e.Result_fit == "L").Count(),
-                                          goalsW = q.Where(e => e.Result_goals == "W").Count(),
-                                          goalsL = q.Where(e => e.Result_goals == "L").Count(),
-                                          交战_概率1_拟合_进球_概率30W = q.Where(e => e.Result_wdl == "W").Count(),
-                                          交战_概率1_拟合_进球_概率30L = q.Where(e => e.Result_wdl == "L").Count(),
-                                      };
-                        dataGridView5.DataSource = winrate;
-                        var maxwin = winrate.FirstOrDefault();
-                        int[] maxw = { maxwin.fitW, maxwin.fitL, maxwin.goalsW, maxwin.goalsL, 
-                                         maxwin.交战_概率1_拟合_进球_概率30W, 
-                                         maxwin.交战_概率1_拟合_进球_概率30L };
-                        label3.Text = maxw.Max().ToString();
-                    }
-                }
+                if (c.Node.Level == 1) { ComputeFitRate(c.Node.Text); }
                 if (c.Node.Level != 2) { return; }
                 dataGridView5.Visible = false;
                 string selectMatch = c.Node.Text.ToString();
                 string[] ar = selectMatch.Split(Convert.ToChar(','));
                 int id = Int32.Parse(ar[0].ToString());
                 label3.Text = LoadDataToChart.ForeCast(chart1, id, selectMatch);
+                //ComputeFitResult(id);
                 LoadDataToChart.LabelMatchDetail(chart1, PointLabelsList.GetItemText(PointLabelsList.SelectedItem));
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+        private void ComputeFitRate(string matchtype)
+        {
+            dataGridView5.Visible = true;
+            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+            {
+                var mar = from a in matches.Match_analysis_result
+                          join b in matches.Live_Table_lib on a.Live_table_lib_id equals b.Live_table_lib_id
+                          select new
+                          {
+                              a.Result_wdl,
+                              a.Result_fit,
+                              a.Result_goals,
+                              b.Match_type
+                          };
+                var winrate = from p in mar
+                              where p.Match_type == matchtype
+                              group p by p.Match_type into q
+                              select new
+                              {
+                                  q.Key,
+                                  fitW = q.Where(e => e.Result_fit == "W").Count(),
+                                  fitL = q.Where(e => e.Result_fit == "L").Count(),
+                                  goalsW = q.Where(e => e.Result_goals == "W").Count(),
+                                  goalsL = q.Where(e => e.Result_goals == "L").Count(),
+                                  交战_概率1_拟合_进球_概率30W = q.Where(e => e.Result_wdl == "W").Count(),
+                                  交战_概率1_拟合_进球_概率30L = q.Where(e => e.Result_wdl == "L").Count(),
+                              };
+                dataGridView5.DataSource = winrate;
+                var maxwin = winrate.FirstOrDefault();
+                int[] maxw = { maxwin.fitW, maxwin.fitL, maxwin.goalsW, maxwin.goalsL, 
+                                         maxwin.交战_概率1_拟合_进球_概率30W, 
+                                         maxwin.交战_概率1_拟合_进球_概率30L };
+                label3.Text = maxw.Max().ToString();
+            }
+        }
+        private void ComputeFitResult(int matchid)
+        {
+            dataGridView5.Visible = true;
+            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+            {
+                string pre = matches.Match_analysis_result
+                    .Where(e => e.Live_table_lib_id == matchid)
+                    .Select(e => e.Pre_algorithm).FirstOrDefault();
+
+                var mar = from a in matches.Match_analysis_result
+                          where a.Pre_algorithm == pre
+                          select a;
+                dataGridView5.DataSource = mar;
             }
         }
         private void treeView5_MouseDown(object sender, MouseEventArgs e)
