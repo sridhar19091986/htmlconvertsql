@@ -34,6 +34,21 @@ namespace Soccer_Score_Forecast
 
     }
 
+    //public class MatlabNet
+    //{
+    //    public DateTime? Match_time;
+    //    public string Match_type;
+    //    public string Home_team;
+    //    public string Away_team;
+    //    public int? Home_w;
+    //    public int? Home_d;
+    //    public int? Home_l;
+    //    public double? Home_goals;
+    //    public double? Away_goals;
+    //    public int? Full_home_goals;
+    //    public int? Full_away_goals;
+    //}
+
     public class CsharpMatlab
     {
         #region   //Matlab和Csharp混合编程的方法，利用Matlab运算得出想要的一个单数据

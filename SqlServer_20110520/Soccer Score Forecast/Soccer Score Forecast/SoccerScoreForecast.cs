@@ -383,6 +383,9 @@ namespace Soccer_Score_Forecast
             MessageBox.Show(pb.ToString());
             toolStripProgressBar1.Maximum = pb;
             u.ExecUpdate();
+
+            MessageBox.Show("OK");
+
         }
         //private void selectMatchToolStripMenuItem_Click(object sender, EventArgs e)
         //{
@@ -612,34 +615,34 @@ namespace Soccer_Score_Forecast
         private void splitContainer4_Panel2_Paint(object sender, PaintEventArgs e)
         {
         }
-        private void checkBox10_CheckedChanged(object sender, EventArgs e)
-        {
-            System.Timers.Timer t = new System.Timers.Timer(100);//实例化Timer类，设置间隔时间为10000毫秒； 
-            t.Elapsed += new System.Timers.ElapsedEventHandler(CrossThreadFlush);//到达时间的时候执行事件； 
-            t.AutoReset = false;//设置是执行一次（false）还是一直执行(true)； 
-            t.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件； 
-        }
-        private delegate void FlushClient();//代理
-        private void CrossThreadFlush(object source, System.Timers.ElapsedEventArgs e)
-        {
-            while (true)
-            {
-                Thread.Sleep(1000);
-                ThreadFunction();//将sleep和无限循环放在等待异步的外面
-            }
-        }
-        private void ThreadFunction()
-        {
-            if (this.textBox2.InvokeRequired)//等待异步
-            {
-                FlushClient fc = new FlushClient(ThreadFunction);
-                this.Invoke(fc);//通过代理调用刷新方法
-            }
-            else
-            {
-                this.textBox2.Text = DateTime.Now.ToString();
-            }
-        }
+        //private void checkBox10_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    System.Timers.Timer t = new System.Timers.Timer(100);//实例化Timer类，设置间隔时间为10000毫秒； 
+        //    t.Elapsed += new System.Timers.ElapsedEventHandler(CrossThreadFlush);//到达时间的时候执行事件； 
+        //    t.AutoReset = false;//设置是执行一次（false）还是一直执行(true)； 
+        //    t.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件； 
+        //}
+        //private delegate void FlushClient();//代理
+        //private void CrossThreadFlush(object source, System.Timers.ElapsedEventArgs e)
+        //{
+        //    while (true)
+        //    {
+        //        Thread.Sleep(1000);
+        //        ThreadFunction();//将sleep和无限循环放在等待异步的外面
+        //    }
+        //}
+        //private void ThreadFunction()
+        //{
+        //    if (this.textBox2.InvokeRequired)//等待异步
+        //    {
+        //        FlushClient fc = new FlushClient(ThreadFunction);
+        //        this.Invoke(fc);//通过代理调用刷新方法
+        //    }
+        //    else
+        //    {
+        //        this.textBox2.Text = DateTime.Now.ToString();
+        //    }
+        //}
         private void toolStripButton2_Click(object sender, EventArgs ee)
         {
             try
@@ -778,7 +781,7 @@ namespace Soccer_Score_Forecast
         {
             try
             {
-                if (c.Node.Level == 1) { ComputeFitRate(c.Node.Text); }
+                if (c.Node.Level == 1) { ComputeFitRate(c.Node.Text); OutToMatlab(c.Node.Text); }
                 if (c.Node.Level != 2) { return; }
                 dataGridView5.Visible = false;
                 string selectMatch = c.Node.Text.ToString();
@@ -793,6 +796,53 @@ namespace Soccer_Score_Forecast
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void OutToMatlab(string matchtype)
+        {
+            //List<MatlabNet> matlabnet = new List<MatlabNet>();
+            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+            {
+                var matchover = from p in matches.Match_analysis_result
+                            join q in matches.Result_tb_lib on p.Result_tb_lib_id equals q.Result_tb_lib_id
+                            join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
+                            select new
+                            {
+
+                                t.Match_time,
+                                t.Match_type,
+                                t.Home_team,
+                                t.Away_team,
+                                p.Home_w,
+                                p.Home_d,
+                                p.Home_l,
+                                p.Home_goals,
+                                p.Away_goals,
+                                q.Full_home_goals,
+                                q.Full_away_goals
+                            };
+                var matchoverf = matchover.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
+                dataGridView2.DataSource = matchoverf;
+                var matchnow = from p in matches.Match_analysis_result
+                                join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
+                                where p.Result_tb_lib_id ==null
+                                select new
+                                {
+                                    t.Match_time,
+                                    t.Match_type,
+                                    t.Home_team,
+                                    t.Away_team,
+                                    t.Status,
+                                    p.Home_w,
+                                    p.Home_d,
+                                    p.Home_l,
+                                    p.Home_goals,
+                                    p.Away_goals,
+                                };
+                var matchnowf = matchnow.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
+                dataGridView3.DataSource = matchnowf;
+            }
+        }
+
         private void ComputeFitRate(string matchtype)
         {
             dataGridView5.Visible = true;

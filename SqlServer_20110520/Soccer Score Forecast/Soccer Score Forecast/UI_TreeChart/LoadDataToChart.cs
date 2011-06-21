@@ -9,12 +9,13 @@ namespace Soccer_Score_Forecast
     {
         static List<MatchPoint<int>> matchpoints = new List<MatchPoint<int>>();
         static List<MatchPoint<float>> fit= new List<MatchPoint<float>>();
+        public static RowNumberLimit rnl;
         public static string ForeCast(Chart chart1, int id, string title)
         {
             foreach (Series ser in chart1.Series) ser.Points.Clear(); //清理chart1上的数据
             string forecast = null;
 
-            RowNumberLimit rnl = new RowNumberLimit(id);
+            rnl = new RowNumberLimit(id);
             rnl.initCurveFit();
             matchpoints = rnl.ListMatchPointData;  //生成历史数据
             fit = rnl.CurveFit;//生成预测数据
