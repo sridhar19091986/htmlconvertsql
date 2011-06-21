@@ -15,6 +15,10 @@ namespace Soccer_Score_Forecast
         public string matchtype;
         public int Top20Count;
         public List<Result_tb_lib> Top20;
+        //public List<Result_tb_lib> homeTop20;
+        //public List<Result_tb_lib> awayTop20;
+        //public List<Result_tb_lib> homeaway;
+      
         /*
         Func<T, TResult> 委托
         在此似乎没有实用价值
@@ -28,6 +32,10 @@ namespace Soccer_Score_Forecast
         //private DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
 
         public RowNumberLimit(int liveid)
+        {
+            ForeCastInit(liveid);
+        }
+        private void ForeCastInit(int liveid)
         {
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
@@ -60,6 +68,7 @@ namespace Soccer_Score_Forecast
                 Top20Count = Top20.Count();
             }
         }
+    
         //主进
         private double _homeGoals;
 
@@ -421,5 +430,15 @@ namespace Soccer_Score_Forecast
             }
             set { _LastJZ = value; }
         }
+
+        #region  matlab仿真用数据
+        //private string hostX;
+        //private string awayX;
+        //private string hostawayX;
+        //private List<Result_tb_lib> hostSeriesX;
+        //private List<Result_tb_lib> awaySeriesX;
+        //private List<Result_tb_lib> hostawaySeriesX;
+        #endregion
+
     }
 }
