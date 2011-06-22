@@ -817,8 +817,10 @@ namespace Soccer_Score_Forecast
                                 p.Home_l,
                                 p.Home_goals,
                                 p.Away_goals,
+                                p.Cross_goals,
                                 q.Full_home_goals,
                                 q.Full_away_goals
+                                
                             };
                 var matchoverf = matchover.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
                 dataGridView2.DataSource = matchoverf;
@@ -837,6 +839,7 @@ namespace Soccer_Score_Forecast
                                     p.Home_l,
                                     p.Home_goals,
                                     p.Away_goals,
+                                    p.Cross_goals
                                 };
                 var matchnowf = matchnow.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
                 dataGridView3.DataSource = matchnowf;
@@ -1068,6 +1071,13 @@ namespace Soccer_Score_Forecast
         private void checkedListBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt",4);
+            ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt",5);
+            ExportToExcel.ExportForDataGridview(dataGridView3, "NewTable", true);
         }
     }
 }

@@ -36,6 +36,7 @@ namespace Soccer_Score_Forecast
                     //match_analysis_result mar = new match_analysis_result();
                     var mar = matches.Match_analysis_result.Where(e => e.Live_table_lib_id == liveid).First();//查找需要更新的数据
                     mar.Live_table_lib_id = r.live_id;
+                    mar.Pre_algorithm = "top20";
                     mar.Pre_match_count = r.Top20Count;
                     mar.Home_goals = r.HomeGoals;
                     mar.Away_goals = r.AwayGoals;
@@ -46,16 +47,34 @@ namespace Soccer_Score_Forecast
                     mar.Fit_goals = r.CureFitGoals();
                     mar.Fit_odd_even = r.CureFitOddEven();//直接赋值，修改完成
 
+                    //2011.6.22
+                    mar.Cross_goals = r.CrossGoals;
+
                     //2011.6.16
                     //【交战+概率1+拟合+进球+概率30】
-                    mar.Pre_algorithm =
-                        r.LastJZ + ":" +
+                    mar.Myfit =
+                        //交战
+                        ForecastCross(r.CrossGoals) + ":" +
+                        //概率1
                         ForecastD(mar.Home_w, mar.Home_d, mar.Home_l) + ":" +
+                        //拟合+进球+概率30
                         ForecastWL(mar.Fit_win_loss, mar.Home_goals, mar.Away_goals, mar.Home_w, mar.Home_l);
+
+               
 
                 }
                 matches.SubmitChanges();
             }
+        }
+
+        //2011.6.22
+        private string ForecastCross(double crossgoals)
+        {
+            string cross = null;
+            if (crossgoals > 0) cross = "3";
+            if (crossgoals == 0) cross = "1";
+            if (crossgoals < 0) cross = "0";
+            return cross;
         }
 
         //2011.6.17  算法更新，交战，预测，概率

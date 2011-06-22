@@ -236,6 +236,7 @@
             this.button18 = new System.Windows.Forms.Button();
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -1935,6 +1936,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel3.Controls.Add(this.dataGridView2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.dataGridView3, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -1992,7 +1994,6 @@
             this.checkBox10.TabIndex = 3;
             this.checkBox10.Text = "Work task timer ";
             this.checkBox10.UseVisualStyleBackColor = true;
-            //this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox10_CheckedChanged);
             // 
             // checkBox9
             // 
@@ -2021,6 +2022,16 @@
             this.treeView4.Name = "treeView4";
             this.treeView4.Size = new System.Drawing.Size(856, 353);
             this.treeView4.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 179);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Export2Excel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -2302,6 +2313,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button button1;
 
     }
 }
