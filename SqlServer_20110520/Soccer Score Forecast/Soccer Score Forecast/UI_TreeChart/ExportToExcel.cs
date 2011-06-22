@@ -1,11 +1,41 @@
 ﻿using System;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using System.IO;
+using System.Text;
 
 namespace Soccer_Score_Forecast
 {
     public class ExportToExcel
     {
+       public static void DataGridView2Txt(DataGridView dataGridView1, string filename,int column)
+        {
+            FileStream sr = File.Open(filename, FileMode.Create);
+            StreamWriter sw = new StreamWriter(sr, System.Text.Encoding.Default);
+            StringBuilder strBuilder = new StringBuilder();
+            try
+            {
+                for (int i = 0; i < dataGridView1.Rows.Count ; i++)
+                {
+                    strBuilder = new StringBuilder();
+                    for (int j = column; j < dataGridView1.Columns.Count; j++)
+                    {
+                        strBuilder.Append(dataGridView1.Rows[i].Cells[j].Value.ToString() +' ');
+                    }
+                    strBuilder.Remove(strBuilder.Length - 1, 1);
+                    sw.WriteLine(strBuilder.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sw.Close();
+                sr.Close();
+            }
+        }
         //导出到EXCEL速度比较快的方法
         public static bool ExportForDataGridview(DataGridView gridView, string fileName, bool isShowExcle)
         {
@@ -52,7 +82,7 @@ namespace Soccer_Score_Forecast
                 ranCaption.Value2 = asCaption;
                 //数据 
                 object[] obj = new object[gridView.Columns.Count];
-                for (int r = 0; r < gridView.RowCount - 1; r++)
+                for (int r = 0; r < gridView.RowCount ; r++)
                 {
                     for (int l = 0; l < gridView.Columns.Count; l++)
                     {

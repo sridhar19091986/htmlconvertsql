@@ -18,7 +18,7 @@ namespace Soccer_Score_Forecast
         //public List<Result_tb_lib> homeTop20;
         //public List<Result_tb_lib> awayTop20;
         //public List<Result_tb_lib> homeaway;
-      
+
         /*
         Func<T, TResult> 委托
         在此似乎没有实用价值
@@ -68,7 +68,7 @@ namespace Soccer_Score_Forecast
                 Top20Count = Top20.Count();
             }
         }
-    
+
         //主进
         private double _homeGoals;
 
@@ -402,42 +402,83 @@ namespace Soccer_Score_Forecast
             }
             set { _listLastJZ = value; }
         }
-        private string _LastJZ;
-        public string LastJZ
+        //private string _LastJZ;
+        //public string LastJZ
+        //{
+        //    get
+        //    {
+        //        if (_LastJZ == null)
+        //        {
+        //            string jzText = null;
+
+        //            var jz = dMatch.dHome[home_team_big]
+        //                           .Where(e => e.Away_team_big == away_team_big)
+        //                           .Where(e => e.Match_time.Value.Date < matchtime.Value.Date)   //这里很关键  2011.6.16
+        //                           .OrderByDescending(e => e.Match_time).FirstOrDefault();
+
+        //            if (jz == null) jzText = "1";
+        //            else
+        //            {
+        //                if (jz.Full_home_goals > jz.Full_away_goals) jzText = "3";
+        //                if (jz.Full_home_goals == jz.Full_away_goals) jzText = "1";
+        //                if (jz.Full_home_goals < jz.Full_away_goals) jzText = "0";
+        //            }
+
+        //            _LastJZ = jzText;
+        //        }
+        //        return _LastJZ;
+        //    }
+        //    set { _LastJZ = value; }
+        //}
+
+
+
+        #region  matlab仿真用数据
+
+        //把交战记录的平均净胜球计算到matlab
+        //当前参与计算的成员：Home_w	Home_d	Home_l	Home_goals	Away_goals
+
+        private double _CrossGoals;
+        public double CrossGoals
         {
             get
             {
-                if (_LastJZ == null)
+                if (_CrossGoals == 0)
                 {
-                    string jzText = null;
-
-                    var jz = dMatch.dHome[home_team_big]
+                    var hCross = dMatch.dHome[home_team_big]
                                    .Where(e => e.Away_team_big == away_team_big)
-                                   .Where(e => e.Match_time.Value.Date < matchtime.Value.Date)   //这里很关键  2011.6.16
-                                   .OrderByDescending(e => e.Match_time).FirstOrDefault();
+                                   .Where(e => e.Match_time.Value.Date < matchtime.Value.Date)
+                                   .Average(e => e.Full_home_goals - e.Full_away_goals);
 
-                    if (jz == null) jzText = "1";
-                    else
-                    {
-                        if (jz.Full_home_goals > jz.Full_away_goals) jzText = "3";
-                        if (jz.Full_home_goals == jz.Full_away_goals) jzText = "1";
-                        if (jz.Full_home_goals < jz.Full_away_goals) jzText = "0";
-                    }
+                    var aCross = dMatch.dHome[away_team_big]
+                                   .Where(e => e.Away_team_big == home_team_big)
+                                   .Where(e => e.Match_time.Value.Date < matchtime.Value.Date)
+                                    .Average(e => e.Full_home_goals - e.Full_away_goals);
 
-                    _LastJZ = jzText;
+                    _CrossGoals = ConvertDoubleP(hCross) - ConvertDoubleP(aCross);
                 }
-                return _LastJZ;
+                return _CrossGoals;
             }
-            set { _LastJZ = value; }
+            set { _CrossGoals = value; }
         }
 
-        #region  matlab仿真用数据
+        private double ConvertDoubleP(double? ddd)
+        {
+            if (ddd == null) return 0;
+            else return (double)ddd;
+        }
+
+
+
         //private string hostX;
         //private string awayX;
         //private string hostawayX;
         //private List<Result_tb_lib> hostSeriesX;
         //private List<Result_tb_lib> awaySeriesX;
         //private List<Result_tb_lib> hostawaySeriesX;
+
+
+
         #endregion
 
     }

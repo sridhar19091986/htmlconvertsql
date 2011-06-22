@@ -124,7 +124,7 @@ namespace Soccer_Score_Forecast
 
                     //2011.6.16数据修正
 
-                    strNode += "【" + mar.Pre_algorithm + "】{交战+概率1+拟合+进球+概率30}";
+                    strNode += "【" + mar.Myfit + "】{交战+概率1+拟合+进球+概率30}";
 
 
                     //修正显示的问题  2011.6.15
@@ -138,13 +138,12 @@ namespace Soccer_Score_Forecast
                         + "::FitReslut:" + myfit    //2011.6.17
                         + "::hGoals:" + mar.Home_goals
                         + "::aGoals:" + mar.Away_goals
-                        + "::Wgoals:" + (mar.Home_goals - mar.Away_goals)
+                        + "::wGoals:" + (mar.Home_goals - mar.Away_goals)
                         + "::MyWDL:" + mar.Home_w.ToString()
                         + "::" + mar.Home_d.ToString()
-                        + "::" + mar.Home_l.ToString();
+                        + "::" + mar.Home_l.ToString()
 
-
-
+                        + "::CrossGoals:" + mar.Cross_goals;
 
                     //fjz = mar.Pre_algorithm;
 
@@ -206,7 +205,8 @@ namespace Soccer_Score_Forecast
                 if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
 
                 if (mar.Result_tb_lib_id != null)
-                    if (mar.Pre_algorithm.IndexOf(result) != -1) child.ForeColor = Color.Red;
+                    if (mar.Myfit != null)
+                        if (mar.Myfit.IndexOf(result) != -1) child.ForeColor = Color.Red;
             }
         }
         #endregion

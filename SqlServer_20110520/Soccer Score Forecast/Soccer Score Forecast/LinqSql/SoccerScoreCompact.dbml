@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Database Name="SyncSoccerScore" EntityNamespace="SoccerScore.Compact.Linq" ContextNamespace="SoccerScore.Compact.Linq"  Class="DataClassesMatchDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SyncSoccerScore" EntityNamespace="SoccerScore.Compact.Linq" ContextNamespace="SoccerScore.Compact.Linq" Class="DataClassesMatchDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Table Name="live_Aibo" Member="Live_Aibo">
     <Type Name="Live_Aibo">
       <Column Name="live_Aibo_id" Member="Live_Aibo_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -149,6 +148,8 @@
       <Column Name="result_fit" Member="Result_fit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="result_goals" Member="Result_goals" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="result_wdl" Member="Result_wdl" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="cross_goals" Member="Cross_goals"  Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="myfit" Member="Myfit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="match_analysis_result_tracking" Member="Match_analysis_result_tracking">
