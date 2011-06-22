@@ -33,3 +33,8 @@ F:\项目开发进度2009年1月18日\ICDR_EDGE\Uninstall\bin\Debug\Uninstall.pd
 F:\项目开发进度2009年1月18日\ICDR_EDGE\Uninstall\obj\Debug\ResolveAssemblyReference.cache
 F:\项目开发进度2009年1月18日\ICDR_EDGE\Uninstall\obj\Debug\Uninstall.exe
 F:\项目开发进度2009年1月18日\ICDR_EDGE\Uninstall\obj\Debug\Uninstall.pdb
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\Uninstall\bin\Debug\Uninstall.exe
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\Uninstall\bin\Debug\Uninstall.pdb
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\Uninstall\obj\Debug\ResolveAssemblyReference.cache
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\Uninstall\obj\Debug\Uninstall.exe
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\Uninstall\obj\Debug\Uninstall.pdb
