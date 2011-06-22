@@ -28,8 +28,8 @@ namespace Soccer_Score_Forecast
         string textboxDate;
         bool liveLib;
         bool insertComplete;
-        int ViewMatchOverDays ;
-        LoadDataToTree loaddatatree ;
+        int ViewMatchOverDays;
+        LoadDataToTree loaddatatree;
         string filterMatchPath;
         private void initTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -225,7 +225,7 @@ namespace Soccer_Score_Forecast
             treeView5.Nodes.Clear();
 
             //重新处理  2011.6.16
-            loaddatatree = new LoadDataToTree(ViewMatchOverDays,filterMatchPath);
+            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath);
 
             loaddatatree.TreeViewMatch(treeView5, "type");
         }
@@ -295,7 +295,7 @@ namespace Soccer_Score_Forecast
         {
             this.Dispose();
             this.Close();
-            
+
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -378,7 +378,7 @@ namespace Soccer_Score_Forecast
             //修正完场数据入库后不能修正错误的问题 2011.6.14
 
             UpdateAnalysisResult u = new UpdateAnalysisResult(ViewMatchOverDays);
-           
+
             int pb = u.ExecUpateCount;
             MessageBox.Show(pb.ToString());
             toolStripProgressBar1.Maximum = pb;
@@ -758,7 +758,7 @@ namespace Soccer_Score_Forecast
             if (liveLib == true)
             {
                 toolStripLabel2.Text = Update_live_Table(richTextBox1.Text).ToString();
-                if (toolStripLabel2.Text== "0") textBox1.Text = "about:blank";
+                if (toolStripLabel2.Text == "0") textBox1.Text = "about:blank";
             }
             else
             {
@@ -799,48 +799,50 @@ namespace Soccer_Score_Forecast
 
         private void OutToMatlab(string matchtype)
         {
+            dataGridView2.Columns.Clear();
+            dataGridView3.Columns.Clear();
             //List<MatlabNet> matlabnet = new List<MatlabNet>();
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
                 var matchover = from p in matches.Match_analysis_result
-                            join q in matches.Result_tb_lib on p.Result_tb_lib_id equals q.Result_tb_lib_id
-                            join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
-                            select new
-                            {
-
-                                t.Match_time,
-                                t.Match_type,
-                                t.Home_team,
-                                t.Away_team,
-                                p.Home_w,
-                                p.Home_d,
-                                p.Home_l,
-                                p.Home_goals,
-                                p.Away_goals,
-                                p.Cross_goals,
-                                q.Full_home_goals,
-                                q.Full_away_goals
-                                
-                            };
-                var matchoverf = matchover.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
-                dataGridView2.DataSource = matchoverf;
-                var matchnow = from p in matches.Match_analysis_result
+                                join q in matches.Result_tb_lib on p.Result_tb_lib_id equals q.Result_tb_lib_id
                                 join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
-                                where p.Result_tb_lib_id ==null
                                 select new
                                 {
+
                                     t.Match_time,
                                     t.Match_type,
                                     t.Home_team,
                                     t.Away_team,
-                                    t.Status,
                                     p.Home_w,
                                     p.Home_d,
                                     p.Home_l,
                                     p.Home_goals,
                                     p.Away_goals,
-                                    p.Cross_goals
+                                    p.Cross_goals,
+                                    q.Full_home_goals,
+                                    q.Full_away_goals
+
                                 };
+                var matchoverf = matchover.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
+                dataGridView2.DataSource = matchoverf;
+                var matchnow = from p in matches.Match_analysis_result
+                               join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
+                               where p.Result_tb_lib_id == null
+                               select new
+                               {
+                                   t.Match_time,
+                                   t.Match_type,
+                                   t.Home_team,
+                                   t.Away_team,
+                                   t.Status,
+                                   p.Home_w,
+                                   p.Home_d,
+                                   p.Home_l,
+                                   p.Home_goals,
+                                   p.Away_goals,
+                                   p.Cross_goals
+                               };
                 var matchnowf = matchnow.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
                 dataGridView3.DataSource = matchnowf;
             }
@@ -1075,9 +1077,38 @@ namespace Soccer_Score_Forecast
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt",4);
-            ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt",5);
+
             ExportToExcel.ExportForDataGridview(dataGridView3, "NewTable", true);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string result = null;
+            ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt", 4);
+            ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt", 5);
+            result = ExportToExcel.SimulinkGRNN();
+
+            richTextBox3.Text = result;
+
+            dataGridView3.Columns.Add("...", "...");
+            dataGridView3.Columns.Add("ForecastCrossGoals", "ForecastCrossGoals");
+
+            int col = dataGridView3.Columns.Count - 1;
+            int i = 0;
+            string[] lines = result.Split(new char[] { '\r', '\n' });
+            foreach (string line in lines)
+                if (line != null)
+                    if (line.IndexOf(".") != -1)
+                    {
+                        dataGridView3.Rows[i].Cells[col].Value = line; i++;
+                    }
+
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            GC.Collect(); GC.Collect(); Application.DoEvents();
         }
     }
 }
