@@ -406,15 +406,6 @@ namespace Soccer_Score_Forecast
             LoadHtmlToTree lhtt = new LoadHtmlToTree(webBrowser2.Document.Body.InnerHtml);
             lhtt.ConvertHtmlToTree(treeView3);
         }
-        private void button9_Click(object sender, EventArgs e)
-        {
-        }
-        private void button10_Click(object sender, EventArgs e)
-        {
-        }
-        private void button11_Click(object sender, EventArgs e)
-        {
-        }
         //C# 发送Http请求 - WebClient类 WebClient位于System.Net命名空间下，通过这个类可以方便的创建Http请求并获取返回内容。
         //一、用法1 - DownloadData
         private void button12_Click(object sender, EventArgs e)
@@ -805,12 +796,12 @@ namespace Soccer_Score_Forecast
             dataGridView7.DataSource = rnd.homeTop20;
             dataGridView8.DataSource = rnd.awayTop20;
 
-            dataGridView6.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            dataGridView6.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView7.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            dataGridView7.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView8.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            dataGridView8.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //dataGridView6.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            //dataGridView6.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //dataGridView7.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            //dataGridView7.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //dataGridView8.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            //dataGridView8.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
         }
         private void OutToMatlab(string matchtype)
@@ -1125,6 +1116,15 @@ namespace Soccer_Score_Forecast
             dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             GC.Collect(); GC.Collect(); Application.DoEvents();
+        }
+
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ExportToExcel.ExportForDataGridview(dataGridView6, "NewTable", true);
+            ExportToExcel.ExportForDataGridview(dataGridView7, "NewTable", true);
+            ExportToExcel.ExportForDataGridview(dataGridView8, "NewTable", true);
+
         }
     }
 }

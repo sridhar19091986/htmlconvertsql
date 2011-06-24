@@ -440,7 +440,7 @@ namespace Soccer_Score_Forecast
                                    .Where(e => e.Match_time.Value.Date < matchtime.Value.Date)
                                     .Average(e => e.Full_home_goals - e.Full_away_goals);
 
-                    _CrossGoals = ConvertDoubleP(hCross) - ConvertDoubleP(aCross);
+                    _CrossGoals = (ConvertDoubleP(hCross) - ConvertDoubleP(aCross)) / 2;
                 }
                 return _CrossGoals;
             }
