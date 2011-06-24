@@ -804,6 +804,14 @@ namespace Soccer_Score_Forecast
             dataGridView6.DataSource = rnd.crossOver;
             dataGridView7.DataSource = rnd.homeTop20;
             dataGridView8.DataSource = rnd.awayTop20;
+
+            dataGridView6.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            dataGridView6.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView7.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            dataGridView7.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView8.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            dataGridView8.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
         }
         private void OutToMatlab(string matchtype)
         {
