@@ -1084,8 +1084,7 @@ namespace Soccer_Score_Forecast
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            ExportToExcel.ExportForDataGridview(dataGridView3, "NewTable", true);
+            ExportToExcel.ExportForDataGridview(dataGridView3, "MyGRNN", true);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -1097,7 +1096,7 @@ namespace Soccer_Score_Forecast
 
             richTextBox3.Text = result;
 
-            dataGridView3.Columns.Add("...", "...");
+            //dataGridView3.Columns.Add("...", "...");
             dataGridView3.Columns.Add("ForecastCrossGoals", "ForecastCrossGoals");
 
             int col = dataGridView3.Columns.Count - 1;
@@ -1110,10 +1109,10 @@ namespace Soccer_Score_Forecast
                         dataGridView3.Rows[i].Cells[col].Value = line; i++;
                     }
 
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            //dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            //dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             GC.Collect(); GC.Collect(); Application.DoEvents();
         }
@@ -1121,10 +1120,9 @@ namespace Soccer_Score_Forecast
 
         private void button10_Click(object sender, EventArgs e)
         {
-            ExportToExcel.ExportForDataGridview(dataGridView6, "NewTable", true);
-            ExportToExcel.ExportForDataGridview(dataGridView7, "NewTable", true);
-            ExportToExcel.ExportForDataGridview(dataGridView8, "NewTable", true);
-
+            ExportToExcel.ExportForDataGridview(dataGridView6, "CrossDetail", true);
+            ExportToExcel.ExportForDataGridview(dataGridView7, "HomeTeam", true);
+            ExportToExcel.ExportForDataGridview(dataGridView8, "AwayTeam", true);
         }
     }
 }
