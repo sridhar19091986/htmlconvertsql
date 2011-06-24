@@ -114,6 +114,7 @@
     <Compile Include="BLL_CurveFit\CsharpMatlabCurveFit.cs" />
     <Compile Include="BLL_CurveFit\ForecastAlgorithm.cs" />
     <Compile Include="BLL_CurveFit\MyCurveFitclass.cs" />
+    <Compile Include="BLL_CurveFit\RowNumberDetail.cs" />
     <Compile Include="BLL_CurveFit\RowNumberLimit.cs" />
     <Compile Include="BLL_CurveFit\UpdateAnalysisResult.cs" />
     <Compile Include="BLL_CurveFit\AuditForecastAlgorithm.cs" />

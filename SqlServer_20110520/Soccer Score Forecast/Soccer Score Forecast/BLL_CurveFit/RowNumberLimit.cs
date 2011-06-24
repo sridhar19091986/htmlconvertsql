@@ -15,21 +15,6 @@ namespace Soccer_Score_Forecast
         public string matchtype;
         public int Top20Count;
         public List<Result_tb_lib> Top20;
-        //public List<Result_tb_lib> homeTop20;
-        //public List<Result_tb_lib> awayTop20;
-        //public List<Result_tb_lib> homeaway;
-
-        /*
-        Func<T, TResult> 委托
-        在此似乎没有实用价值
-         **/
-        private TResult Sum<T, TResult>(IEnumerable<T> sequence, TResult total, Func<T, TResult, TResult> accumulator)
-        {
-            foreach (T item in sequence)
-                total = accumulator(item, total);
-            return total;
-        }
-        //private DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
 
         public RowNumberLimit(int liveid)
         {

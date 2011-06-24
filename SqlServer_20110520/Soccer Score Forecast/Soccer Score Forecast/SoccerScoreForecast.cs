@@ -699,7 +699,7 @@ namespace Soccer_Score_Forecast
         private void winRateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.tabControl1.SelectedTab = this.tabPage11;
-            button18.PerformClick();
+            //button18.PerformClick();
         }
         private void splitContainer9_Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -788,15 +788,23 @@ namespace Soccer_Score_Forecast
                 string[] ar = selectMatch.Split(Convert.ToChar(','));
                 int id = Int32.Parse(ar[0].ToString());
                 label3.Text = LoadDataToChart.ForeCast(chart1, id, selectMatch);
-                //ComputeFitResult(id);
                 LoadDataToChart.LabelMatchDetail(chart1, PointLabelsList.GetItemText(PointLabelsList.SelectedItem));
+
+                OutMatchDetail(id);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
-
+        private void OutMatchDetail(int matchid)
+        {
+            RowNumberDetail rnd = new RowNumberDetail(matchid);
+            dataGridView6.DataSource = rnd.crossOver;
+            dataGridView7.DataSource = rnd.homeTop20;
+            dataGridView8.DataSource = rnd.awayTop20;
+        }
         private void OutToMatlab(string matchtype)
         {
             dataGridView2.Columns.Clear();
@@ -883,21 +891,21 @@ namespace Soccer_Score_Forecast
                 label3.Text = maxw.Max().ToString();
             }
         }
-        private void ComputeFitResult(int matchid)
-        {
-            dataGridView5.Visible = true;
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-            {
-                string pre = matches.Match_analysis_result
-                    .Where(e => e.Live_table_lib_id == matchid)
-                    .Select(e => e.Pre_algorithm).FirstOrDefault();
+        //private void ComputeFitResult(int matchid)
+        //{
+        //    dataGridView5.Visible = true;
+        //    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+        //    {
+        //        string pre = matches.Match_analysis_result
+        //            .Where(e => e.Live_table_lib_id == matchid)
+        //            .Select(e => e.Pre_algorithm).FirstOrDefault();
 
-                var mar = from a in matches.Match_analysis_result
-                          where a.Pre_algorithm == pre
-                          select a;
-                dataGridView5.DataSource = mar;
-            }
-        }
+        //        var mar = from a in matches.Match_analysis_result
+        //                  where a.Pre_algorithm == pre
+        //                  select a;
+        //        dataGridView5.DataSource = mar;
+        //    }
+        //}
         private void treeView5_MouseDown(object sender, MouseEventArgs e)
         {
             label3.Location = new Point(e.Location.X + 100, e.Location.Y + 50);
