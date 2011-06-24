@@ -54,11 +54,15 @@ namespace Soccer_Score_Forecast
                     OrderByDescending(e => e.Match_time).ToList();
 
                 var homeTop20t = dMatch.dHome[home_team_big].Union(dMatch.dAway[home_team_big]);
-                homeTop20 = homeTop20t.Where(e => e.Match_time.Value.Date < matchtime.Value.Date).
+                homeTop20 = homeTop20t.
+                    Where(e => e.Match_time.Value.Date < matchtime.Value.Date).
+                    Where(e => e.Match_type == matchtype).
                     OrderByDescending(e => e.Match_time).Take(20).ToList();
 
                 var awayTop20t = dMatch.dHome[away_team_big].Union(dMatch.dAway[away_team_big]);
-                awayTop20 = awayTop20t.Where(e => e.Match_time.Value.Date < matchtime.Value.Date).
+                awayTop20 = awayTop20t.
+                    Where(e => e.Match_time.Value.Date < matchtime.Value.Date).
+                      Where(e => e.Match_type == matchtype).
                     OrderByDescending(e => e.Match_time).Take(20).ToList();
             }
         }
