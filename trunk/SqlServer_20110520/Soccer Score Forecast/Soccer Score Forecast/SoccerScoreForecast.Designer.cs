@@ -30,49 +30,49 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem55 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem56 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem57 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem58 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem59 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem60 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem61 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem62 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem63 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem64 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem65 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem66 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.ListViewItem listViewItem67 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem68 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem69 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem70 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem71 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem72 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem73 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem74 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem75 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem76 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem77 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem78 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem79 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem80 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem81 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem82 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem83 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem84 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem85 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem86 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem87 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem88 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem89 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem90 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem91 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem92 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem93 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem94 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem95 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem96 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem97 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem98 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem99 = new System.Windows.Forms.ListViewItem("");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dataCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oddsCollectionOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -247,6 +247,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button11 = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -338,6 +340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -592,7 +595,7 @@
             this.caiPiaoToolStripMenuItem,
             this.initTreeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 224);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 202);
             // 
             // filterMatchToolStripMenuItem
             // 
@@ -672,16 +675,16 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tableLayoutPanel1.Controls.Add(this.chart1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel10, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(850, 347);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -692,54 +695,54 @@
             this.chart1.BorderlineColor = System.Drawing.SystemColors.ActiveCaption;
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chart1.BorderlineWidth = 2;
-            chartArea2.Name = "Default";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea3.Name = "Default";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(3, 3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series8.ChartArea = "Default";
-            series8.Legend = "Legend1";
-            series8.Name = "RealScore";
-            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series8.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series8.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series9.ChartArea = "Default";
-            series9.Legend = "Legend1";
-            series9.Name = "RealWDL";
-            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series10.ChartArea = "Default";
-            series10.Legend = "Legend1";
-            series10.Name = "RealGoals";
-            series10.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series11.ChartArea = "Default";
-            series11.Legend = "Legend1";
-            series11.Name = "RealOddEven";
-            series12.ChartArea = "Default";
-            series12.Legend = "Legend1";
-            series12.Name = "ForeWDL";
-            series13.ChartArea = "Default";
-            series13.Legend = "Legend1";
-            series13.Name = "ForeGoals";
-            series13.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series14.ChartArea = "Default";
-            series14.Legend = "Legend1";
-            series14.Name = "ForeOddEven";
-            this.chart1.Series.Add(series8);
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Series.Add(series11);
-            this.chart1.Series.Add(series12);
-            this.chart1.Series.Add(series13);
-            this.chart1.Series.Add(series14);
-            this.chart1.Size = new System.Drawing.Size(844, 150);
+            series15.ChartArea = "Default";
+            series15.Legend = "Legend1";
+            series15.Name = "RealScore";
+            series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series15.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series15.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series16.ChartArea = "Default";
+            series16.Legend = "Legend1";
+            series16.Name = "RealWDL";
+            series16.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series16.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series17.ChartArea = "Default";
+            series17.Legend = "Legend1";
+            series17.Name = "RealGoals";
+            series17.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series18.ChartArea = "Default";
+            series18.Legend = "Legend1";
+            series18.Name = "RealOddEven";
+            series19.ChartArea = "Default";
+            series19.Legend = "Legend1";
+            series19.Name = "ForeWDL";
+            series20.ChartArea = "Default";
+            series20.Legend = "Legend1";
+            series20.Name = "ForeGoals";
+            series20.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series21.ChartArea = "Default";
+            series21.Legend = "Legend1";
+            series21.Name = "ForeOddEven";
+            this.chart1.Series.Add(series15);
+            this.chart1.Series.Add(series16);
+            this.chart1.Series.Add(series17);
+            this.chart1.Series.Add(series18);
+            this.chart1.Series.Add(series19);
+            this.chart1.Series.Add(series20);
+            this.chart1.Series.Add(series21);
+            this.chart1.Size = new System.Drawing.Size(844, 99);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title2.Name = "Title1";
-            this.chart1.Titles.Add(title2);
+            title3.Name = "Title1";
+            this.chart1.Titles.Add(title3);
             // 
             // panel1
             // 
@@ -747,7 +750,7 @@
             this.panel1.Controls.Add(this.PointLabelsList);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 159);
+            this.panel1.Location = new System.Drawing.Point(3, 210);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(844, 29);
             this.panel1.TabIndex = 1;
@@ -786,13 +789,11 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView5);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.treeView5);
+            this.panel2.Controls.Add(this.chart1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 194);
+            this.panel2.Location = new System.Drawing.Point(3, 245);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(844, 150);
+            this.panel2.Size = new System.Drawing.Size(844, 99);
             this.panel2.TabIndex = 7;
             // 
             // dataGridView5
@@ -803,7 +804,7 @@
             this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridView5.Location = new System.Drawing.Point(136, 33);
+            this.dataGridView5.Location = new System.Drawing.Point(62, 102);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowTemplate.Height = 23;
             this.dataGridView5.Size = new System.Drawing.Size(679, 70);
@@ -813,7 +814,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(708, 119);
+            this.label3.Location = new System.Drawing.Point(544, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 12);
             this.label3.TabIndex = 1;
@@ -826,7 +827,7 @@
             this.treeView5.Location = new System.Drawing.Point(0, 0);
             this.treeView5.Name = "treeView5";
             this.treeView5.ShowNodeToolTips = true;
-            this.treeView5.Size = new System.Drawing.Size(844, 150);
+            this.treeView5.Size = new System.Drawing.Size(844, 201);
             this.treeView5.TabIndex = 0;
             this.treeView5.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView5_AfterSelect);
             this.treeView5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView5_MouseDown);
@@ -1474,39 +1475,39 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem34,
-            listViewItem35,
-            listViewItem36,
-            listViewItem37,
-            listViewItem38,
-            listViewItem39,
-            listViewItem40,
-            listViewItem41,
-            listViewItem42,
-            listViewItem43,
-            listViewItem44,
-            listViewItem45,
-            listViewItem46,
-            listViewItem47,
-            listViewItem48,
-            listViewItem49,
-            listViewItem50,
-            listViewItem51,
-            listViewItem52,
-            listViewItem53,
-            listViewItem54,
-            listViewItem55,
-            listViewItem56,
-            listViewItem57,
-            listViewItem58,
-            listViewItem59,
-            listViewItem60,
-            listViewItem61,
-            listViewItem62,
-            listViewItem63,
-            listViewItem64,
-            listViewItem65,
-            listViewItem66});
+            listViewItem67,
+            listViewItem68,
+            listViewItem69,
+            listViewItem70,
+            listViewItem71,
+            listViewItem72,
+            listViewItem73,
+            listViewItem74,
+            listViewItem75,
+            listViewItem76,
+            listViewItem77,
+            listViewItem78,
+            listViewItem79,
+            listViewItem80,
+            listViewItem81,
+            listViewItem82,
+            listViewItem83,
+            listViewItem84,
+            listViewItem85,
+            listViewItem86,
+            listViewItem87,
+            listViewItem88,
+            listViewItem89,
+            listViewItem90,
+            listViewItem91,
+            listViewItem92,
+            listViewItem93,
+            listViewItem94,
+            listViewItem95,
+            listViewItem96,
+            listViewItem97,
+            listViewItem98,
+            listViewItem99});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(848, 297);
@@ -1994,6 +1995,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.button11);
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.button2);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2004,7 +2006,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(5, 18);
+            this.button1.Location = new System.Drawing.Point(5, 127);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 24);
             this.button1.TabIndex = 11;
@@ -2014,7 +2016,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(5, 83);
+            this.button2.Location = new System.Drawing.Point(5, 18);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 23);
             this.button2.TabIndex = 12;
@@ -2163,6 +2165,27 @@
             this.treeView4.Size = new System.Drawing.Size(856, 353);
             this.treeView4.TabIndex = 0;
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(5, 69);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(116, 23);
+            this.button11.TabIndex = 13;
+            this.button11.Text = "SaveToSqlCompact";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label3);
+            this.panel10.Controls.Add(this.dataGridView5);
+            this.panel10.Controls.Add(this.treeView5);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(3, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(844, 201);
+            this.panel10.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2193,7 +2216,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -2281,6 +2303,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2462,6 +2486,8 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Panel panel10;
 
     }
 }

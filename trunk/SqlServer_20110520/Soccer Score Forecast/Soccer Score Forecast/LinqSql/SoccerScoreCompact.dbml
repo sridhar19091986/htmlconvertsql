@@ -150,7 +150,8 @@
       <Column Name="result_wdl" Member="Result_wdl" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="cross_goals" Member="Cross_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="myfit" Member="Myfit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="recent_scores" Member="Recent_scores"  Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="recent_scores" Member="Recent_scores" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="grnn_fit" Member="Grnn_fit"  Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="match_analysis_result_tracking" Member="Match_analysis_result_tracking">
