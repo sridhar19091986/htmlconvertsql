@@ -2896,6 +2896,8 @@ namespace SoccerScore.Compact.Linq
 		
 		private System.Nullable<int> _Recent_scores;
 		
+		private string _Grnn_fit;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2938,6 +2940,8 @@ namespace SoccerScore.Compact.Linq
     partial void OnMyfitChanged();
     partial void OnRecent_scoresChanging(System.Nullable<int> value);
     partial void OnRecent_scoresChanged();
+    partial void OnGrnn_fitChanging(string value);
+    partial void OnGrnn_fitChanged();
     #endregion
 		
 		public Match_analysis_result()
@@ -3321,6 +3325,26 @@ namespace SoccerScore.Compact.Linq
 					this._Recent_scores = value;
 					this.SendPropertyChanged("Recent_scores");
 					this.OnRecent_scoresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="grnn_fit", Storage="_Grnn_fit", DbType="NVarChar(100)")]
+		public string Grnn_fit
+		{
+			get
+			{
+				return this._Grnn_fit;
+			}
+			set
+			{
+				if ((this._Grnn_fit != value))
+				{
+					this.OnGrnn_fitChanging(value);
+					this.SendPropertyChanging();
+					this._Grnn_fit = value;
+					this.SendPropertyChanged("Grnn_fit");
+					this.OnGrnn_fitChanged();
 				}
 			}
 		}

@@ -830,12 +830,12 @@ namespace Soccer_Score_Forecast
                                     p.Fit_win_loss,
 
                                     //
-                                   // Fit_win_loss=p.Fit_win_loss.Value.ToString("F2"),
+                                    // Fit_win_loss=p.Fit_win_loss.Value.ToString("F2"),
 
 
                                     //用310还是净胜球表示？
-                                   //Lottery_Ticket = q.Full_home_goals > q.Full_away_goals ? 3 : (q.Full_home_goals == q.Full_away_goals ? 1 : 0),
-                                    Lottery_Ticket = q.Full_home_goals-q.Full_away_goals,
+                                    //Lottery_Ticket = q.Full_home_goals > q.Full_away_goals ? 3 : (q.Full_home_goals == q.Full_away_goals ? 1 : 0),
+                                    Lottery_Ticket = q.Full_home_goals - q.Full_away_goals,
                                     q.Full_home_goals,
                                     q.Full_away_goals,
 
@@ -848,6 +848,7 @@ namespace Soccer_Score_Forecast
                                where p.Result_tb_lib_id == null
                                select new
                                {
+                                   p.Analysis_result_id,
                                    t.Match_time,
                                    t.Match_type,
                                    t.Home_team,
@@ -861,7 +862,7 @@ namespace Soccer_Score_Forecast
                                    p.Recent_scores,
                                    p.Cross_goals,
                                    p.Fit_win_loss,
-                                  // Fit_win_loss = p.Fit_win_loss.Value.ToString("F2")
+                                   // Fit_win_loss = p.Fit_win_loss.Value.ToString("F2")
                                };
                 var matchnowf = matchnow.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
                 dataGridView3.DataSource = matchnowf;
@@ -1104,7 +1105,7 @@ namespace Soccer_Score_Forecast
         {
             string result = null;
             ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt", 4);
-            ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt", 5);
+            ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt", 6);
             result = ExportToExcel.SimulinkGRNN();
 
             richTextBox3.Text = result;
@@ -1122,6 +1123,7 @@ namespace Soccer_Score_Forecast
                         dataGridView3.Rows[i].Cells[col].Value = line; i++;
                     }
 
+
             //dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             //dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             //dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
@@ -1136,6 +1138,33 @@ namespace Soccer_Score_Forecast
             ExportToExcel.ExportForDataGridview(dataGridView6, "CrossDetail", true);
             ExportToExcel.ExportForDataGridview(dataGridView7, "HomeTeam", true);
             ExportToExcel.ExportForDataGridview(dataGridView8, "AwayTeam", true);
+        }
+
+        private void button11_Click(object sender, EventArgs eee)
+        {
+            try
+            {
+                using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                {
+                    int resultid = 0;
+                    int col = dataGridView3.Columns.Count - 1;
+                    string grnnfit = null;
+                    for (int i = 0; i < dataGridView3.Rows.Count; i++)
+                    {
+                        resultid = Int32.Parse(dataGridView3.Rows[i].Cells[0].Value.ToString());
+                        grnnfit = dataGridView3.Rows[i].Cells[col].Value.ToString();
+                        var mar = matches.Match_analysis_result
+                            .Where(e => e.Analysis_result_id == resultid).First();//查找需要更新的数据
+                        mar.Grnn_fit = grnnfit;
+                    }
+                    matches.SubmitChanges();
+                }
+                MessageBox.Show("OK");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
