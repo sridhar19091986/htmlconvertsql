@@ -447,6 +447,42 @@ namespace Soccer_Score_Forecast
             set { _CrossGoals = value; }
         }
 
+
+        private int _RecentScores;
+        public int RecentScores
+        {
+            get
+            {
+                if (_RecentScores == 0)
+                {
+                    var homeTop20t = Top20.Where(e => e.Home_team_big == home_team_big);
+                    var homeTop20tt = Top20.Where(e => e.Away_team_big == home_team_big);
+                    var homeTop20ttt = homeTop20tt.Union(homeTop20t);
+                    var hCross = homeTop20ttt.OrderByDescending(e => e.Match_time).FirstOrDefault();
+
+                    var awayTop20t = Top20.Where(e => e.Home_team_big == away_team_big);
+                    var awayTop20tt = Top20.Where(e => e.Away_team_big == away_team_big);
+                    var awayTop20ttt = awayTop20tt.Union(awayTop20t);
+                    var aCross = awayTop20ttt.OrderByDescending(e => e.Match_time).FirstOrDefault();
+
+                    if (hCross != null && aCross != null)
+                    {
+                        int h = hCross.Home_team_big == home_team_big ? (hCross.Full_home_goals - hCross.Full_away_goals > 0 ? 3
+                            : (hCross.Full_home_goals - hCross.Full_away_goals == 0 ? 1 : 0))
+                            : (hCross.Full_home_goals - hCross.Full_away_goals < 0 ? 3
+                            : (hCross.Full_home_goals - hCross.Full_away_goals == 0 ? 1 : 0));
+                        int a = aCross.Away_team_big == away_team_big ? (aCross.Full_home_goals - aCross.Full_away_goals > 0 ? 3
+                            : (aCross.Full_home_goals - aCross.Full_away_goals == 0 ? 1 : 0))
+                            : (aCross.Full_home_goals - aCross.Full_away_goals < 0 ? 3
+                            : (aCross.Full_home_goals - aCross.Full_away_goals == 0 ? 1 : 0));
+
+                        _RecentScores = h + a;
+                    }
+                }
+                return _RecentScores;
+            }
+            set { _RecentScores = value; }
+        }
         private double ConvertDoubleP(double? ddd)
         {
             if (ddd == null) return 0;

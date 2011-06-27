@@ -47,6 +47,8 @@ namespace Soccer_Score_Forecast
                     mar.Fit_goals = r.CureFitGoals();
                     mar.Fit_odd_even = r.CureFitOddEven();//直接赋值，修改完成
 
+                    mar.Recent_scores = r.RecentScores; //增加最后一轮的分数
+
                     //2011.6.22
                     mar.Cross_goals = r.CrossGoals;
 

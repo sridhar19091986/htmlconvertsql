@@ -31,9 +31,9 @@ namespace Soccer_Score_Forecast
             FindMatchDetail(liveid);
             var top20h = dMatch.dHome[home_team_big].Union(dMatch.dHome[away_team_big]).
                    Union(dMatch.dAway[home_team_big]).Union(dMatch.dAway[away_team_big]);
-            var top20hh = top20h.Where(e => e.Match_time.Value.Date < matchtime.Value.Date);
-            Top20 = top20hh.Where(e => e.Match_type == matchtype).
-                OrderByDescending(e => e.Match_time).Take(40).ToList();
+            var top20hh = top20h.Where(e => e.Match_time.Value.Date < matchtime.Value.Date).
+                 OrderByDescending(e => e.Match_time);
+            Top20 = top20hh.Where(e => e.Match_type == matchtype).Take(40).ToList();
         }
         private void FindMatchDetail(int liveid)
         {
@@ -62,8 +62,7 @@ namespace Soccer_Score_Forecast
 
                     var crossOvert = dMatch.dHome[home_team_big].Where(e => e.Away_team_big == away_team_big).
                                Union(dMatch.dHome[away_team_big].Where(e => e.Away_team_big == home_team_big));
-                    var crossOvertt = crossOvert.Where(e => e.Match_time.Value.Date < matchtime.Value.Date).
-                        OrderByDescending(e => e.Match_time);
+                    var crossOvertt = crossOvert.Where(e => e.Match_time.Value.Date < matchtime.Value.Date);
                     var crossOverttt = from p in crossOvertt
                                        select new
                                        {
@@ -71,13 +70,14 @@ namespace Soccer_Score_Forecast
                                            p.Match_type,
                                            p.Home_team,
                                            p.Away_team,
+                                           p.Odds,
                                            FullScore = p.Full_home_goals + " - " + p.Full_away_goals,
                                            HalfScroe = p.Half_home_goals + " - " + p.Half_away_goals,
                                            homeCross = p.Home_team_big == home_team_big ?
                                            (p.Full_home_goals - p.Full_away_goals) :
                                            (p.Full_away_goals - p.Full_home_goals)
                                        };
-                    _crossOver = crossOverttt.ToDataTable();
+                    _crossOver = crossOverttt.OrderByDescending(e => e.Match_time).ToDataTable();
                 }
                 return _crossOver;
             }
@@ -102,6 +102,7 @@ namespace Soccer_Score_Forecast
                                            p.Match_type,
                                            p.Home_team,
                                            p.Away_team,
+                                           p.Odds,
                                            FullScore = p.Full_home_goals + " - " + p.Full_away_goals,
                                            HalfScroe = p.Half_home_goals + " - " + p.Half_away_goals,
                                            homeCross = p.Home_team_big == home_team_big ?
@@ -110,7 +111,7 @@ namespace Soccer_Score_Forecast
                                            (p.Full_home_goals < p.Full_away_goals ? "3"
                                            : (p.Full_home_goals == p.Full_away_goals ? "1" : "0"))
                                        };
-                    _homeTop20 = homeTop20ttt.ToDataTable();
+                    _homeTop20 = homeTop20ttt.OrderByDescending(e => e.Match_time).ToDataTable();
                 }
                 return _homeTop20;
             }
@@ -135,6 +136,7 @@ namespace Soccer_Score_Forecast
                                            p.Match_type,
                                            p.Home_team,
                                            p.Away_team,
+                                           p.Odds,
                                            FullScore = p.Full_home_goals + " - " + p.Full_away_goals,
                                            HalfScroe = p.Half_home_goals + " - " + p.Half_away_goals,
                                            homeCross = p.Away_team_big == away_team_big ?
@@ -143,7 +145,7 @@ namespace Soccer_Score_Forecast
                                            (p.Full_home_goals < p.Full_away_goals ? "3"
                                            : (p.Full_home_goals == p.Full_away_goals ? "1" : "0"))
                                        };
-                    _awayTop20 = awayTop20ttt.ToDataTable();
+                    _awayTop20 = awayTop20ttt.OrderByDescending(e => e.Match_time).ToDataTable();
                 }
                 return _awayTop20;
             }

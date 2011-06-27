@@ -826,7 +826,9 @@ namespace Soccer_Score_Forecast
                                     p.Home_l,
                                     p.Home_goals,
                                     p.Away_goals,
+                                    p.Recent_scores,
                                     p.Cross_goals,
+                                    p.Fit_win_loss,
                                     q.Full_home_goals,
                                     q.Full_away_goals
 
@@ -848,7 +850,9 @@ namespace Soccer_Score_Forecast
                                    p.Home_l,
                                    p.Home_goals,
                                    p.Away_goals,
-                                   p.Cross_goals
+                                   p.Recent_scores,
+                                   p.Cross_goals,
+                                   p.Fit_win_loss
                                };
                 var matchnowf = matchnow.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
                 dataGridView3.DataSource = matchnowf;
