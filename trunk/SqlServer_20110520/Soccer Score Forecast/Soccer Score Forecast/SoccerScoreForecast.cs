@@ -816,7 +816,6 @@ namespace Soccer_Score_Forecast
                                 join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
                                 select new
                                 {
-
                                     t.Match_time,
                                     t.Match_type,
                                     t.Home_team,
@@ -829,8 +828,17 @@ namespace Soccer_Score_Forecast
                                     p.Recent_scores,
                                     p.Cross_goals,
                                     p.Fit_win_loss,
+
+                                    //
+                                   // Fit_win_loss=p.Fit_win_loss.Value.ToString("F2"),
+
+
+                                    //用310还是净胜球表示？
+                                   //Lottery_Ticket = q.Full_home_goals > q.Full_away_goals ? 3 : (q.Full_home_goals == q.Full_away_goals ? 1 : 0),
+                                    Lottery_Ticket = q.Full_home_goals-q.Full_away_goals,
                                     q.Full_home_goals,
-                                    q.Full_away_goals
+                                    q.Full_away_goals,
+
 
                                 };
                 var matchoverf = matchover.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
@@ -852,7 +860,8 @@ namespace Soccer_Score_Forecast
                                    p.Away_goals,
                                    p.Recent_scores,
                                    p.Cross_goals,
-                                   p.Fit_win_loss
+                                   p.Fit_win_loss,
+                                  // Fit_win_loss = p.Fit_win_loss.Value.ToString("F2")
                                };
                 var matchnowf = matchnow.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
                 dataGridView3.DataSource = matchnowf;
