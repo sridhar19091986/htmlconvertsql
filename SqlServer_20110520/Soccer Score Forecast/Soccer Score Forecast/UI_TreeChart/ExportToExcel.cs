@@ -16,7 +16,7 @@ namespace Soccer_Score_Forecast
             StringBuilder strBuilder = new StringBuilder();
             try
             {
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
                 {
                     strBuilder = new StringBuilder();
                     for (int j = column; j < dataGridView1.Columns.Count; j++)

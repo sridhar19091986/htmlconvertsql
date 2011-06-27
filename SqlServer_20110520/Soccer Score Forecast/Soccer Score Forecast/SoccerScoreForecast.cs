@@ -119,7 +119,12 @@ namespace Soccer_Score_Forecast
             校验注册号代码Btn_Click();
             toolStripStatusLabel1.Text = "download table......";
             liveLib = true;
+
+            //澳门盘口
             textBox1.Text = "http://live2.7m.cn/cpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=";
+
+            //立博盘口
+            textBox1.Text = "http://live2.7m.cn/cpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=1";
         }
         #endregion
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -167,32 +172,8 @@ namespace Soccer_Score_Forecast
         }
         private void button3_Click(object sender, EventArgs c)
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-            {
-                var mar = from a in matches.Match_analysis_result
-                          join b in matches.Live_Table_lib on a.Live_table_lib_id equals b.Live_table_lib_id
-                          select new
-                          {
-                              a.Result_wdl,
-                              a.Result_fit,
-                              a.Result_goals,
-                              b.Match_type
-                          };
-                var winrate = from p in mar
-                              group p by p.Match_type into q
-                              select new
-                              {
-                                  q.Key,
-                                  fitW = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_fit == "W").Count(),
-                                  fitL = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_fit == "L").Count(),
-                                  goalsW = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_goals == "W").Count(),
-                                  goalsL = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_goals == "L").Count(),
-                                  wdlW = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_wdl == "W").Count(),
-                                  wdlL = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_wdl == "L").Count(),
-                              };
-
-                dataGridView1.DataSource = winrate;
-            }
+            RowNumberTable rnt = new RowNumberTable();
+            dataGridView1.DataSource = rnt.WinRate;
         }
         //随着鼠标选择的节点做文件路径的索引，读出treeView节点指向的txt中的sql语句
         private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
@@ -772,7 +753,11 @@ namespace Soccer_Score_Forecast
         {
             try
             {
-                if (c.Node.Level == 1) { ComputeFitRate(c.Node.Text); OutToMatlab(c.Node.Text); }
+                if (c.Node.Level == 1) { ComputeFitRate(c.Node.Text); OutToMatlab(c.Node.Text);
+                //button2.PerformClick();
+                //button11.PerformClick();
+
+                }
                 if (c.Node.Level != 2) { return; }
                 dataGridView5.Visible = false;
                 string selectMatch = c.Node.Text.ToString();
@@ -806,104 +791,21 @@ namespace Soccer_Score_Forecast
         }
         private void OutToMatlab(string matchtype)
         {
+            RowNumberTable rnt = new RowNumberTable(matchtype);
             dataGridView2.Columns.Clear();
             dataGridView3.Columns.Clear();
-            //List<MatlabNet> matlabnet = new List<MatlabNet>();
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-            {
-                var matchover = from p in matches.Match_analysis_result
-                                join q in matches.Result_tb_lib on p.Result_tb_lib_id equals q.Result_tb_lib_id
-                                join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
-                                select new
-                                {
-                                    t.Match_time,
-                                    t.Match_type,
-                                    t.Home_team,
-                                    t.Away_team,
-                                    p.Home_w,
-                                    p.Home_d,
-                                    p.Home_l,
-                                    p.Home_goals,
-                                    p.Away_goals,
-                                    p.Recent_scores,
-                                    p.Cross_goals,
-                                    p.Fit_win_loss,
-
-                                    //
-                                    // Fit_win_loss=p.Fit_win_loss.Value.ToString("F2"),
-
-
-                                    //用310还是净胜球表示？
-                                    //Lottery_Ticket = q.Full_home_goals > q.Full_away_goals ? 3 : (q.Full_home_goals == q.Full_away_goals ? 1 : 0),
-                                    Lottery_Ticket = q.Full_home_goals - q.Full_away_goals,
-                                    q.Full_home_goals,
-                                    q.Full_away_goals,
-
-
-                                };
-                var matchoverf = matchover.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
-                dataGridView2.DataSource = matchoverf;
-                var matchnow = from p in matches.Match_analysis_result
-                               join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
-                               where p.Result_tb_lib_id == null
-                               select new
-                               {
-                                   p.Analysis_result_id,
-                                   t.Match_time,
-                                   t.Match_type,
-                                   t.Home_team,
-                                   t.Away_team,
-                                   t.Status,
-                                   p.Home_w,
-                                   p.Home_d,
-                                   p.Home_l,
-                                   p.Home_goals,
-                                   p.Away_goals,
-                                   p.Recent_scores,
-                                   p.Cross_goals,
-                                   p.Fit_win_loss,
-                                   // Fit_win_loss = p.Fit_win_loss.Value.ToString("F2")
-                               };
-                var matchnowf = matchnow.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time).ToList();
-                dataGridView3.DataSource = matchnowf;
-            }
+            dataGridView2.DataSource = rnt.matchOverf;
+            dataGridView3.DataSource = rnt.matchNowf;
         }
 
         private void ComputeFitRate(string matchtype)
         {
             dataGridView5.Visible = true;
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-            {
-                var mar = from a in matches.Match_analysis_result
-                          join b in matches.Live_Table_lib on a.Live_table_lib_id equals b.Live_table_lib_id
-                          select new
-                          {
-                              a.Result_wdl,
-                              a.Result_fit,
-                              a.Result_goals,
-                              b.Match_type
-                          };
-                var winrate = from p in mar
-                              where p.Match_type == matchtype
-                              group p by p.Match_type into q
-                              select new
-                              {
-                                  q.Key,
-                                  fitW = q.Where(e => e.Result_fit == "W").Count(),
-                                  fitL = q.Where(e => e.Result_fit == "L").Count(),
-                                  goalsW = q.Where(e => e.Result_goals == "W").Count(),
-                                  goalsL = q.Where(e => e.Result_goals == "L").Count(),
-                                  交战_概率1_拟合_进球_概率30W = q.Where(e => e.Result_wdl == "W").Count(),
-                                  交战_概率1_拟合_进球_概率30L = q.Where(e => e.Result_wdl == "L").Count(),
-                              };
-                dataGridView5.DataSource = winrate;
-                var maxwin = winrate.FirstOrDefault();
-                int[] maxw = { maxwin.fitW, maxwin.fitL, maxwin.goalsW, maxwin.goalsL, 
-                                         maxwin.交战_概率1_拟合_进球_概率30W, 
-                                         maxwin.交战_概率1_拟合_进球_概率30L };
-                label3.Text = maxw.Max().ToString();
-            }
+            RowNumberTable rnt = new RowNumberTable(matchtype);
+            dataGridView5.DataSource = rnt.typeRate;
+            label3.Text = rnt.MaxW.ToString();
         }
+    
         //private void ComputeFitResult(int matchid)
         //{
         //    dataGridView5.Visible = true;
@@ -1104,7 +1006,7 @@ namespace Soccer_Score_Forecast
         private void button2_Click(object sender, EventArgs e)
         {
             string result = null;
-            ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt", 4);
+            ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt", 5);
             ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt", 6);
             result = ExportToExcel.SimulinkGRNN();
 
@@ -1130,6 +1032,8 @@ namespace Soccer_Score_Forecast
             //dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             GC.Collect(); GC.Collect(); Application.DoEvents();
+
+            button11.PerformClick();
         }
 
 
@@ -1149,7 +1053,7 @@ namespace Soccer_Score_Forecast
                     int resultid = 0;
                     int col = dataGridView3.Columns.Count - 1;
                     string grnnfit = null;
-                    for (int i = 0; i < dataGridView3.Rows.Count; i++)
+                    for (int i = 0; i < dataGridView3.Rows.Count-1; i++)
                     {
                         resultid = Int32.Parse(dataGridView3.Rows[i].Cells[0].Value.ToString());
                         grnnfit = dataGridView3.Rows[i].Cells[col].Value.ToString();
