@@ -121,10 +121,10 @@ namespace Soccer_Score_Forecast
             liveLib = true;
 
             //澳门盘口
-            textBox1.Text = "http://live2.7m.cn/cpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=";
+            //textBox1.Text = "http://live2.7m.cn/cpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=";
 
             //立博盘口
-            textBox1.Text = "http://live2.7m.cn/cpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=1";
+            textBox1.Text = "http://live2.7m.cn/lbpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=";
         }
         #endregion
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -1069,6 +1069,11 @@ namespace Soccer_Score_Forecast
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
