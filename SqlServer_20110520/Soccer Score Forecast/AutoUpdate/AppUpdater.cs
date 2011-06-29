@@ -35,7 +35,7 @@ namespace AutoUpdate
 		/// </summary>
 		public AppUpdater()
 		{
-			this.handle = handle;
+			//this.handle = handle;
 		}
 		public void Dispose()
 		{
