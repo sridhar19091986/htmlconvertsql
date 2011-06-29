@@ -11,6 +11,7 @@ Pt=xite(:,[1:8,9]);
 input_train=P'; 
 output_train=ind2vec(T); 
 input_test=Pt'; 
+%spreadÄ¬ÈÏ²ÎÊı0.1
 net=newpnn(input_train,output_train);
 output=sim(net,input_test);
 output_test=vec2ind(output);(output_test-100)'
