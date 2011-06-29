@@ -5,7 +5,7 @@ clear;
 yn = textread('D:\My Documents\MATLAB\yn.txt');
 xite = textread('D:\My Documents\MATLAB\xite.txt');
 %固定系数
-spread=0.999;
+%spread=0.999;
 %mse=0.002; 
 P=yn(:,[1:8,12]);
 T=yn(:,9:11);  %T=yn(:,[9,12]);
@@ -18,7 +18,8 @@ input_test=Pt';
 %[outputn,outputps]=mapminmax(output_train);
 %网络训练
 %net=newrb(input_train,output_train,mse,spread);
-net=newgrnn(input_train,output_train,spread);
+%spread默认参数1
+net=newgrnn(input_train,output_train);
 %net=newgrnn(inputn,outputn,spread);%newgrnn
 %net=newrb(inputn,outputn,mse,spread); %newrb
 %预测数据归一化 
