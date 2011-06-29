@@ -124,7 +124,7 @@ namespace Soccer_Score_Forecast
 
                     //2011.6.16数据修正
 
-                    strNode += "【" + mar.Grnn_fit+ "】【" + mar.Myfit + "】{交战+概率1+拟合+进球+概率30}";
+                    strNode += "【" + mar.Pnn_fit + "】【" + mar.Grnn_fit + "】【" + mar.Myfit + "】{交战+概率1+拟合+进球+概率30}";
 
 
                     //修正显示的问题  2011.6.15

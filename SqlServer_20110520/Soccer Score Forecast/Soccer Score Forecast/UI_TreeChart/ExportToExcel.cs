@@ -37,10 +37,10 @@ namespace Soccer_Score_Forecast
                 sr.Close();
             }
         }
-        public static string SimulinkGRNN()
+        public static string SimulinkNN(string executablePath )
         {
             //Get the path to the executable you wish to run from a setting in web.config
-            var executablePath = @"D:\My Documents\MATLAB\mygrnn.exe";
+            
             //Create a process to execute the executable. Redirecting the output.
             var proc = new Process();
             proc.StartInfo = new ProcessStartInfo

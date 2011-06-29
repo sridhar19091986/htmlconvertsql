@@ -2898,6 +2898,8 @@ namespace SoccerScore.Compact.Linq
 		
 		private string _Grnn_fit;
 		
+		private string _Pnn_fit;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2942,6 +2944,8 @@ namespace SoccerScore.Compact.Linq
     partial void OnRecent_scoresChanged();
     partial void OnGrnn_fitChanging(string value);
     partial void OnGrnn_fitChanged();
+    partial void OnPnn_fitChanging(string value);
+    partial void OnPnn_fitChanged();
     #endregion
 		
 		public Match_analysis_result()
@@ -3345,6 +3349,26 @@ namespace SoccerScore.Compact.Linq
 					this._Grnn_fit = value;
 					this.SendPropertyChanged("Grnn_fit");
 					this.OnGrnn_fitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="pnn_fit", Storage="_Pnn_fit", DbType="NVarChar(20)")]
+		public string Pnn_fit
+		{
+			get
+			{
+				return this._Pnn_fit;
+			}
+			set
+			{
+				if ((this._Pnn_fit != value))
+				{
+					this.OnPnn_fitChanging(value);
+					this.SendPropertyChanging();
+					this._Pnn_fit = value;
+					this.SendPropertyChanged("Pnn_fit");
+					this.OnPnn_fitChanged();
 				}
 			}
 		}

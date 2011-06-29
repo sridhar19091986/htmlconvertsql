@@ -2022,7 +2022,7 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(116, 23);
             this.button11.TabIndex = 13;
-            this.button11.Text = "SaveToSqlCompact";
+            this.button11.Text = "MyPNN";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
