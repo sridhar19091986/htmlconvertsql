@@ -753,9 +753,11 @@ namespace Soccer_Score_Forecast
         {
             try
             {
-                if (c.Node.Level == 1) { ComputeFitRate(c.Node.Text); OutToMatlab(c.Node.Text);
-                //button2.PerformClick();
-                //button11.PerformClick();
+                if (c.Node.Level == 1)
+                {
+                    ComputeFitRate(c.Node.Text); OutToMatlab(c.Node.Text);
+                    //button2.PerformClick();
+                    //button11.PerformClick();
 
                 }
                 if (c.Node.Level != 2) { return; }
@@ -805,7 +807,7 @@ namespace Soccer_Score_Forecast
             dataGridView5.DataSource = rnt.typeRate;
             label3.Text = rnt.MaxW.ToString();
         }
-    
+
         //private void ComputeFitResult(int matchid)
         //{
         //    dataGridView5.Visible = true;
@@ -1003,37 +1005,54 @@ namespace Soccer_Score_Forecast
             ExportToExcel.ExportForDataGridview(dataGridView3, "MyGRNN", true);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs eee)
         {
-            string result = null;
-            ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt", 5);
-            ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt", 6);
-            result = ExportToExcel.SimulinkGRNN();
+            try
+            {
+                string result = null;
+                ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt", 5);
+                ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt", 6);
+                result = ExportToExcel.SimulinkNN(@"D:\My Documents\MATLAB\mygrnn.exe");
 
-            richTextBox3.Text = result;
+                richTextBox3.Text = result;
 
-            //dataGridView3.Columns.Add("...", "...");
-            dataGridView3.Columns.Add("ForecastCrossGoals", "ForecastCrossGoals");
+                //dataGridView3.Columns.Add("...", "...");
+                dataGridView3.Columns.Add("MyGRNN", "MyGRNN");
 
-            int col = dataGridView3.Columns.Count - 1;
-            int i = 0;
-            string[] lines = result.Split(new char[] { '\r', '\n' });
-            foreach (string line in lines)
-                if (line != null)
-                    if (line.IndexOf(".") != -1)
+                int colx = dataGridView3.Columns.Count - 1;
+                int ix = 0;
+                string[] lines = result.Split(new char[] { '\r', '\n' });
+                foreach (string line in lines)
+                    if (line != null)
+                        if (line.Trim().Length > 0)
+                            if (line.IndexOf("=") == -1)
+                            {
+                                dataGridView3.Rows[ix].Cells[colx].Value = line; ix++;
+                            }
+
+
+                using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                {
+                    int resultid = 0;
+                    int col = dataGridView3.Columns.Count - 1;
+                    string grnnfit = null;
+                    for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
                     {
-                        dataGridView3.Rows[i].Cells[col].Value = line; i++;
+                        resultid = Int32.Parse(dataGridView3.Rows[i].Cells[0].Value.ToString());
+                        grnnfit = dataGridView3.Rows[i].Cells[col].Value.ToString();
+                        var mar = matches.Match_analysis_result
+                            .Where(e => e.Analysis_result_id == resultid).First();//查找需要更新的数据
+                        mar.Grnn_fit = grnnfit.Trim();
                     }
-
-
-            //dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            //dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            //dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            //dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
+                    matches.SubmitChanges();
+                }
+                MessageBox.Show("OK");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             GC.Collect(); GC.Collect(); Application.DoEvents();
-
-            button11.PerformClick();
         }
 
 
@@ -1048,18 +1067,40 @@ namespace Soccer_Score_Forecast
         {
             try
             {
+                string result = null;
+                //ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt", 5);
+                //ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt", 6);
+                result = ExportToExcel.SimulinkNN(@"D:\My Documents\MATLAB\mypnn.exe");
+
+                richTextBox3.Text = result;
+
+                //dataGridView3.Columns.Add("...", "...");
+                dataGridView3.Columns.Add("MyPNN", "MyPNN");
+
+                int colx = dataGridView3.Columns.Count - 1;
+                int ix = 0;
+                string[] lines = result.Split(new char[] { '\r', '\n' });
+                foreach (string line in lines)
+                    if (line != null)
+                        if (line.Trim().Length > 0)
+                            if (line.IndexOf("=") == -1)
+                            {
+                                dataGridView3.Rows[ix].Cells[colx].Value = line; ix++;
+                            }
+
+
                 using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
                 {
                     int resultid = 0;
                     int col = dataGridView3.Columns.Count - 1;
-                    string grnnfit = null;
-                    for (int i = 0; i < dataGridView3.Rows.Count-1; i++)
+                    string pnnfit = null;
+                    for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
                     {
                         resultid = Int32.Parse(dataGridView3.Rows[i].Cells[0].Value.ToString());
-                        grnnfit = dataGridView3.Rows[i].Cells[col].Value.ToString();
+                        pnnfit = dataGridView3.Rows[i].Cells[col].Value.ToString();
                         var mar = matches.Match_analysis_result
                             .Where(e => e.Analysis_result_id == resultid).First();//查找需要更新的数据
-                        mar.Grnn_fit = grnnfit;
+                        mar.Pnn_fit = pnnfit.Trim();
                     }
                     matches.SubmitChanges();
                 }
@@ -1069,6 +1110,7 @@ namespace Soccer_Score_Forecast
             {
                 MessageBox.Show(ex.ToString());
             }
+            GC.Collect(); GC.Collect(); Application.DoEvents();
         }
 
         private void chart1_Click(object sender, EventArgs e)
