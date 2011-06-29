@@ -103,7 +103,11 @@ namespace Soccer_Score_Forecast
         #region 相同循环体  ？？  ltl.match_type
         private void TreeNodeLoad(TreeNode tn)
         {
-            foreach (var ltl in ltls)
+            var ltlmars = from p in ltls
+                          join q in marAll on p.Live_table_lib_id equals q.Live_table_lib_id
+                          orderby q.Pnn_fit
+                          select p;
+            foreach (var ltl in ltlmars)
             {
                 //string fDraw = "";
                 double? fit = 0, goals = 0, wdl = 0;
@@ -200,10 +204,11 @@ namespace Soccer_Score_Forecast
                 tn.Nodes.Add(child);
                 //颜色处理
                 if (fit < 0) child.ForeColor = Color.Blue;
-                if (goals < 0) child.BackColor = Color.Orange;
-                if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Italic);
-                if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
+                //if (goals < 0) child.BackColor = Color.Orange;
+                //if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Italic);
+                //if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
 
+                //结果验证
                 if (mar.Result_tb_lib_id != null)
                     if (mar.Myfit != null)
                         if (mar.Myfit.IndexOf(result) != -1) child.ForeColor = Color.Red;
