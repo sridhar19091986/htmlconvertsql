@@ -1049,7 +1049,6 @@ namespace Soccer_Score_Forecast
             {
                 MessageBox.Show(ex.ToString());
             }
-            GC.Collect(); GC.Collect(); Application.DoEvents();
         }
 
 
@@ -1107,7 +1106,6 @@ namespace Soccer_Score_Forecast
             {
                 MessageBox.Show(ex.ToString());
             }
-            GC.Collect(); GC.Collect(); Application.DoEvents();
         }
 
         private void button18_Click(object sender, EventArgs eee)
@@ -1124,8 +1122,9 @@ namespace Soccer_Score_Forecast
                     Application.DoEvents();
                     btnSimPNN.PerformClick();
                     Application.DoEvents();
+                    GC.Collect(); GC.Collect(); 
+                    Application.DoEvents();
                 }
-
             }
         }
     }
