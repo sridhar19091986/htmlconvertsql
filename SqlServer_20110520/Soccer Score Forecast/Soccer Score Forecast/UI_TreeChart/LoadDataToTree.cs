@@ -11,7 +11,7 @@ namespace Soccer_Score_Forecast
     public class LoadDataToTree
     {
         //private  DataClassesMatchDataContext matches;
-        public  List<Live_Table_lib> ltlAll;
+        public List<Live_Table_lib> ltlAll;
         private List<Result_tb_lib> rtlAll;
         private List<Match_analysis_result> marAll;
         private List<Live_okoo> loAll;
@@ -113,11 +113,13 @@ namespace Soccer_Score_Forecast
                 double? fit = 0, goals = 0, wdl = 0;
                 //string fjz = "";
 
-                string myfit = ""; ;
+                string myfit = "";
+
+                double pnngrnncomp = 0;
 
                 //double preresult=0;
 
-                string result = "";
+                //string result = "";
 
                 //加入live_table数据
                 strNode = ltl.Live_table_lib_id + "," + ltl.Match_type + "," + ltl.Match_time + "::" + ltl.Home_team + "::" + ltl.Away_team + "::" + ltl.Status;
@@ -130,6 +132,7 @@ namespace Soccer_Score_Forecast
 
                     strNode += "【" + mar.Pnn_fit + "】【" + mar.Grnn_fit + "】【" + mar.Myfit + "】{交战+概率1+拟合+进球+概率30}";
 
+                    pnngrnncomp = ComparePnnGrnn(mar.Pnn_fit, mar.Grnn_fit);
 
                     //修正显示的问题  2011.6.15
 
@@ -164,9 +167,9 @@ namespace Soccer_Score_Forecast
 
 
 
-                        if (rtl.Full_home_goals > rtl.Full_away_goals) result = "3";
-                        if (rtl.Full_home_goals == rtl.Full_away_goals) result = "1";
-                        if (rtl.Full_home_goals < rtl.Full_away_goals) result = "0";
+                        //if (rtl.Full_home_goals > rtl.Full_away_goals) result = "3";
+                        //if (rtl.Full_home_goals == rtl.Full_away_goals) result = "1";
+                        //if (rtl.Full_home_goals < rtl.Full_away_goals) result = "0";
 
 
 
@@ -203,15 +206,18 @@ namespace Soccer_Score_Forecast
                 TreeNode child = new TreeNode(strNode);
                 tn.Nodes.Add(child);
                 //颜色处理
-                if (fit < 0) child.ForeColor = Color.Blue;
+                //if (fit < 0) child.ForeColor = Color.Blue;
                 //if (goals < 0) child.BackColor = Color.Orange;
                 //if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Italic);
                 //if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
 
+                if (pnngrnncomp< 0) child.ForeColor = Color.Blue;
+
                 //结果验证
                 if (mar.Result_tb_lib_id != null)
-                    if (mar.Myfit != null)
-                        if (mar.Myfit.IndexOf(result) != -1) child.ForeColor = Color.Red;
+                    //if (mar.Myfit != null)
+                        //if (mar.Myfit.IndexOf(result) != -1) 
+                            child.ForeColor = Color.Red;
             }
         }
         #endregion
@@ -251,8 +257,16 @@ namespace Soccer_Score_Forecast
             if (d == wdl.Min() && d != w && d != l) return "30";
             else return "1";
         }
+        private double ComparePnnGrnn(string pnn, string grnn)
+        {
+            if (pnn == null || grnn == null) return 1;
+            double comp = 0;
+            string tgrnn = grnn.Substring(0, 5);
+            if(double.Parse(pnn) * double.Parse(tgrnn)<0) return 1;
+            comp = Math.Abs(double.Parse(pnn) - double.Parse(tgrnn))-10;
+            return comp;
+        }
     }
-
 }
 
 
