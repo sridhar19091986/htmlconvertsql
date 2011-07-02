@@ -490,9 +490,6 @@ namespace Soccer_Score_Forecast
             button17.PerformClick();
         }
 
-        private void button18_Click(object sender, EventArgs e)
-        {
-        }
         private void treeExpandToolStripMenuItem_Click(object sender, EventArgs e)
         {
             treeView5.ExpandAll();
@@ -1005,7 +1002,7 @@ namespace Soccer_Score_Forecast
             ExportToExcel.ExportForDataGridview(dataGridView3, "MyGRNN", true);
         }
 
-        private void button2_Click(object sender, EventArgs eee)
+        private void btnSimGRNN_Click(object sender, EventArgs eee)
         {
             try
             {
@@ -1046,7 +1043,7 @@ namespace Soccer_Score_Forecast
                     }
                     matches.SubmitChanges();
                 }
-                MessageBox.Show("OK");
+                //MessageBox.Show("OK");
             }
             catch (Exception ex)
             {
@@ -1063,7 +1060,7 @@ namespace Soccer_Score_Forecast
             ExportToExcel.ExportForDataGridview(dataGridView8, "AwayTeam", true);
         }
 
-        private void button11_Click(object sender, EventArgs eee)
+        private void btnSimPNN_Click(object sender, EventArgs eee)
         {
             try
             {
@@ -1104,7 +1101,7 @@ namespace Soccer_Score_Forecast
                     }
                     matches.SubmitChanges();
                 }
-                MessageBox.Show("OK");
+                //MessageBox.Show("OK");
             }
             catch (Exception ex)
             {
@@ -1113,9 +1110,23 @@ namespace Soccer_Score_Forecast
             GC.Collect(); GC.Collect(); Application.DoEvents();
         }
 
-        private void chart1_Click(object sender, EventArgs e)
+        private void button18_Click(object sender, EventArgs eee)
         {
+            var mtlist = loaddatatree.ltlAll.Select(e => e.Match_type).Distinct();
+            foreach (string matchtype in mtlist)
+            {
+                label9.Text = matchtype;
+                OutToMatlab(matchtype);
+                Application.DoEvents();
+                if (dataGridView3.RowCount > 1 && dataGridView2.RowCount > 1)
+                {
+                    btnSimGRNN.PerformClick();
+                    Application.DoEvents();
+                    btnSimPNN.PerformClick();
+                    Application.DoEvents();
+                }
 
+            }
         }
     }
 }

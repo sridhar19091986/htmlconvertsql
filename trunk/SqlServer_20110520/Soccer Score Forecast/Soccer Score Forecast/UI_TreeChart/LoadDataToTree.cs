@@ -11,7 +11,7 @@ namespace Soccer_Score_Forecast
     public class LoadDataToTree
     {
         //private  DataClassesMatchDataContext matches;
-        private List<Live_Table_lib> ltlAll;
+        public  List<Live_Table_lib> ltlAll;
         private List<Result_tb_lib> rtlAll;
         private List<Match_analysis_result> marAll;
         private List<Live_okoo> loAll;

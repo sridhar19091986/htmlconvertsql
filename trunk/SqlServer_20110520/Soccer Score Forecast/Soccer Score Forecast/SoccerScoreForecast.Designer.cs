@@ -232,9 +232,10 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.btnSimPNN = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSimGRNN = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
@@ -249,6 +250,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label9 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -795,7 +797,6 @@
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
             this.chart1.Titles.Add(title1);
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // panel10
             // 
@@ -2007,28 +2008,40 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.button11);
+            this.panel7.Controls.Add(this.label9);
+            this.panel7.Controls.Add(this.button18);
+            this.panel7.Controls.Add(this.btnSimPNN);
             this.panel7.Controls.Add(this.button1);
-            this.panel7.Controls.Add(this.button2);
+            this.panel7.Controls.Add(this.btnSimGRNN);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(3, 3);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(165, 170);
             this.panel7.TabIndex = 13;
             // 
-            // button11
+            // button18
             // 
-            this.button11.Location = new System.Drawing.Point(5, 69);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(116, 23);
-            this.button11.TabIndex = 13;
-            this.button11.Text = "MyPNN";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button18.Location = new System.Drawing.Point(5, 102);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(116, 24);
+            this.button18.TabIndex = 14;
+            this.button18.Text = "BatchExcute";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // btnSimPNN
+            // 
+            this.btnSimPNN.Location = new System.Drawing.Point(5, 32);
+            this.btnSimPNN.Name = "btnSimPNN";
+            this.btnSimPNN.Size = new System.Drawing.Size(116, 23);
+            this.btnSimPNN.TabIndex = 13;
+            this.btnSimPNN.Text = "MyPNN";
+            this.btnSimPNN.UseVisualStyleBackColor = true;
+            this.btnSimPNN.Click += new System.EventHandler(this.btnSimPNN_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(5, 127);
+            this.button1.Location = new System.Drawing.Point(5, 61);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 24);
             this.button1.TabIndex = 11;
@@ -2036,15 +2049,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnSimGRNN
             // 
-            this.button2.Location = new System.Drawing.Point(5, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "MyGRNN";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSimGRNN.Location = new System.Drawing.Point(5, 3);
+            this.btnSimGRNN.Name = "btnSimGRNN";
+            this.btnSimGRNN.Size = new System.Drawing.Size(118, 23);
+            this.btnSimGRNN.TabIndex = 12;
+            this.btnSimGRNN.Text = "MyGRNN";
+            this.btnSimGRNN.UseVisualStyleBackColor = true;
+            this.btnSimGRNN.Click += new System.EventHandler(this.btnSimGRNN_Click);
             // 
             // panel8
             // 
@@ -2187,6 +2200,15 @@
             this.treeView4.Size = new System.Drawing.Size(856, 353);
             this.treeView4.TabIndex = 0;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(48, 136);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "label9";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2297,6 +2319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -2474,7 +2497,7 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSimGRNN;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.RichTextBox richTextBox3;
@@ -2487,8 +2510,10 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnSimPNN;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label9;
 
     }
 }
