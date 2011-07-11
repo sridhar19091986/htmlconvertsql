@@ -19,6 +19,10 @@ namespace Soccer_Score_Forecast
                 return "//table[@id='" + table_id_value + "']";
             }
         }
+        public string macauTag
+        {
+            get { return table_id_value; }
+        }
         private void init_table_id_value()
         {
             using (DataClassesMatchDataContext match = new DataClassesMatchDataContext(Conn.conn))

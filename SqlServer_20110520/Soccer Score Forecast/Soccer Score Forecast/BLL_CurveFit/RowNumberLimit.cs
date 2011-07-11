@@ -11,6 +11,7 @@ namespace Soccer_Score_Forecast
         public int live_id;
         public int? home_team_big;
         public int? away_team_big;
+        public string home_team;
         public DateTime? matchtime;
         public string matchtype;
         public int Top20Count;
@@ -28,11 +29,13 @@ namespace Soccer_Score_Forecast
                 {
                     dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
                     dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                    dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
                 }
                 this.live_id = liveid;
                 var l = matches.Live_Table_lib.Where(e => e.Live_table_lib_id == liveid).First();
                 home_team_big = l.Home_team_big;
                 away_team_big = l.Away_team_big;
+                home_team=l.Home_team;
                 matchtime = l.Match_time;
 
                 //修正把比赛类型搞进去  2011.6.17
@@ -352,6 +355,33 @@ namespace Soccer_Score_Forecast
             return wdl;
         }
 
+        private string macaupre;
+        public string MacauPre
+        {
+            get
+            {
+                if (macaupre == null)
+                {
+                    var hometeam = dMatch.macauPre
+                        .Where(e => e.Key.Length > 1)
+                        .Where(e => home_team.IndexOf(e.Key) != -1)
+                        .Select(e => e.Key).FirstOrDefault();
+                    if (hometeam != null)
+                    {
+                        var macau = dMatch.macauPre[hometeam]
+                                .OrderByDescending(e => e.MacauPredication_id)
+                                .Select(e => e.Macauslot).FirstOrDefault();
+                        macaupre = "\r\n" + macau + "\r\n";
+                    }
+                }
+                return macaupre;
+            }
+            set
+            {
+                macaupre = value;
+            }
+        }
+
         //修改于 2011.6.16   选比赛策略
 
         private string _listLastJZ;
@@ -488,18 +518,12 @@ namespace Soccer_Score_Forecast
             if (ddd == null) return 0;
             else return (double)ddd;
         }
-
-
-
         //private string hostX;
         //private string awayX;
         //private string hostawayX;
         //private List<Result_tb_lib> hostSeriesX;
         //private List<Result_tb_lib> awaySeriesX;
         //private List<Result_tb_lib> hostawaySeriesX;
-
-
-
         #endregion
 
     }

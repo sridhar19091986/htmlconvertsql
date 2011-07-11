@@ -10,10 +10,11 @@ namespace Soccer_Score_Forecast
 {
     public class LoadDataToTree
     {
-        //private  DataClassesMatchDataContext matches;
+        //private  DataClassesMatchDataContext dcmdc=new DataClassesMatchDataContext (Conn.conn);
         public List<Live_Table_lib> ltlAll;
         private List<Result_tb_lib> rtlAll;
         private List<Match_analysis_result> marAll;
+        private List<MacauPredication> mpAll;
         private List<Live_okoo> loAll;
         private IEnumerable<Live_Table_lib> ltls;
         //private IEnumerable<match_analysis_result> mars;
@@ -54,6 +55,7 @@ namespace Soccer_Score_Forecast
                 rtlAll = matches.Result_tb_lib.Where(m => m.Match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).ToList();
                 marAll = matches.Match_analysis_result.Where(e => e.Live_table_lib_id > 0).ToList();
                 loAll = matches.Live_okoo.Where(e => e.Live_okoo_id > 0).ToList();
+                mpAll = matches.MacauPredication.OrderByDescending(e => e.MacauPredication_id).ToList();
             }
         }
 
@@ -107,6 +109,7 @@ namespace Soccer_Score_Forecast
                           join q in marAll on p.Live_table_lib_id equals q.Live_table_lib_id
                           orderby q.Pnn_fit
                           select p;
+
             foreach (var ltl in ltlmars)
             {
                 //string fDraw = "";
@@ -115,7 +118,11 @@ namespace Soccer_Score_Forecast
 
                 string myfit = "";
 
-                double pnngrnncomp = 0;
+                string macau = "";
+
+                int pnngrnncomp = 1;
+
+                int grnncheck = 1;
 
                 //double preresult=0;
 
@@ -129,10 +136,18 @@ namespace Soccer_Score_Forecast
                     //加入match_analysis数据
 
                     //2011.6.16数据修正
+                    macau = mpAll
+                        .Where(e => ltl.Home_team.IndexOf(e.Home_team) != -1)
+                        .Select(e => e.Predication).FirstOrDefault();
 
-                    strNode += "【" + mar.Pnn_fit + "】【" + mar.Grnn_fit + "】【" + mar.Myfit + "】{交战+概率1+拟合+进球+概率30}";
+                    strNode += "【" + mar.Pnn_fit + "】【" 
+                        + mar.Grnn_fit + "】【" + mar.Myfit + "】{"+ macau+"}{交战+概率1+拟合+进球+概率30}";
+
+                    
+
 
                     pnngrnncomp = ComparePnnGrnn(mar.Pnn_fit, mar.Grnn_fit);
+                    grnncheck =GrnnCheck(mar.Grnn_fit);
 
                     //修正显示的问题  2011.6.15
 
@@ -211,13 +226,14 @@ namespace Soccer_Score_Forecast
                 //if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Italic);
                 //if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
 
-                if (pnngrnncomp< 0) child.ForeColor = Color.Blue;
+                if (grnncheck == 0) child.ForeColor = Color.Green;
+                if (pnngrnncomp == 0 && grnncheck==0) child.ForeColor = Color.Blue;
 
                 //结果验证
                 if (mar.Result_tb_lib_id != null)
                     //if (mar.Myfit != null)
-                        //if (mar.Myfit.IndexOf(result) != -1) 
-                            child.ForeColor = Color.Red;
+                    //if (mar.Myfit.IndexOf(result) != -1) 
+                    child.ForeColor = Color.Red;
             }
         }
         #endregion
@@ -257,14 +273,29 @@ namespace Soccer_Score_Forecast
             if (d == wdl.Min() && d != w && d != l) return "30";
             else return "1";
         }
-        private double ComparePnnGrnn(string pnn, string grnn)
+        private int ComparePnnGrnn(string pnn, string grnn)
         {
             if (pnn == null || grnn == null) return 1;
-            double comp = 0;
-            string tgrnn = grnn.Substring(0, 5);
-            if(double.Parse(pnn) * double.Parse(tgrnn)<0) return 1;
-            comp = Math.Abs(double.Parse(pnn) - double.Parse(tgrnn))-10;
+            if ( grnn.IndexOf(".") != -1) return 1;
+            int comp = 0;
+            string tgrnn = grnn.Substring(0, 3);
+            //if(double.Parse(pnn) * double.Parse(tgrnn)<0) return 1;
+            comp = Math.Abs(int.Parse(pnn) - int.Parse(tgrnn));
             return comp;
+        }
+        private int GrnnCheck(string grnn)
+        {
+            if (grnn == null) return 1;
+            if (grnn.IndexOf(".") != -1) return 1;
+            List<int> goals = new List<int>();
+            string[] lines = grnn.Split(new char[] { ' ' });
+            foreach (string line in lines)
+                if (line.Trim() != "")
+                    goals.Add(Int32.Parse(line));
+            if (goals.Count != 4) return 1;
+            if (goals[0] != goals[2] + goals[3]) return 1;
+            if (goals[1] != goals[2] - goals[3]) return 1;
+            return 0;
         }
     }
 }

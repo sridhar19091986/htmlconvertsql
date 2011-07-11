@@ -203,12 +203,11 @@ namespace Soccer_Score_Forecast
         }
         private void filterMatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            treeView5.Nodes.Clear();
-
             //重新处理  2011.6.16
+            treeView5.Nodes.Clear();
             loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath);
-
             loaddatatree.TreeViewMatch(treeView5, "type");
+            GC.Collect(); GC.Collect(); Application.DoEvents();
         }
         //treeView过滤操作的方法
         private void todayMatchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1007,9 +1006,15 @@ namespace Soccer_Score_Forecast
             try
             {
                 string result = null;
-                ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt", 5);
-                ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt", 6);
-                result = ExportToExcel.SimulinkNN(@"D:\My Documents\MATLAB\mygrnn.exe");
+                ExportToExcel.DataGridView2Txt(dataGridView2, nn.tempy, 5);
+                ExportToExcel.DataGridView2Txt(dataGridView3, nn.tempx, 6);
+
+
+                //exe文件方式
+                //result = ExportToExcel.SimulinkNN(@"D:\My Documents\MATLAB\mygrnn.exe");
+
+                //dll文件方式
+                result = nn.NewGrnn();
 
                 richTextBox3.Text = result;
 
@@ -1059,6 +1064,7 @@ namespace Soccer_Score_Forecast
             ExportToExcel.ExportForDataGridview(dataGridView8, "AwayTeam", true);
         }
 
+        NNPredication nn = new NNPredication();
         private void btnSimPNN_Click(object sender, EventArgs eee)
         {
             try
@@ -1066,7 +1072,12 @@ namespace Soccer_Score_Forecast
                 string result = null;
                 //ExportToExcel.DataGridView2Txt(dataGridView2, @"D:\My Documents\MATLAB\yn.txt", 5);
                 //ExportToExcel.DataGridView2Txt(dataGridView3, @"D:\My Documents\MATLAB\xite.txt", 6);
-                result = ExportToExcel.SimulinkNN(@"D:\My Documents\MATLAB\mypnn.exe");
+
+                //exe文件方式
+                //result = ExportToExcel.SimulinkNN(@"D:\My Documents\MATLAB\mypnn.exe");
+
+                //dll文件方式
+                result = nn.NewPnn();
 
                 richTextBox3.Text = result;
 
@@ -1108,8 +1119,30 @@ namespace Soccer_Score_Forecast
             }
         }
 
+        private void btnSimWNN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string result = null;
+                //总是出现问题
+                //result = nn.NewffWavelet();
+                //richTextBox3.Text = result;
+
+                //用exe的方式看看
+                result = ExportToExcel.SimulinkNN(@"D:\My Documents\MATLAB\mywavelet.exe");
+                richTextBox3.Text = result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
         private void button18_Click(object sender, EventArgs eee)
         {
+            //重新实例化一个对象以更新数据
+            treeView5.Nodes.Clear();
+            loaddatatree.TreeViewMatch(treeView5, "type");
+
             var mtlist = loaddatatree.ltlAll.Select(e => e.Match_type).Distinct();
             foreach (string matchtype in mtlist)
             {
@@ -1122,9 +1155,31 @@ namespace Soccer_Score_Forecast
                     Application.DoEvents();
                     btnSimPNN.PerformClick();
                     Application.DoEvents();
-                    GC.Collect(); GC.Collect(); 
+                    GC.Collect(); GC.Collect();
                     Application.DoEvents();
                 }
+            }
+        }
+        MacauslotToSql macau;
+        private void Macauslot_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                macau = new MacauslotToSql(webBrowser2.Document.Body.InnerHtml);
+                toolStripLabel2.Text = macau.updateMacauslot().ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(webBrowser2.Document.Body.InnerHtml);
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+            {
+                dataGridView1.DataSource = matches.MacauPredication;
             }
         }
     }

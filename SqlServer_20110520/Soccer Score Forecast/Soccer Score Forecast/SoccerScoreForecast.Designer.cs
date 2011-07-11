@@ -144,6 +144,7 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.button2 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
@@ -157,6 +158,7 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.splitContainer13 = new System.Windows.Forms.SplitContainer();
+            this.Macauslot = new System.Windows.Forms.Button();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.button4 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
@@ -232,6 +234,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnSimWNN = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.btnSimPNN = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -250,7 +254,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label9 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -1126,6 +1129,7 @@
             // 
             // splitContainer7.Panel1
             // 
+            this.splitContainer7.Panel1.Controls.Add(this.button2);
             this.splitContainer7.Panel1.Controls.Add(this.button30);
             this.splitContainer7.Panel1.Controls.Add(this.button29);
             this.splitContainer7.Panel1.Controls.Add(this.button26);
@@ -1139,6 +1143,16 @@
             this.splitContainer7.Size = new System.Drawing.Size(253, 343);
             this.splitContainer7.SplitterDistance = 130;
             this.splitContainer7.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(53, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(163, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "MacauPredication";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button30
             // 
@@ -1284,6 +1298,7 @@
             // 
             // splitContainer13.Panel1
             // 
+            this.splitContainer13.Panel1.Controls.Add(this.Macauslot);
             this.splitContainer13.Panel1.Controls.Add(this.webBrowser2);
             // 
             // splitContainer13.Panel2
@@ -1293,6 +1308,16 @@
             this.splitContainer13.Size = new System.Drawing.Size(842, 291);
             this.splitContainer13.SplitterDistance = 102;
             this.splitContainer13.TabIndex = 2;
+            // 
+            // Macauslot
+            // 
+            this.Macauslot.Location = new System.Drawing.Point(745, 3);
+            this.Macauslot.Name = "Macauslot";
+            this.Macauslot.Size = new System.Drawing.Size(75, 23);
+            this.Macauslot.TabIndex = 2;
+            this.Macauslot.Text = "Macauslot";
+            this.Macauslot.UseVisualStyleBackColor = true;
+            this.Macauslot.Click += new System.EventHandler(this.Macauslot_Click);
             // 
             // webBrowser2
             // 
@@ -2008,6 +2033,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.btnSimWNN);
             this.panel7.Controls.Add(this.label9);
             this.panel7.Controls.Add(this.button18);
             this.panel7.Controls.Add(this.btnSimPNN);
@@ -2019,9 +2045,28 @@
             this.panel7.Size = new System.Drawing.Size(165, 170);
             this.panel7.TabIndex = 13;
             // 
+            // btnSimWNN
+            // 
+            this.btnSimWNN.Location = new System.Drawing.Point(5, 61);
+            this.btnSimWNN.Name = "btnSimWNN";
+            this.btnSimWNN.Size = new System.Drawing.Size(118, 23);
+            this.btnSimWNN.TabIndex = 16;
+            this.btnSimWNN.Text = "MyWavelet";
+            this.btnSimWNN.UseVisualStyleBackColor = true;
+            this.btnSimWNN.Click += new System.EventHandler(this.btnSimWNN_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(51, 149);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "label9";
+            // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(5, 102);
+            this.button18.Location = new System.Drawing.Point(5, 122);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(116, 24);
             this.button18.TabIndex = 14;
@@ -2041,7 +2086,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(5, 61);
+            this.button1.Location = new System.Drawing.Point(5, 92);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 24);
             this.button1.TabIndex = 11;
@@ -2199,15 +2244,6 @@
             this.treeView4.Name = "treeView4";
             this.treeView4.Size = new System.Drawing.Size(856, 353);
             this.treeView4.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 136);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 12);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "label9";
             // 
             // Form1
             // 
@@ -2514,6 +2550,9 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnSimWNN;
+        private System.Windows.Forms.Button Macauslot;
+        private System.Windows.Forms.Button button2;
 
     }
 }

@@ -43,6 +43,7 @@ namespace Soccer_Score_Forecast
                 {
                     dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
                     dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                    dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
                 }
                 this.live_id = liveid;
                 var l = matches.Live_Table_lib.Where(e => e.Live_table_lib_id == liveid).First();

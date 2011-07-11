@@ -60,7 +60,7 @@ namespace Soccer_Score_Forecast
             //chart1.Titles["Title1"].Text = title;
             BaseChartFormat(chart1);
 
-            return rnl.ListLastJZ;
+            return rnl.ListLastJZ +rnl.MacauPre;
         }
         public static void BaseChartFormat(Chart chart1)
         {
