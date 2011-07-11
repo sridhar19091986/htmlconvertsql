@@ -33,9 +33,9 @@ namespace SoccerScore.Compact.Linq
     partial void InsertLive_Aibo(Live_Aibo instance);
     partial void UpdateLive_Aibo(Live_Aibo instance);
     partial void DeleteLive_Aibo(Live_Aibo instance);
-    partial void InsertLive_Aibo_tracking(Live_Aibo_tracking instance);
-    partial void UpdateLive_Aibo_tracking(Live_Aibo_tracking instance);
-    partial void DeleteLive_Aibo_tracking(Live_Aibo_tracking instance);
+    partial void InsertMacauPredication(MacauPredication instance);
+    partial void UpdateMacauPredication(MacauPredication instance);
+    partial void DeleteMacauPredication(MacauPredication instance);
     partial void InsertLive_okoo(Live_okoo instance);
     partial void UpdateLive_okoo(Live_okoo instance);
     partial void DeleteLive_okoo(Live_okoo instance);
@@ -127,11 +127,11 @@ namespace SoccerScore.Compact.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<Live_Aibo_tracking> Live_Aibo_tracking
+		public System.Data.Linq.Table<MacauPredication> MacauPredication
 		{
 			get
 			{
-				return this.GetTable<Live_Aibo_tracking>();
+				return this.GetTable<MacauPredication>();
 			}
 		}
 		
@@ -494,211 +494,163 @@ namespace SoccerScore.Compact.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="live_Aibo_tracking")]
-	public partial class Live_Aibo_tracking : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute()]
+	public partial class MacauPredication : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Live_Aibo_id;
+		private int _MacauPredication_id;
 		
-		private int _Sync_row_is_tombstone;
+		private System.Nullable<System.DateTime> _Record_datetime;
 		
-		private int _Sync_update_peer_key;
+		private string _Home_team;
 		
-		private long _Sync_update_peer_timestamp;
+		private string _Macauslot;
 		
-		private int _Sync_create_peer_key;
+		private string _Predication;
 		
-		private long _Sync_create_peer_timestamp;
-		
-		private long _Sync_update_bsn;
-		
-		private System.Nullable<System.DateTime> _Last_change_datetime;
+		private System.Nullable<int> _Accuracy;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnLive_Aibo_idChanging(int value);
-    partial void OnLive_Aibo_idChanged();
-    partial void OnSync_row_is_tombstoneChanging(int value);
-    partial void OnSync_row_is_tombstoneChanged();
-    partial void OnSync_update_peer_keyChanging(int value);
-    partial void OnSync_update_peer_keyChanged();
-    partial void OnSync_update_peer_timestampChanging(long value);
-    partial void OnSync_update_peer_timestampChanged();
-    partial void OnSync_create_peer_keyChanging(int value);
-    partial void OnSync_create_peer_keyChanged();
-    partial void OnSync_create_peer_timestampChanging(long value);
-    partial void OnSync_create_peer_timestampChanged();
-    partial void OnSync_update_bsnChanging(long value);
-    partial void OnSync_update_bsnChanged();
-    partial void OnLast_change_datetimeChanging(System.Nullable<System.DateTime> value);
-    partial void OnLast_change_datetimeChanged();
+    partial void OnMacauPredication_idChanging(int value);
+    partial void OnMacauPredication_idChanged();
+    partial void OnRecord_datetimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnRecord_datetimeChanged();
+    partial void OnHome_teamChanging(string value);
+    partial void OnHome_teamChanged();
+    partial void OnMacauslotChanging(string value);
+    partial void OnMacauslotChanged();
+    partial void OnPredicationChanging(string value);
+    partial void OnPredicationChanged();
+    partial void OnAccuracyChanging(System.Nullable<int> value);
+    partial void OnAccuracyChanged();
     #endregion
 		
-		public Live_Aibo_tracking()
+		public MacauPredication()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="live_Aibo_id", Storage="_Live_Aibo_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Live_Aibo_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MacauPredication_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MacauPredication_id
 		{
 			get
 			{
-				return this._Live_Aibo_id;
+				return this._MacauPredication_id;
 			}
 			set
 			{
-				if ((this._Live_Aibo_id != value))
+				if ((this._MacauPredication_id != value))
 				{
-					this.OnLive_Aibo_idChanging(value);
+					this.OnMacauPredication_idChanging(value);
 					this.SendPropertyChanging();
-					this._Live_Aibo_id = value;
-					this.SendPropertyChanged("Live_Aibo_id");
-					this.OnLive_Aibo_idChanged();
+					this._MacauPredication_id = value;
+					this.SendPropertyChanged("MacauPredication_id");
+					this.OnMacauPredication_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="sync_row_is_tombstone", Storage="_Sync_row_is_tombstone", DbType="Int NOT NULL")]
-		public int Sync_row_is_tombstone
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Record_datetime", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Record_datetime
 		{
 			get
 			{
-				return this._Sync_row_is_tombstone;
+				return this._Record_datetime;
 			}
 			set
 			{
-				if ((this._Sync_row_is_tombstone != value))
+				if ((this._Record_datetime != value))
 				{
-					this.OnSync_row_is_tombstoneChanging(value);
+					this.OnRecord_datetimeChanging(value);
 					this.SendPropertyChanging();
-					this._Sync_row_is_tombstone = value;
-					this.SendPropertyChanged("Sync_row_is_tombstone");
-					this.OnSync_row_is_tombstoneChanged();
+					this._Record_datetime = value;
+					this.SendPropertyChanged("Record_datetime");
+					this.OnRecord_datetimeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="sync_update_peer_key", Storage="_Sync_update_peer_key", DbType="Int NOT NULL")]
-		public int Sync_update_peer_key
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Home_team", DbType="NVarChar(50)")]
+		public string Home_team
 		{
 			get
 			{
-				return this._Sync_update_peer_key;
+				return this._Home_team;
 			}
 			set
 			{
-				if ((this._Sync_update_peer_key != value))
+				if ((this._Home_team != value))
 				{
-					this.OnSync_update_peer_keyChanging(value);
+					this.OnHome_teamChanging(value);
 					this.SendPropertyChanging();
-					this._Sync_update_peer_key = value;
-					this.SendPropertyChanged("Sync_update_peer_key");
-					this.OnSync_update_peer_keyChanged();
+					this._Home_team = value;
+					this.SendPropertyChanged("Home_team");
+					this.OnHome_teamChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="sync_update_peer_timestamp", Storage="_Sync_update_peer_timestamp", DbType="BigInt NOT NULL")]
-		public long Sync_update_peer_timestamp
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Macauslot", DbType="NVarChar(500)")]
+		public string Macauslot
 		{
 			get
 			{
-				return this._Sync_update_peer_timestamp;
+				return this._Macauslot;
 			}
 			set
 			{
-				if ((this._Sync_update_peer_timestamp != value))
+				if ((this._Macauslot != value))
 				{
-					this.OnSync_update_peer_timestampChanging(value);
+					this.OnMacauslotChanging(value);
 					this.SendPropertyChanging();
-					this._Sync_update_peer_timestamp = value;
-					this.SendPropertyChanged("Sync_update_peer_timestamp");
-					this.OnSync_update_peer_timestampChanged();
+					this._Macauslot = value;
+					this.SendPropertyChanged("Macauslot");
+					this.OnMacauslotChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="sync_create_peer_key", Storage="_Sync_create_peer_key", DbType="Int NOT NULL")]
-		public int Sync_create_peer_key
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Predication", DbType="NVarChar(50)")]
+		public string Predication
 		{
 			get
 			{
-				return this._Sync_create_peer_key;
+				return this._Predication;
 			}
 			set
 			{
-				if ((this._Sync_create_peer_key != value))
+				if ((this._Predication != value))
 				{
-					this.OnSync_create_peer_keyChanging(value);
+					this.OnPredicationChanging(value);
 					this.SendPropertyChanging();
-					this._Sync_create_peer_key = value;
-					this.SendPropertyChanged("Sync_create_peer_key");
-					this.OnSync_create_peer_keyChanged();
+					this._Predication = value;
+					this.SendPropertyChanged("Predication");
+					this.OnPredicationChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="sync_create_peer_timestamp", Storage="_Sync_create_peer_timestamp", DbType="BigInt NOT NULL")]
-		public long Sync_create_peer_timestamp
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Accuracy", DbType="Int")]
+		public System.Nullable<int> Accuracy
 		{
 			get
 			{
-				return this._Sync_create_peer_timestamp;
+				return this._Accuracy;
 			}
 			set
 			{
-				if ((this._Sync_create_peer_timestamp != value))
+				if ((this._Accuracy != value))
 				{
-					this.OnSync_create_peer_timestampChanging(value);
+					this.OnAccuracyChanging(value);
 					this.SendPropertyChanging();
-					this._Sync_create_peer_timestamp = value;
-					this.SendPropertyChanged("Sync_create_peer_timestamp");
-					this.OnSync_create_peer_timestampChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="sync_update_bsn", Storage="_Sync_update_bsn", DbType="BigInt NOT NULL")]
-		public long Sync_update_bsn
-		{
-			get
-			{
-				return this._Sync_update_bsn;
-			}
-			set
-			{
-				if ((this._Sync_update_bsn != value))
-				{
-					this.OnSync_update_bsnChanging(value);
-					this.SendPropertyChanging();
-					this._Sync_update_bsn = value;
-					this.SendPropertyChanged("Sync_update_bsn");
-					this.OnSync_update_bsnChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="last_change_datetime", Storage="_Last_change_datetime", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Last_change_datetime
-		{
-			get
-			{
-				return this._Last_change_datetime;
-			}
-			set
-			{
-				if ((this._Last_change_datetime != value))
-				{
-					this.OnLast_change_datetimeChanging(value);
-					this.SendPropertyChanging();
-					this._Last_change_datetime = value;
-					this.SendPropertyChanged("Last_change_datetime");
-					this.OnLast_change_datetimeChanged();
+					this._Accuracy = value;
+					this.SendPropertyChanged("Accuracy");
+					this.OnAccuracyChanged();
 				}
 			}
 		}

@@ -74,6 +74,13 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>lib\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
+    <Reference Include="MWArray, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e1d84a0da19db86f, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\My Documents\MATLAB\RbfPredication\distrib\MWArray.dll</HintPath>
+    </Reference>
+    <Reference Include="RbfPredication">
+      <HintPath>D:\My Documents\MATLAB\RbfPredication\distrib\RbfPredication.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -114,6 +121,7 @@
     <Compile Include="BLL_CurveFit\CsharpMatlabCurveFit.cs" />
     <Compile Include="BLL_CurveFit\ForecastAlgorithm.cs" />
     <Compile Include="BLL_CurveFit\MyCurveFitclass.cs" />
+    <Compile Include="BLL_CurveFit\NNPredication.cs" />
     <Compile Include="BLL_CurveFit\RowNumberDetail.cs" />
     <Compile Include="BLL_CurveFit\RowNumberLimit.cs" />
     <Compile Include="BLL_CurveFit\RowNumberTable.cs" />
@@ -123,6 +131,7 @@
     <Compile Include="Config\LicenseReadLib.cs" />
     <Compile Include="DAL_HtmlSql\AiboLiveToSql.cs" />
     <Compile Include="DAL_HtmlSql\HtmlAgilityPackTableXpath.cs" />
+    <Compile Include="DAL_HtmlSql\MacauslotToSql.cs" />
     <Compile Include="DAL_HtmlSql\SqlAgilityPackTableXpath.cs" />
     <Compile Include="LinqSql\SoccerScoreCompact.designer.cs">
       <AutoGen>True</AutoGen>

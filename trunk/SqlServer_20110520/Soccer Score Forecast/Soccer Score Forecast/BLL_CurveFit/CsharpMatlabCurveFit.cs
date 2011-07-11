@@ -31,7 +31,7 @@ namespace Soccer_Score_Forecast
     {
         public static ILookup<int?, Result_tb_lib> dHome = null;
         public static ILookup<int?, Result_tb_lib> dAway = null;
-
+        public static ILookup<string, MacauPredication> macauPre= null;
     }
 
     //public class MatlabNet

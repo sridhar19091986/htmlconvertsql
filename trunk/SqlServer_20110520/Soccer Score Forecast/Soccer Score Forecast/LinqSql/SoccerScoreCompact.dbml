@@ -10,16 +10,14 @@
       <Column Name="MatchOrder1_AwayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="live_Aibo_tracking" Member="Live_Aibo_tracking">
-    <Type Name="Live_Aibo_tracking">
-      <Column Name="live_Aibo_id" Member="Live_Aibo_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="sync_row_is_tombstone" Member="Sync_row_is_tombstone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="sync_update_peer_key" Member="Sync_update_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="sync_update_peer_timestamp" Member="Sync_update_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="sync_create_peer_key" Member="Sync_create_peer_key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="sync_create_peer_timestamp" Member="Sync_create_peer_timestamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="sync_update_bsn" Member="Sync_update_bsn" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="last_change_datetime" Member="Last_change_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+  <Table Name="MacauPredication">
+    <Type Name="MacauPredication">
+      <Column Name="MacauPredication_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Record_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Macauslot" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Predication" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Accuracy" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="live_okoo" Member="Live_okoo">
@@ -152,7 +150,7 @@
       <Column Name="myfit" Member="Myfit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="recent_scores" Member="Recent_scores" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="grnn_fit" Member="Grnn_fit" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="pnn_fit" Member="Pnn_fit"  Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="pnn_fit" Member="Pnn_fit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="match_analysis_result_tracking" Member="Match_analysis_result_tracking">
