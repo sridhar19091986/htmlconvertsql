@@ -276,4 +276,13 @@
       <Column Name="scope_tomb_mark" Member="Scope_tomb_mark" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="Live_Single">
+    <Type Name="Live_Single">
+      <Column Name="Live_Single_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Html_position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Home_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Away_team_big" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

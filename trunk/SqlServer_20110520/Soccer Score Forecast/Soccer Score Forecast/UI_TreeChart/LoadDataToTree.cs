@@ -16,6 +16,7 @@ namespace Soccer_Score_Forecast
         private List<Match_analysis_result> marAll;
         private List<MacauPredication> mpAll;
         private List<Live_okoo> loAll;
+        private List<Live_Single> lsAll;
         private IEnumerable<Live_Table_lib> ltls;
         //private IEnumerable<match_analysis_result> mars;
         private Result_tb_lib rtl;
@@ -56,6 +57,7 @@ namespace Soccer_Score_Forecast
                 marAll = matches.Match_analysis_result.Where(e => e.Live_table_lib_id > 0).ToList();
                 loAll = matches.Live_okoo.Where(e => e.Live_okoo_id > 0).ToList();
                 mpAll = matches.MacauPredication.OrderByDescending(e => e.MacauPredication_id).ToList();
+                lsAll = matches.Live_Single.ToList();
             }
         }
 
@@ -131,7 +133,15 @@ namespace Soccer_Score_Forecast
                 //加入live_table数据
                 strNode = ltl.Live_table_lib_id + "," + ltl.Match_type + "," + ltl.Match_time + "::" + ltl.Home_team + "::" + ltl.Away_team + "::" + ltl.Status;
                 mar = marAll.Where(o => o.Live_table_lib_id == ltl.Live_table_lib_id).OrderByDescending(o => o.Analysis_result_id).FirstOrDefault();
+
+                var sg = lsAll.Where(e => Int32.Parse(e.Home_team_big) == ltl.Home_team_big).FirstOrDefault();
+                if (sg != null)
+                {
+                    strNode += "{" + sg.Status + "}{" + sg.Html_position + "}";
+                }
+
                 if (mar != null)  //有运行过算法
+                if(mar.Fit_win_loss !=0)
                 {
                     //加入match_analysis数据
 
