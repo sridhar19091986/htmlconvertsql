@@ -130,6 +130,7 @@
     <Compile Include="Config\LicenseCheckLib.cs" />
     <Compile Include="Config\LicenseReadLib.cs" />
     <Compile Include="DAL_HtmlSql\AiboLiveToSql.cs" />
+    <Compile Include="DAL_HtmlSql\SevenmLiveSingleToSql.cs" />
     <Compile Include="DAL_HtmlSql\HtmlAgilityPackTableXpath.cs" />
     <Compile Include="DAL_HtmlSql\MacauslotToSql.cs" />
     <Compile Include="DAL_HtmlSql\SqlAgilityPackTableXpath.cs" />

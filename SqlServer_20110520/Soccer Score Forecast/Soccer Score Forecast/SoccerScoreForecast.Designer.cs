@@ -144,6 +144,7 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.button11 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
@@ -158,6 +159,7 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.splitContainer13 = new System.Windows.Forms.SplitContainer();
+            this.Livesg = new System.Windows.Forms.Button();
             this.Macauslot = new System.Windows.Forms.Button();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.button4 = new System.Windows.Forms.Button();
@@ -1129,6 +1131,7 @@
             // 
             // splitContainer7.Panel1
             // 
+            this.splitContainer7.Panel1.Controls.Add(this.button11);
             this.splitContainer7.Panel1.Controls.Add(this.button2);
             this.splitContainer7.Panel1.Controls.Add(this.button30);
             this.splitContainer7.Panel1.Controls.Add(this.button29);
@@ -1141,8 +1144,18 @@
             // 
             this.splitContainer7.Panel2.Controls.Add(this.treeView2);
             this.splitContainer7.Size = new System.Drawing.Size(253, 343);
-            this.splitContainer7.SplitterDistance = 130;
+            this.splitContainer7.SplitterDistance = 240;
             this.splitContainer7.TabIndex = 0;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(53, 120);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(163, 23);
+            this.button11.TabIndex = 10;
+            this.button11.Text = "Live_Single";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button2
             // 
@@ -1176,7 +1189,7 @@
             // 
             // button26
             // 
-            this.button26.Location = new System.Drawing.Point(237, 33);
+            this.button26.Location = new System.Drawing.Point(53, 178);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(86, 23);
             this.button26.TabIndex = 6;
@@ -1186,7 +1199,7 @@
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(237, 91);
+            this.button19.Location = new System.Drawing.Point(53, 149);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(86, 23);
             this.button19.TabIndex = 5;
@@ -1206,7 +1219,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(237, 62);
+            this.button3.Location = new System.Drawing.Point(53, 207);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(86, 23);
             this.button3.TabIndex = 1;
@@ -1219,7 +1232,7 @@
             this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView2.Location = new System.Drawing.Point(0, 0);
             this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(253, 209);
+            this.treeView2.Size = new System.Drawing.Size(253, 99);
             this.treeView2.TabIndex = 0;
             this.treeView2.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView2_AfterSelect);
             // 
@@ -1298,6 +1311,7 @@
             // 
             // splitContainer13.Panel1
             // 
+            this.splitContainer13.Panel1.Controls.Add(this.Livesg);
             this.splitContainer13.Panel1.Controls.Add(this.Macauslot);
             this.splitContainer13.Panel1.Controls.Add(this.webBrowser2);
             // 
@@ -1308,6 +1322,16 @@
             this.splitContainer13.Size = new System.Drawing.Size(842, 291);
             this.splitContainer13.SplitterDistance = 102;
             this.splitContainer13.TabIndex = 2;
+            // 
+            // Livesg
+            // 
+            this.Livesg.Location = new System.Drawing.Point(745, 50);
+            this.Livesg.Name = "Livesg";
+            this.Livesg.Size = new System.Drawing.Size(75, 23);
+            this.Livesg.TabIndex = 3;
+            this.Livesg.Text = "Livesg";
+            this.Livesg.UseVisualStyleBackColor = true;
+            this.Livesg.Click += new System.EventHandler(this.Livesg_Click);
             // 
             // Macauslot
             // 
@@ -2553,6 +2577,8 @@
         private System.Windows.Forms.Button btnSimWNN;
         private System.Windows.Forms.Button Macauslot;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button Livesg;
 
     }
 }

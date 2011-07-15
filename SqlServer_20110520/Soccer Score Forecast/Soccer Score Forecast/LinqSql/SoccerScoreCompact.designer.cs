@@ -93,6 +93,9 @@ namespace SoccerScore.Compact.Linq
     partial void InsertScope_info(Scope_info instance);
     partial void UpdateScope_info(Scope_info instance);
     partial void DeleteScope_info(Scope_info instance);
+    partial void InsertLive_Single(Live_Single instance);
+    partial void UpdateLive_Single(Live_Single instance);
+    partial void DeleteLive_Single(Live_Single instance);
     #endregion
 		
 		public DataClassesMatchDataContext(string connection) : 
@@ -284,6 +287,14 @@ namespace SoccerScore.Compact.Linq
 			get
 			{
 				return this.GetTable<Scope_info>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Live_Single> Live_Single
+		{
+			get
+			{
+				return this.GetTable<Live_Single>();
 			}
 		}
 	}
@@ -5693,6 +5704,164 @@ namespace SoccerScore.Compact.Linq
 					this._Scope_tomb_mark = value;
 					this.SendPropertyChanged("Scope_tomb_mark");
 					this.OnScope_tomb_markChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute()]
+	public partial class Live_Single : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Live_Single_id;
+		
+		private string _Html_position;
+		
+		private string _Home_team_big;
+		
+		private string _Away_team_big;
+		
+		private string _Status;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLive_Single_idChanging(int value);
+    partial void OnLive_Single_idChanged();
+    partial void OnHtml_positionChanging(string value);
+    partial void OnHtml_positionChanged();
+    partial void OnHome_team_bigChanging(string value);
+    partial void OnHome_team_bigChanged();
+    partial void OnAway_team_bigChanging(string value);
+    partial void OnAway_team_bigChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    #endregion
+		
+		public Live_Single()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Live_Single_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Live_Single_id
+		{
+			get
+			{
+				return this._Live_Single_id;
+			}
+			set
+			{
+				if ((this._Live_Single_id != value))
+				{
+					this.OnLive_Single_idChanging(value);
+					this.SendPropertyChanging();
+					this._Live_Single_id = value;
+					this.SendPropertyChanged("Live_Single_id");
+					this.OnLive_Single_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Html_position", DbType="NVarChar(50)")]
+		public string Html_position
+		{
+			get
+			{
+				return this._Html_position;
+			}
+			set
+			{
+				if ((this._Html_position != value))
+				{
+					this.OnHtml_positionChanging(value);
+					this.SendPropertyChanging();
+					this._Html_position = value;
+					this.SendPropertyChanged("Html_position");
+					this.OnHtml_positionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Home_team_big", DbType="NVarChar(50)")]
+		public string Home_team_big
+		{
+			get
+			{
+				return this._Home_team_big;
+			}
+			set
+			{
+				if ((this._Home_team_big != value))
+				{
+					this.OnHome_team_bigChanging(value);
+					this.SendPropertyChanging();
+					this._Home_team_big = value;
+					this.SendPropertyChanged("Home_team_big");
+					this.OnHome_team_bigChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Away_team_big", DbType="NVarChar(50)")]
+		public string Away_team_big
+		{
+			get
+			{
+				return this._Away_team_big;
+			}
+			set
+			{
+				if ((this._Away_team_big != value))
+				{
+					this.OnAway_team_bigChanging(value);
+					this.SendPropertyChanging();
+					this._Away_team_big = value;
+					this.SendPropertyChanged("Away_team_big");
+					this.OnAway_team_bigChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(50)")]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
 				}
 			}
 		}

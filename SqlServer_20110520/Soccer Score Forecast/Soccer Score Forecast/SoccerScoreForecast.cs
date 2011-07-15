@@ -121,10 +121,10 @@ namespace Soccer_Score_Forecast
             liveLib = true;
 
             //澳门盘口
-            //textBox1.Text = "http://live2.7m.cn/cpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=";
+            textBox1.Text = "http://live2.7m.cn/cpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=";
 
             //立博盘口
-            textBox1.Text = "http://live2.7m.cn/lbpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=";
+            //textBox1.Text = "http://live2.7m.cn/lbpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=";
         }
         #endregion
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -286,7 +286,8 @@ namespace Soccer_Score_Forecast
             listView2.Items.Add("http://www.totochina.com/happypool/sp/sp.jsp");
             listView2.Items.Add("http://data1.7m.cn/fixture_data/default_big.shtml?date=1");
             listView2.Items.Add("http://web.macauslot.com/soccer/html/predictions.html");
-            //listView2.Items.Add("http://ms.7m.cn/default_big.shtml");
+            //listView2.Items.Add("");
+            listView2.Items.Add("http://live.win.7m.cn/?view=sg");
             listView2.Items.Add("http://live2.7m.cn/cpk_ft.aspx?view=all&amp;match=&amp;line=no&amp;ordType=");
             listView2.Items.Add("http://live.aibo123.com/bifen/indexBeiDan.shtml?lang=&isc=");
             listView2.Items.Add("http://1x2.bet007.com/");
@@ -513,12 +514,31 @@ namespace Soccer_Score_Forecast
             result = MessageBox.Show(this, "YesOrNo", "你确定要删除分析库？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)//Messagebox返回的值
             {
+                //try
+                //{
+                //    if (Conn.CreateTable(typeof(Match_analysis_result))
+                //        && Conn.CreateTable(typeof(Live_Table_lib)))
+                //        MessageBox.Show("OK");
+                //    Conn.CompressCompact();
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.ToString());
+                //}
                 try
                 {
-                    if (Conn.CreateTable(typeof(Match_analysis_result))
-                        && Conn.CreateTable(typeof(Live_Table_lib)))
+                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                    {
+                        var maxliveid = matches.Match_analysis_result
+                            .Where(r => r.Result_tb_lib_id != null)
+                            .Max(r => r.Analysis_result_id);
+                        var noresult = matches.Match_analysis_result
+                            .Where(r => r.Result_tb_lib_id == null)
+                            .Where(r => r.Analysis_result_id < maxliveid);
+                        matches.Match_analysis_result.DeleteAllOnSubmit(noresult);
+                        matches.SubmitChanges();
                         MessageBox.Show("OK");
-                    Conn.CompressCompact();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -1181,6 +1201,27 @@ namespace Soccer_Score_Forecast
             {
                 dataGridView1.DataSource = matches.MacauPredication;
             }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+            {
+                dataGridView1.DataSource = matches.Live_Single;
+            }
+        }
+        private void Livesg_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+                SevenmLiveSingleToSql sg =  new SevenmLiveSingleToSql();
+                toolStripLabel2.Text = sg.InsertLiveHtmlTableToDB(webBrowser2.Document.Body.OuterHtml).ToString();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(webBrowser2.Document.Body.InnerHtml);
+            //    MessageBox.Show(ex.ToString());
+            //}
         }
     }
 }
