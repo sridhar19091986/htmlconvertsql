@@ -256,6 +256,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -1317,6 +1318,7 @@
             // 
             // splitContainer13.Panel2
             // 
+            this.splitContainer13.Panel2.Controls.Add(this.textBox2);
             this.splitContainer13.Panel2.Controls.Add(this.button4);
             this.splitContainer13.Panel2.Controls.Add(this.listView2);
             this.splitContainer13.Size = new System.Drawing.Size(842, 291);
@@ -2269,6 +2271,13 @@
             this.treeView4.Size = new System.Drawing.Size(856, 353);
             this.treeView4.TabIndex = 0;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(700, 44);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 21);
+            this.textBox2.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2346,6 +2355,7 @@
             this.tabPage5.ResumeLayout(false);
             this.splitContainer13.Panel1.ResumeLayout(false);
             this.splitContainer13.Panel2.ResumeLayout(false);
+            this.splitContainer13.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer13)).EndInit();
             this.splitContainer13.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
@@ -2579,6 +2589,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button Livesg;
+        private System.Windows.Forms.TextBox textBox2;
 
     }
 }

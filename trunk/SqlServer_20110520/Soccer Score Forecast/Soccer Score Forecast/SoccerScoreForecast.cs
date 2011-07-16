@@ -9,6 +9,7 @@ using System.Net;
 using SoccerScore.Compact.Linq;
 using System.Linq;
 using System.Data.SqlServerCe;
+using HtmlAgilityPack;
 
 
 namespace Soccer_Score_Forecast
@@ -59,6 +60,7 @@ namespace Soccer_Score_Forecast
             treeView5.Nodes.Clear();
             loaddatatree.TreeViewMatch(treeView5, "type");
             dateTimePicker1.Value = DateTime.Parse(toolStripStatusLabel3.Text);
+            textBox2.Text = "1";
 
         }
         LincenseString ls = new LincenseString();
@@ -1180,13 +1182,35 @@ namespace Soccer_Score_Forecast
                 }
             }
         }
+        #region html option 花我整1上午时间
         MacauslotToSql macau;
+        private List<string> ParserMacau()
+        {
+            List<string> theList = new List<string>();
+            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            HtmlNode.ElementsFlags.Remove("option");
+            doc.LoadHtml(webBrowser2.Document.Body.InnerHtml);
+            foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//select[@name='menu']//option"))
+                if (node.InnerText.IndexOf("參考") == -1)
+                    theList.Add(node.InnerText);
+            return theList;
+        }
         private void Macauslot_Click(object sender, EventArgs e)
         {
             try
             {
+                int select = Int32.Parse(textBox2.Text); //只能通过这个textbox来循环，其他循环html的脚本有问题
+                HtmlElement theList = webBrowser2.Document.GetElementsByTagName("select")[0];  //select 节点
+                int optionmax = theList.GetElementsByTagName("option").Count;  //option 节点数量
+                theList.Focus();
+                if (select > optionmax) return;
+                theList.GetElementsByTagName("option")[select].SetAttribute("selected", "true");//选定option
+                theList.InvokeMember("onchange");    //不调用该方法网页将不刷新
+                Application.DoEvents();
                 macau = new MacauslotToSql(webBrowser2.Document.Body.InnerHtml);
                 toolStripLabel2.Text = macau.updateMacauslot().ToString();
+                select++;
+                textBox2.Text = select.ToString();
             }
             catch (Exception ex)
             {
@@ -1194,6 +1218,7 @@ namespace Soccer_Score_Forecast
                 MessageBox.Show(ex.ToString());
             }
         }
+        #endregion
 
         private void button2_Click(object sender, EventArgs e)
         {
