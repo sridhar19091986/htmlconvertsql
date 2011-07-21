@@ -110,12 +110,12 @@ namespace Soccer_Score_Forecast
                         ltl.Half_away_goals = Int32.Parse(m.Half_time_score.Substring(m.Half_time_score.IndexOf("-") + 1, m.Half_time_score.Length - m.Half_time_score.IndexOf("-") - 1));
                     }
 
-                    var rtExist = matches.Live_Table_lib.Where(p => p.Home_team_big == ltl.Home_team_big && p.Away_team_big == ltl.Away_team_big);
+                    var rtExist = matches.Live_Table_lib
+                        .Where(p => p.Home_team_big == ltl.Home_team_big && p.Away_team_big == ltl.Away_team_big);
                     //let关键字，匿名类型
                     var rtUpdateExist = from p in rtExist
                                         let timeDiff = ltl.Match_time.Value - p.Match_time.Value
-                                        where timeDiff.Days <= 1
-                                        where timeDiff.Days >= -1
+                                        where Math.Abs(timeDiff.Days) <= 1
                                         select p;
 
                     //存在记录的则做更新，必须确认是最新数据，即时间差不超过1天
@@ -139,7 +139,6 @@ namespace Soccer_Score_Forecast
                     }
                 }
             }
-
             matches.Live_Table.DeleteAllOnSubmit(lt);//更新后删除
             matches.SubmitChanges();
             MessageBox.Show("OK");

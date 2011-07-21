@@ -331,6 +331,8 @@ namespace Soccer_Score_Forecast
                 this.tabControl1.SelectedTab = this.tabPage12;
 
                 ForecastAlgorithm f = new ForecastAlgorithm();
+                f.DeleteRedundancy();
+
                 int pb = f.idExc.Count();
                 MessageBox.Show(pb.ToString());
                 if (pb != 0)
