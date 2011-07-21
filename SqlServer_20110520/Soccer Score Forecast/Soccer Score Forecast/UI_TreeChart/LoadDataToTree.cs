@@ -185,6 +185,9 @@ namespace Soccer_Score_Forecast
                     {
                         //加入result_tb数据
                         rtl = rtlAll.Where(e => e.Result_tb_lib_id == mar.Result_tb_lib_id).FirstOrDefault();
+
+                        if (rtl == null) continue;
+                        
                         strNode += "||" + rtl.Match_time.Value.ToShortDateString() + "::" +
                                             rtl.Full_home_goals.ToString() + "-" + rtl.Full_away_goals.ToString() + "::" +
                                             rtl.Odds + "::" + rtl.Win_loss_big + "::" + rtl.Home_team + "::" + rtl.Away_team;

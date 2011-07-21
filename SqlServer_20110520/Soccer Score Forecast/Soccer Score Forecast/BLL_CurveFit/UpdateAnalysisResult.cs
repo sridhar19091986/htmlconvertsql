@@ -75,12 +75,22 @@ namespace Soccer_Score_Forecast
 
                 //修改无法更新完场数据的问题 2011.6.11
 
-                string comparekey = ((DateTime)match_time).ToShortDateString()
+                string comparekeyA = ((DateTime)match_time).ToShortDateString()
                     + "-" + home_team_big + "-" + away_team_big;
 
-                if (rtls.Contains(comparekey ))
+                //前后2天修正
+                string comparekeyB = ((DateTime)match_time.Value.AddDays(1)).ToShortDateString()
+                    + "-" + home_team_big + "-" + away_team_big;
+                string comparekeyC = ((DateTime)match_time.Value.AddDays(-1)).ToShortDateString()
+                    + "-" + home_team_big + "-" + away_team_big;
+
+                if (rtls.Contains(comparekeyA )|| rtls.Contains(comparekeyB )|| rtls.Contains(comparekeyC ))
                 {
-                    var rtl = rtls[comparekey].FirstOrDefault(); //修改无法更新完场数据的问题 2011.6.11
+                    var rtl = rtls[comparekeyA].FirstOrDefault(); //修改无法更新完场数据的问题 2011.6.11
+
+                    //前后2天修正
+                    if (rtls.Contains(comparekeyB) ) rtl = rtls[comparekeyB].FirstOrDefault();
+                    if (rtls.Contains(comparekeyC) ) rtl = rtls[comparekeyC].FirstOrDefault();
 
                     result_tb_lib_id = rtl.Result_tb_lib_id;
 
