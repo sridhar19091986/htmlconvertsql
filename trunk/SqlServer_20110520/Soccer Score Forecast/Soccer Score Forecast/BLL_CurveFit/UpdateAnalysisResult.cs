@@ -58,7 +58,20 @@ namespace Soccer_Score_Forecast
                 //if (lvls.Any())
                 //{
                 //    //得出match time home away
+
+                #region  删除Live_Table_lib已经删除的数据
+                if (!lvls.Keys.Contains((int)m.Live_table_lib_id))
+                {
+                    var marid = matches.Match_analysis_result
+                        .Where(e => e.Live_table_lib_id == m.Live_table_lib_id)
+                        .FirstOrDefault();
+                    matches.Match_analysis_result.DeleteOnSubmit(marid);
+                    continue;
+                }
+                #endregion
+
                 var lvl = lvls[(int)m.Live_table_lib_id];
+
                 match_time = lvl.Match_time;
                 home_team_big = lvl.Home_team_big;
                 away_team_big = lvl.Away_team_big;
