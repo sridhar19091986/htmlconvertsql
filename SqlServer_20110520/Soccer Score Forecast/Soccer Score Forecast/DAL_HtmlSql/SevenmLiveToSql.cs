@@ -122,6 +122,7 @@ namespace Soccer_Score_Forecast
                     if (rtUpdateExist.Any())
                     {
                         var rtUpate = rtUpdateExist.First();
+                        rtUpate.Match_time = ltl.Match_time;  //时间也需要更新 2011.7.24
                         rtUpate.Status = ltl.Status;
                         rtUpate.Home_team = ltl.Home_team;
                         rtUpate.Away_team = ltl.Away_team;

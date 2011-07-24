@@ -62,7 +62,10 @@ namespace Soccer_Score_Forecast
                         //拟合+进球+概率30
                         ForecastWL(mar.Fit_win_loss, mar.Home_goals, mar.Away_goals, mar.Home_w, mar.Home_l);
 
-               
+                    //更新北京单场
+                    var sg = matches.Live_Single.Where(e => Convert.ToInt32(e.Home_team_big) == r.home_team_big).FirstOrDefault();
+                    if (sg != null)
+                        mar.Pre_algorithm = sg.Html_position;
 
                 }
                 matches.SubmitChanges();
