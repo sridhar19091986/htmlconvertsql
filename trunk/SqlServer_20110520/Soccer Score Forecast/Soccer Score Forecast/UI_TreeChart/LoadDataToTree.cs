@@ -24,7 +24,7 @@ namespace Soccer_Score_Forecast
         private string strNode;
         //private  TreeNode _treeViewMatch;
 
-        public LoadDataToTree(int daysDiff, string filterMatchPath)
+        public LoadDataToTree(int daysDiff, string filterMatchPath,bool bj)
         {
             //string filterMatchPath = Application.StartupPath + @"\FilterMatch";
             List<string> matchlist = new List<string>();
@@ -34,9 +34,9 @@ namespace Soccer_Score_Forecast
                 while ((line = r.ReadLine()) != null)
                     matchlist.Add(line);
             }
-            initTreeNode(daysDiff, matchlist, true);
+            initTreeNode(daysDiff, matchlist, true,bj);
         }
-        public void initTreeNode(int daysDiff, List<string> matchlist, bool ismath)
+        public void initTreeNode(int daysDiff, List<string> matchlist, bool ismath,bool bj)
         {
             //这个连接不能放到class中，不然取的还是缓存的数据？？？？？？？？？？？
             //对象和数据库之间会存在不能更新的问题？？？？？？？？？？？
@@ -58,6 +58,12 @@ namespace Soccer_Score_Forecast
                 loAll = matches.Live_okoo.Where(e => e.Live_okoo_id > 0).ToList();
                 mpAll = matches.MacauPredication.OrderByDescending(e => e.MacauPredication_id).ToList();
                 lsAll = matches.Live_Single.ToList();
+
+                //处理北京单场
+                if(bj)
+                    marAll = matches.Match_analysis_result
+                        .Where(e => e.Pre_algorithm != "top20")
+                        .Where(e => e.Live_table_lib_id > 0).ToList();
             }
         }
 
@@ -298,6 +304,7 @@ namespace Soccer_Score_Forecast
         }
         private int GrnnCheck(string grnn)
         {
+
             if (grnn == null) return 1;
             if (grnn.IndexOf(".") != -1) return 1;
             List<int> goals = new List<int>();
@@ -306,8 +313,12 @@ namespace Soccer_Score_Forecast
                 if (line.Trim() != "")
                     goals.Add(Int32.Parse(line));
             if (goals.Count != 4) return 1;
+
+            if (Math.Abs(goals[1]) > 0) return 0;
+
             if (goals[0] != goals[2] + goals[3]) return 1;
             if (goals[1] != goals[2] - goals[3]) return 1;
+           
             return 0;
         }
     }

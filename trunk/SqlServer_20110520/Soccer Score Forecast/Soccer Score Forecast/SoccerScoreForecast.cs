@@ -23,7 +23,7 @@ namespace Soccer_Score_Forecast
             ViewMatchOverDays = -1;
             appPath = Application.StartupPath.ToString();
             filterMatchPath = appPath + @"\FilterMatch.sdf";
-            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath);
+            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath,false);
         }
         string appPath;
         string textboxDate;
@@ -43,7 +43,7 @@ namespace Soccer_Score_Forecast
                     matchlist.Add(line);
             }
 
-            loaddatatree.initTreeNode(ViewMatchOverDays, matchlist, false);
+            loaddatatree.initTreeNode(ViewMatchOverDays, matchlist, false,false);
         }
         #region 软件加密模块1,检验注册码
         private void Form1_Load(object sender, EventArgs ee)
@@ -207,7 +207,7 @@ namespace Soccer_Score_Forecast
         {
             //重新处理  2011.6.16
             treeView5.Nodes.Clear();
-            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath);
+            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath,true);
             loaddatatree.TreeViewMatch(treeView5, "type");
             GC.Collect(); GC.Collect(); Application.DoEvents();
         }
@@ -275,6 +275,7 @@ namespace Soccer_Score_Forecast
         #endregion
         private void toolStripButton_exitSystem_Click(object sender, EventArgs e)
         {
+            Application.Exit();
             this.Dispose();
             this.Close();
 
