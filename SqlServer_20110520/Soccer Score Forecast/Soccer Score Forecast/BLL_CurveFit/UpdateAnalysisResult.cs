@@ -131,7 +131,8 @@ namespace Soccer_Score_Forecast
                     if (rtl.Full_home_goals == rtl.Full_away_goals) result = "1";
                     if (rtl.Full_home_goals < rtl.Full_away_goals) result = "0";
 
-                    if(m.Pre_algorithm.IndexOf(result) !=-1)
+                    //这里导致运算错误  2011.7.26
+                    if(m.Myfit.IndexOf(result) !=-1)
                         m.Result_wdl = "W";
                     else
                         m.Result_wdl = "L";
