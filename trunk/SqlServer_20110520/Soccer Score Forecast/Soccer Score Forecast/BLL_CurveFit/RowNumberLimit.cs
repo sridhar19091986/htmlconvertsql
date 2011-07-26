@@ -25,17 +25,19 @@ namespace Soccer_Score_Forecast
         {
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
-                if (dMatch.dHome == null || dMatch.dAway == null)
-                {
+
+                if (dMatch.dHome == null) 
                     dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                if (dMatch.dAway == null) 
                     dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                if (dMatch.macauPre == null) 
                     dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
-                }
+
                 this.live_id = liveid;
                 var l = matches.Live_Table_lib.Where(e => e.Live_table_lib_id == liveid).First();
                 home_team_big = l.Home_team_big;
                 away_team_big = l.Away_team_big;
-                home_team=l.Home_team;
+                home_team = l.Home_team;
                 matchtime = l.Match_time;
 
                 //修正把比赛类型搞进去  2011.6.17

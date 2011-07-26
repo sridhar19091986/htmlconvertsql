@@ -275,9 +275,10 @@ namespace Soccer_Score_Forecast
         #endregion
         private void toolStripButton_exitSystem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
             this.Dispose();
             this.Close();
+            Application.Exit();
 
         }
         private void button4_Click(object sender, EventArgs e)
@@ -338,12 +339,15 @@ namespace Soccer_Score_Forecast
                 MessageBox.Show(pb.ToString());
                 if (pb != 0)
                 {
-                    if (dMatch.dHome == null || dMatch.dAway == null)
-                        using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-                        {
+                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                    {
+                        if (dMatch.dHome == null)
                             dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                        if (dMatch.dAway == null)
                             dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
-                        }
+                        if (dMatch.macauPre == null)
+                            dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                    }
                     toolStripProgressBar1.Maximum = pb;
                     f.top20Algorithm();
                 }
@@ -534,12 +538,12 @@ namespace Soccer_Score_Forecast
                 {
                     using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
                     {
-                        var maxliveid = matches.Match_analysis_result
+                        var maxResultid = matches.Match_analysis_result
                             .Where(r => r.Result_tb_lib_id != null)
                             .Max(r => r.Analysis_result_id);
                         var noresult = matches.Match_analysis_result
-                            .Where(r => r.Result_tb_lib_id == null)
-                            .Where(r => r.Analysis_result_id < maxliveid);
+                            .Where(r => r.Analysis_result_id < maxResultid)
+                            .Where(r => r.Result_tb_lib_id == null);         
                         matches.Match_analysis_result.DeleteAllOnSubmit(noresult);
                         matches.SubmitChanges();
                         MessageBox.Show("OK");
@@ -651,8 +655,12 @@ namespace Soccer_Score_Forecast
                 {
                     using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
                     {
-                        dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
-                        dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                        if (dMatch.dHome == null)
+                            dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                        if (dMatch.dAway == null)
+                            dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                        if (dMatch.macauPre == null)
+                            dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
                     }
                     toolStripProgressBar1.Maximum = pb;
                     f.top20Algorithm();
