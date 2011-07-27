@@ -12,6 +12,7 @@ namespace Soccer_Score_Forecast
         public int? home_team_big;
         public int? away_team_big;
         public string home_team;
+        public string away_team;
         public DateTime? matchtime;
         public string matchtype;
         public int Top20Count;
@@ -38,6 +39,7 @@ namespace Soccer_Score_Forecast
                 home_team_big = l.Home_team_big;
                 away_team_big = l.Away_team_big;
                 home_team = l.Home_team;
+                away_team = l.Away_team;
                 matchtime = l.Match_time;
 
                 //修正把比赛类型搞进去  2011.6.17
@@ -370,7 +372,10 @@ namespace Soccer_Score_Forecast
                         .Select(e => e.Key).FirstOrDefault();
                     if (hometeam != null)
                     {
+                        //澳门预测做优化处理，主对频繁比赛，避免关系弄错
                         var macau = dMatch.macauPre[hometeam]
+                                .Where(e=>e.Away_team !=null)
+                                .Where(e=>away_team.IndexOf(e.Away_team) !=-1)
                                 .OrderByDescending(e => e.MacauPredication_id)
                                 .Select(e => e.Macauslot).FirstOrDefault();
                         macaupre = "\r\n" + macau + "\r\n";

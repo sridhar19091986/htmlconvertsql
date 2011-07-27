@@ -151,9 +151,12 @@ namespace Soccer_Score_Forecast
                 {
                     //加入match_analysis数据
 
-                    //2011.6.16数据修正
+
+                    //2011.6.16数据修正  澳门预测显示的问题
                     macau = mpAll
+                        .Where(e=>e.Home_team !=null && e.Away_team !=null)
                         .Where(e => ltl.Home_team.IndexOf(e.Home_team) != -1)
+                        .Where(e => ltl.Away_team.IndexOf(e.Away_team) != -1)
                         .Select(e => e.Predication).FirstOrDefault();
 
                     strNode += "【" + mar.Pnn_fit + "】【" 
