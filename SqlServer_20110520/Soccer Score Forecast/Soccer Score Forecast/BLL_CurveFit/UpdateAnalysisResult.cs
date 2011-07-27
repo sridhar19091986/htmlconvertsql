@@ -42,7 +42,7 @@ namespace Soccer_Score_Forecast
             //var rtls = matches.result_tb_lib.ToDictionary(e => e.match_time.ToString() + "-" + e.home_team_big + "-" + e.away_team_big);
 
             //修改无法更新完场数据的问题 2011.6.11
-            var rtls = matches.Result_tb_lib.ToLookup(e => ((DateTime)e.Match_time).ToShortDateString() 
+            var rtls = matches.Result_tb_lib.ToLookup(e => ((DateTime)e.Match_time).ToShortDateString()
                 + "-" + e.Home_team_big + "-" + e.Away_team_big);
 
             string result = null;
@@ -97,13 +97,13 @@ namespace Soccer_Score_Forecast
                 string comparekeyC = ((DateTime)match_time.Value.AddDays(-1)).ToShortDateString()
                     + "-" + home_team_big + "-" + away_team_big;
 
-                if (rtls.Contains(comparekeyA )|| rtls.Contains(comparekeyB )|| rtls.Contains(comparekeyC ))
+                if (rtls.Contains(comparekeyA) || rtls.Contains(comparekeyB) || rtls.Contains(comparekeyC))
                 {
                     var rtl = rtls[comparekeyA].FirstOrDefault(); //修改无法更新完场数据的问题 2011.6.11
 
                     //前后2天修正
-                    if (rtls.Contains(comparekeyB) ) rtl = rtls[comparekeyB].FirstOrDefault();
-                    if (rtls.Contains(comparekeyC) ) rtl = rtls[comparekeyC].FirstOrDefault();
+                    if (rtls.Contains(comparekeyB)) rtl = rtls[comparekeyB].FirstOrDefault();
+                    if (rtls.Contains(comparekeyC)) rtl = rtls[comparekeyC].FirstOrDefault();
 
                     result_tb_lib_id = rtl.Result_tb_lib_id;
 
@@ -132,10 +132,13 @@ namespace Soccer_Score_Forecast
                     if (rtl.Full_home_goals < rtl.Full_away_goals) result = "0";
 
                     //这里导致运算错误  2011.7.26
-                    if(m.Myfit.IndexOf(result) !=-1)
-                        m.Result_wdl = "W";
-                    else
-                        m.Result_wdl = "L";
+                    if (m.Myfit != null)
+                    {
+                        if (m.Myfit.IndexOf(result) != -1)
+                            m.Result_wdl = "W";
+                        else
+                            m.Result_wdl = "L";
+                    }
 
                     //if ((rtl.Full_home_goals - rtl.Full_away_goals) * (m.Home_w - m.Home_l) > 0)
                     //    m.Result_wdl = "W";

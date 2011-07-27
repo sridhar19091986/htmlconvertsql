@@ -34,7 +34,7 @@ namespace Soccer_Score_Forecast
                 while ((line = r.ReadLine()) != null)
                     matchlist.Add(line);
             }
-            initTreeNode(daysDiff, matchlist, true,bj);
+            initTreeNode(daysDiff, matchlist, false,bj);
         }
         public void initTreeNode(int daysDiff, List<string> matchlist, bool ismath,bool bj)
         {

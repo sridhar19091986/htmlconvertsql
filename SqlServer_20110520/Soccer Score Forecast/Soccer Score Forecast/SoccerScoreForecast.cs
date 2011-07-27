@@ -341,12 +341,14 @@ namespace Soccer_Score_Forecast
                 {
                     using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
                     {
-                        if (dMatch.dHome == null)
+                        dMatch.dNew = false;
+                        if (dMatch.dNew == false)
+                        {
                             dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
-                        if (dMatch.dAway == null)
                             dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
-                        if (dMatch.macauPre == null)
                             dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                            dMatch.dNew = true;
+                        }
                     }
                     toolStripProgressBar1.Maximum = pb;
                     f.top20Algorithm();
@@ -543,8 +545,18 @@ namespace Soccer_Score_Forecast
                             .Max(r => r.Analysis_result_id);
                         var noresult = matches.Match_analysis_result
                             .Where(r => r.Analysis_result_id < maxResultid)
-                            .Where(r => r.Result_tb_lib_id == null);         
+                            .Where(r => r.Result_tb_lib_id == null);
                         matches.Match_analysis_result.DeleteAllOnSubmit(noresult);
+                        matches.SubmitChanges();
+                        MessageBox.Show("OK");
+                    }
+                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                    {
+                        var marLiveidCollection = matches.Match_analysis_result
+                            .Select(r => r.Live_table_lib_id).ToList();
+                        var delayMatch = matches.Live_Table_lib
+                            .Where(r => marLiveidCollection.Contains(r.Live_table_lib_id) == false);
+                        matches.Live_Table_lib.DeleteAllOnSubmit(delayMatch);
                         matches.SubmitChanges();
                         MessageBox.Show("OK");
                     }
@@ -655,12 +667,14 @@ namespace Soccer_Score_Forecast
                 {
                     using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
                     {
-                        if (dMatch.dHome == null)
+                        dMatch.dNew = false;
+                        if (dMatch.dNew == false)
+                        {
                             dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
-                        if (dMatch.dAway == null)
                             dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
-                        if (dMatch.macauPre == null)
                             dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                            dMatch.dNew = true;
+                        }
                     }
                     toolStripProgressBar1.Maximum = pb;
                     f.top20Algorithm();
