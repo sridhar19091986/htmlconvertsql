@@ -10,7 +10,7 @@ namespace Soccer_Score_Forecast
     {
         //private DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
         public List<int> idExc;
-        private List<Match_analysis_result> mars;
+        //private IEnumerable<Match_analysis_result> mars;
         private List<Live_Single> lss;
         //private DateTime? todaytime;
         public AuditForecastAlgorithm(int daysDiff)
@@ -21,7 +21,7 @@ namespace Soccer_Score_Forecast
                    .Where(e => e.Match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
                    .Select(e => e.Live_table_lib_id)
                    .ToList();
-                mars = matches.Match_analysis_result.ToList();
+                //mars = matches.Match_analysis_result;   //这里不能放入list，否则更新不了数据， 2011.7.27
                 lss = matches.Live_Single.ToList();
             }
         }
@@ -38,7 +38,10 @@ namespace Soccer_Score_Forecast
                     RowNumberLimit r = new RowNumberLimit(liveid);
                     r.initCurveFit();
                     //match_analysis_result mar = new match_analysis_result();
-                    var mar = mars.Where(e => e.Live_table_lib_id == liveid).First();//查找需要更新的数据
+
+                    var mar = matches.Match_analysis_result
+                        .Where(e => e.Live_table_lib_id == liveid).First();//查找需要更新的数据
+
                     mar.Live_table_lib_id = r.live_id;
                     mar.Pre_algorithm = "top20";
                     mar.Pre_match_count = r.Top20Count;
@@ -66,6 +69,7 @@ namespace Soccer_Score_Forecast
                         //拟合+进球+概率30
                         ForecastWL(mar.Fit_win_loss, mar.Home_goals, mar.Away_goals, mar.Home_w, mar.Home_l);
 
+                    
                     //更新北京单场
                     var sg = lss.Where(e => Convert.ToInt32(e.Home_team_big) == r.home_team_big) .FirstOrDefault();
                     if (sg != null)
@@ -74,6 +78,7 @@ namespace Soccer_Score_Forecast
                     var sgerror = lss.Where(e => Convert.ToInt32(e.Away_team_big) == r.home_team_big).FirstOrDefault();
                     if (sgerror != null)
                         mar.Pre_algorithm = sgerror.Html_position;
+                     
 
                 }
                 matches.SubmitChanges();

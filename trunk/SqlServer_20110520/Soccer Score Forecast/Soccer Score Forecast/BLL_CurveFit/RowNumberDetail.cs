@@ -39,12 +39,13 @@ namespace Soccer_Score_Forecast
         {
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
-                if (dMatch.dHome == null)
+                if (dMatch.dNew == false)
+                {
                     dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
-                if (dMatch.dAway == null)
                     dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
-                if (dMatch.macauPre == null)
                     dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                    dMatch.dNew = true;
+                }
 
                 this.live_id = liveid;
                 var l = matches.Live_Table_lib.Where(e => e.Live_table_lib_id == liveid).First();
