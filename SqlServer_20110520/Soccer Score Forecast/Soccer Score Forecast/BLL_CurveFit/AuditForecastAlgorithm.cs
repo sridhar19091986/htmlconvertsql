@@ -71,11 +71,13 @@ namespace Soccer_Score_Forecast
 
                     
                     //更新北京单场
-                    var sg = lss.Where(e => Convert.ToInt32(e.Home_team_big) == r.home_team_big) .FirstOrDefault();
+                    var sg = lss.Where(e => Convert.ToInt32(e.Home_team_big) == r.home_team_big
+                        && Convert.ToInt32(e.Away_team_big) == r.away_team_big).FirstOrDefault();
                     if (sg != null)
                         mar.Pre_algorithm = sg.Html_position;
 
-                    var sgerror = lss.Where(e => Convert.ToInt32(e.Away_team_big) == r.home_team_big).FirstOrDefault();
+                    var sgerror = lss.Where(e => Convert.ToInt32(e.Away_team_big) == r.home_team_big
+                        && Convert.ToInt32(e.Home_team_big) == r.away_team_big).FirstOrDefault();
                     if (sgerror != null)
                         mar.Pre_algorithm = sgerror.Html_position;
                      

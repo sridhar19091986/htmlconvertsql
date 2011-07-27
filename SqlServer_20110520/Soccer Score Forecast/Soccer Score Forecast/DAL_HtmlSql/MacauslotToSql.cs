@@ -27,9 +27,8 @@ namespace Soccer_Score_Forecast
                             {
                                 MacauPredication mp = new MacauPredication();
                                 mp.Record_datetime = dtt;
-                                mp.Home_team = aa[1].ToString()
-                                    .Replace("(主)", "")
-                                    .Replace("(中)", "").Trim();
+                                mp.Home_team = extract(aa[1].ToString());
+                                mp.Away_team = extract(aa[5].ToString());
                                 mp.Macauslot = aa[0].ToString().Trim();
                                 mp.Predication = aa[4].ToString();
                                 match.MacauPredication.InsertOnSubmit(mp);
@@ -38,6 +37,13 @@ namespace Soccer_Score_Forecast
                 match.SubmitChanges();
                 return match.MacauPredication.Max(e => e.MacauPredication_id);
             }
+        }
+        private string extract( string team)
+        {
+            string extractstr = team;
+            extractstr = extractstr.Replace("(主)", "").Replace("(中)", "").Trim();
+            extractstr = extractstr.Replace("(", "").Replace(")", "").Trim();
+            return extractstr;
         }
     }
 }

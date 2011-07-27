@@ -517,6 +517,8 @@ namespace SoccerScore.Compact.Linq
 		
 		private string _Home_team;
 		
+		private string _Away_team;
+		
 		private string _Macauslot;
 		
 		private string _Predication;
@@ -533,6 +535,8 @@ namespace SoccerScore.Compact.Linq
     partial void OnRecord_datetimeChanged();
     partial void OnHome_teamChanging(string value);
     partial void OnHome_teamChanged();
+    partial void OnAway_teamChanging(string value);
+    partial void OnAway_teamChanged();
     partial void OnMacauslotChanging(string value);
     partial void OnMacauslotChanged();
     partial void OnPredicationChanging(string value);
@@ -602,6 +606,26 @@ namespace SoccerScore.Compact.Linq
 					this._Home_team = value;
 					this.SendPropertyChanged("Home_team");
 					this.OnHome_teamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Away_team", DbType="NVarChar(50)")]
+		public string Away_team
+		{
+			get
+			{
+				return this._Away_team;
+			}
+			set
+			{
+				if ((this._Away_team != value))
+				{
+					this.OnAway_teamChanging(value);
+					this.SendPropertyChanging();
+					this._Away_team = value;
+					this.SendPropertyChanged("Away_team");
+					this.OnAway_teamChanged();
 				}
 			}
 		}
