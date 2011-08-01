@@ -24,7 +24,7 @@ namespace Soccer_Score_Forecast
         private string strNode;
         //private  TreeNode _treeViewMatch;
 
-        public LoadDataToTree(int daysDiff, string filterMatchPath,bool bj)
+        public LoadDataToTree(int daysDiff, string filterMatchPath, bool bj)
         {
             //string filterMatchPath = Application.StartupPath + @"\FilterMatch";
             List<string> matchlist = new List<string>();
@@ -34,9 +34,9 @@ namespace Soccer_Score_Forecast
                 while ((line = r.ReadLine()) != null)
                     matchlist.Add(line);
             }
-            initTreeNode(daysDiff, matchlist, false,bj);
+            initTreeNode(daysDiff, matchlist, false, bj);
         }
-        public void initTreeNode(int daysDiff, List<string> matchlist, bool ismath,bool bj)
+        public void initTreeNode(int daysDiff, List<string> matchlist, bool ismath, bool bj)
         {
             //这个连接不能放到class中，不然取的还是缓存的数据？？？？？？？？？？？
             //对象和数据库之间会存在不能更新的问题？？？？？？？？？？？
@@ -60,7 +60,7 @@ namespace Soccer_Score_Forecast
                 lsAll = matches.Live_Single.ToList();
 
                 //处理北京单场
-                if(bj)
+                if (bj)
                     marAll = matches.Match_analysis_result
                         .Where(e => e.Pre_algorithm != "top20")
                         .Where(e => e.Live_table_lib_id > 0).ToList();
@@ -128,9 +128,13 @@ namespace Soccer_Score_Forecast
 
                 string macau = "";
 
-                int pnngrnncomp = 1;
+                string comp = "";
 
-                int grnncheck = 1;
+                //int pnngrnncomp = 1;
+
+                int grnncheck = -1;
+
+                int fitgrnncomp = -1;
 
                 //double preresult=0;
 
@@ -147,77 +151,79 @@ namespace Soccer_Score_Forecast
                 }
 
                 if (mar != null)  //有运行过算法
-                if(mar.Fit_win_loss !=0)
-                {
-                    //加入match_analysis数据
-
-
-                    //2011.6.16数据修正  澳门预测显示的问题
-                    macau = mpAll
-                        .Where(e=>e.Home_team !=null && e.Away_team !=null)
-                        .Where(e => ltl.Home_team.IndexOf(e.Home_team) != -1)
-                        .Where(e => ltl.Away_team.IndexOf(e.Away_team) != -1)
-                        .Select(e => e.Predication).FirstOrDefault();
-
-                    strNode += "【" + mar.Pnn_fit + "】【" 
-                        + mar.Grnn_fit + "】【" + mar.Myfit + "】{"+ macau+"}{交战+概率1+拟合+进球+概率30}";
-
-                    
-
-
-                    pnngrnncomp = ComparePnnGrnn(mar.Pnn_fit, mar.Grnn_fit);
-                    grnncheck =GrnnCheck(mar.Grnn_fit);
-
-                    //修正显示的问题  2011.6.15
-
-                    myfit = mar.Fit_win_loss.ToString();
-                    myfit = myfit.Length < 5 ? myfit : myfit.Substring(0, 5);
-
-                    strNode += "||" + mar.Result_fit
-                        + "::" + mar.Result_goals
-                        + "::" + mar.Result_wdl
-                        + "::FitReslut:" + myfit    //2011.6.17
-                        + "::hGoals:" + mar.Home_goals
-                        + "::aGoals:" + mar.Away_goals
-                        + "::wGoals:" + (mar.Home_goals - mar.Away_goals)
-                        + "::MyWDL:" + mar.Home_w.ToString()
-                        + "::" + mar.Home_d.ToString()
-                        + "::" + mar.Home_l.ToString()
-
-                        + "::CrossGoals:" + mar.Cross_goals;
-
-                    //fjz = mar.Pre_algorithm;
-
-                    //fDraw = ForecastDraw(mar.Home_w, mar.Home_d, mar.Home_l);
-
-                    if (mar.Result_tb_lib_id != null)  //有导入了结果
+                    if (mar.Fit_win_loss != 0)
                     {
-                        //加入result_tb数据
-                        rtl = rtlAll.Where(e => e.Result_tb_lib_id == mar.Result_tb_lib_id).FirstOrDefault();
-
-                        if (rtl == null) continue;
-                        
-                        strNode += "||" + rtl.Match_time.Value.ToShortDateString() + "::" +
-                                            rtl.Full_home_goals.ToString() + "-" + rtl.Full_away_goals.ToString() + "::" +
-                                            rtl.Odds + "::" + rtl.Win_loss_big + "::" + rtl.Home_team + "::" + rtl.Away_team;
+                        //加入match_analysis数据
 
 
+                        //2011.6.16数据修正  澳门预测显示的问题
+                        macau = mpAll
+                            .Where(e => e.Home_team != null && e.Away_team != null)
+                            .Where(e => ltl.Home_team.IndexOf(e.Home_team) != -1)
+                            .Where(e => ltl.Away_team.IndexOf(e.Away_team) != -1)
+                            .Select(e => e.Predication).FirstOrDefault();
+
+                        strNode += "【" + mar.Pnn_fit + "】【"
+                            + mar.Grnn_fit + "】【" + mar.Myfit + "】{" + macau + "}{交战+概率1+拟合+进球+概率30}";
+
+                       //pnngrnncomp = ComparePnnGrnn(mar.Pnn_fit, mar.Grnn_fit);
+
+                        grnncheck = (int)GrnnCheck(mar.Grnn_fit);
+
+                        comp = grnncheck.ToString();
+
+                        fitgrnncomp =(int)CompareMyfitGrnn(mar.Myfit, comp);
+
+                        //修正显示的问题  2011.6.15
+
+                        myfit = mar.Fit_win_loss.ToString();
+                        myfit = myfit.Length < 5 ? myfit : myfit.Substring(0, 5);
+
+                        strNode += "||" + mar.Result_fit
+                            + "::" + mar.Result_goals
+                            + "::" + mar.Result_wdl
+                            + "::FitReslut:" + myfit    //2011.6.17
+                            + "::hGoals:" + mar.Home_goals
+                            + "::aGoals:" + mar.Away_goals
+                            + "::wGoals:" + (mar.Home_goals - mar.Away_goals)
+                            + "::MyWDL:" + mar.Home_w.ToString()
+                            + "::" + mar.Home_d.ToString()
+                            + "::" + mar.Home_l.ToString()
+
+                            + "::CrossGoals:" + mar.Cross_goals;
+
+                        //fjz = mar.Pre_algorithm;
+
+                        //fDraw = ForecastDraw(mar.Home_w, mar.Home_d, mar.Home_l);
+
+                        if (mar.Result_tb_lib_id != null)  //有导入了结果
+                        {
+                            //加入result_tb数据
+                            rtl = rtlAll.Where(e => e.Result_tb_lib_id == mar.Result_tb_lib_id).FirstOrDefault();
+
+                            if (rtl == null) continue;
+
+                            strNode += "||" + rtl.Match_time.Value.ToShortDateString() + "::" +
+                                                rtl.Full_home_goals.ToString() + "-" + rtl.Full_away_goals.ToString() + "::" +
+                                                rtl.Odds + "::" + rtl.Win_loss_big + "::" + rtl.Home_team + "::" + rtl.Away_team;
 
 
-                        //if (rtl.Full_home_goals > rtl.Full_away_goals) result = "3";
-                        //if (rtl.Full_home_goals == rtl.Full_away_goals) result = "1";
-                        //if (rtl.Full_home_goals < rtl.Full_away_goals) result = "0";
 
+
+                            //if (rtl.Full_home_goals > rtl.Full_away_goals) result = "3";
+                            //if (rtl.Full_home_goals == rtl.Full_away_goals) result = "1";
+                            //if (rtl.Full_home_goals < rtl.Full_away_goals) result = "0";
+
+
+
+                        }
+
+                        fit = mar.Fit_win_loss;
+                        goals = mar.Home_goals - mar.Away_goals;
+                        wdl = mar.Home_w - mar.Home_l;
 
 
                     }
-
-                    fit = mar.Fit_win_loss;
-                    goals = mar.Home_goals - mar.Away_goals;
-                    wdl = mar.Home_w - mar.Home_l;
-
-
-                }
 
                 //加入bj单场数据
 
@@ -248,8 +254,9 @@ namespace Soccer_Score_Forecast
                 //if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Italic);
                 //if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
 
-                if (grnncheck == 0) child.ForeColor = Color.Green;
-                if (pnngrnncomp == 0 && grnncheck==0) child.ForeColor = Color.Blue;
+                if (grnncheck > 0) child.ForeColor = Color.Green;
+                if (grnncheck > 0 && fitgrnncomp > 0) child.ForeColor = Color.Blue;
+                //if (pnngrnncomp == 0 && grnncheck == 0) child.ForeColor = Color.Blue;
 
                 //结果验证
                 if (mar.Result_tb_lib_id != null)
@@ -298,31 +305,48 @@ namespace Soccer_Score_Forecast
         private int ComparePnnGrnn(string pnn, string grnn)
         {
             if (pnn == null || grnn == null) return 1;
-            if ( grnn.IndexOf(".") != -1) return 1;
+            if (grnn.IndexOf(".") != -1) return 1;
             int comp = 0;
             string tgrnn = grnn.Substring(0, 3);
             //if(double.Parse(pnn) * double.Parse(tgrnn)<0) return 1;
             comp = Math.Abs(int.Parse(pnn) - int.Parse(tgrnn));
             return comp;
         }
-        private int GrnnCheck(string grnn)
+        private GrnnResult CompareMyfitGrnn(string fit, string grnn)
         {
-
-            if (grnn == null) return 1;
-            if (grnn.IndexOf(".") != -1) return 1;
+            if (fit == null || grnn == null) return GrnnResult.Nul;
+            if (fit.IndexOf(grnn) != -1) return GrnnResult.Win;
+            return GrnnResult.Nul;
+        }
+        private GrnnResult GrnnCheck(string grnn)
+        {
+            if (grnn == null) return GrnnResult.Nul;
+            if (grnn.IndexOf(".") != -1) return GrnnResult.Nul;
             List<int> goals = new List<int>();
             string[] lines = grnn.Split(new char[] { ' ' });
             foreach (string line in lines)
                 if (line.Trim() != "")
                     goals.Add(Int32.Parse(line));
-            if (goals.Count != 4) return 1;
+            if (goals.Count != 4) return GrnnResult.Nul;
 
-            if (Math.Abs(goals[1]) > 0) return 0;
+            //if (Math.Abs(goals[1]) > 0) return GrnnResult.Nul;
 
-            if (goals[0] != goals[2] + goals[3]) return 1;
-            if (goals[1] != goals[2] - goals[3]) return 1;
-           
-            return 0;
+            if (goals[0] != goals[2] + goals[3]) return GrnnResult.Nul;
+            if (goals[1] != goals[2] - goals[3]) return GrnnResult.Nul;
+
+            if (goals[1] > 0) return GrnnResult.Win;
+            if (goals[1] == 0) return GrnnResult.Draw;
+            if (goals[1] < 0) return GrnnResult.Lose;
+
+            return GrnnResult.Nul;
+
+        }
+        private enum GrnnResult
+        {
+            Win = 3,
+            Draw = 1,
+            Lose = 0,
+            Nul = -1,
         }
     }
 }
