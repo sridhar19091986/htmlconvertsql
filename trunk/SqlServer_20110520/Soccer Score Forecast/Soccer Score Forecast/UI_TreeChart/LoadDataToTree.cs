@@ -151,7 +151,7 @@ namespace Soccer_Score_Forecast
                 }
 
                 if (mar != null)  //有运行过算法
-                    if (mar.Fit_win_loss != 0)
+                    if (mar.Fit_win_loss != null)
                     {
                         //加入match_analysis数据
 
@@ -254,8 +254,8 @@ namespace Soccer_Score_Forecast
                 //if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Italic);
                 //if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
 
-                if (grnncheck > 0) child.ForeColor = Color.Green;
-                if (grnncheck > 0 && fitgrnncomp > 0) child.ForeColor = Color.Blue;
+                if (grnncheck >= 0) child.ForeColor = Color.Green;
+                if (grnncheck >= 0 && fitgrnncomp > 0) child.ForeColor = Color.Blue;
                 //if (pnngrnncomp == 0 && grnncheck == 0) child.ForeColor = Color.Blue;
 
                 //结果验证
@@ -321,14 +321,14 @@ namespace Soccer_Score_Forecast
         private GrnnResult GrnnCheck(string grnn)
         {
             if (grnn == null) return GrnnResult.Nul;
-            if (grnn.IndexOf(".") != -1) return GrnnResult.Nul;
+            //if (grnn.IndexOf("-1") > 0) return GrnnResult.Lose;
+            //if (grnn.IndexOf(".") != -1) return GrnnResult.Nul;
             List<int> goals = new List<int>();
             string[] lines = grnn.Split(new char[] { ' ' });
             foreach (string line in lines)
                 if (line.Trim() != "")
                     goals.Add(Int32.Parse(line));
             if (goals.Count != 4) return GrnnResult.Nul;
-
             //if (Math.Abs(goals[1]) > 0) return GrnnResult.Nul;
 
             if (goals[0] != goals[2] + goals[3]) return GrnnResult.Nul;
