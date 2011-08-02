@@ -166,13 +166,13 @@ namespace Soccer_Score_Forecast
                         strNode += "【" + mar.Pnn_fit + "】【"
                             + mar.Grnn_fit + "】【" + mar.Myfit + "】{" + macau + "}{交战+概率1+拟合+进球+概率30}";
 
-                       //pnngrnncomp = ComparePnnGrnn(mar.Pnn_fit, mar.Grnn_fit);
+                        //pnngrnncomp = ComparePnnGrnn(mar.Pnn_fit, mar.Grnn_fit);
 
                         grnncheck = (int)GrnnCheck(mar.Grnn_fit);
 
                         comp = grnncheck.ToString();
 
-                        fitgrnncomp =(int)CompareMyfitGrnn(mar.Myfit, comp);
+                        fitgrnncomp = (int)CompareMyfitGrnn(mar.Myfit, comp);
 
                         //修正显示的问题  2011.6.15
 
@@ -255,7 +255,8 @@ namespace Soccer_Score_Forecast
                 //if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
 
                 if (grnncheck >= 0) child.ForeColor = Color.Green;
-                if (grnncheck >= 0 && fitgrnncomp > 0) child.ForeColor = Color.Blue;
+                if (grnncheck >= 0 && fitgrnncomp > 0 && fitgrnncomp <10 ) child.ForeColor = Color.Blue;
+                if (grnncheck >= 0 && fitgrnncomp >= 10) child.ForeColor = Color.Brown;
                 //if (pnngrnncomp == 0 && grnncheck == 0) child.ForeColor = Color.Blue;
 
                 //结果验证
@@ -316,11 +317,16 @@ namespace Soccer_Score_Forecast
         {
             if (fit == null || grnn == null) return GrnnResult.Nul;
             if (fit.IndexOf(grnn) != -1) return GrnnResult.Win;
+            int temp = Int32.Parse(grnn) - 10;
+            if (temp >= 0)
+                if (fit.IndexOf(temp.ToString()) != -1)
+                    return GrnnResult.pWin;
             return GrnnResult.Nul;
         }
         private GrnnResult GrnnCheck(string grnn)
         {
-            if (grnn == null) return GrnnResult.Nul;
+            GrnnResult gr = GrnnResult.Nul;
+            if (grnn == null) return gr;
             //if (grnn.IndexOf("-1") > 0) return GrnnResult.Lose;
             //if (grnn.IndexOf(".") != -1) return GrnnResult.Nul;
             List<int> goals = new List<int>();
@@ -328,17 +334,21 @@ namespace Soccer_Score_Forecast
             foreach (string line in lines)
                 if (line.Trim() != "")
                     goals.Add(Int32.Parse(line));
-            if (goals.Count != 4) return GrnnResult.Nul;
+            if (goals.Count != 4) return gr;
+
             //if (Math.Abs(goals[1]) > 0) return GrnnResult.Nul;
 
-            if (goals[0] != goals[2] + goals[3]) return GrnnResult.Nul;
-            if (goals[1] != goals[2] - goals[3]) return GrnnResult.Nul;
+            if (goals[1] > 0) gr = GrnnResult.pWin;
+            if (goals[1] < 0) gr = GrnnResult.pLose;
 
-            if (goals[1] > 0) return GrnnResult.Win;
-            if (goals[1] == 0) return GrnnResult.Draw;
-            if (goals[1] < 0) return GrnnResult.Lose;
+            if (goals[0] != goals[2] + goals[3]) return gr;
+            if (goals[1] != goals[2] - goals[3]) return gr;
 
-            return GrnnResult.Nul;
+            if (goals[1] > 0) gr = GrnnResult.Win;
+            if (goals[1] == 0) gr = GrnnResult.Draw;
+            if (goals[1] < 0) gr = GrnnResult.Lose;
+
+            return gr;
 
         }
         private enum GrnnResult
@@ -346,6 +356,10 @@ namespace Soccer_Score_Forecast
             Win = 3,
             Draw = 1,
             Lose = 0,
+
+            pWin = 3 + 10,
+            pLose = 0 + 10,
+
             Nul = -1,
         }
     }
