@@ -25,6 +25,8 @@ namespace Soccer_Score_Forecast
                         if (aa[8].ToString().Trim() != "")
                         {
                             status = HtmlTextToStr(aa[8].ToString()).Trim();
+
+                            //北京单场
                             if (status != "让球")
                             {
                                 if (status.Length >= 1 && status.Length <= 2)
@@ -36,6 +38,17 @@ namespace Soccer_Score_Forecast
                                     ls.Status = status;
                                     match.Live_Single.InsertOnSubmit(ls);
                                 }
+                            }
+
+                            //竞猜
+                            if (status.IndexOf(".") != -1)
+                            {
+                                Live_Single ls = new Live_Single();
+                                ls.Html_position = GetNumber(HtmlTextToStr(aa[0].ToString()));
+                                ls.Home_team_big = GetNumber(HtmlHrefToStr(aa[4].ToString()));
+                                ls.Away_team_big = GetNumber(HtmlHrefToStr(aa[6].ToString()));
+                                ls.Status = status;
+                                match.Live_Single.InsertOnSubmit(ls);
                             }
                         }
             }
