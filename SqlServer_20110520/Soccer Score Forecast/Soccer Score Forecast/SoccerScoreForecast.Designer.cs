@@ -102,7 +102,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.filterMatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.todayMatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectMatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.todayMatchTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeExpandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeColaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -595,7 +594,6 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.filterMatchToolStripMenuItem,
             this.todayMatchToolStripMenuItem,
-            this.selectMatchToolStripMenuItem,
             this.todayMatchTimeToolStripMenuItem,
             this.treeExpandToolStripMenuItem,
             this.treeColaToolStripMenuItem,
@@ -618,12 +616,6 @@
             this.todayMatchToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.todayMatchToolStripMenuItem.Text = "Today Match";
             this.todayMatchToolStripMenuItem.Click += new System.EventHandler(this.todayMatchToolStripMenuItem_Click);
-            // 
-            // selectMatchToolStripMenuItem
-            // 
-            this.selectMatchToolStripMenuItem.Name = "selectMatchToolStripMenuItem";
-            this.selectMatchToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.selectMatchToolStripMenuItem.Text = "Select Match";
             // 
             // todayMatchTimeToolStripMenuItem
             // 
@@ -2471,7 +2463,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ToolStripButton toolStripButton_resultEvaluate;
         private System.Windows.Forms.ToolStripButton toolStripButton_todayEvaluate;
-        private System.Windows.Forms.ToolStripMenuItem selectMatchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem todayMatchTimeToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer13;
         private System.Windows.Forms.TabPage tabPage8;

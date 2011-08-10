@@ -214,6 +214,9 @@ namespace Soccer_Score_Forecast
         //treeView过滤操作的方法
         private void todayMatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            treeView5.Nodes.Clear();
+            loaddatatree.TreeViewMatch(treeView5, "type");
+            treeView5.ExpandAll();
         }
         private void toolStripButton_iniLast_Click(object sender, EventArgs e)
         {
@@ -275,9 +278,11 @@ namespace Soccer_Score_Forecast
         #endregion
         private void toolStripButton_exitSystem_Click(object sender, EventArgs e)
         {
+            //this.Dispose();
+            //this.Close();
 
-            this.Dispose();
-            this.Close();
+            //2011.8.9  修正程序完成退出的问题
+            Application.ExitThread();
             Application.Exit();
 
         }
@@ -390,6 +395,7 @@ namespace Soccer_Score_Forecast
         {
             treeView5.Nodes.Clear();
             loaddatatree.TreeViewMatch(treeView5, "time");
+            treeView5.ExpandAll();
         }
         //把html生成tree的方法
         private void button8_Click(object sender, EventArgs e)
@@ -1190,6 +1196,9 @@ namespace Soccer_Score_Forecast
             treeView5.Nodes.Clear();
             loaddatatree.TreeViewMatch(treeView5, "type");
 
+            //2011.8.9 修正需要重新启动程序的问题
+            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath, false);
+
             var mtlist = loaddatatree.ltlAll.Select(e => e.Match_type).Distinct();
             foreach (string matchtype in mtlist)
             {
@@ -1273,5 +1282,6 @@ namespace Soccer_Score_Forecast
             //    MessageBox.Show(ex.ToString());
             //}
         }
+
     }
 }

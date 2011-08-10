@@ -157,10 +157,11 @@ namespace Soccer_Score_Forecast
 
 
                         //2011.6.16数据修正  澳门预测显示的问题
+                        //2011.8.11 修正()替换
                         macau = mpAll
                             .Where(e => e.Home_team != null && e.Away_team != null)
-                            .Where(e => ltl.Home_team.IndexOf(e.Home_team) != -1)
-                            .Where(e => ltl.Away_team.IndexOf(e.Away_team) != -1)
+                            .Where(e => ltl.Home_team.Replace("(", "").Replace(")", "").IndexOf(e.Home_team) != -1)
+                            .Where(e => ltl.Away_team.Replace("(", "").Replace(")", "").IndexOf(e.Away_team) != -1)
                             .Select(e => e.Predication).FirstOrDefault();
 
                         strNode += "【" + mar.Pnn_fit + "】【"
@@ -255,7 +256,7 @@ namespace Soccer_Score_Forecast
                 //if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
 
                 if (grnncheck >= 0) child.ForeColor = Color.Green;
-                if (grnncheck >= 0 && fitgrnncomp > 0 && fitgrnncomp <10 ) child.ForeColor = Color.Blue;
+                if (grnncheck >= 0 && fitgrnncomp > 0 && fitgrnncomp < 10) child.ForeColor = Color.Blue;
                 if (grnncheck >= 0 && fitgrnncomp >= 10) child.ForeColor = Color.Brown;
                 //if (pnngrnncomp == 0 && grnncheck == 0) child.ForeColor = Color.Blue;
 
