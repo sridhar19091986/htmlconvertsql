@@ -134,6 +134,8 @@ namespace Soccer_Score_Forecast
 
                 int grnncheck = -1;
 
+                string pnncheck = "";
+
                 int fitgrnncomp = -1;
 
                 //double preresult=0;
@@ -168,6 +170,7 @@ namespace Soccer_Score_Forecast
                             + mar.Grnn_fit + "】【" + mar.Myfit + "】{" + macau + "}{交战+概率1+拟合+进球+概率30}";
 
                         //pnngrnncomp = ComparePnnGrnn(mar.Pnn_fit, mar.Grnn_fit);
+                        pnncheck = mar.Pnn_fit;
 
                         grnncheck = (int)GrnnCheck(mar.Grnn_fit);
 
@@ -257,8 +260,9 @@ namespace Soccer_Score_Forecast
 
                 if (grnncheck >= 0) child.ForeColor = Color.Green;
                 if (grnncheck >= 0 && fitgrnncomp > 0 && fitgrnncomp < 10) child.ForeColor = Color.Blue;
-                if (grnncheck >= 0 && fitgrnncomp >= 10) child.ForeColor = Color.Brown;
+                if (grnncheck >= 0 && fitgrnncomp >= 10) child.ForeColor = Color.Blue;
                 //if (pnngrnncomp == 0 && grnncheck == 0) child.ForeColor = Color.Blue;
+                if (pnncheck == "-99") child.ForeColor = Color.Black;
 
                 //结果验证
                 if (mar.Result_tb_lib_id != null)
