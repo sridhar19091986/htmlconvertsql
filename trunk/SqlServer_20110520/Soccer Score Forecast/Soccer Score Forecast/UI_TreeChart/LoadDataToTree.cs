@@ -268,7 +268,8 @@ namespace Soccer_Score_Forecast
                 if (mar.Result_tb_lib_id != null)
                     //if (mar.Myfit != null)
                     //if (mar.Myfit.IndexOf(result) != -1) 
-                    child.ForeColor = Color.Red;
+                    //child.ForeColor = Color.Red;
+                    child.BackColor = Color.Gray;
             }
         }
         #endregion
