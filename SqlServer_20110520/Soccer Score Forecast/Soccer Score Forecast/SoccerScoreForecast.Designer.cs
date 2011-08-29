@@ -530,8 +530,8 @@
             this.toolStripButton_todayEvaluate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_todayEvaluate.Image")));
             this.toolStripButton_todayEvaluate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton_todayEvaluate.Name = "toolStripButton_todayEvaluate";
-            this.toolStripButton_todayEvaluate.Size = new System.Drawing.Size(129, 32);
-            this.toolStripButton_todayEvaluate.Text = "updateResultAnalysis";
+            this.toolStripButton_todayEvaluate.Size = new System.Drawing.Size(93, 32);
+            this.toolStripButton_todayEvaluate.Text = "batchExcuteSim";
             this.toolStripButton_todayEvaluate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton_todayEvaluate.Click += new System.EventHandler(this.toolStripButton_todayEvaluate_Click);
             // 
@@ -568,7 +568,7 @@
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(89, 12);
+            this.toolStripLabel2.Size = new System.Drawing.Size(89, 32);
             this.toolStripLabel2.Text = "              ";
             // 
             // tabControl1
