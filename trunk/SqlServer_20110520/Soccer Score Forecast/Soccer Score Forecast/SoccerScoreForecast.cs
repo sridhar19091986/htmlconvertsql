@@ -239,6 +239,10 @@ namespace Soccer_Score_Forecast
                 }
                 SevenmResultToSql sevenm = new SevenmResultToSql();
                 sevenm.UpdateLastMatch();
+
+                //执行分析数据的更新
+                UpdateAnalysisResult_today();
+
             }
             catch (Exception ex)
             {
@@ -363,12 +367,12 @@ namespace Soccer_Score_Forecast
             {
                 MessageBox.Show(ex.ToString());
             }
-            finally
-            {
-                MessageBox.Show("OK");
-            }
+
+            MessageBox.Show("OK");
+
         }
-        private void toolStripButton_todayEvaluate_Click(object sender, EventArgs e)
+
+        private void UpdateAnalysisResult_today()
         {
             this.tabControl1.SelectedTab = this.tabPage12;
 
@@ -382,6 +386,15 @@ namespace Soccer_Score_Forecast
             u.ExecUpdate();
 
             MessageBox.Show("OK");
+        }
+
+        private void toolStripButton_todayEvaluate_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = this.tabPage3;
+
+            Application.DoEvents();
+
+            BatchExcuteSim();
 
         }
         //private void selectMatchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1190,7 +1203,8 @@ namespace Soccer_Score_Forecast
                 MessageBox.Show(ex.ToString());
             }
         }
-        private void button18_Click(object sender, EventArgs eee)
+
+        private void BatchExcuteSim()
         {
             //重新实例化一个对象以更新数据
             treeView5.Nodes.Clear();
@@ -1215,6 +1229,11 @@ namespace Soccer_Score_Forecast
                     Application.DoEvents();
                 }
             }
+        }
+
+        private void button18_Click(object sender, EventArgs eee)
+        {
+            BatchExcuteSim();
         }
         #region html option 花我整1上午时间
         MacauslotToSql macau;
