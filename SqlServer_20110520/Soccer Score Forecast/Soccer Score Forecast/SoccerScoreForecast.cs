@@ -23,7 +23,7 @@ namespace Soccer_Score_Forecast
             ViewMatchOverDays = -1;
             appPath = Application.StartupPath.ToString();
             filterMatchPath = appPath + @"\FilterMatch.sdf";
-            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath,false);
+            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath, false);
         }
         string appPath;
         string textboxDate;
@@ -43,7 +43,7 @@ namespace Soccer_Score_Forecast
                     matchlist.Add(line);
             }
 
-            loaddatatree.initTreeNode(ViewMatchOverDays, matchlist, false,false);
+            loaddatatree.initTreeNode(ViewMatchOverDays, matchlist, false, false);
         }
         #region 软件加密模块1,检验注册码
         private void Form1_Load(object sender, EventArgs ee)
@@ -207,7 +207,7 @@ namespace Soccer_Score_Forecast
         {
             //重新处理  2011.6.16
             treeView5.Nodes.Clear();
-            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath,true);
+            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath, true);
             loaddatatree.TreeViewMatch(treeView5, "type");
             GC.Collect(); GC.Collect(); Application.DoEvents();
         }
@@ -223,6 +223,11 @@ namespace Soccer_Score_Forecast
             try
             {
                 this.tabControl1.SelectedTab = this.tabPage1;
+
+                if (Conn.CreateTable(typeof(Result_tb)))
+                    Conn.CompressCompact();
+
+                Application.DoEvents();
 
                 datahtml = false;
 
@@ -241,6 +246,7 @@ namespace Soccer_Score_Forecast
                 sevenm.UpdateLastMatch();
 
                 //执行分析数据的更新
+
                 UpdateAnalysisResult_today();
 
             }
@@ -544,46 +550,45 @@ namespace Soccer_Score_Forecast
             result = MessageBox.Show(this, "YesOrNo", "你确定要删除分析库？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)//Messagebox返回的值
             {
-                //try
-                //{
-                //    if (Conn.CreateTable(typeof(Match_analysis_result))
-                //        && Conn.CreateTable(typeof(Live_Table_lib)))
-                //        MessageBox.Show("OK");
-                //    Conn.CompressCompact();
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show(ex.ToString());
-                //}
+
+                int max_Analysis_result_id = 0;
+                IEnumerable<Match_analysis_result> noresult;
+
                 try
                 {
                     using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
                     {
-                        var maxResultid = matches.Match_analysis_result
+                        max_Analysis_result_id = matches.Match_analysis_result
                             .Where(r => r.Result_tb_lib_id != null)
                             .Max(r => r.Analysis_result_id);
-                        var noresult = matches.Match_analysis_result
-                            .Where(r => r.Analysis_result_id < maxResultid)
+
+                        noresult = matches.Match_analysis_result
+                            .Where(r => r.Analysis_result_id < max_Analysis_result_id)
                             .Where(r => r.Result_tb_lib_id == null);
+
+                        var marLiveidCollection = noresult.ToDictionary(r => r.Live_table_lib_id);
+
+                        //删除live_table_lib中推迟或者延迟的比赛
+                        foreach (var id in marLiveidCollection.Keys)
+                        {
+                            var delaymatch = matches.Live_Table_lib.Where(r => r.Live_table_lib_id == id).FirstOrDefault();
+                            matches.Live_Table_lib.DeleteOnSubmit(delaymatch);
+                        }
+                        matches.SubmitChanges();
+                        MessageBox.Show("Live_Table_lib OK");
+
+                        //删除Match_analysis_result中未发生结果的比赛
                         matches.Match_analysis_result.DeleteAllOnSubmit(noresult);
                         matches.SubmitChanges();
-                        MessageBox.Show("OK");
-                    }
-                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-                    {
-                        var marLiveidCollection = matches.Match_analysis_result
-                            .Select(r => r.Live_table_lib_id).ToList();
-                        var delayMatch = matches.Live_Table_lib
-                            .Where(r => marLiveidCollection.Contains(r.Live_table_lib_id) == false);
-                        matches.Live_Table_lib.DeleteAllOnSubmit(delayMatch);
-                        matches.SubmitChanges();
-                        MessageBox.Show("OK");
+                        MessageBox.Show("Match_analysis_result OK");
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
+
+                GC.Collect(); GC.Collect(); Application.DoEvents();
             }
         }
         private void deleteFile(DirectoryInfo directory)
@@ -817,7 +822,7 @@ namespace Soccer_Score_Forecast
             {
                 if (c.Node.Level == 1)
                 {
-                    ComputeFitRate(c.Node.Text); OutToMatlab(c.Node.Text);
+                    ComputeFitRate(c.Node.Text); OutToMatlab(c.Node.Text, 1);
                     //button2.PerformClick();
                     //button11.PerformClick();
 
@@ -853,13 +858,17 @@ namespace Soccer_Score_Forecast
             //dataGridView8.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
         }
-        private void OutToMatlab(string matchtype)
+        private bool OutToMatlab(string matchtype, int rowCount)
         {
+            bool canSim = false;
             RowNumberTable rnt = new RowNumberTable(matchtype);
             dataGridView2.Columns.Clear();
             dataGridView3.Columns.Clear();
             dataGridView2.DataSource = rnt.matchOverf;
             dataGridView3.DataSource = rnt.matchNowf;
+            if (rnt.matchNowf.Rows.Count >= rowCount && rnt.matchOverf.Rows.Count >= rowCount)
+                canSim = true;
+            return canSim;
         }
 
         private void ComputeFitRate(string matchtype)
@@ -885,6 +894,7 @@ namespace Soccer_Score_Forecast
         //        dataGridView5.DataSource = mar;
         //    }
         //}
+
         private void treeView5_MouseDown(object sender, MouseEventArgs e)
         {
             label3.Location = new Point(e.Location.X + 100, e.Location.Y + 50);
@@ -1206,28 +1216,39 @@ namespace Soccer_Score_Forecast
 
         private void BatchExcuteSim()
         {
+            /*
             //重新实例化一个对象以更新数据
             treeView5.Nodes.Clear();
             loaddatatree.TreeViewMatch(treeView5, "type");
 
             //2011.8.9 修正需要重新启动程序的问题
             loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath, false);
+            **/
+            List<string> mtlist;
 
-            var mtlist = loaddatatree.ltlAll.Select(e => e.Match_type).Distinct();
+            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+            {
+                mtlist = matches.Live_Table_lib.Where(m => m.Match_time.Value.Date >= DateTime.Now.AddDays(-1).Date)
+                .Select(e => e.Match_type).Distinct().ToList();
+            }
+
             foreach (string matchtype in mtlist)
             {
                 label9.Text = matchtype;
-                OutToMatlab(matchtype);
                 Application.DoEvents();
-                if (dataGridView3.RowCount > 1 && dataGridView2.RowCount > 1)
-                {
-                    btnSimGRNN.PerformClick();
-                    Application.DoEvents();
-                    btnSimPNN.PerformClick();
-                    Application.DoEvents();
-                    GC.Collect(); GC.Collect();
-                    Application.DoEvents();
-                }
+                if (OutToMatlab(matchtype, 1) == false) continue;
+
+                Application.DoEvents();
+
+                btnSimGRNN.PerformClick();
+
+                Application.DoEvents();
+                btnSimPNN.PerformClick();
+                Application.DoEvents();
+
+                GC.Collect(); GC.Collect();
+                Application.DoEvents();
+
             }
         }
 
@@ -1292,8 +1313,8 @@ namespace Soccer_Score_Forecast
         {
             //try
             //{
-                SevenmLiveSingleToSql sg =  new SevenmLiveSingleToSql();
-                toolStripLabel2.Text = sg.InsertLiveHtmlTableToDB(webBrowser2.Document.Body.OuterHtml).ToString();
+            SevenmLiveSingleToSql sg = new SevenmLiveSingleToSql();
+            toolStripLabel2.Text = sg.InsertLiveHtmlTableToDB(webBrowser2.Document.Body.OuterHtml).ToString();
             //}
             //catch (Exception ex)
             //{
@@ -1302,5 +1323,155 @@ namespace Soccer_Score_Forecast
             //}
         }
 
+        #region Match_analysis_result和Live_Table_lib 数据恢复
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            DialogResult result; //Messagebox所属于的类
+            result = MessageBox.Show(this, "YesOrNo", "你确定要删除分析库？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)//Messagebox返回的值
+            {
+                try
+                {
+                    if (Conn.CreateTable(typeof(Match_analysis_result))
+                        && Conn.CreateTable(typeof(Live_Table_lib)))
+                        MessageBox.Show("OK");
+                    Conn.CompressCompact();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void button24_Click_1(object sender, EventArgs eeee)
+        {
+            DialogResult result; //Messagebox所属于的类
+            result = MessageBox.Show(this, "YesOrNo", "你确定要删除分析库？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)//Messagebox返回的值
+            {
+                //提取去年的数据
+                DateTime dt = DateTime.Now.AddYears(-1);
+
+                using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                {
+                    var result_tb = matches.Result_tb_lib.Where(e => e.Match_time > dt).OrderBy(e => e.Match_time);
+                    foreach (var r in result_tb)
+                    {
+                        Live_Table_lib ltl = new Live_Table_lib();
+                        ltl.Match_time = r.Match_time;
+                        ltl.Html_position = r.Html_position;
+                        ltl.Match_type = r.Match_type;
+                        ltl.Home_team_big = r.Home_team_big;
+                        ltl.Home_team = r.Home_team;
+                        ltl.Away_red_card = r.Away_red_card;
+                        ltl.Away_team_big = r.Away_team_big;
+                        ltl.Away_team = r.Away_team;
+                        ltl.Away_red_card = r.Away_red_card;
+                        ltl.Full_home_goals = r.Full_home_goals;
+                        ltl.Full_away_goals = r.Full_away_goals;
+                        ltl.Half_home_goals = r.Half_home_goals;
+                        ltl.Half_away_goals = r.Half_away_goals;
+                        ltl.Status = r.Odds;
+                        matches.Live_Table_lib.InsertOnSubmit(ltl);
+                    }
+                    matches.SubmitChanges();
+                }
+                MessageBox.Show("OK");
+            }
+        }
+
+        private void button25_Click_1(object sender, EventArgs eeee)
+        {
+
+            int overday = -370;
+
+            try
+            {
+                MessageBox.Show(overday.ToString());
+                AuditForecastAlgorithm f = new AuditForecastAlgorithm(overday);
+                int pb = f.idExc.Count();
+                MessageBox.Show(pb.ToString());
+                if (pb != 0)
+                {
+                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                    {
+                        dMatch.dNew = false;
+                        if (dMatch.dNew == false)
+                        {
+                            dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                            dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                            dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                            dMatch.dNew = true;
+                        }
+                    }
+                    toolStripProgressBar1.Maximum = pb;
+                    f.top20Algorithm();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            GC.Collect(); GC.Collect(); Application.DoEvents();
+            MessageBox.Show("OK");
+
+
+            try
+            {
+                UpdateAnalysisResult u = new UpdateAnalysisResult(overday);
+
+                int pb = u.ExecUpateCount;
+                MessageBox.Show(pb.ToString());
+                toolStripProgressBar1.Maximum = pb;
+                u.ExecUpdate();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            MessageBox.Show("OK");
+
+        }
+
+        #endregion
+
+        #region Result_tb_lib和Result_tb 数据恢复
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            DialogResult result; //Messagebox所属于的类
+            result = MessageBox.Show(this, "YesOrNo", "你确定要删除分析库？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)//Messagebox返回的值
+            {
+                try
+                {
+                    if (Conn.CreateTable(typeof(Result_tb_lib)) && Conn.CreateTable(typeof(Result_tb)))
+                        MessageBox.Show("OK");
+                    Conn.CompressCompact();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+            {
+                int pb = matches.Result_tb.Count();
+                toolStripProgressBar1.Maximum = pb;
+                MessageBox.Show(pb.ToString());
+            }
+            SevenmResultToSql sevenm = new SevenmResultToSql();
+            sevenm.BatchUpdateLastMatch();
+        }
+
+        #endregion
     }
 }

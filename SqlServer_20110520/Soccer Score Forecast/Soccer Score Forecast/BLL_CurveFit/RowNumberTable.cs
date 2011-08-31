@@ -6,8 +6,22 @@ using System.Data;
 
 namespace Soccer_Score_Forecast
 {
+    static class MatlabMatch
+    {
+        public static DataTable matchover = null;
+        public static DataTable matchnow = null;
+        public static List<StatMatch> statmatch = null;
+    }
+    class StatMatch
+    {
+        public string Result_wdl;
+        public string Result_fit;
+        public string Result_goals;
+        public string Match_type;
+    }
     class RowNumberTable
     {
+        
         private string matchtype;
         private DataTable _winRate;
         public DataTable WinRate
@@ -56,44 +70,84 @@ namespace Soccer_Score_Forecast
         public RowNumberTable(string matchtype)
         {
             this.matchtype = matchtype;
+            InitMatchOver();
+            InitMatchNow();
         }
 
+        public void InitMatchOver()
+        {
+            if (MatlabMatch.matchover == null)
+            {
+                using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                {
+                    var matchover = from p in matches.Match_analysis_result
+                                    join q in matches.Result_tb_lib on p.Result_tb_lib_id equals q.Result_tb_lib_id
+                                    join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
+                                    select new
+                                    {
+                                        t.Match_time,
+                                        t.Match_type,
+                                        t.Home_team,
+                                        t.Away_team,
+                                        q.Odds,
+                                        p.Home_w,
+                                        p.Home_d,
+                                        p.Home_l,
+                                        p.Home_goals,
+                                        p.Away_goals,
+                                        p.Recent_scores,
+                                        p.Cross_goals,
+                                        p.Fit_win_loss,
+                                        Lottery_Ticket = q.Full_home_goals - q.Full_away_goals,
+                                        q.Full_home_goals,
+                                        q.Full_away_goals,
+                                        Dodds = ConvertOdd(t.Home_team, q.Odds)
+                                    };
+                    MatlabMatch.matchover = matchover.ToDataTable();
+                }
+
+            }
+        }
+
+        public void InitMatchNow()
+        {
+            if (MatlabMatch.matchnow == null)
+            {
+                using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                {
+                    var matchnowf = from p in matches.Match_analysis_result
+                                   join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
+                                   where p.Result_tb_lib_id == null
+                                   select new
+                                   {
+                                       p.Analysis_result_id,
+                                       t.Match_time,
+                                       t.Match_type,
+                                       t.Home_team,
+                                       t.Away_team,
+                                       t.Status,
+
+                                       p.Home_w,
+                                       p.Home_d,
+                                       p.Home_l,
+                                       p.Home_goals,
+                                       p.Away_goals,
+                                       p.Recent_scores,
+                                       p.Cross_goals,
+                                       p.Fit_win_loss,
+                                       Dodds = ConvertOdd(t.Home_team, t.Status)
+                                   };
+                    MatlabMatch.matchnow = matchnowf.ToDataTable();
+                }
+            }
+        }
         private DataTable _matchOverf;
         public DataTable matchOverf
         {
             get
             {
                 if (_matchOverf == null)
-                {
-                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-                    {
-                        var matchover = from p in matches.Match_analysis_result
-                                        join q in matches.Result_tb_lib on p.Result_tb_lib_id equals q.Result_tb_lib_id
-                                        join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
-                                        select new
-                                        {
-                                            t.Match_time,
-                                            t.Match_type,
-                                            t.Home_team,
-                                            t.Away_team,
-                                            q.Odds,  
-                                            p.Home_w,
-                                            p.Home_d,
-                                            p.Home_l,
-                                            p.Home_goals,
-                                            p.Away_goals,
-                                            p.Recent_scores,
-                                            p.Cross_goals,
-                                            p.Fit_win_loss,
-                                            Lottery_Ticket = q.Full_home_goals - q.Full_away_goals,
-                                            q.Full_home_goals,
-                                            q.Full_away_goals,
-                                            Dodds = ConvertOdd(t.Home_team, q.Odds)
-                                        };
-                        var matchoverf = matchover.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time);
-                        _matchOverf = matchoverf.ToDataTable();
-                    }
-                }
+                    _matchOverf = FilterDataTable(MatlabMatch.matchover, matchtype);
                 return _matchOverf;
             }
             set
@@ -107,40 +161,52 @@ namespace Soccer_Score_Forecast
             get
             {
                 if (_matchNowf == null)
-                {
-                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-                    {
-                        var matchnow = from p in matches.Match_analysis_result
-                                       join t in matches.Live_Table_lib on p.Live_table_lib_id equals t.Live_table_lib_id
-                                       where p.Result_tb_lib_id == null
-                                       select new
-                                       {
-                                           p.Analysis_result_id,
-                                           t.Match_time,
-                                           t.Match_type,
-                                           t.Home_team,
-                                           t.Away_team,
-                                           t.Status,
-                                           
-                                           p.Home_w,
-                                           p.Home_d,
-                                           p.Home_l,
-                                           p.Home_goals,
-                                           p.Away_goals,
-                                           p.Recent_scores,
-                                           p.Cross_goals,
-                                           p.Fit_win_loss,
-                                           Dodds = ConvertOdd(t.Home_team, t.Status)
-                                       };
-                        var matchnowf = matchnow.Where(e => e.Match_type == matchtype).OrderBy(e => e.Match_time);
-                        _matchNowf = matchnowf.ToDataTable();
-                    }
-                }
+                    _matchNowf = FilterDataTable(MatlabMatch.matchnow, matchtype);
 
                 return _matchNowf;
             }
             set { _matchNowf = value; }
         }
+
+        private DataTable FilterDataTable(DataTable dataSource, string matchtypes)
+        {
+            DataView dv = dataSource.DefaultView;
+            dv.RowFilter = "Match_type = '" + matchtypes + "'";
+            DataTable newTable1 = dv.ToTable();
+            return newTable1;
+        }
+
+        public List<StatMatch> statmatch()
+        {
+            if (MatlabMatch.statmatch == null)
+            {
+                List<StatMatch> lsm = new List<StatMatch>();
+                using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                {
+                    var mar = from a in matches.Match_analysis_result
+                              join b in matches.Live_Table_lib on a.Live_table_lib_id equals b.Live_table_lib_id
+                              select new
+                              {
+                                  a.Result_wdl,
+                                  a.Result_fit,
+                                  a.Result_goals,
+                                  b.Match_type
+                              };
+                    foreach (var m in mar)
+                    {
+                        StatMatch sm = new StatMatch();
+                        sm.Match_type = m.Match_type;
+                        sm.Result_fit = m.Result_fit;
+                        sm.Result_goals = m.Result_goals;
+                        sm.Result_wdl = m.Result_wdl;
+                       lsm.Add(sm);
+                    }
+                }
+                MatlabMatch.statmatch = lsm;
+            }
+            return MatlabMatch.statmatch;
+        }
+
         private DataTable _typeRate;
         public int MaxW;
         public DataTable typeRate
@@ -149,18 +215,8 @@ namespace Soccer_Score_Forecast
             {
                 if (_typeRate == null)
                 {
-                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-                    {
-                        var mar = from a in matches.Match_analysis_result
-                                  join b in matches.Live_Table_lib on a.Live_table_lib_id equals b.Live_table_lib_id
-                                  select new
-                                  {
-                                      a.Result_wdl,
-                                      a.Result_fit,
-                                      a.Result_goals,
-                                      b.Match_type
-                                  };
-                        var winrate = from p in mar
+
+                        var winrate = from p in statmatch()
                                       where p.Match_type == matchtype
                                       group p by p.Match_type into q
                                       select new
@@ -179,7 +235,7 @@ namespace Soccer_Score_Forecast
                                          maxwin.交战_概率1_拟合_进球_概率30L };
                         MaxW = maxw.Max();
                         _typeRate = winrate.ToDataTable();
-                    }
+                    
                 }
                 return _typeRate;
             }
