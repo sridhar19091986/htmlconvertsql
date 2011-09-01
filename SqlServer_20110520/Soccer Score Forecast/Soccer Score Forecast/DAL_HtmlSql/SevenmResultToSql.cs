@@ -134,7 +134,9 @@ namespace Soccer_Score_Forecast
             int i = 0;
             DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn);
             var aulm = AuditUpdateLastMatch().ToLookup(e =>
-                e.Match_time.Value.Date.ToShortDateString() + "----------" + e.Home_team_big + "----------" + e.Away_team_big);
+                e.Match_time.Value.Date.ToShortDateString() 
+                + "----------" + e.Home_team_big 
+                + "----------" + e.Away_team_big);
             var aulmorder = aulm.OrderBy(e => e.Key.Substring(0, 10));
             foreach (var au in aulmorder)
             {
@@ -149,6 +151,7 @@ namespace Soccer_Score_Forecast
         private List<Result_tb_lib> AuditUpdateLastMatch()
         {
             int i = 0;
+
             DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn);
 
             var rt = matches.Result_tb.OrderBy(o => o.S_date).ThenBy(p => p.S_time);//用lambda表达式简洁

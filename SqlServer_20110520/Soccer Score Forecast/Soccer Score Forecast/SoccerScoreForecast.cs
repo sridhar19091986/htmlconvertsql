@@ -276,6 +276,9 @@ namespace Soccer_Score_Forecast
 
                 if (ls.bRegOK)
                 {
+                    int pb = Int32.Parse(toolStripLabel2.Text);
+                    toolStripProgressBar1.Maximum = pb;
+
                     SevenmLiveToSql sevenm = new SevenmLiveToSql();
                     sevenm.UpdateTodayMatch();
                 }
@@ -564,7 +567,15 @@ namespace Soccer_Score_Forecast
 
                         noresult = matches.Match_analysis_result
                             .Where(r => r.Analysis_result_id < max_Analysis_result_id)
+                            //这个条件很关键，否则删除所有的数据
                             .Where(r => r.Result_tb_lib_id == null);
+
+
+                        //以下完成于2011.9.2日
+                        //在只有代码的情况下也可以直接生成分析数据库      
+                        //如果删除所有数据，则需要根据历史重新生成分析数据库  result->analysis
+                        //如果历史数据出现错误，则需要重新下载历史数据        www.7m.cn->result
+                       
 
                         var marLiveidCollection = noresult.ToDictionary(r => r.Live_table_lib_id);
 
