@@ -11,7 +11,7 @@ namespace Soccer_Score_Forecast
         //private DataClassesMatchDataContext matches = new DataClassesMatchDataContext();
         public List<int> idExc;
         //private IEnumerable<Match_analysis_result> mars;
-        private List<Live_Single> lss;
+        private ILookup<string,Live_Single> lss;
         //private DateTime? todaytime;
         public AuditForecastAlgorithm(int daysDiff)
         {
@@ -22,7 +22,7 @@ namespace Soccer_Score_Forecast
                    .Select(e => e.Live_table_lib_id)
                    .ToList();
                 //mars = matches.Match_analysis_result;   //这里不能放入list，否则更新不了数据， 2011.7.27
-                lss = matches.Live_Single.ToList();
+                lss = matches.Live_Single.ToLookup(e => e.Home_team_big + e.Away_team_big);
             }
         }
         public void top20Algorithm()
@@ -69,23 +69,26 @@ namespace Soccer_Score_Forecast
                         //拟合+进球+概率30
                         ForecastWL(mar.Fit_win_loss, mar.Home_goals, mar.Away_goals, mar.Home_w, mar.Home_l);
 
-                    
+
                     //更新北京单场
-                    var sg = lss.Where(e => Convert.ToInt32(e.Home_team_big) == r.home_team_big
-                        && Convert.ToInt32(e.Away_team_big) == r.away_team_big).FirstOrDefault();
+                    var sg = lss[r.home_team_big.ToString() + r.away_team_big.ToString()].FirstOrDefault();
                     if (sg != null)
                         mar.Pre_algorithm = sg.Html_position;
 
-                    var sgerror = lss.Where(e => Convert.ToInt32(e.Away_team_big) == r.home_team_big
-                        && Convert.ToInt32(e.Home_team_big) == r.away_team_big).FirstOrDefault();
+                    var sgerror = lss[r.away_team_big.ToString() + r.home_team_big.ToString()].FirstOrDefault();
                     if (sgerror != null)
                         mar.Pre_algorithm = sgerror.Html_position;
-                     
 
+                    //缩短数据更新周期
+                    if (i % 500 == 0)
+                    {
+                        matches.SubmitChanges(); GC.Collect(); GC.Collect(); Application.DoEvents();
+                    }
                 }
                 matches.SubmitChanges();
             }
         }
+
 
         //2011.6.22
         private string ForecastCross(double crossgoals)

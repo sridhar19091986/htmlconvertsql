@@ -79,13 +79,21 @@ namespace Soccer_Score_Forecast
         }
 
         private string temp_date = null;
+
         public void UpdateTodayMatch()
         {
+            int i = 0;
             DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn);
             var lt = matches.Live_Table.OrderBy(o => o.S_date).ThenBy(p => p.S_time);//用lambda表达式简洁
+            ILookup<string, Live_Table_lib> ltl_look 
+                = matches .Live_Table_lib.ToLookup(e => e.Home_team_big.ToString() + "-" +e.Away_team_big.ToString() + "-" + e.Match_time.Value.ToShortDateString());
 
             foreach (var m in lt)
             {
+                i++;
+                ProgressBarDelegate.DoSendPMessage(i);
+                Application.DoEvents();
+
                 if (m.Home_team_big != null)
                 {
                     //一一对应生成
@@ -110,6 +118,7 @@ namespace Soccer_Score_Forecast
                         ltl.Half_away_goals = Int32.Parse(m.Half_time_score.Substring(m.Half_time_score.IndexOf("-") + 1, m.Half_time_score.Length - m.Half_time_score.IndexOf("-") - 1));
                     }
 
+                    /*
                     var rtExist = matches.Live_Table_lib
                         .Where(p => p.Home_team_big == ltl.Home_team_big && p.Away_team_big == ltl.Away_team_big);
                     //let关键字，匿名类型
@@ -117,11 +126,18 @@ namespace Soccer_Score_Forecast
                                         let timeDiff = ltl.Match_time.Value - p.Match_time.Value
                                         where Math.Abs(timeDiff.Days) <= 1
                                         select p;
+                     * */
+
+                    var rtUpdateExist 
+                        = ltl_look[ltl.Home_team_big.ToString() + "-" +ltl.Away_team_big.ToString() + "-" + ltl.Match_time.Value.ToShortDateString()];
 
                     //存在记录的则做更新，必须确认是最新数据，即时间差不超过1天
                     if (rtUpdateExist.Any())
                     {
-                        var rtUpate = rtUpdateExist.First();
+                        int ltlid = rtUpdateExist.First().Live_table_lib_id;
+                        var rtUpate = matches.Live_Table_lib
+                        .Where(e => e.Live_table_lib_id == ltlid).First();
+
                         rtUpate.Match_time = ltl.Match_time;  //时间也需要更新 2011.7.24
                         rtUpate.Status = ltl.Status;
                         rtUpate.Home_team = ltl.Home_team;
