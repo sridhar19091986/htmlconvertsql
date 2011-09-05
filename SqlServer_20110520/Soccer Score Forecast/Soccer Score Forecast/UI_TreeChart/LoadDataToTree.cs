@@ -134,6 +134,10 @@ namespace Soccer_Score_Forecast
 
                 int grnncheck = -1;
 
+                //计算是否有利于投资 1
+                int goalnumcheck = 0;
+                goalsnum = 0;
+
                 string pnncheck = "";
 
                 int fitgrnncomp = -1;
@@ -150,6 +154,7 @@ namespace Soccer_Score_Forecast
                 if (sg != null)
                 {
                     strNode += "{" + sg.Status + "}{" + sg.Html_position + "}";
+                    goalnumcheck = Int32.Parse(sg.Status);
                 }
 
                 if (mar != null)  //有运行过算法
@@ -177,6 +182,9 @@ namespace Soccer_Score_Forecast
                         comp = grnncheck.ToString();
 
                         fitgrnncomp = (int)CompareMyfitGrnn(mar.Myfit, comp);
+
+                        //计算是否有利于投资 2
+                        goalnumcheck = goalsnum + goalnumcheck;
 
                         //修正显示的问题  2011.6.15
 
@@ -258,9 +266,27 @@ namespace Soccer_Score_Forecast
                 //if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Italic);
                 //if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
 
+              
+                /*
                 if (grnncheck >= 0) child.ForeColor = Color.Green;
-                if (grnncheck >= 0 && fitgrnncomp > 0 && fitgrnncomp < 10) child.ForeColor = Color.Blue;
-                if (grnncheck >= 0 && fitgrnncomp >= 10) child.ForeColor = Color.Blue;
+                if (grnncheck >= 0 && fitgrnncomp > 0)
+                {
+                    if (goalnumcheck != 0)
+                    {
+                        if (ltl.Home_team.IndexOf("*") != -1 && goalnumcheck > 0 ||
+                            ltl.Away_team.IndexOf("*") != -1 && goalnumcheck < 0)
+                        {
+                            child.ForeColor = Color.Red;  //上盘概率高，有利于投资
+                        }
+                        else
+                        {
+                            child.ForeColor = Color.Lavender;  //下盘概率低，看情况而定
+                        }
+                    }
+                    else
+                        child.ForeColor = Color.Blue;
+                }
+                //if (grnncheck >= 0 && fitgrnncomp >= 10) child.ForeColor = Color.Blue;
                 //if (pnngrnncomp == 0 && grnncheck == 0) child.ForeColor = Color.Blue;
                 if (pnncheck == "-99") child.ForeColor = Color.Black;
 
@@ -270,9 +296,49 @@ namespace Soccer_Score_Forecast
                     //if (mar.Myfit.IndexOf(result) != -1) 
                     //child.ForeColor = Color.Red;
                     child.BackColor = Color.Gray;
+
+                 * */
+
+                TreeNodeBrushColor(child,
+                    ltl.Home_team, ltl.Away_team, mar.Result_tb_lib_id,
+                    grnncheck, pnncheck, fitgrnncomp, goalnumcheck);
             }
         }
         #endregion
+
+        private void TreeNodeBrushColor(TreeNode child,
+            string home_team, string away_team, int? result_tb_lib_id,
+            int grnncheck, string pnncheck,  int fitgrnncomp, int goalnumcheck)
+        {
+            if (grnncheck >= 0) child.ForeColor = Color.Green;
+            if (grnncheck >= 0 && fitgrnncomp > 0)
+            {
+                if (goalnumcheck != 0)
+                {
+                    if (home_team.IndexOf("*") != -1 && goalnumcheck > 0 ||
+                        away_team.IndexOf("*") != -1 && goalnumcheck < 0)
+                    {
+                        child.ForeColor = Color.Red;  //上盘概率高，有利于投资
+                    }
+                    else
+                    {
+                        child.ForeColor = Color.Lavender;  //下盘概率低，看情况而定
+                    }
+                }
+                else
+                    child.ForeColor = Color.Blue;
+            }
+            //if (grnncheck >= 0 && fitgrnncomp >= 10) child.ForeColor = Color.Blue;
+            //if (pnngrnncomp == 0 && grnncheck == 0) child.ForeColor = Color.Blue;
+            if (pnncheck == "-99") child.ForeColor = Color.Black;
+
+            //结果验证
+            if (result_tb_lib_id != null)
+                //if (mar.Myfit != null)
+                //if (mar.Myfit.IndexOf(result) != -1) 
+                //child.ForeColor = Color.Red;
+                child.BackColor = Color.Gray;
+        }
 
         //List<double> minOdds = new List<double>();
         //double minOdd = 0;
@@ -329,6 +395,9 @@ namespace Soccer_Score_Forecast
                     return GrnnResult.pWin;
             return GrnnResult.Nul;
         }
+
+        private int goalsnum = 0;
+
         private GrnnResult GrnnCheck(string grnn)
         {
             GrnnResult gr = GrnnResult.Nul;
@@ -343,6 +412,7 @@ namespace Soccer_Score_Forecast
             if (goals.Count != 4) return gr;
 
             //if (Math.Abs(goals[1]) > 0) return GrnnResult.Nul;
+            goalsnum = goals[1];
 
             if (goals[1] > 0) gr = GrnnResult.pWin;
             if (goals[1] < 0) gr = GrnnResult.pLose;
