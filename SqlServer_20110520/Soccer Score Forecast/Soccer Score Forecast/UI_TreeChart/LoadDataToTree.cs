@@ -154,7 +154,10 @@ namespace Soccer_Score_Forecast
                 if (sg != null)
                 {
                     strNode += "{" + sg.Status + "}{" + sg.Html_position + "}";
-                    goalnumcheck = Int32.Parse(sg.Status);
+                    if (sg.Status.IndexOf(".") == -1)
+                        goalnumcheck = Int32.Parse(sg.Status);
+                    else
+                        goalnumcheck = 0;
                 }
 
                 if (mar != null)  //有运行过算法
