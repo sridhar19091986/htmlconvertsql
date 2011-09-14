@@ -346,8 +346,8 @@ namespace Soccer_Score_Forecast
         //运用DateTable逐步计算，从最近到最远进行拟合
         private void toolStripButton_resultEvaluate_Click(object sender, EventArgs c)
         {
-            try
-            {
+            //try
+            //{
                 this.tabControl1.SelectedTab = this.tabPage12;
 
                 ForecastAlgorithm f = new ForecastAlgorithm();
@@ -365,19 +365,21 @@ namespace Soccer_Score_Forecast
                             dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
                             dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
                             dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                            dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                            dMatch.liveTables = matches.Live_Table_lib.ToLookup(e => e.Live_table_lib_id);
                             dMatch.dNew = true;
                         }
                     }
                     toolStripProgressBar1.Maximum = pb;
                     f.top20Algorithm();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
 
-            MessageBox.Show("OK");
+            //MessageBox.Show("OK");
 
         }
 
@@ -689,7 +691,7 @@ namespace Soccer_Score_Forecast
         //}
         private void toolStripButton2_Click(object sender, EventArgs ee)
         {
-            try
+            //try
             {
                 this.tabControl1.SelectedTab = this.tabPage12;
 
@@ -708,6 +710,7 @@ namespace Soccer_Score_Forecast
                             dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
                             dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
                             dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                            dMatch.liveTables = matches.Live_Table_lib.ToLookup(e => e.Live_table_lib_id);
                             dMatch.dNew = true;
                         }
                     }
@@ -715,14 +718,14 @@ namespace Soccer_Score_Forecast
                     f.top20Algorithm();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                MessageBox.Show("OK");
-            }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
+            //finally
+            //{
+            //    MessageBox.Show("OK");
+            //}
         }
         private void exitSystemSToolStripMenuItem_Click(object sender, EventArgs e)
         {

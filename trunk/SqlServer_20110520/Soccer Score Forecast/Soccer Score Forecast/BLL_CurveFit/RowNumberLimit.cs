@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using SoccerScore.Compact.Linq;
 using System.Linq;
 using System.Reflection;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 namespace Soccer_Score_Forecast
 {
-    public class RowNumberLimit
+    public class RowNumberLimit : IDisposable
     {
         public int live_id;
         public int? home_team_big;
@@ -16,7 +18,7 @@ namespace Soccer_Score_Forecast
         public DateTime? matchtime;
         public string matchtype;
         public int Top20Count;
-        public List<Result_tb_lib> Top20;
+        public IEnumerable<Result_tb_lib> Top20;
 
         public RowNumberLimit(int liveid)
         {
@@ -26,16 +28,17 @@ namespace Soccer_Score_Forecast
         {
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
-                if (dMatch.dNew == false)
-                {
-                    dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
-                    dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
-                    dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
-                    dMatch.dNew = true;
-                }
+                //if (dMatch.dNew == false)
+                //{
+                //    dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                //    dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                //    dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                //    dMatch.liveTables= matches.Live_Table_lib.ToLookup(e => e.Live_table_lib_id);
+                //    dMatch.dNew = true;
+                //}
 
                 this.live_id = liveid;
-                var l = matches.Live_Table_lib.Where(e => e.Live_table_lib_id == liveid).First();
+                var l = dMatch.liveTables[live_id].First();
                 home_team_big = l.Home_team_big;
                 away_team_big = l.Away_team_big;
                 home_team = l.Home_team;
@@ -52,7 +55,9 @@ namespace Soccer_Score_Forecast
                 var top20hh = top20h.Where(e => e.Match_time.Value.Date < matchtime.Value.Date);
 
                 //修正把比赛类型搞进去  2011.6.17
-                Top20 = top20hh.Where(e => e.Match_type == matchtype).OrderByDescending(e => e.Match_time).Take(40).ToList();
+                Top20 = top20hh.Where(e => e.Match_type == matchtype).OrderByDescending(e => e.Match_time).Take(40);
+
+                // .ToList();
 
                 //var top20h = matches.result_tb_lib.Where(e => e.home_team_big == l.home_team_big || e.away_team_big == l.away_team_big);
                 //var top20a = matches.result_tb_lib.Where(e => e.home_team_big == l.away_team_big || e.away_team_big == l.home_team_big);
@@ -374,8 +379,8 @@ namespace Soccer_Score_Forecast
                     {
                         //澳门预测做优化处理，主对频繁比赛，避免关系弄错
                         var macau = dMatch.macauPre[hometeam]
-                                .Where(e=>e.Away_team !=null)
-                                .Where(e=>away_team.IndexOf(e.Away_team) !=-1)
+                                .Where(e => e.Away_team != null)
+                                .Where(e => away_team.IndexOf(e.Away_team) != -1)
                                 .OrderByDescending(e => e.MacauPredication_id)
                                 .Select(e => e.Macauslot).FirstOrDefault();
                         macaupre = "\r\n" + macau + "\r\n";
@@ -533,5 +538,111 @@ namespace Soccer_Score_Forecast
         //private List<Result_tb_lib> hostawaySeriesX;
         #endregion
 
+
+
+        #region dispose
+
+        // Pointer to an external unmanaged resource.
+        private IntPtr handle;
+        // Other managed resource this class uses.
+       // private Component Components;
+        // Track whether Dispose has been called.
+        private bool disposed = false;
+
+        // Constructor for the BaseResource object.
+        //public BaseResource()
+        //{
+        //   // Insert appropriate constructor code here.
+        //}
+
+        // Implement IDisposable.
+        // Do not make this method virtual.
+        // A derived class should not be able to override this method.
+        public void Dispose()
+        {
+            Dispose(true);
+            // Take yourself off the Finalization queue 
+            // to prevent finalization code for this object
+            // from executing a second time.
+            GC.SuppressFinalize(this);
+        }
+
+        // Dispose(bool disposing) executes in two distinct scenarios.
+        // If disposing equals true, the method has been called directly
+        // or indirectly by a user's code. Managed and unmanaged resources
+        // can be disposed.
+        // If disposing equals false, the method has been called by the 
+        // runtime from inside the finalizer and you should not reference 
+        // other objects. Only unmanaged resources can be disposed.
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool CloseHandle(IntPtr hObject);
+
+        protected virtual void Dispose(bool disposing)
+        {
+            // Check to see if Dispose has already been called.
+            if (!this.disposed)
+            {
+                // If disposing equals true, dispose all managed 
+                // and unmanaged resources.
+                //if (disposing)
+                //{
+                //    // Dispose managed resources.
+                //    Components.Dispose();
+                //}
+                // Release unmanaged resources. If disposing is false, 
+                // only the following code is executed.
+                CloseHandle(handle);
+                handle = IntPtr.Zero;
+                // Note that this is not thread safe.
+                // Another thread could start disposing the object
+                // after the managed resources are disposed,
+                // but before the disposed flag is set to true.
+                // If thread safety is necessary, it must be
+                // implemented by the client.
+
+            }
+            disposed = true;
+        }
+
+        // Use C# destructor syntax for finalization code.
+        // This destructor will run only if the Dispose method 
+        // does not get called.
+        // It gives your base class the opportunity to finalize.
+        // Do not provide destructors in types derived from this class.
+        //~BaseResource()      
+        ~RowNumberLimit()
+        {
+            // Do not re-create Dispose clean-up code here.
+            // Calling Dispose(false) is optimal in terms of
+            // readability and maintainability.
+            Dispose(false);
+        }
+
+        // Allow your Dispose method to be called multiple times,
+        // but throw an exception if the object has been disposed.
+        // Whenever you do something with this class, 
+        // check to see if it has been disposed.
+        public void DoSomething()
+        {
+            if (this.disposed)
+            {
+                //throw new ObjectDisposedException();
+            }
+        }
+
+
+        // Design pattern for a derived class.
+        // Note that this derived class inherently implements the 
+        // IDisposable interface because it is implemented in the base class.
+
+
+        public void Close()
+        {
+            // Calls the Dispose method without parameters.
+            Dispose();
+        }
+
+        #endregion
     }
 }
