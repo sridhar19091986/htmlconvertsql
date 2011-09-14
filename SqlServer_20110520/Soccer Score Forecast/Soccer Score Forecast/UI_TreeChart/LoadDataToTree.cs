@@ -10,18 +10,40 @@ namespace Soccer_Score_Forecast
 {
     public class LoadDataToTree
     {
+        //string fDraw = "";
+        double? fit = 0; 
+        double? goals = 0; 
+        double? wdl = 0;
+        //string fjz = "";
+        string myfit = "";
+        string macau = "";
+        string comp = "";
+        string smp = "";
+        string pnncheck = "";
+        //int pnngrnncomp = 1;
+        //记录北京单场盘口
+        int bjpk = 0;
+        int grnncheck = -1;
+        //计算是否有利于投资 1
+        int goalnumcheck = 0;  
+        int fitgrnncomp = -1;
+        //double preresult=0;
+       
+
+        //string result = "";
         //private  DataClassesMatchDataContext dcmdc=new DataClassesMatchDataContext (Conn.conn);
-        public List<Live_Table_lib> ltlAll;
-        private List<Result_tb_lib> rtlAll;
-        private List<Match_analysis_result> marAll;
-        private List<MacauPredication> mpAll;
-        private List<Live_okoo> loAll;
-        private List<Live_Single> lsAll;
-        private IEnumerable<Live_Table_lib> ltls;
+        private List<Live_Table_lib> ltlAll { get; set; }
+        private List<Result_tb_lib> rtlAll { get; set; }
+        private ILookup<int?, Match_analysis_result> marAll { get; set; }
+        private ILookup<string, MacauPredication> mpAll { get; set; }
+        //private List<Live_okoo> loAll { get; set; }
+        private ILookup<string, Live_Single> lsAll { get; set; }
+        private IEnumerable<Live_Table_lib> ltls { get; set; }
         //private IEnumerable<match_analysis_result> mars;
-        private Result_tb_lib rtl;
-        private Match_analysis_result mar;
-        private string strNode;
+        private Result_tb_lib rtl { get; set; }
+        private Match_analysis_result mar { get; set; }
+        private string strNode { get; set; }
+         private MacauPredication mp{ get; set; }
         //private  TreeNode _treeViewMatch;
 
         public LoadDataToTree(int daysDiff, string filterMatchPath, bool bj)
@@ -54,16 +76,21 @@ namespace Soccer_Score_Forecast
                         .Where(m => m.Match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
                         .OrderBy(m => m.Match_time).ToList();
                 rtlAll = matches.Result_tb_lib.Where(m => m.Match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).ToList();
-                marAll = matches.Match_analysis_result.Where(e => e.Live_table_lib_id > 0).ToList();
-                loAll = matches.Live_okoo.Where(e => e.Live_okoo_id > 0).ToList();
-                mpAll = matches.MacauPredication.OrderByDescending(e => e.MacauPredication_id).ToList();
-                lsAll = matches.Live_Single.ToList();
+                marAll = matches.Match_analysis_result.ToLookup(e => e.Live_table_lib_id);
+                //loAll = matches.Live_okoo.Where(e => e.Live_okoo_id > 0).ToList();
+                //mpAll = matches.MacauPredication.OrderByDescending(e => e.MacauPredication_id).ToList();
+                //lsAll = matches.Live_Single.ToList();
+
+                lsAll = matches.Live_Single.ToLookup(e => e.Home_team_big);
+                mpAll = matches.MacauPredication.OrderByDescending(e => e.MacauPredication_id)
+                    .Where(e => e.Home_team != null && e.Away_team != null)
+                    .ToLookup(e => e.Home_team);
 
                 //处理北京单场
                 if (bj)
                     marAll = matches.Match_analysis_result
                         .Where(e => e.Pre_algorithm != "top20")
-                        .Where(e => e.Live_table_lib_id > 0).ToList();
+                        .Where(e => e.Live_table_lib_id > 0).ToLookup(e => e.Live_table_lib_id);
             }
         }
 
@@ -114,33 +141,38 @@ namespace Soccer_Score_Forecast
         private void TreeNodeLoad(TreeNode tn)
         {
             var ltlmars = from p in ltls
-                          join q in marAll on p.Live_table_lib_id equals q.Live_table_lib_id
-                          orderby q.Pnn_fit
+                          join q in marAll on p.Live_table_lib_id equals q.Key
+                          //orderby q.Pnn_fit
                           select p;
 
             foreach (var ltl in ltlmars)
             {
                 //string fDraw = "";
-                double? fit = 0, goals = 0, wdl = 0;
+                fit = 0;
+                goals = 0;
+                wdl = 0;
                 //string fjz = "";
 
-                string myfit = "";
+                myfit = "";
 
-                string macau = "";
+                macau = "";
 
-                string comp = "";
+                comp = "";
 
                 //int pnngrnncomp = 1;
 
-                int grnncheck = -1;
+                //记录北京单场盘口
+                bjpk = 0;
+
+                grnncheck = -1;
 
                 //计算是否有利于投资 1
-                int goalnumcheck = 0;
+                goalnumcheck = 0;
                 goalsnum = 0;
 
-                string pnncheck = "";
+                pnncheck = "";
 
-                int fitgrnncomp = -1;
+                fitgrnncomp = -1;
 
                 //double preresult=0;
 
@@ -148,24 +180,31 @@ namespace Soccer_Score_Forecast
 
                 //加入live_table数据
                 strNode = ltl.Live_table_lib_id + "," + ltl.Match_type + "," + ltl.Match_time + "::" + ltl.Home_team + "::" + ltl.Away_team + "::" + ltl.Status;
-                mar = marAll.Where(o => o.Live_table_lib_id == ltl.Live_table_lib_id).OrderByDescending(o => o.Analysis_result_id).FirstOrDefault();
 
-                var sg = lsAll.Where(e => Int32.Parse(e.Home_team_big) == ltl.Home_team_big).FirstOrDefault();
+
+                //var sg = lsAll.Where(e => Int32.Parse(e.Home_team_big) == ltl.Home_team_big).FirstOrDefault();
+                var sg = lsAll[ltl.Home_team_big.ToString()].FirstOrDefault();
+
                 if (sg != null)
                 {
                     strNode += "{" + sg.Status + "}{" + sg.Html_position + "}";
                     if (sg.Status.IndexOf(".") == -1)
+                    {
                         goalnumcheck = Int32.Parse(sg.Status);
+                        bjpk = goalnumcheck;
+                    }
                     else
                         goalnumcheck = 0;
                 }
+
+                mar = marAll[ltl.Live_table_lib_id].OrderByDescending(o => o.Analysis_result_id).FirstOrDefault();
 
                 if (mar != null)  //有运行过算法
                     if (mar.Fit_win_loss != null)
                     {
                         //加入match_analysis数据
 
-
+                        /*
                         //2011.6.16数据修正  澳门预测显示的问题
                         //2011.8.11 修正()替换
                         macau = mpAll
@@ -173,6 +212,20 @@ namespace Soccer_Score_Forecast
                             .Where(e => ltl.Home_team.Replace("(", "").Replace(")", "").IndexOf(e.Home_team) != -1)
                             .Where(e => ltl.Away_team.Replace("(", "").Replace(")", "").IndexOf(e.Away_team) != -1)
                             .Select(e => e.Predication).FirstOrDefault();
+                         * */
+
+                        smp = mpAll.Where(e => ltl.Home_team.Replace("(", "").Replace(")", "").IndexOf(e.Key) != -1)
+                           .Select(e => e.Key).FirstOrDefault();
+
+                        if (smp != null)
+                        {
+                            mp = mpAll[smp]
+                             .Where(e => ltl.Away_team.Replace("(", "").Replace(")", "").IndexOf(e.Away_team) != -1)
+                             .OrderByDescending(e => e.MacauPredication_id).FirstOrDefault();
+
+                            if (mp != null)
+                                macau = mp.Predication;
+                        }
 
                         strNode += "【" + mar.Pnn_fit + "】【"
                             + mar.Grnn_fit + "】【" + mar.Myfit + "】{" + macau + "}{交战+概率1+拟合+进球+概率30}";
@@ -210,6 +263,8 @@ namespace Soccer_Score_Forecast
                         //fjz = mar.Pre_algorithm;
 
                         //fDraw = ForecastDraw(mar.Home_w, mar.Home_d, mar.Home_l);
+
+
 
                         if (mar.Result_tb_lib_id != null)  //有导入了结果
                         {
@@ -269,7 +324,7 @@ namespace Soccer_Score_Forecast
                 //if (wdl < 0) child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Italic);
                 //if (strNode.Contains("***")) child.Parent.ForeColor = Color.Red;
 
-              
+
                 /*
                 if (grnncheck >= 0) child.ForeColor = Color.Green;
                 if (grnncheck >= 0 && fitgrnncomp > 0)
@@ -304,14 +359,14 @@ namespace Soccer_Score_Forecast
 
                 TreeNodeBrushColor(child,
                     ltl.Home_team, ltl.Away_team, mar.Result_tb_lib_id,
-                    grnncheck, pnncheck, fitgrnncomp, goalnumcheck);
+                    grnncheck, pnncheck, fitgrnncomp, goalnumcheck, bjpk);
             }
         }
         #endregion
 
         private void TreeNodeBrushColor(TreeNode child,
             string home_team, string away_team, int? result_tb_lib_id,
-            int grnncheck, string pnncheck,  int fitgrnncomp, int goalnumcheck)
+            int grnncheck, string pnncheck, int fitgrnncomp, int goalnumcheck, int bjpk)
         {
             if (grnncheck >= 0) child.ForeColor = Color.Green;
             if (grnncheck >= 0 && fitgrnncomp > 0)
@@ -329,7 +384,12 @@ namespace Soccer_Score_Forecast
                     }
                 }
                 else
-                    child.ForeColor = Color.Blue;
+                {
+                    if (bjpk != 0)
+                        child.ForeColor = Color.Blue;  //竞猜可用
+                    else
+                        child.ForeColor = Color.AliceBlue;
+                }
             }
             //if (grnncheck >= 0 && fitgrnncomp >= 10) child.ForeColor = Color.Blue;
             //if (pnngrnncomp == 0 && grnncheck == 0) child.ForeColor = Color.Blue;

@@ -13,6 +13,10 @@ namespace Soccer_Score_Forecast
         //private IEnumerable<Match_analysis_result> mars;
         private ILookup<string,Live_Single> lss;
         //private DateTime? todaytime;
+        private Match_analysis_result mar;
+        private RowNumberLimit r;
+        private Live_Single sg;
+        private Live_Single sgerror;
         public AuditForecastAlgorithm(int daysDiff)
         {
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
@@ -24,6 +28,7 @@ namespace Soccer_Score_Forecast
                 //mars = matches.Match_analysis_result;   //这里不能放入list，否则更新不了数据， 2011.7.27
                 lss = matches.Live_Single.ToLookup(e => e.Home_team_big + e.Away_team_big);
             }
+            //dMatch.dNew = false;
         }
         public void top20Algorithm()
         {
@@ -35,12 +40,13 @@ namespace Soccer_Score_Forecast
                     i++;
                     ProgressBarDelegate.DoSendPMessage(i);
                     Application.DoEvents();
-                    RowNumberLimit r = new RowNumberLimit(liveid);
+                    r = new RowNumberLimit(liveid);
                     r.initCurveFit();
                     //match_analysis_result mar = new match_analysis_result();
 
-                    var mar = matches.Match_analysis_result
-                        .Where(e => e.Live_table_lib_id == liveid).First();//查找需要更新的数据
+                    mar = matches.Match_analysis_result
+                        .Where(e => e.Live_table_lib_id == liveid)
+                        .First();//查找需要更新的数据
 
                     mar.Live_table_lib_id = r.live_id;
                     mar.Pre_algorithm = "top20";
@@ -59,6 +65,7 @@ namespace Soccer_Score_Forecast
                     //2011.6.22
                     mar.Cross_goals = r.CrossGoals;
 
+
                     //2011.6.16
                     //【交战+概率1+拟合+进球+概率30】
                     mar.Myfit =
@@ -71,16 +78,18 @@ namespace Soccer_Score_Forecast
 
 
                     //更新北京单场
-                    var sg = lss[r.home_team_big.ToString() + r.away_team_big.ToString()].FirstOrDefault();
+                    sg = lss[r.home_team_big.ToString() + r.away_team_big.ToString()].FirstOrDefault();
                     if (sg != null)
                         mar.Pre_algorithm = sg.Html_position;
 
-                    var sgerror = lss[r.away_team_big.ToString() + r.home_team_big.ToString()].FirstOrDefault();
+                    sgerror = lss[r.away_team_big.ToString() + r.home_team_big.ToString()].FirstOrDefault();
                     if (sgerror != null)
                         mar.Pre_algorithm = sgerror.Html_position;
 
+                    //r.Close();
+
                     //缩短数据更新周期
-                    if (i % 500 == 0)
+                    if (i % 100 == 0)
                     {
                         matches.SubmitChanges(); GC.Collect(); GC.Collect(); Application.DoEvents();
                     }
