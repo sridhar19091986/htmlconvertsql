@@ -28,14 +28,14 @@ namespace Soccer_Score_Forecast
         {
             using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
             {
-                //if (dMatch.dNew == false)
-                //{
-                //    dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
-                //    dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
-                //    dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
-                //    dMatch.liveTables= matches.Live_Table_lib.ToLookup(e => e.Live_table_lib_id);
-                //    dMatch.dNew = true;
-                //}
+                if (dMatch.dNew == false)
+                {
+                    dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                    dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                    dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                    dMatch.liveTables = matches.Live_Table_lib.ToLookup(e => e.Live_table_lib_id);
+                    dMatch.dNew = true;
+                }
 
                 this.live_id = liveid;
                 var l = dMatch.liveTables[live_id].First();
