@@ -17,7 +17,7 @@ namespace Soccer_Score_Forecast
             HtmlAgilityPackGeneric SevenmLivesg = new HtmlAgilityPackGeneric(_html, tbTag.tbTag, 0);//容易出错，主要路径的转换
             DataTable dt = SevenmLivesg.GetTableOutHtml(); //容易出错，注意方法的转换
             DataClassesMatchDataContext match = new DataClassesMatchDataContext(Conn.conn);
-            if (!Conn.CreateTable(typeof(Live_Single))) { return 0; }
+            //if (!Conn.CreateTable(typeof(Live_Single))) { return 0; }
             foreach (DataRow aa in dt.Rows)
             {
                 if (aa[8] != null)

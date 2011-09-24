@@ -49,6 +49,8 @@ namespace Soccer_Score_Forecast
         public LoadDataToTree(int daysDiff, string filterMatchPath, bool bj)
         {
             //string filterMatchPath = Application.StartupPath + @"\FilterMatch";
+            if (!File.Exists(filterMatchPath)) return;
+
             List<string> matchlist = new List<string>();
             using (StreamReader r = new StreamReader(filterMatchPath, System.Text.Encoding.Default))
             {
@@ -58,6 +60,7 @@ namespace Soccer_Score_Forecast
             }
             initTreeNode(daysDiff, matchlist, false, bj);
         }
+
         public void initTreeNode(int daysDiff, List<string> matchlist, bool ismath, bool bj)
         {
             //这个连接不能放到class中，不然取的还是缓存的数据？？？？？？？？？？？
@@ -380,7 +383,8 @@ namespace Soccer_Score_Forecast
                     }
                     else
                     {
-                        child.ForeColor = Color.Lavender;  //下盘概率低，看情况而定
+                        child.ForeColor = Color.Red;  //下盘概率低，看情况而定
+                        child.BackColor = Color.Green;
                     }
                 }
                 else
@@ -388,12 +392,15 @@ namespace Soccer_Score_Forecast
                     if (bjpk != 0)
                         child.ForeColor = Color.Blue;  //竞猜可用
                     else
-                        child.ForeColor = Color.AliceBlue;
+                    {
+                        child.ForeColor = Color.Blue;  //???
+                        child.BackColor = Color.Green;
+                    }
                 }
             }
             //if (grnncheck >= 0 && fitgrnncomp >= 10) child.ForeColor = Color.Blue;
             //if (pnngrnncomp == 0 && grnncheck == 0) child.ForeColor = Color.Blue;
-            if (pnncheck == "-99") child.ForeColor = Color.Black;
+            //if (pnncheck == "-99") child.ForeColor = Color.Black;
 
             //结果验证
             if (result_tb_lib_id != null)

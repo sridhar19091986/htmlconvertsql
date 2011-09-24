@@ -165,9 +165,6 @@
       <LastGenOutput>SoccerScoreCompact.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="LinqSql\SoccerScoreCompact.dbml.layout">
-      <DependentUpon>SoccerScoreCompact.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="SoccerScoreForecast.resx">
       <DependentUpon>SoccerScoreForecast.cs</DependentUpon>
       <SubType>Designer</SubType>

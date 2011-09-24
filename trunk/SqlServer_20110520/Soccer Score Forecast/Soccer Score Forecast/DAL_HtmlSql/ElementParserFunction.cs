@@ -77,6 +77,7 @@ namespace Soccer_Score_Forecast
         public string GetNumber(String str)
         {
             string ss = "";
+            if (str == null) return ss;
             for (int i = 0; i < str.Length; i++)
             {
                 if (Char.IsNumber(str, i) == true)

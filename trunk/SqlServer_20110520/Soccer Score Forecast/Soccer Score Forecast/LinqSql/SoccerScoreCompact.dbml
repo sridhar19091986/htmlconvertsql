@@ -150,6 +150,11 @@
       <Column Name="cross_goals" Member="Cross_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="myfit" Member="Myfit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="recent_scores" Member="Recent_scores" Type="System.Int32" DbType="Int" CanBeNull="true" />
+	  <Column Name="recent_2scores" Member="Recent_2scores" Type="System.Int32" DbType="Int" CanBeNull="true" />
+	  <Column Name="recent_3scores" Member="Recent_3scores" Type="System.Int32" DbType="Int" CanBeNull="true" />
+	  <Column Name="recent_4scores" Member="Recent_4scores" Type="System.Int32" DbType="Int" CanBeNull="true" />
+	  <Column Name="recent_5scores" Member="Recent_5scores" Type="System.Int32" DbType="Int" CanBeNull="true" />
+	  <Column Name="recent_6scores" Member="Recent_6scores" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="grnn_fit" Member="Grnn_fit" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="pnn_fit" Member="Pnn_fit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </Type>

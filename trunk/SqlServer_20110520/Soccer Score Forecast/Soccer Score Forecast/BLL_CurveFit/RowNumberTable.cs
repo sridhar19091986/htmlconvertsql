@@ -93,17 +93,30 @@ namespace Soccer_Score_Forecast
                                         p.Home_w,
                                         p.Home_d,
                                         p.Home_l,
+
                                         p.Home_goals,
                                         p.Away_goals,
-                                        p.Recent_scores,
+
                                         p.Cross_goals,
+
                                         p.Fit_win_loss,
+
+                                        p.Recent_scores,
+                                        p.Recent_2scores,
+                                        p.Recent_3scores,
+                                        p.Recent_4scores,
+                                        p.Recent_5scores,
+                                        p.Recent_6scores,
+
                                         Lottery_Ticket = q.Full_home_goals - q.Full_away_goals,
                                         q.Full_home_goals,
                                         q.Full_away_goals,
                                         Dodds = ConvertOdd(t.Home_team, q.Odds)
                                     };
-                    MatlabMatch.matchover = matchover.ToDataTable();
+
+                    //避免干扰  Where(e=>e.Home_w+e.Home_d+e.Home_l>2)
+                    MatlabMatch.matchover = matchover.Where(e=>e.Home_w+e.Home_d+e.Home_l>2).ToDataTable();
+
                 }
 
             }
@@ -132,9 +145,17 @@ namespace Soccer_Score_Forecast
                                        p.Home_l,
                                        p.Home_goals,
                                        p.Away_goals,
-                                       p.Recent_scores,
+                                       
                                        p.Cross_goals,
                                        p.Fit_win_loss,
+
+                                       p.Recent_scores,
+                                       p.Recent_2scores,
+                                       p.Recent_3scores,
+                                       p.Recent_4scores,
+                                       p.Recent_5scores,
+                                       p.Recent_6scores,
+
                                        Dodds = ConvertOdd(t.Home_team, t.Status)
                                    };
                     MatlabMatch.matchnow = matchnowf.ToDataTable();
@@ -168,13 +189,34 @@ namespace Soccer_Score_Forecast
             set { _matchNowf = value; }
         }
 
+        //??????????? 2011.9.20
+
+        #region 计算过滤
+
         private DataTable FilterDataTable(DataTable dataSource, string matchtypes)
         {
             DataView dv = dataSource.DefaultView;
             dv.RowFilter = "Match_type = '" + matchtypes + "'";
+            //dv.Sort = "Match_time desc";
+            //DataView dv1 = SelectView(dv, 18 * 6);
             DataTable newTable1 = dv.ToTable();
             return newTable1;
         }
+        public DataView SelectView(DataView dv , int TopValue)
+        {
+            DataTable Dtable = dv.Table.Clone(); //克隆DataTable 的结构，包括所有DataTable 架构和约束。
+            for (int i = 0; i < dv.Count; i++)
+            {
+                if (i >= TopValue)
+                {
+                    break;
+                }
+                Dtable.ImportRow(dv[i].Row); //取前TopValue行，其他的不添加至DataTable
+            }
+            return new DataView(Dtable);
+        }
+
+        #endregion
 
         public List<StatMatch> statmatch()
         {

@@ -2883,6 +2883,16 @@ namespace SoccerScore.Compact.Linq
 		
 		private System.Nullable<int> _Recent_scores;
 		
+		private System.Nullable<int> _Recent_2scores;
+		
+		private System.Nullable<int> _Recent_3scores;
+		
+		private System.Nullable<int> _Recent_4scores;
+		
+		private System.Nullable<int> _Recent_5scores;
+		
+		private System.Nullable<int> _Recent_6scores;
+		
 		private string _Grnn_fit;
 		
 		private string _Pnn_fit;
@@ -2929,6 +2939,16 @@ namespace SoccerScore.Compact.Linq
     partial void OnMyfitChanged();
     partial void OnRecent_scoresChanging(System.Nullable<int> value);
     partial void OnRecent_scoresChanged();
+    partial void OnRecent_2scoresChanging(System.Nullable<int> value);
+    partial void OnRecent_2scoresChanged();
+    partial void OnRecent_3scoresChanging(System.Nullable<int> value);
+    partial void OnRecent_3scoresChanged();
+    partial void OnRecent_4scoresChanging(System.Nullable<int> value);
+    partial void OnRecent_4scoresChanged();
+    partial void OnRecent_5scoresChanging(System.Nullable<int> value);
+    partial void OnRecent_5scoresChanged();
+    partial void OnRecent_6scoresChanging(System.Nullable<int> value);
+    partial void OnRecent_6scoresChanged();
     partial void OnGrnn_fitChanging(string value);
     partial void OnGrnn_fitChanged();
     partial void OnPnn_fitChanging(string value);
@@ -3316,6 +3336,106 @@ namespace SoccerScore.Compact.Linq
 					this._Recent_scores = value;
 					this.SendPropertyChanged("Recent_scores");
 					this.OnRecent_scoresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="recent_2scores", Storage="_Recent_2scores", DbType="Int")]
+		public System.Nullable<int> Recent_2scores
+		{
+			get
+			{
+				return this._Recent_2scores;
+			}
+			set
+			{
+				if ((this._Recent_2scores != value))
+				{
+					this.OnRecent_2scoresChanging(value);
+					this.SendPropertyChanging();
+					this._Recent_2scores = value;
+					this.SendPropertyChanged("Recent_2scores");
+					this.OnRecent_2scoresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="recent_3scores", Storage="_Recent_3scores", DbType="Int")]
+		public System.Nullable<int> Recent_3scores
+		{
+			get
+			{
+				return this._Recent_3scores;
+			}
+			set
+			{
+				if ((this._Recent_3scores != value))
+				{
+					this.OnRecent_3scoresChanging(value);
+					this.SendPropertyChanging();
+					this._Recent_3scores = value;
+					this.SendPropertyChanged("Recent_3scores");
+					this.OnRecent_3scoresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="recent_4scores", Storage="_Recent_4scores", DbType="Int")]
+		public System.Nullable<int> Recent_4scores
+		{
+			get
+			{
+				return this._Recent_4scores;
+			}
+			set
+			{
+				if ((this._Recent_4scores != value))
+				{
+					this.OnRecent_4scoresChanging(value);
+					this.SendPropertyChanging();
+					this._Recent_4scores = value;
+					this.SendPropertyChanged("Recent_4scores");
+					this.OnRecent_4scoresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="recent_5scores", Storage="_Recent_5scores", DbType="Int")]
+		public System.Nullable<int> Recent_5scores
+		{
+			get
+			{
+				return this._Recent_5scores;
+			}
+			set
+			{
+				if ((this._Recent_5scores != value))
+				{
+					this.OnRecent_5scoresChanging(value);
+					this.SendPropertyChanging();
+					this._Recent_5scores = value;
+					this.SendPropertyChanged("Recent_5scores");
+					this.OnRecent_5scoresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="recent_6scores", Storage="_Recent_6scores", DbType="Int")]
+		public System.Nullable<int> Recent_6scores
+		{
+			get
+			{
+				return this._Recent_6scores;
+			}
+			set
+			{
+				if ((this._Recent_6scores != value))
+				{
+					this.OnRecent_6scoresChanging(value);
+					this.SendPropertyChanging();
+					this._Recent_6scores = value;
+					this.SendPropertyChanged("Recent_6scores");
+					this.OnRecent_6scoresChanged();
 				}
 			}
 		}

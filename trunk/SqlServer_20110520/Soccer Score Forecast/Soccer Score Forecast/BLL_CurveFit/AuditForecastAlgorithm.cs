@@ -53,14 +53,23 @@ namespace Soccer_Score_Forecast
                     mar.Pre_match_count = r.Top20Count;
                     mar.Home_goals = r.HomeGoals;
                     mar.Away_goals = r.AwayGoals;
+
                     mar.Home_w = r.hWin;
                     mar.Home_d = r.hDraw;
                     mar.Home_l = r.hLose;
+
                     mar.Fit_win_loss = r.CureFitWinLoss();
                     mar.Fit_goals = r.CureFitGoals();
                     mar.Fit_odd_even = r.CureFitOddEven();//直接赋值，修改完成
 
+                    //2011.9.22   修改成利用积分进行运算
                     mar.Recent_scores = r.RecentScores; //增加最后一轮的分数
+                    mar.Recent_2scores = r.Recent2Scores;
+                    mar.Recent_3scores = r.Recent3Scores;
+                    mar.Recent_4scores = r.Recent4Scores;
+                    mar.Recent_5scores = r.Recent5Scores;
+                    mar.Recent_6scores = r.Recent6Scores;
+
 
                     //2011.6.22
                     mar.Cross_goals = r.CrossGoals;
