@@ -84,7 +84,7 @@ namespace Soccer_Score_Forecast
                 //mpAll = matches.MacauPredication.OrderByDescending(e => e.MacauPredication_id).ToList();
                 //lsAll = matches.Live_Single.ToList();
 
-                lsAll = matches.Live_Single.ToLookup(e => e.Home_team_big);
+                lsAll = matches.Live_Single.ToLookup(e => e.Home_team_big+"-"+e.Away_team_big);
                 mpAll = matches.MacauPredication.OrderByDescending(e => e.MacauPredication_id)
                     .Where(e => e.Home_team != null && e.Away_team != null)
                     .ToLookup(e => e.Home_team);
@@ -186,7 +186,7 @@ namespace Soccer_Score_Forecast
 
 
                 //var sg = lsAll.Where(e => Int32.Parse(e.Home_team_big) == ltl.Home_team_big).FirstOrDefault();
-                var sg = lsAll[ltl.Home_team_big.ToString()].FirstOrDefault();
+                var sg = lsAll[ltl.Home_team_big.ToString()+"-"+ltl.Away_team_big.ToString()].OrderByDescending(e=>e.Live_Single_id).FirstOrDefault();
 
                 if (sg != null)
                 {
@@ -407,7 +407,7 @@ namespace Soccer_Score_Forecast
                 //if (mar.Myfit != null)
                 //if (mar.Myfit.IndexOf(result) != -1) 
                 //child.ForeColor = Color.Red;
-                child.BackColor = Color.Gray;
+                child.NodeFont = new Font("Trebuchet MS", 10, FontStyle.Bold);
         }
 
         //List<double> minOdds = new List<double>();

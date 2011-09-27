@@ -32,7 +32,7 @@ namespace Soccer_Score_Forecast
                 {
                     dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
                     dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
-                    dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                    dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team + "-" + e.Away_team);
                     dMatch.liveTables = matches.Live_Table_lib.ToLookup(e => e.Live_table_lib_id);
                     dMatch.dNew = true;
                 }
@@ -374,6 +374,7 @@ namespace Soccer_Score_Forecast
                     var hometeam = dMatch.macauPre
                         .Where(e => e.Key.Length > 1)
                         .Where(e => home_team.IndexOf(e.Key) != -1)
+                        .Where(e=>home_team.IndexOf(e.Key) !=-1)
                         .Select(e => e.Key).FirstOrDefault();
                     if (hometeam != null)
                     {

@@ -1418,7 +1418,7 @@ namespace Soccer_Score_Forecast
                         {
                             dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
                             dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
-                            dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                            dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team + "-" + e.Away_team);
                             dMatch.dNew = true;
                         }
                     }
