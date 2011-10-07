@@ -715,7 +715,9 @@ namespace Soccer_Score_Forecast
                     //        dMatch.dNew = true;
                     //    }
                     //}
-                    dMatch.dNew = false;
+                    //dMatch.dNew = false;
+
+                    dMatch.LoadMatchData(true);
                     toolStripProgressBar1.Maximum = pb;
                     f.top20Algorithm();
                 }
@@ -1411,17 +1413,8 @@ namespace Soccer_Score_Forecast
                 MessageBox.Show(pb.ToString());
                 if (pb != 0)
                 {
-                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-                    {
-                        dMatch.dNew = false;
-                        if (dMatch.dNew == false)
-                        {
-                            dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
-                            dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
-                            dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team + "-" + e.Away_team);
-                            dMatch.dNew = true;
-                        }
-                    }
+                    dMatch.LoadMatchData(true);
+
                     toolStripProgressBar1.Maximum = pb;
                     f.top20Algorithm();
                 }

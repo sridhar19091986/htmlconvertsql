@@ -17,6 +17,9 @@ namespace Soccer_Score_Forecast
                 var idAnalysis = matches.Match_analysis_result.Select(e => e.Live_table_lib_id ?? 0).ToList();//可空类型转换
                 idExc = idLive.Except(idAnalysis).ToList();   //except序列A有的元素序列B没有
             }
+
+            dMatch.dNew = false;
+            dMatch.LoadMatchData(true);
         }
         private List<int?> idDelete;
         public void DeleteRedundancy()
