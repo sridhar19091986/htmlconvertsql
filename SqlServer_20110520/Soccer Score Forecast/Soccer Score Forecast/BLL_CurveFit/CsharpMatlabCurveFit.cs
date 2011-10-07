@@ -31,9 +31,24 @@ namespace Soccer_Score_Forecast
     {
         public static ILookup<int?, Result_tb_lib> dHome = null;
         public static ILookup<int?, Result_tb_lib> dAway = null;
-        public static ILookup<string, MacauPredication> macauPre= null;
+        public static ILookup<string, MacauPredication> macauPre = null;
         public static ILookup<int, Live_Table_lib> liveTables = null;
-        public static bool dNew=false;
+        public static bool dNew = false;
+        public static bool LoadMatchData(bool reload)
+        {
+            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+            {
+                if (reload == true && dNew == false)
+                {
+                    dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                    dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                    macauPre = matches.MacauPredication.ToLookup(e => e.Home_team + "-" + e.Away_team);
+                    liveTables = matches.Live_Table_lib.ToLookup(e => e.Live_table_lib_id);
+                    dNew = true;
+                }
+                return reload;
+            }
+        }
     }
 
     //public class MatlabNet

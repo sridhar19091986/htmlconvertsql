@@ -37,7 +37,7 @@ namespace Soccer_Score_Forecast
         {
             MWArray xx = (MWArray)x;
             MWArray yy = (MWArray)y;
-            var pnn = rbf.NewpnnPredication(xx, yy,0.1);//default = 0.1
+            var pnn = rbf.NewpnnPredication(xx, yy,0.7);//default = 0.1
             string newpnn = pnn.ToString();
             return newpnn;
         }

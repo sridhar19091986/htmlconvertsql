@@ -28,7 +28,9 @@ namespace Soccer_Score_Forecast
                 //mars = matches.Match_analysis_result;   //这里不能放入list，否则更新不了数据， 2011.7.27
                 lss = matches.Live_Single.ToLookup(e => e.Home_team_big + e.Away_team_big);
             }
-            //dMatch.dNew = false;
+
+            dMatch.dNew = false;
+            dMatch.LoadMatchData(true);
         }
         public void top20Algorithm()
         {

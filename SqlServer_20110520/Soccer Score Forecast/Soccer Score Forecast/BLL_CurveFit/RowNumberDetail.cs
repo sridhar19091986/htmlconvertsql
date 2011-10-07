@@ -37,23 +37,16 @@ namespace Soccer_Score_Forecast
         }
         private void FindMatchDetail(int liveid)
         {
-            using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
-            {
-                if (dMatch.dNew == false)
-                {
-                    dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
-                    dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
-                    dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team+"-"+e.Away_team);
-                    dMatch.dNew = true;
-                }
 
-                this.live_id = liveid;
-                var l = matches.Live_Table_lib.Where(e => e.Live_table_lib_id == liveid).First();
-                home_team_big = l.Home_team_big;
-                away_team_big = l.Away_team_big;
-                matchtime = l.Match_time;
-                matchtype = l.Match_type;
-            }
+            dMatch.LoadMatchData(true);
+
+            this.live_id = liveid;
+            var l = dMatch.liveTables[live_id].First();
+            home_team_big = l.Home_team_big;
+            away_team_big = l.Away_team_big;
+            matchtime = l.Match_time;
+            matchtype = l.Match_type;
+
         }
         private DataTable _crossOver;
         public DataTable crossOver

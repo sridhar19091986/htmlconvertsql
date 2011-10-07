@@ -123,7 +123,12 @@
     <Compile Include="BLL_CurveFit\MyCurveFitclass.cs" />
     <Compile Include="BLL_CurveFit\NNPredication.cs" />
     <Compile Include="BLL_CurveFit\RowNumberDetail.cs" />
-    <Compile Include="BLL_CurveFit\RowNumberLimit.cs" />
+    <Compile Include="BLL_CurveFit\RowNumberLimitA.cs" />
+    <Compile Include="BLL_CurveFit\RowNumberLimitB.cs" />
+    <Compile Include="BLL_CurveFit\RowNumberLimitC.cs" />
+    <Compile Include="BLL_CurveFit\RowNumberLimitD.cs" />
+    <Compile Include="BLL_CurveFit\RowNumberLimitE.cs" />
+    <Compile Include="BLL_CurveFit\RowNumberLimitF.cs" />
     <Compile Include="BLL_CurveFit\RowNumberTable.cs" />
     <Compile Include="BLL_CurveFit\UpdateAnalysisResult.cs" />
     <Compile Include="BLL_CurveFit\AuditForecastAlgorithm.cs" />
@@ -139,6 +144,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SoccerScoreCompact.dbml</DependentUpon>
     </Compile>
+    <Compile Include="UI_TreeChart\LoadDataToTreeB.cs" />
+    <Compile Include="UI_TreeChart\LoadDataToTreeC.cs" />
     <Compile Include="UI_TreeChart\LoadHtmlToTree.cs" />
     <Compile Include="UI_TreeChart\ProgressBarDelegate.cs" />
     <Compile Include="DAL_HtmlSql\SevenmLiveToSql.cs" />
@@ -190,7 +197,7 @@
     </Compile>
     <Compile Include="UI_TreeChart\ExportToExcel.cs" />
     <Compile Include="UI_TreeChart\LoadDataToChart.cs" />
-    <Compile Include="UI_TreeChart\LoadDataToTree.cs" />
+    <Compile Include="UI_TreeChart\LoadDataToTreeA.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
