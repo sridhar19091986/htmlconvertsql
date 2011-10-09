@@ -66,6 +66,10 @@ namespace Soccer_Score_Forecast
                     mar.Fit_goals = r.CureFitGoals();
                     mar.Fit_odd_even = r.CureFitOddEven();
                     matches.Match_analysis_result.InsertOnSubmit(mar);
+
+                    //2011.10.8  销毁
+                    r.Dispose();
+
                 }
                 matches.SubmitChanges();
             }

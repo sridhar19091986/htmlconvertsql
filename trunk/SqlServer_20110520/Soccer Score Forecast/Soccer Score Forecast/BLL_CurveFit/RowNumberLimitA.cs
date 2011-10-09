@@ -18,7 +18,10 @@ namespace Soccer_Score_Forecast
         public DateTime? matchtime;
         public string matchtype;
         public int Top20Count;
-        public IEnumerable<Result_tb_lib> Top20;
+
+        //public IEnumerable<Result_tb_lib> Top20;
+
+        public List<Result_tb_lib> Top20;
 
         public RowNumberLimit(int liveid)
         {
@@ -44,7 +47,7 @@ namespace Soccer_Score_Forecast
                 var top20hh = top20h.Where(e => e.Match_time.Value.Date < matchtime.Value.Date);
 
                 //修正把比赛类型搞进去  2011.6.17
-                Top20 = top20hh.Where(e => e.Match_type == matchtype).OrderByDescending(e => e.Match_time).Take(40);
+                Top20 = top20hh.Where(e => e.Match_type == matchtype).OrderByDescending(e => e.Match_time).Take(40).ToList();
 
                 // .ToList();
 
@@ -53,6 +56,5 @@ namespace Soccer_Score_Forecast
                 //Top20 = top20h.Union(top20a).Where(e => e.match_time < matchtime).OrderByDescending(e => e.match_time).Take(40).ToList();
                 Top20Count = Top20.Count();
             }    
-
     }
 }

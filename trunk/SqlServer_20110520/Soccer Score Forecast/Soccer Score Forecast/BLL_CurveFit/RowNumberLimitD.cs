@@ -107,8 +107,10 @@ namespace Soccer_Score_Forecast
         }
         private double ConvertDoubleP(double? ddd)
         {
-            if (ddd == null) return 0;
-            else return (double)ddd;
+            return ddd ?? 0;
+
+            //if (ddd == null) return 0;
+            //else return (double)ddd;
         }
         //private string hostX;
         //private string awayX;
