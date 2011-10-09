@@ -102,8 +102,12 @@ namespace Soccer_Score_Forecast
                     //缩短数据更新周期
                     if (i % 100 == 0)
                     {
-                        matches.SubmitChanges(); GC.Collect(); GC.Collect(); Application.DoEvents();
+                        matches.SubmitChanges();
+                        //GC.Collect(); GC.Collect(); Application.DoEvents();
                     }
+
+                    //2011.10.8.   这里销毁
+                    r.Dispose();
                 }
                 matches.SubmitChanges();
             }
