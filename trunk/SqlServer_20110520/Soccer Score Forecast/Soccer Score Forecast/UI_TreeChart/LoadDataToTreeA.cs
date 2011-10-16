@@ -48,22 +48,22 @@ namespace Soccer_Score_Forecast
         private MacauPredication mp { get; set; }
         //private  TreeNode _treeViewMatch;
 
-        public LoadDataToTree(int daysDiff, string filterMatchPath, bool bj)
+        public LoadDataToTree(int daysDiff,  bool bj)
         {
             //string filterMatchPath = Application.StartupPath + @"\FilterMatch";
-            if (!File.Exists(filterMatchPath)) return;
+            //if (!File.Exists(filterMatchPath)) return;
 
-            List<string> matchlist = new List<string>();
-            using (StreamReader r = new StreamReader(filterMatchPath, System.Text.Encoding.Default))
-            {
-                string line;
-                while ((line = r.ReadLine()) != null)
-                    matchlist.Add(line);
-            }
-            initTreeNode(daysDiff, matchlist, false, bj);
+            //List<string> matchlist = new List<string>();
+            //using (StreamReader r = new StreamReader(filterMatchPath, System.Text.Encoding.Default))
+            //{
+            //    string line;
+            //    while ((line = r.ReadLine()) != null)
+            //        matchlist.Add(line);
+            //}
+            initTreeNode(daysDiff, false, bj);
         }
 
-        public void initTreeNode(int daysDiff, List<string> matchlist, bool ismath, bool bj)
+        public void initTreeNode(int daysDiff, bool ismath, bool bj)
         {
             //这个连接不能放到class中，不然取的还是缓存的数据？？？？？？？？？？？
             //对象和数据库之间会存在不能更新的问题？？？？？？？？？？？
@@ -71,17 +71,17 @@ namespace Soccer_Score_Forecast
 
             //using (SoccerScoreSqlite matches = new SoccerScoreSqlite(cnn))
             {
-                if (ismath)
-                    ltlAll = matches.Live_Table_lib
-                        .Where(e => matchlist.Contains(e.Match_type))
-                        .Where(m => m.Match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
-                        .OrderBy(m => m.Match_time).ToList();
-                else
+                //if (ismath)
+                //    ltlAll = matches.Live_Table_lib
+                //        .Where(e => matchlist.Contains(e.Match_type))
+                //        .Where(m => m.Match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
+                //        .OrderBy(m => m.Match_time).ToList();
+                //else
                     ltlAll = matches.Live_Table_lib
                         .Where(m => m.Match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date)
                         .OrderBy(m => m.Match_time).ToList();
                 rtlAll = matches.Result_tb_lib.Where(m => m.Match_time.Value.Date >= DateTime.Now.AddDays(daysDiff).Date).ToList();
-                marAll = matches.Match_analysis_result.ToLookup(e => e.Live_table_lib_id);
+            
                 //loAll = matches.Live_okoo.Where(e => e.Live_okoo_id > 0).ToList();
                 //mpAll = matches.MacauPredication.OrderByDescending(e => e.MacauPredication_id).ToList();
                 //lsAll = matches.Live_Single.ToList();
@@ -95,7 +95,9 @@ namespace Soccer_Score_Forecast
                 if (bj)
                     marAll = matches.Match_analysis_result
                         .Where(e => e.Pre_algorithm != "top20")
-                        .Where(e => e.Live_table_lib_id > 0).ToLookup(e => e.Live_table_lib_id);
+                        .Where(e => e.Live_table_lib_id  > 0).ToLookup(e => e.Live_table_lib_id);
+                else
+                    marAll = matches.Match_analysis_result.ToLookup(e => e.Live_table_lib_id);
             }
         }
 

@@ -23,7 +23,7 @@ namespace Soccer_Score_Forecast
             ViewMatchOverDays = -1;
             appPath = Application.StartupPath.ToString();
             filterMatchPath = appPath + @"\FilterMatch.sdf";
-            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath, false);
+            loaddatatree = new LoadDataToTree(ViewMatchOverDays,  false);
         }
         string appPath;
         string textboxDate;
@@ -35,15 +35,15 @@ namespace Soccer_Score_Forecast
         private void initTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(ViewMatchOverDays.ToString());
-            List<string> matchlist = new List<string>();
-            using (StreamReader r = new StreamReader(filterMatchPath, System.Text.Encoding.Default))
-            {
-                string line;
-                while ((line = r.ReadLine()) != null)
-                    matchlist.Add(line);
-            }
+            //List<string> matchlist = new List<string>();
+            //using (StreamReader r = new StreamReader(filterMatchPath, System.Text.Encoding.Default))
+            //{
+            //    string line;
+            //    while ((line = r.ReadLine()) != null)
+            //        matchlist.Add(line);
+            //}
 
-            loaddatatree.initTreeNode(ViewMatchOverDays, matchlist, false, false);
+            loaddatatree.initTreeNode(ViewMatchOverDays, false, false);
         }
         #region 软件加密模块1,检验注册码
         private void Form1_Load(object sender, EventArgs ee)
@@ -207,7 +207,7 @@ namespace Soccer_Score_Forecast
         {
             //重新处理  2011.6.16
             treeView5.Nodes.Clear();
-            loaddatatree = new LoadDataToTree(ViewMatchOverDays, filterMatchPath, true);
+            loaddatatree = new LoadDataToTree(ViewMatchOverDays, true);
             loaddatatree.TreeViewMatch(treeView5, "type");
             GC.Collect(); GC.Collect(); Application.DoEvents();
         }
@@ -840,7 +840,8 @@ namespace Soccer_Score_Forecast
             {
                 if (c.Node.Level == 1)
                 {
-                    ComputeFitRate(c.Node.Text); OutToMatlab(c.Node.Text, 1);
+                    return;
+                   // ComputeFitRate(c.Node.Text); OutToMatlab(c.Node.Text, 1);
                     //button2.PerformClick();
                     //button11.PerformClick();
 
