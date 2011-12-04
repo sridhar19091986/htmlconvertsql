@@ -1,0 +1,118 @@
+﻿        private DataTable _winRate;
+        public DataTable WinRate
+        {
+            get
+            {
+                if (_winRate == null)
+                {
+                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                    {
+                        var mar = from a in matches.Match_analysis_result
+                                  join b in matches.Live_Table_lib on a.Live_table_lib_id equals b.Live_table_lib_id
+                                  select new
+                                  {
+                                      a.Result_wdl,
+                                      a.Result_fit,
+                                      a.Result_goals,
+                                      b.Match_type
+                                  };
+                        var winrate = from p in mar
+                                      group p by p.Match_type into q
+                                      select new
+                                      {
+                                          q.Key,
+                                          fitW = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_fit == "W").Count(),
+                                          fitL = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_fit == "L").Count(),
+                                          goalsW = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_goals == "W").Count(),
+                                          goalsL = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_goals == "L").Count(),
+                                          wdlW = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_wdl == "W").Count(),
+                                          wdlL = q.Where(e => e.Match_type == q.Key).Where(e => e.Result_wdl == "L").Count(),
+                                      };
+                        _winRate = winrate.ToDataTable();
+                    }
+                }
+                return _winRate;
+            }
+            set
+            {
+                _winRate = value;
+            }
+
+        }
+
+
+		        public List<StatMatch> statmatch()
+        {
+            if (MatlabMatch.statmatch == null)
+            {
+                List<StatMatch> lsm = new List<StatMatch>();
+                using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                {
+                    var mar = from a in matches.Match_analysis_result
+                              join b in matches.Live_Table_lib on a.Live_table_lib_id equals b.Live_table_lib_id
+                              select new
+                              {
+                                  a.Result_wdl,
+                                  a.Result_fit,
+                                  a.Result_goals,
+                                  b.Match_type
+                              };
+                    foreach (var m in mar)
+                    {
+                        StatMatch sm = new StatMatch();
+                        sm.Match_type = m.Match_type;
+                        sm.Result_fit = m.Result_fit;
+                        sm.Result_goals = m.Result_goals;
+                        sm.Result_wdl = m.Result_wdl;
+                        lsm.Add(sm);
+                    }
+                }
+                MatlabMatch.statmatch = lsm;
+            }
+            return MatlabMatch.statmatch;
+        }
+
+        private DataTable _typeRate;
+        public int MaxW;
+        public DataTable typeRate
+        {
+            get
+            {
+                if (_typeRate == null)
+                {
+
+                    var winrate = from p in statmatch()
+                                  where p.Match_type == matchtype
+                                  group p by p.Match_type into q
+                                  select new
+                                  {
+                                      q.Key,
+                                      fitW = q.Where(e => e.Result_fit == "W").Count(),
+                                      fitL = q.Where(e => e.Result_fit == "L").Count(),
+                                      goalsW = q.Where(e => e.Result_goals == "W").Count(),
+                                      goalsL = q.Where(e => e.Result_goals == "L").Count(),
+                                      交战_概率1_拟合_进球_概率30W = q.Where(e => e.Result_wdl == "W").Count(),
+                                      交战_概率1_拟合_进球_概率30L = q.Where(e => e.Result_wdl == "L").Count(),
+                                  };
+                    var maxwin = winrate.FirstOrDefault();
+                    int[] maxw = { maxwin.fitW, maxwin.fitL, maxwin.goalsW, maxwin.goalsL, 
+                                         maxwin.交战_概率1_拟合_进球_概率30W, 
+                                         maxwin.交战_概率1_拟合_进球_概率30L };
+                    MaxW = maxw.Max();
+                    _typeRate = winrate.ToDataTable();
+
+                }
+                return _typeRate;
+            }
+            set { _typeRate = value; }
+        }
+
+
+
+		        private void ComputeFitRate(string matchtype)
+        {
+            dataGridView5.Visible = true;
+            RowNumberTable rnt = new RowNumberTable(matchtype);
+            dataGridView5.DataSource = rnt.typeRate;
+            label3.Text = rnt.MaxW.ToString();
+        }

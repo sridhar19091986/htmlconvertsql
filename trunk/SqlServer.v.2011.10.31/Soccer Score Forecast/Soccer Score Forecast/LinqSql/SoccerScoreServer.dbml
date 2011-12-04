@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><Database Name="SyncSoccerScore" EntityNamespace="SoccerScore.Compact.Linq" ContextNamespace="SoccerScore.Compact.Linq.Review" Class="DataClassesMatchDataContext2" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="Analysis_Review" Member="Analysis_Review">
+    <Type Name="Analysis_Review">	
+	  <Column Name="analysis_review_id" Member="analysis_review_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      
+	  <Column Name="analysis_result_id" Member="Analysis_result_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+	  <Column Name="live_table_lib_id" Member="Live_table_lib_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="result_tb_lib_id" Member="Result_tb_lib_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+	  
+      <Column Name="home_w" Member="Home_w" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_d" Member="Home_d" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_l" Member="Home_l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="home_goals" Member="Home_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="away_goals" Member="Away_goals" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ls_fit" Member="ls_fit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="result_grnn" Member="result_grnn" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="result_goals" Member="Result_goals" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="result_wdl" Member="Result_wdl" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="composite_fit" Member="composite_fit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="grnn_fit" Member="Grnn_fit" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pnn_fit" Member="Pnn_fit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+   
+      <Column Name="home_team_big" Member="Home_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="away_team_big" Member="Away_team_big" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="match_type" Member="Match_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="match_time" Member="Match_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="home_team" Member="Home_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="away_team" Member="Away_team" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      
+      <Column Name="asia_odds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="full_home_goals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_away_goals"  Type="System.Int32" DbType="Int" CanBeNull="true" />
+	  
+	  <Column Name="bj_match_number" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+	  <Column Name="bj_host_odds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+	  <Column Name="bj_select" Type="System.Int32" DbType="Int" CanBeNull="true"  />
+			 
+	  <Column Name="Macau_predication" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
