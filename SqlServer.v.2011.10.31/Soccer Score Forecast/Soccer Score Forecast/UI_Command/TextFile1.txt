@@ -1,0 +1,188 @@
+﻿
+                /*
+                int max_Analysis_result_id = 0;
+                IEnumerable<Match_analysis_result> noresult;
+
+                try
+                {
+                    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                    {
+                        max_Analysis_result_id = matches.Match_analysis_result
+                            .Where(r => r.Result_tb_lib_id != null)
+                            .Max(r => r.Analysis_result_id);
+
+                        noresult = matches.Match_analysis_result
+                            .Where(r => r.Analysis_result_id < max_Analysis_result_id)
+                            //这个条件很关键，否则删除所有的数据
+                            .Where(r => r.Result_tb_lib_id == null);
+
+
+                        //以下完成于2011.9.2日
+                        //在只有代码的情况下也可以直接生成分析数据库      
+                        //如果删除所有数据，则需要根据历史重新生成分析数据库  result->analysis
+                        //如果历史数据出现错误，则需要重新下载历史数据        www.7m.cn->result
+
+
+                        var marLiveidCollection = noresult.ToDictionary(r => r.Live_table_lib_id);
+
+                        //删除live_table_lib中推迟或者延迟的比赛
+                        foreach (var id in marLiveidCollection.Keys)
+                        {
+                            var delaymatch = matches.Live_Table_lib.Where(r => r.Live_table_lib_id == id).FirstOrDefault();
+                            matches.Live_Table_lib.DeleteOnSubmit(delaymatch);
+                        }
+                        matches.SubmitChanges();
+                        MessageBox.Show("Live_Table_lib OK");
+
+                        //删除Match_analysis_result中未发生结果的比赛
+                        matches.Match_analysis_result.DeleteAllOnSubmit(noresult);
+                        matches.SubmitChanges();
+                        MessageBox.Show("Match_analysis_result OK");
+                    }
+               
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                  
+                GC.Collect(); GC.Collect(); Application.DoEvents();
+                 * 
+                 * * */
+
+				                     //using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                    //{
+                    //    dMatch.dNew = false;
+                    //    if (dMatch.dNew == false)
+                    //    {
+                    //        dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                    //        dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                    //        dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                    //        dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                    //        dMatch.liveTables = matches.Live_Table_lib.ToLookup(e => e.Live_table_lib_id);
+                    //        dMatch.dNew = true;
+                    //    }
+                    //}
+                    //dMatch.dNew = false;
+
+					            //List<string> matchlist = new List<string>();
+            //using (StreamReader r = new StreamReader(filterMatchPath, System.Text.Encoding.Default))
+            //{
+            //    string line;
+            //    while ((line = r.ReadLine()) != null)
+            //        matchlist.Add(line);
+            //}
+
+
+
+			            //RowNumberTable rnt = new RowNumberTable();
+            //dataGridView1.DataSource = rnt.WinRate;
+
+            //Conn.CreateTable(typeof(Analysis_Review));
+
+
+			                //string selectFile = appPath + "\\" + e.Node.Parent.Text.ToString() + "\\" + e.Node.Text.ToString();
+                //StreamReader reader = new StreamReader(selectFile);
+                //richTextBox2.Text = reader.ReadToEnd();
+                //reader.Close();
+
+
+				        //private void selectMatchToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    listBox2.Items.Add(toolStripStatusLabel3.Text);
+        //}
+
+
+		        //private void checkBox10_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    System.Timers.Timer t = new System.Timers.Timer(100);//实例化Timer类，设置间隔时间为10000毫秒； 
+        //    t.Elapsed += new System.Timers.ElapsedEventHandler(CrossThreadFlush);//到达时间的时候执行事件； 
+        //    t.AutoReset = false;//设置是执行一次（false）还是一直执行(true)； 
+        //    t.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件； 
+        //}
+        //private delegate void FlushClient();//代理
+        //private void CrossThreadFlush(object source, System.Timers.ElapsedEventArgs e)
+        //{
+        //    while (true)
+        //    {
+        //        Thread.Sleep(1000);
+        //        ThreadFunction();//将sleep和无限循环放在等待异步的外面
+        //    }
+        //}
+        //private void ThreadFunction()
+        //{
+        //    if (this.textBox2.InvokeRequired)//等待异步
+        //    {
+        //        FlushClient fc = new FlushClient(ThreadFunction);
+        //        this.Invoke(fc);//通过代理调用刷新方法
+        //    }
+        //    else
+        //    {
+        //        this.textBox2.Text = DateTime.Now.ToString();
+        //    }
+        //}
+
+
+		                    //using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+                    //{
+                    //    dMatch.dNew = false;
+                    //    if (dMatch.dNew == false)
+                    //    {
+                    //        dMatch.dHome = matches.Result_tb_lib.ToLookup(e => e.Home_team_big);
+                    //        dMatch.dAway = matches.Result_tb_lib.ToLookup(e => e.Away_team_big);
+                    //        dMatch.macauPre = matches.MacauPredication.ToLookup(e => e.Home_team);
+                    //        dMatch.liveTables = matches.Live_Table_lib.ToLookup(e => e.Live_table_lib_id);
+                    //        dMatch.dNew = true;
+                    //    }
+                    //}
+                    //dMatch.dNew = false;
+
+                    //dMatch.LoadMatchData(true);
+
+
+
+					                //if (f.idExc == null) return;
+
+
+									            //using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+            //{
+            //    dataGridView1.DataSource = matches.Live_okoo;
+            //}
+
+
+
+			        //private void ComputeFitResult(int matchid)
+        //{
+        //    dataGridView5.Visible = true;
+        //    using (DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn))
+        //    {
+        //        string pre = matches.Match_analysis_result
+        //            .Where(e => e.Live_table_lib_id == matchid)
+        //            .Select(e => e.Pre_algorithm).FirstOrDefault();
+
+        //        var mar = from a in matches.Match_analysis_result
+        //                  where a.Pre_algorithm == pre
+        //                  select a;
+        //        dataGridView5.DataSource = mar;
+        //    }
+        //}
+
+
+		
+        //bool web2docComplete = false;
+        //private void webBrowser2_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        //{
+        //    while (webBrowser1.ReadyState != WebBrowserReadyState.Complete) return;
+        //    web2docComplete = true;
+        //}
+
+
+		            //dataGridView6.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            //dataGridView6.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //dataGridView7.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            //dataGridView7.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //dataGridView8.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            //dataGridView8.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+

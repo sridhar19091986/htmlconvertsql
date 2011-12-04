@@ -1,0 +1,9 @@
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Debug\AutoUpdate.exe
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Debug\AutoUpdate.pdb
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\bin\Debug\AutoUpdate.exe.config
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\bin\Debug\AutoUpdate.exe
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\bin\Debug\AutoUpdate.pdb
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Debug\ResolveAssemblyReference.cache
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Debug\AutoUpdate.FrmUpdate.resources
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Debug\GenerateResource.read.1.tlog
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Debug\GenerateResource.write.1.tlog

@@ -1,0 +1,10 @@
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\bin\注册.exe.config
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\注册\obj\Release\注册.exe
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\注册\obj\Release\注册.pdb
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\bin\注册.exe
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\bin\注册.pdb
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\注册\obj\Release\ResolveAssemblyReference.cache
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\注册\obj\Release\注册.Form1.resources
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\注册\obj\Release\注册.Properties.Resources.resources
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\注册\obj\Release\GenerateResource.read.1.tlog
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\注册\obj\Release\GenerateResource.write.1.tlog

@@ -1,0 +1,14 @@
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Release\ResolveAssemblyReference.cache
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Release\AutoUpdate.FrmUpdate.resources
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Release\GenerateResource.read.1.tlog
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Release\GenerateResource.write.1.tlog
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\bin\Release\AutoUpdate.exe.config
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\bin\Release\AutoUpdate.exe
+G:\htmlconvertsql\SqlCompact.v.2011.05.21\Soccer Score Forecast\AutoUpdate\obj\Release\AutoUpdate.exe
+G:\htmlconvertsql\SqlServer.v.2011.10.31\Soccer Score Forecast\AutoUpdate\bin\Release\AutoUpdate.exe.config
+G:\htmlconvertsql\SqlServer.v.2011.10.31\Soccer Score Forecast\AutoUpdate\bin\Release\AutoUpdate.exe
+G:\htmlconvertsql\SqlServer.v.2011.10.31\Soccer Score Forecast\AutoUpdate\obj\Release\ResolveAssemblyReference.cache
+G:\htmlconvertsql\SqlServer.v.2011.10.31\Soccer Score Forecast\AutoUpdate\obj\Release\AutoUpdate.FrmUpdate.resources
+G:\htmlconvertsql\SqlServer.v.2011.10.31\Soccer Score Forecast\AutoUpdate\obj\Release\GenerateResource.read.1.tlog
+G:\htmlconvertsql\SqlServer.v.2011.10.31\Soccer Score Forecast\AutoUpdate\obj\Release\GenerateResource.write.1.tlog
+G:\htmlconvertsql\SqlServer.v.2011.10.31\Soccer Score Forecast\AutoUpdate\obj\Release\AutoUpdate.exe

@@ -1,0 +1,13 @@
+﻿INSERT INTO [G:\htmlconvertsql\match_analysis_pdm.mdf].[dbo].[match_table_xpath]
+           ([uri_host]
+           ,[max_table_xpath]
+           ,[max_table_id_value]
+           ,[second_table_xpath]
+     )
+     VALUES
+           ('live.win.7m.cn'
+           ,'/div[10]/div[3]/div[2]/div[2]/table[1]'
+           ,'live_Table'
+           ,'/div[10]/div[3]/div[1]/div[1]/div[1]/table[2]'
+          )
+GO
