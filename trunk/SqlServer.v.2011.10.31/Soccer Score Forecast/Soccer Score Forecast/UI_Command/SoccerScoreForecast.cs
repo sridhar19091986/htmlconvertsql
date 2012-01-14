@@ -45,7 +45,7 @@ namespace Soccer_Score_Forecast
         #region 软件加密模块1,检验注册码
         private void Form1_Load(object sender, EventArgs ee)
         {
-            
+
 
             注册LicenseCheck();
             dataGridView5.Visible = false;
@@ -216,6 +216,8 @@ namespace Soccer_Score_Forecast
         }
         private void toolStripButton_iniLast_Click(object sender, EventArgs e)
         {
+            toolStripLabel1.Text = "updateResultTable";
+
             try
             {
                 this.tabControl1.SelectedTab = this.tabPage1;
@@ -264,6 +266,8 @@ namespace Soccer_Score_Forecast
         #region 软件加密模块2，注册验证码不正确不能入库
         private void toolStripButton_iniToday_Click(object sender, EventArgs e)
         {
+            toolStripLabel1.Text = "updateLiveTable";
+
             try
             {
                 this.tabControl1.SelectedTab = this.tabPage1;
@@ -275,14 +279,15 @@ namespace Soccer_Score_Forecast
 
                 while (!insertComplete) Application.DoEvents();
 
-                if (ls.bRegOK)
-                {
-                    int pb = Int32.Parse(toolStripLabel2.Text);
-                    toolStripProgressBar1.Maximum = pb;
+                //if (ls.bRegOK)
+                //{
+                int pb = Int32.Parse(toolStripLabel2.Text);
+                toolStripProgressBar1.Maximum = pb;
 
-                    SevenmLiveToSql sevenm = new SevenmLiveToSql();
-                    sevenm.UpdateTodayMatch();
-                }
+                SevenmLiveToSql sevenm = new SevenmLiveToSql();
+                sevenm.UpdateTodayMatch();
+
+                //}
             }
             catch (Exception ex)
             {
@@ -349,11 +354,14 @@ namespace Soccer_Score_Forecast
         //运用DateTable逐步计算，从最近到最远进行拟合
         private void toolStripButton_resultEvaluate_Click(object sender, EventArgs c)
         {
+
+            toolStripLabel1.Text = "resultEvaluate";
+
             try
             {
                 this.tabControl1.SelectedTab = this.tabPage12;
 
-           
+
 
                 ForecastAlgorithm f = new ForecastAlgorithm();
                 f.DeleteRedundancy();
@@ -394,6 +402,8 @@ namespace Soccer_Score_Forecast
 
         private void toolStripButton_todayEvaluate_Click(object sender, EventArgs e)
         {
+            toolStripLabel1.Text = "batchExcuteSim";
+
             BatchExcuteSim(ViewMatchOverDays);
         }
 
@@ -485,6 +495,9 @@ namespace Soccer_Score_Forecast
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+
+            toolStripLabel1.Text = "AutidtLiveTablelib";
+
             DialogResult result; //Messagebox所属于的类
             result = MessageBox.Show(this, "YesOrNo", "你确定要删除分析库？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)//Messagebox返回的值
@@ -551,6 +564,8 @@ namespace Soccer_Score_Forecast
 
         private void toolStripButton2_Click(object sender, EventArgs ee)
         {
+            toolStripLabel1.Text = "auditAnalysis";
+
             try
             {
                 this.tabControl1.SelectedTab = this.tabPage12;
@@ -862,6 +877,8 @@ namespace Soccer_Score_Forecast
             //AutoUpdate.FrmUpdate autoupdateform = new AutoUpdate.FrmUpdate();
             //autoupdateform.ShowDialog();
 
+            toolStripLabel1.Text = "statSimulink";
+
             this.tabControl1.SelectedTab = this.tabPage2;
 
             Application.DoEvents();
@@ -954,5 +971,28 @@ namespace Soccer_Score_Forecast
             //}
         }
 
+        public delegate void runBatCommands(object sender, EventArgs e);
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+
+            toolStripLabel1.Text = "runBatCommands";
+
+            runBatCommands rb = new runBatCommands(this.toolStripButton_iniLast_Click);
+            rb += this.toolStripButton1_Click;
+            rb += this.toolStripButton_iniToday_Click;
+            rb += this.toolStripButton_resultEvaluate_Click;
+            rb += this.toolStripButton2_Click;
+            rb += this.toolStripButton_todayEvaluate_Click;
+            rb += this.toolStripButton_autoUpateSystem_Click;
+
+            DialogResult result; //Messagebox所属于的类
+            result = MessageBox.Show(this, "YesOrNo", "你确定执行？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)//Messagebox返回的值
+            {
+                rb(sender, e);
+                
+            }
+            toolStripLabel1.Text = "runComplete";
+        }
     }
 }
