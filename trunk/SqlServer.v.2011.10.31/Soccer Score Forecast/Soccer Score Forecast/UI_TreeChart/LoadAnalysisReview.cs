@@ -62,11 +62,11 @@ namespace Soccer_Score_Forecast.Handle
                 rtlAll = matches.Result_tb_lib.ToDictionary(e => e.Result_tb_lib_id);
             }
         }
-        public void insertSQL()
+        public string  insertSQL()
         {
             Conn.CreateTable(typeof(Analysis_Review));
             InsertSQL(UpdateARdata());
-            MessageBox.Show("OK");
+            return "statSimulink...OK";
         }
 
         public int MarCount()
