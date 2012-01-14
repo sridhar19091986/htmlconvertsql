@@ -141,7 +141,8 @@ namespace Soccer_Score_Forecast
                 }
                 con.Close();
             }
-            MessageBox.Show("UpdateResultData...OK");
+            //MessageBox.Show("UpdateResultData...OK");
+            toolStripLabel2.Text = "UpdateResultData...OK"; Thread.Sleep(1);
         }
 
         //3.更新 live_id to Match_analysis_result
@@ -156,7 +157,8 @@ namespace Soccer_Score_Forecast
                 //f.DeleteRedundancy();
 
                 int pb = f.idExc.Count();
-                MessageBox.Show(pb.ToString());
+                //MessageBox.Show(pb.ToString());
+                toolStripLabel2.Text = pb.ToString(); Thread.Sleep(1);
                 if (pb != 0)
                 {
                     toolStripProgressBar1.Maximum = pb;
@@ -169,7 +171,8 @@ namespace Soccer_Score_Forecast
                 MessageBox.Show(ex.ToString());
             }
 
-            MessageBox.Show("ForecastAlgorithm...OK");
+            //MessageBox.Show("ForecastAlgorithm...OK");
+            toolStripLabel2.Text = "ForecastAlgorithm...OK"; Thread.Sleep(1);
         }
 
         //4.重新运算 Match_analysis_result
@@ -181,11 +184,13 @@ namespace Soccer_Score_Forecast
                 //dMatch.dNew = false;
                 //dMatch.LoadMatchData(true);
 
-                MessageBox.Show(overday.ToString());
+                //MessageBox.Show(overday.ToString());
+                toolStripLabel2.Text = overday.ToString(); Thread.Sleep(1);
 
                 AuditForecastAlgorithm f = new AuditForecastAlgorithm(overday);
                 int pb = f.idExc.Count();
-                MessageBox.Show(pb.ToString());
+                //MessageBox.Show(pb.ToString());
+                toolStripLabel2.Text = pb.ToString(); Thread.Sleep(1);
                 if (pb != 0)
                 {
 
@@ -200,7 +205,8 @@ namespace Soccer_Score_Forecast
                 MessageBox.Show(ex.ToString());
             }
 
-            MessageBox.Show("AuditForecastAlgorithm...OK");
+            //MessageBox.Show("AuditForecastAlgorithm...OK");
+            toolStripLabel2.Text = "AuditForecastAlgorithm...OK"; Thread.Sleep(1);
         }
 
         //5.仿真
@@ -258,7 +264,8 @@ namespace Soccer_Score_Forecast
             {
                 UpdateAnalysisResult u = new UpdateAnalysisResult();
                 int pb = u.ExecUpateCount;
-                MessageBox.Show(pb.ToString());
+                //MessageBox.Show(pb.ToString());
+                toolStripLabel2.Text = pb.ToString(); Thread.Sleep(1);
 
                 if (pb != 0)
                 {
@@ -272,7 +279,8 @@ namespace Soccer_Score_Forecast
                 MessageBox.Show(ex.ToString());
             }
 
-            MessageBox.Show("UpdateAnalysisResult...OK");
+            //MessageBox.Show("UpdateAnalysisResult...OK");
+            toolStripLabel2.Text = "UpdateAnalysisResult...OK"; Thread.Sleep(1);
         }
     }
 }

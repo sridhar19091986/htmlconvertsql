@@ -83,7 +83,6 @@
             this.importCompactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -97,7 +96,6 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_todayEvaluate = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_exitSystem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.filterMatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -260,8 +258,11 @@
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -373,7 +374,7 @@
             this.importUpdateToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(864, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(912, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -436,21 +437,15 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1,
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
             this.statusStrip1.Location = new System.Drawing.Point(0, 437);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(864, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(912, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
             // toolStripStatusLabel1
             // 
@@ -487,11 +482,10 @@
             this.toolStripButton_resultEvaluate,
             this.toolStripButton2,
             this.toolStripButton_todayEvaluate,
-            this.toolStripButton_exitSystem,
-            this.toolStripLabel2});
+            this.toolStripButton_exitSystem});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(864, 35);
+            this.toolStrip1.Size = new System.Drawing.Size(912, 35);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -575,12 +569,6 @@
             this.toolStripButton_exitSystem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton_exitSystem.Click += new System.EventHandler(this.toolStripButton_exitSystem_Click);
             // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(89, 32);
-            this.toolStripLabel2.Text = "              ";
-            // 
             // tabControl1
             // 
             this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
@@ -596,7 +584,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(858, 347);
+            this.tabControl1.Size = new System.Drawing.Size(906, 347);
             this.tabControl1.TabIndex = 3;
             // 
             // contextMenuStrip1
@@ -671,7 +659,7 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 4);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(850, 322);
+            this.tabPage12.Size = new System.Drawing.Size(898, 322);
             this.tabPage12.TabIndex = 6;
             this.tabPage12.Text = "Smart Soccer Forecast";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -691,7 +679,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(844, 316);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(892, 316);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
@@ -702,7 +690,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 190);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(838, 29);
+            this.panel1.Size = new System.Drawing.Size(886, 29);
             this.panel1.TabIndex = 1;
             // 
             // numericUpDown1
@@ -748,7 +736,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 225);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(838, 88);
+            this.panel2.Size = new System.Drawing.Size(886, 88);
             this.panel2.TabIndex = 7;
             // 
             // chart1
@@ -801,7 +789,7 @@
             this.chart1.Series.Add(series12);
             this.chart1.Series.Add(series13);
             this.chart1.Series.Add(series14);
-            this.chart1.Size = new System.Drawing.Size(838, 88);
+            this.chart1.Size = new System.Drawing.Size(886, 88);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title2.Name = "Title1";
@@ -815,7 +803,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(3, 3);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(838, 181);
+            this.panel10.Size = new System.Drawing.Size(886, 181);
             this.panel10.TabIndex = 8;
             // 
             // label3
@@ -848,7 +836,7 @@
             this.treeView5.Location = new System.Drawing.Point(0, 0);
             this.treeView5.Name = "treeView5";
             this.treeView5.ShowNodeToolTips = true;
-            this.treeView5.Size = new System.Drawing.Size(838, 181);
+            this.treeView5.Size = new System.Drawing.Size(886, 181);
             this.treeView5.TabIndex = 0;
             this.treeView5.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView5_AfterSelect);
             this.treeView5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView5_MouseDown);
@@ -859,7 +847,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(856, 353);
+            this.tabPage1.Size = new System.Drawing.Size(898, 322);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Match Data Collection";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1061,7 +1049,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(856, 353);
+            this.tabPage2.Size = new System.Drawing.Size(898, 322);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Match Data Operation";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1235,7 +1223,7 @@
             this.tabPage4.Controls.Add(this.splitContainer11);
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(856, 353);
+            this.tabPage4.Size = new System.Drawing.Size(898, 322);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Live Odds Collection";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1791,7 +1779,7 @@
             this.tabPage10.Controls.Add(this.tableLayoutPanel2);
             this.tabPage10.Location = new System.Drawing.Point(4, 4);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(856, 353);
+            this.tabPage10.Size = new System.Drawing.Size(898, 322);
             this.tabPage10.TabIndex = 4;
             this.tabPage10.Text = "Live Collection Result";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -2036,7 +2024,7 @@
             this.tabPage3.Controls.Add(this.tableLayoutPanel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(856, 353);
+            this.tabPage3.Size = new System.Drawing.Size(898, 322);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Soccer Score Forecast";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2184,7 +2172,7 @@
             this.tabPage11.Controls.Add(this.treeView4);
             this.tabPage11.Location = new System.Drawing.Point(4, 4);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(856, 353);
+            this.tabPage11.Size = new System.Drawing.Size(898, 322);
             this.tabPage11.TabIndex = 5;
             this.tabPage11.Text = "Forecast Result Review";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -2304,12 +2292,42 @@
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1});
+            this.toolStripLabel1,
+            this.toolStripLabel2,
+            this.toolStripProgressBar1,
+            this.toolStripButton3});
             this.toolStrip2.Location = new System.Drawing.Point(0, 59);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(864, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(912, 25);
             this.toolStrip2.TabIndex = 5;
             this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.AutoSize = false;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(95, 22);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.AutoSize = false;
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(95, 22);
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 22);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::Soccer_Score_Forecast.Properties.Resources.audit;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -2321,20 +2339,14 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(864, 353);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(912, 353);
             this.tableLayoutPanel5.TabIndex = 6;
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(95, 22);
-            this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 459);
+            this.ClientSize = new System.Drawing.Size(912, 459);
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
@@ -2580,7 +2592,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripMenuItem initTreeToolStripMenuItem;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Button button34;
@@ -2605,7 +2616,6 @@
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.TreeView treeView5;
         private System.Windows.Forms.ToolStripButton toolStripButton_autoUpateSystem;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripMenuItem importCompactToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importUpdateToolStripMenuItem;
         private System.Windows.Forms.Panel panel3;
@@ -2653,6 +2663,9 @@
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
 
     }
 }
