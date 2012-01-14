@@ -213,6 +213,5 @@ namespace Soccer_Score_Forecast
             SevenmResultToSql sevenm = new SevenmResultToSql();
             sevenm.BatchUpdateLastMatch();
         }
-    
     }
 }

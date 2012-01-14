@@ -173,6 +173,7 @@ namespace Soccer_Score_Forecast
 
         private void initAnalysisReview()
         {
+            /*
             DialogResult result; //Messagebox所属于的类
             result = MessageBox.Show(this, "YesOrNo", "你确定要删除分析库？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)//Messagebox返回的值
@@ -184,6 +185,12 @@ namespace Soccer_Score_Forecast
 
                 lar.insertSQL();
             }
+             * */
+            LoadAnalysisReview lar = new LoadAnalysisReview();
+            int pb = lar.MarCount();
+            toolStripProgressBar1.Maximum = pb;
+            string insertsqlresult = lar.insertSQL();
+            toolStripLabel2.Text = insertsqlresult; Thread.Sleep(1);
         }
 
         private void button3_Click(object sender, EventArgs c)
@@ -243,7 +250,9 @@ namespace Soccer_Score_Forecast
                 {
                     int pb = matches.Result_tb.Count();
                     toolStripProgressBar1.Maximum = pb;
-                    MessageBox.Show(pb.ToString());
+
+                    //MessageBox.Show(pb.ToString());
+                    toolStripLabel2.Text = pb.ToString(); Thread.Sleep(1);
                 }
                 SevenmResultToSql sevenm = new SevenmResultToSql();
                 sevenm.UpdateLastMatch();
@@ -285,7 +294,8 @@ namespace Soccer_Score_Forecast
                 toolStripProgressBar1.Maximum = pb;
 
                 SevenmLiveToSql sevenm = new SevenmLiveToSql();
-                sevenm.UpdateTodayMatch();
+                string sm = sevenm.UpdateTodayMatch();
+                toolStripLabel2.Text = sm; Thread.Sleep(1);
 
                 //}
             }
@@ -367,7 +377,8 @@ namespace Soccer_Score_Forecast
                 f.DeleteRedundancy();
 
                 int pb = f.idExc.Count();
-                MessageBox.Show(pb.ToString());
+                //MessageBox.Show(pb.ToString());
+                toolStripLabel2.Text = pb.ToString(); Thread.Sleep(1);
                 if (pb != 0)
                 {
 
@@ -380,7 +391,8 @@ namespace Soccer_Score_Forecast
                 MessageBox.Show(ex.ToString());
             }
 
-            MessageBox.Show("OK");
+            //MessageBox.Show("OK");
+            toolStripLabel2.Text = "OK"; Thread.Sleep(1);
 
         }
 
@@ -393,11 +405,13 @@ namespace Soccer_Score_Forecast
             UpdateAnalysisResult u = new UpdateAnalysisResult();
 
             int pb = u.ExecUpateCount;
-            MessageBox.Show(pb.ToString());
+            //MessageBox.Show(pb.ToString());
+            toolStripLabel2.Text = pb.ToString(); Thread.Sleep(1);
             toolStripProgressBar1.Maximum = pb;
             u.ExecUpdate();
 
-            MessageBox.Show("OK");
+            //MessageBox.Show("OK");
+            toolStripLabel2.Text = "UpdateAnalysisResult...OK"; Thread.Sleep(1);
         }
 
         private void toolStripButton_todayEvaluate_Click(object sender, EventArgs e)
@@ -498,6 +512,9 @@ namespace Soccer_Score_Forecast
 
             toolStripLabel1.Text = "AutidtLiveTablelib";
 
+            UpateResult();
+
+            /*
             DialogResult result; //Messagebox所属于的类
             result = MessageBox.Show(this, "YesOrNo", "你确定要删除分析库？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)//Messagebox返回的值
@@ -506,6 +523,8 @@ namespace Soccer_Score_Forecast
                 UpateResult();
 
             }
+             * */
+
         }
         private void deleteFile(DirectoryInfo directory)
         {
@@ -569,10 +588,12 @@ namespace Soccer_Score_Forecast
             try
             {
                 this.tabControl1.SelectedTab = this.tabPage12;
-                MessageBox.Show(ViewMatchOverDays.ToString());
+                //MessageBox.Show(ViewMatchOverDays.ToString());
+                toolStripLabel2.Text = ViewMatchOverDays.ToString(); Thread.Sleep(1);
                 AuditForecastAlgorithm f = new AuditForecastAlgorithm(ViewMatchOverDays);
                 int pb = f.idExc.Count();
-                MessageBox.Show(pb.ToString());
+                //MessageBox.Show(pb.ToString());
+                toolStripLabel2.Text = pb.ToString(); Thread.Sleep(1);
                 if (pb != 0)
                 {
                     toolStripProgressBar1.Maximum = pb;
@@ -585,7 +606,8 @@ namespace Soccer_Score_Forecast
             }
             finally
             {
-                MessageBox.Show("OK");
+                //MessageBox.Show("OK");
+                toolStripLabel2.Text = "OK"; Thread.Sleep(1);
             }
         }
         private void exitSystemSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -994,5 +1016,7 @@ namespace Soccer_Score_Forecast
             }
             toolStripLabel1.Text = "runComplete";
         }
+
+    
     }
 }
