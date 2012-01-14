@@ -80,7 +80,7 @@ namespace Soccer_Score_Forecast
 
         private string temp_date = null;
 
-        public void UpdateTodayMatch()
+        public string UpdateTodayMatch()
         {
             int i = 0;
             DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn);
@@ -158,7 +158,9 @@ namespace Soccer_Score_Forecast
             }
             matches.Live_Table.DeleteAllOnSubmit(lt);//更新后删除
             matches.SubmitChanges();
-            MessageBox.Show("OK");
+
+            //MessageBox.Show("OK");
+            return "OK";
             //dataGridView1.DataSource = matches.live_Table_lib;
         }
 

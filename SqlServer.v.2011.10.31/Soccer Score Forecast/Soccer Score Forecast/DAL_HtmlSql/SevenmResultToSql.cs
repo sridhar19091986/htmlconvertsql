@@ -55,7 +55,7 @@ namespace Soccer_Score_Forecast
         }
         private string temp_time = null;
         private int last_line = 0;
-        public void UpdateLastMatch()
+        public string UpdateLastMatch()
         {
             int i = 0;
             DataClassesMatchDataContext matches = new DataClassesMatchDataContext(Conn.conn);
@@ -128,7 +128,8 @@ namespace Soccer_Score_Forecast
             }
             matches.Result_tb_lib.InsertAllOnSubmit(update_tb);
             matches.SubmitChanges();
-            MessageBox.Show("OK");
+            //MessageBox.Show("OK");
+            return "OK";
         }
 
         public void BatchUpdateLastMatch()
